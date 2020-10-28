@@ -18,11 +18,12 @@ const remoteSrc = require('gulp-remote-src');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const zip = require('gulp-vinyl-zip');
+const sass = require('gulp-sass');
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
 -------------------------------------------------------------------------------------------------- */
-const themeName = 'wordpressify';
+const themeName = 'persian-bourse';
 
 /* -------------------------------------------------------------------------------------------------
 PostCSS Plugins
@@ -64,9 +65,18 @@ const pluginsListProd = [
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
-const headerJS = ['./node_modules/jquery/dist/jquery.js'];
+const headerJS = [
+	'./node_modules/jquery/dist/jquery.js',
+	'./node_modules/swiper/swiper-bundle.js',
+	'./node_modules/aos/dist/aos.js',
+	'./node_modules/simplebar/dist/simplebar.min.js',
+	'./node_modules/bxslider/dist/jquery.bxslider.js',
+	'./src/assets/js/tabs.js'
+];
 
-const footerJS = ['./src/assets/js/**'];
+const footerJS = [
+	'./src/assets/js/**'
+];
 
 /* -------------------------------------------------------------------------------------------------
 Installation Tasks
@@ -123,7 +133,8 @@ function devServer() {
 		},
 	);
 
-	watch('./src/assets/css/**/*.css', stylesDev);
+	// watch('./src/assets/css/**/*.css', stylesDev);
+	watch('./src/assets/css/**/*.scss', stylesDev);
 	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
 	watch('./src/assets/img/**', series(copyImagesDev, Reload));
 	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
@@ -159,10 +170,16 @@ function copyFontsDev() {
 }
 
 function stylesDev() {
-	return src('./src/assets/css/style.css')
-		.pipe(plumber({ errorHandler: onError }))
+	// return src('./src/assets/css/style.css')
+	// 	.pipe(plumber({ errorHandler: onError }))
+	// 	.pipe(sourcemaps.init())
+	// 	.pipe(postcss(pluginsListDev))
+	// 	.pipe(sourcemaps.write('.'))
+	// 	.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
+	// 	.pipe(browserSync.stream({ match: '**/*.css' }));
+	return src('./src/assets/css/style.scss')
 		.pipe(sourcemaps.init())
-		.pipe(postcss(pluginsListDev))
+		.pipe(sass({includePaths: 'node_modules'}).on("error", sass.logError))
 		.pipe(sourcemaps.write('.'))
 		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
 		.pipe(browserSync.stream({ match: '**/*.css' }));
@@ -226,9 +243,12 @@ function copyFontsProd() {
 }
 
 function stylesProd() {
-	return src('./src/assets/css/style.css')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(postcss(pluginsListProd))
+	// return src('./src/assets/css/style.css')
+	// 	.pipe(plumber({ errorHandler: onError }))
+	// 	.pipe(postcss(pluginsListProd))
+	// 	.pipe(dest('./dist/themes/' + themeName));
+	return src('./src/assets/css/style.scss')
+		.pipe(sass({includePaths: 'node_modules'})).on("error", sass.logError)
 		.pipe(dest('./dist/themes/' + themeName));
 }
 

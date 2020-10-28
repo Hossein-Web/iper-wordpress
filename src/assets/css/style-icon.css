@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'persian';
+  src:  url('../fonts/font_icon/persian.eot?a6n6pa');
+  src:  url('../fonts/font_icon/persian.eot?a6n6pa#iefix') format('embedded-opentype'),
+  url('../fonts/font_icon/persian.ttf?a6n6pa') format('truetype'),
+  url('../fonts/font_icon/persian.woff?a6n6pa') format('woff'),
+  url('../fonts/font_icon/persian.svg?a6n6pa#persian') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="persian-"], [class*=" persian-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'persian' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.persian-instagram-2:before {
+  content: "\e921";
+}
+.persian-response:before {
+  content: "\e922";
+}
+.persian-back-large:before {
+  content: "\e91e";
+}
+.persian-back-small:before {
+  content: "\e920";
+}
+.persian-connector:before {
+  content: "\e91f";
+}
+.persian-angle-left:before {
+  content: "\e900";
+}
+.persian-angle-right:before {
+  content: "\e901";
+}
+.persian-arrow-down:before {
+  content: "\e902";
+}
+.persian-arrow-left:before {
+  content: "\e903";
+}
+.persian-arrow-up:before {
+  content: "\e904";
+}
+.persian-cross:before {
+  content: "\e905";
+}
+.persian-date:before {
+  content: "\e906";
+}
+.persian-email:before {
+  content: "\e907";
+}
+.persian-external-link:before {
+  content: "\e908";
+}
+.persian-facebook:before {
+  content: "\e909";
+}
+.persian-fire:before {
+  content: "\e90a";
+}
+.persian-home:before {
+  content: "\e90b";
+}
+.persian-instagram:before {
+  content: "\e90c";
+}
+.persian-ivahid:before {
+  content: "\e90d";
+}
+.persian-left:before {
+  content: "\e90e";
+}
+.persian-like:before {
+  content: "\e90f";
+}
+.persian-lock:before {
+  content: "\e910";
+}
+.persian-mobile:before {
+  content: "\e911";
+}
+.persian-notification:before {
+  content: "\e912";
+}
+.persian-play:before {
+  content: "\e913";
+}
+.persian-search:before {
+  content: "\e914";
+}
+.persian-telegram:before {
+  content: "\e915";
+}
+.persian-tick:before {
+  content: "\e916";
+}
+.persian-time:before {
+  content: "\e917";
+}
+.persian-twitter:before {
+  content: "\e918";
+}
+.persian-user:before {
+  content: "\e919";
+}
+.persian-verify-key:before {
+  content: "\e91a";
+}
+.persian-view:before {
+  content: "\e91b";
+}
+.persian-warning:before {
+  content: "\e91c";
+}
+.persian-whatsapp:before {
+  content: "\e91d";
+}
