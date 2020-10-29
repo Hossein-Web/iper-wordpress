@@ -1,4 +1,9 @@
 <?php
+function persian_var_dump( $value ) {
+    echo '<pre style="direction: ltr; text-align: left;">';
+    var_dump( $value );
+    echo '</pre>';
+}
 function wordpressify_resources() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_script( 'header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false );
@@ -35,18 +40,10 @@ function is_search_has_results() {
 	return 0 != $GLOBALS['wp_query']->found_posts;
 }
 
-// Add Widget Areas
-function wordpressify_widgets() {
-	register_sidebar(
-		array(
-			'name'          => 'Sidebar',
-			'id'            => 'sidebar1',
-			'before_widget' => '<div class="widget-item">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
+// include widgets
+require_once get_template_directory() . '/inc/widgets.php';
 
-add_action( 'widgets_init', 'wordpressify_widgets' );
+// Add options page for ACF
+if ( function_exists( 'acf_add_options_page' ) ){
+    acf_add_options_page();
+}
