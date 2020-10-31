@@ -286,44 +286,5 @@
             </ul>
         </div><!-- .fixed-social-media -->
     </div><!-- .fixed-social-media-wrapper -->
-    <div class="header-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="latest-news-articles">
-                        <span class="latest-news-articles__title">آخرین اخبار و مقالات :</span>
-                        <!-- .latest-news-articles__title -->
-                        <div class="latest-news-articles__slider">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide"><a href="#">جدول زمانبندی پرداخت سود بسویچ اعلام شد.</a>
-                                    </div>
-                                    <div class="swiper-slide"><a href="#">دوره آموزش صفر تا صد بورس (ویژه مبتدیان)</a>
-                                    </div>
-                                    <div class="swiper-slide"><a href="#">محصولات سامسونگ سه آپدیت بزرگ اندروید!</a>
-                                    </div>
-                                </div><!-- .swiper-wrapper -->
-                            </div>
-                        </div><!-- .latest-news-articles__slider -->
-                    </div><!-- .latest-news-articles -->
-                </div><!-- .col-lg-12 -->
-                <div class="col-lg-12">
-                    <ul class="secondary-menu">
-                        <li class="secondary-menu__item">
-                            <a href="index.html">صفحه اصلی</a>
-                        </li><!-- .secondary-menu__item -->
-                        <li class="secondary-menu__item">
-                            <a href="log-sign.html">ورود</a>
-                        </li><!-- .secondary-menu__item -->
-                        <li class="secondary-menu__item">
-                            <a href="404.html">404</a>
-                        </li><!-- .secondary-menu__item -->
-                        <li class="secondary-menu__item">
-                            <a href="#">ارتباط با ما</a>
-                        </li><!-- .secondary-menu__item -->
-                    </ul>
-                </div><!-- .col-lg-12 -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .header-bottom -->
+    <?php get_template_part( 'template_parts/header_bottom' ); ?>
 <?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
