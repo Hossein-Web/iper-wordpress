@@ -50,3 +50,21 @@ function wordpressify_widgets() {
 }
 
 add_action( 'widgets_init', 'wordpressify_widgets' );
+
+function persian_var_dump($var){
+    ?>
+    <pre style="direction: ltr; text-align: left">
+        <?php var_dump( $var ); ?>
+    </pre>
+<?php
+}
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title' 	=> 'تنظیمات قالب پرشین بورس',
+        'menu_title'	=> 'تنظیمات پرشین بورس',
+        'menu_slug' 	=> 'persian-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+}
