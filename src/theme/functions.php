@@ -7,6 +7,8 @@ function wordpressify_resources() {
 
 add_action( 'wp_enqueue_scripts', 'wordpressify_resources' );
 
+//main_function file
+require_once get_template_directory() . '/libs/main_function.php';
 // Customize excerpt word count length
 function custom_excerpt_length() {
 	return 22;
