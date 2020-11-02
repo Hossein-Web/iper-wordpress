@@ -262,58 +262,18 @@ if ($persian_slider){
                                             <ul>
                                                 <?php foreach ( $comments as $comment_item ) { ?>
                                                     <li class="d-flex align-items-center">
-                                                        <a href="#" class="comment-profile-image">
+                                                        <a href="<?php echo get_post_permalink( $comment_item->comment_post_ID ); ?>" class="comment-profile-image">
                                                             <?php echo get_avatar( $comment_item ); ?>
                                                         </a>
                                                         <div class="comment-content">
                                                             <p><?php echo esc_html( $comment_item->comment_author ); ?></p>
                                                             <p><?php echo esc_html( $comment_item->comment_content ); ?></p>
-                                                            <a href="<?php echo get_post_permalink( $comment_item->comment_post_ID ) ?>" class="view-more">
+                                                            <a href="<?php echo get_post_permalink( $comment_item->comment_post_ID ); ?>" class="view-more">
                                                                 <?php _e( 'مشاهده در مطلب', 'persian_bourse' ); ?>
                                                             </a>
                                                         </div>
                                                     </li>
                                                 <?php } ?>
-                                                <li class="d-flex align-items-center">
-                                                    <a href="#" class="comment-profile-image">
-                                                        <img src="./assets/img/user-profile.png" alt="user profile">
-                                                    </a>
-                                                    <div class="comment-content">
-                                                        <p>پیمان طباطبایی</p>
-                                                        <p>سلام . وقت بخیر . لطفا بفرمایید چگونه می توان فیلتری نوشت تا...</p>
-                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
-                                                    </div>
-                                                </li>
-                                                <li class="d-flex align-items-center">
-                                                    <a href="#" class="comment-profile-image">
-                                                        <img src="./assets/img/user-profile.png" alt="user profile">
-                                                    </a>
-                                                    <div class="comment-content">
-                                                        <p>محمد عطایی</p>
-                                                        <p>سلام ایا حمایت 47000 برای ورود خوب است...</p>
-                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
-                                                    </div>
-                                                </li>
-                                                <li class="d-flex align-items-center">
-                                                    <a href="#" class="comment-profile-image">
-                                                        <img src="./assets/img/user-profile.png" alt="user profile">
-                                                    </a>
-                                                    <div class="comment-content">
-                                                        <p>رضا اکبری</p>
-                                                        <p> با سلام این وظیفه ماست که هر هفته 40 نماد منتخب سایت را اپدی...</p>
-                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
-                                                    </div>
-                                                </li>
-                                                <li class="d-flex align-items-center">
-                                                    <a href="#" class="comment-profile-image">
-                                                        <img src="./assets/img/user-profile.png" alt="user profile">
-                                                    </a>
-                                                    <div class="comment-content">
-                                                        <p>وحید دانافرد</p>
-                                                        <p>مطالب پرشین بورس عالیه !</p>
-                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
-                                                    </div>
-                                                </li>
                                             </ul>
                                         </div><!-- .comments__wrapper -->
                                     </div><!-- .comments -->
