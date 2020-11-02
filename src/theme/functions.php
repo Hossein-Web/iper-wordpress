@@ -1,9 +1,42 @@
 <?php
+
+// General
 function persian_var_dump( $value ) {
     echo '<pre style="direction: ltr; text-align: left;">';
     var_dump( $value );
     echo '</pre>';
 }
+
+// Convert string to array and trim it
+function StrToArr($str, $delimiter)
+{
+    $arr = explode($delimiter, $str);
+    $result = [];
+    foreach ($arr as $item) {
+        $result[] = trim($item);
+    }
+    return $result;
+}
+
+// Load theme text domain
+function persian_load_text_domain() {
+    load_theme_textdomain( 'persian_bourse', get_template_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'persian_load_text_domain' );
+
+// Ivahid functions
+
+//function ivahid_get_views($postID = null)
+//{
+//    if ($postID == null):
+//        global $post;
+//        $postID = $post->ID;
+//    endif;
+//
+//    return intval(get_post_meta($postID, 'views', true));
+//}
+
+// Wordpressify functions
 function wordpressify_resources() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_script( 'header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false );
@@ -40,10 +73,45 @@ function is_search_has_results() {
 	return 0 != $GLOBALS['wp_query']->found_posts;
 }
 
-// include widgets
+// Include files
 require_once get_template_directory() . '/inc/widgets.php';
+require_once get_template_directory() . '/inc/shortcodes.php';
+require_once get_template_directory() . '/libs/main_function.php';
+
 
 // Add options page for ACF
 if ( function_exists( 'acf_add_options_page' ) ){
     acf_add_options_page();
 }
+
+// Comments callback
+function persian_comments( $comment, $args, $depth ) {
+//    get_template_part( '/template_parts/comment_list' );
+    ?>
+    <li class="comment">
+    <div class="comment__content">
+        <div class="comment-info">
+            <p class="comment-author"><?php echo get_comment_author(); ?></p><!-- .comment-author -->
+            <p class="comment-date"><?php echo get_comment_date(); ?></p><!-- .comment-date -->
+        </div><!-- .comment-info -->
+        <p class="comment-text"><?php echo esc_html( get_comment_text( $comment->comment_ID ) ) ?></p><!-- .comment-text -->
+        <?php  persian_var_dump( get_comment_reply_link( array_merge( $args, [ 'reply_text' => __( 'پاسخ دهید', 'persian_bourse' ),
+                                                                                'add_below' => 'comment',  ] ), $comment->comment_ID,
+                                                                                $comment->comment_post_ID ) ); ?>
+    </div><!-- .comment__content -->
+    <?php
+}
+
+//function alter_comment_form_fields( $fields ) {
+////    $fields['author'] = '';
+//    persian_var_dump( $fields );
+//
+//    return $fields;
+//}
+//add_filter('comment_form_default_fields','alter_comment_form_fields');
+
+function change_comment_form_defaults( $default ){
+    $default['fields']['mobile'] = '<input type="text" name="mobile" />';
+    return $default;
+}
+add_filter( 'comment_form_defaults', 'change_comment_form_defaults' );

@@ -43,69 +43,71 @@
                     </div><!-- .footer-copy-right -->
                 </div><!-- .col-lg-12 -->
                 <div class="col-lg-12">
-                    <div class="footer-social-media">
-                        <ul>
-                            <?php
-                                if ( get_field( 'persian_telegram_address', 'option' ) ) {
-                                $telegram_address = get_field( 'persian_telegram_address', 'option' );
-                            ?>
-                                <li class="active">
-                                    <div class="social-text-wrapper">
-                                        <span><?php echo esc_html( $telegram_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
-                                    </div><!-- .social-text-wrapper -->
-                                    <a href="<?php echo esc_url( $telegram_address[ 'url' ] );?>"><i class="footer-social-icon persian-telegram"></i></a>
-                                </li>
-                            <?php } ?>
+                    <?php if ( class_exists('ACF') ) { ?>
+                        <div class="footer-social-media">
+                                <ul>
+                                    <?php
+                                    if ( get_field( 'persian_telegram_address', 'option' ) ) {
+                                        $telegram_address = get_field( 'persian_telegram_address', 'option' );
+                                        ?>
+                                        <li class="active">
+                                            <div class="social-text-wrapper">
+                                                <span><?php echo esc_html( $telegram_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
+                                            </div><!-- .social-text-wrapper -->
+                                            <a href="<?php echo esc_url( $telegram_address[ 'url' ] );?>"><i class="footer-social-icon persian-telegram"></i></a>
+                                        </li>
+                                    <?php } ?>
 
-                            <?php
-                            if ( get_field( 'persian_instagram_address', 'option' ) ) {
-                                $instagram_address = get_field( 'persian_instagram_address', 'option' );
-                                ?>
-                                <li>
-                                    <div class="social-text-wrapper">
-                                        <span><?php echo esc_html( $instagram_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
-                                    </div><!-- .social-text-wrapper -->
-                                    <a href="<?php echo esc_url( $instagram_address[ 'url' ] );?>"><i class="footer-social-icon persian-instagram"></i></a>
-                                </li>
-                            <?php } ?>
+                                    <?php
+                                    if ( get_field( 'persian_instagram_address', 'option' ) ) {
+                                        $instagram_address = get_field( 'persian_instagram_address', 'option' );
+                                        ?>
+                                        <li>
+                                            <div class="social-text-wrapper">
+                                                <span><?php echo esc_html( $instagram_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
+                                            </div><!-- .social-text-wrapper -->
+                                            <a href="<?php echo esc_url( $instagram_address[ 'url' ] );?>"><i class="footer-social-icon persian-instagram"></i></a>
+                                        </li>
+                                    <?php } ?>
 
-                            <?php
-                            if ( get_field( 'persian_whatsapp_address', 'option' ) ) {
-                                $whatsapp_address = get_field( 'persian_whatsapp_address', 'option' );
-                                ?>
-                                <li>
-                                    <div class="social-text-wrapper">
-                                        <span><?php echo esc_html( $whatsapp_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
-                                    </div><!-- .social-text-wrapper -->
-                                    <a href="<?php echo esc_url( $whatsapp_address[ 'url' ] );?>"><i class="footer-social-icon persian-whatsapp"></i></a>
-                                </li>
-                            <?php } ?>
+                                    <?php
+                                    if ( get_field( 'persian_whatsapp_address', 'option' ) ) {
+                                        $whatsapp_address = get_field( 'persian_whatsapp_address', 'option' );
+                                        ?>
+                                        <li>
+                                            <div class="social-text-wrapper">
+                                                <span><?php echo esc_html( $whatsapp_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
+                                            </div><!-- .social-text-wrapper -->
+                                            <a href="<?php echo esc_url( $whatsapp_address[ 'url' ] );?>"><i class="footer-social-icon persian-whatsapp"></i></a>
+                                        </li>
+                                    <?php } ?>
 
-                            <?php
-                            if ( get_field( 'persian_twitter_address', 'option' ) ) {
-                                $twitter_address = get_field( 'persian_twitter_address', 'option' );
-                                ?>
-                                <li>
-                                    <div class="social-text-wrapper">
-                                        <span><?php echo esc_html( $twitter_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
-                                    </div><!-- .social-text-wrapper -->
-                                    <a href="<?php echo esc_url( $twitter_address[ 'url' ] );?>"><i class="footer-social-icon persian-twitter"></i></a>
-                                </li>
-                            <?php } ?>
+                                    <?php
+                                    if ( get_field( 'persian_twitter_address', 'option' ) ) {
+                                        $twitter_address = get_field( 'persian_twitter_address', 'option' );
+                                        ?>
+                                        <li>
+                                            <div class="social-text-wrapper">
+                                                <span><?php echo esc_html( $twitter_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
+                                            </div><!-- .social-text-wrapper -->
+                                            <a href="<?php echo esc_url( $twitter_address[ 'url' ] );?>"><i class="footer-social-icon persian-twitter"></i></a>
+                                        </li>
+                                    <?php } ?>
 
-                            <?php
-                            if ( get_field( 'persian_facebook_address', 'option' ) ) {
-                                $facebook_address = get_field( 'persian_facebook_address', 'option' );
-                                ?>
-                                <li>
-                                    <div class="social-text-wrapper">
-                                        <span><?php echo esc_html( $facebook_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
-                                    </div><!-- .social-text-wrapper -->
-                                    <a href="<?php echo esc_url( $facebook_address[ 'url' ] );?>"><i class="footer-social-icon persian-facebook"></i></a>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    </div><!-- .footer-social-media -->
+                                    <?php
+                                    if ( get_field( 'persian_facebook_address', 'option' ) ) {
+                                        $facebook_address = get_field( 'persian_facebook_address', 'option' );
+                                        ?>
+                                        <li>
+                                            <div class="social-text-wrapper">
+                                                <span><?php echo esc_html( $facebook_address[ 'title' ] );?><i class="persian-angle-right"></i></span>
+                                            </div><!-- .social-text-wrapper -->
+                                            <a href="<?php echo esc_url( $facebook_address[ 'url' ] );?>"><i class="footer-social-icon persian-facebook"></i></a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                        </div><!-- .footer-social-media -->
+                    <?php } ?>
                 </div><!-- .col-lg-12 -->
             </div>
         </div>
