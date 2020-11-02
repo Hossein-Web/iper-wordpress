@@ -1,14 +1,290 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="author" content="Luan Gjokaj, and WordPressify contributors" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo('charset'); ?>"/>
+    <meta name="author" content="Luan Gjokaj, and WordPressify contributors"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<header id="header" class="container header">
-	<h1>Header</h1>
-</header>
-<?php edit_post_link( 'Edit', '<p class="edit-button">', '</p>' ); ?>
+<div class="menu-wrapper">
+    <div class="top-live-prices">
+        <div class="container">
+            <ul class="currency-list-wrapper">
+                <li class="currency-list-wrapper__item">
+                    <p class="currency-name">Bitcoin</p>
+                    <div class="currency-details">
+                        <span class="currency-value">$168.681841489</span>
+                        <span class="currency-status currency-status--inc">-2.41%</span>
+                    </div><!-- .currency-details -->
+                </li>
+                <li class="currency-list-wrapper__item">
+                    <p class="currency-name">NEM</p>
+                    <div class="currency-details">
+                        <span class="currency-value">$168.681841489</span>
+                        <span class="currency-status currency-status--dec">-2.41%</span>
+                    </div><!-- .currency-details -->
+                </li>
+                <li class="currency-list-wrapper__item">
+                    <p class="currency-name">Bitcoin</p>
+                    <div class="currency-details">
+                        <span class="currency-value">$168.681841489</span>
+                        <span class="currency-status currency-status--inc">-2.41%</span>
+                    </div><!-- .currency-details -->
+                </li>
+                <li class="currency-list-wrapper__item">
+                    <p class="currency-name">Monero</p>
+                    <div class="currency-details">
+                        <span class="currency-value">$168.681841489</span>
+                        <span class="currency-status currency-status--dec">-2.41%</span>
+                    </div><!-- .currency-details -->
+                </li>
+                <li class="currency-list-wrapper__item">
+                    <p class="currency-name">ETHEthereum</p>
+                    <div class="currency-details">
+                        <span class="currency-value">$168.681841489</span>
+                        <span class="currency-status currency-status--dec">-2.41%</span>
+                    </div><!-- .currency-details -->
+                </li>
+            </ul><!-- .currency-list-wrapper -->
+        </div><!-- .container -->
+    </div><!-- .top-live-prices -->
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="row align-items-center">
+                    <div class="col-xl-5 col-lg-5 col-12">
+                        <div class="header__logo">
+                            <?php
+                            if (class_exists('ACF')) {
+
+                                $persian_logo = get_field('persian-logo', 'option');
+
+                                if ($persian_logo) {
+                                    ?>
+                                    <a href="<?php echo esc_url(get_home_url()); ?>">
+                                        <img src="<?php echo esc_url($persian_logo['url']); ?>"
+                                             alt="<?php esc_attr($persian_logo['alt']); ?>">
+                                    </a>
+                                    <?php
+                                }
+                            }
+
+                            ?>
+                        </div><!-- .logo -->
+                    </div><!-- .col-xl-5 -->
+                    <div class="col-xl-19 col-lg-19 col-12">
+                        <div class="header__menu-user-links-wrapper d-flex justify-content-between align-items-center">
+                            <div class="mobile-menu-button">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <nav class="main-menu">
+                                <?php
+                                if (have_rows('persian-menu', 'option')) {
+                                    ?>
+                                    <ul class="list-inline">
+                                        <?php
+                                        while (have_rows('persian-menu', 'option')) {
+                                            the_row();
+                                            $persian_menu_link = get_sub_field('persian-menu-link');
+                                            $persian_menu_link_title = $persian_menu_link['title'];
+                                            $persian_menu_link_url = $persian_menu_link['url'];
+                                            $persian_have_submenu = get_sub_field('persian-have-submenu');
+                                            ?>
+
+                                            <li class="list-inline-item mega-menu">
+                                                <a href="<?php echo esc_url($persian_menu_link_url); ?>"><?php echo esc_html($persian_menu_link_title); ?></a>
+                                                <?php
+                                                $megamenu_content = [];
+                                                if ($persian_have_submenu) { ?>
+                                                    <div class="main-menu__mega-menu" data-tabindex="popular">
+                                                        <?php
+                                                        if (have_rows('persian-sub-menu', 'option')){
+                                                        ?>
+                                                        <div class="tab-title ">
+                                                            <?php
+                                                            while (have_rows('persian-sub-menu', 'option')) {
+                                                                the_row();
+//                                                                persian_var_dump( get_sub_field('persian-select-megamenu') );
+
+                                                                $persian_submenu_title = get_sub_field('persian-submenu-title');
+                                                                $persian_megamenu = get_sub_field('persian-select-megamenu');
+
+                                                                if ( $persian_submenu_title ){
+
+                                                                     $megamenu_content ['main_title'.get_row_index() ] = $persian_submenu_title;
+                                                                     $megamenu_content[ get_row_index() ] = $persian_megamenu;
+                                                                    ?>
+                                                                    <div data-tab="apps-<?php echo get_row_index(); ?>"
+                                                                         data-parent="popular">
+                                                                        <span><?php echo esc_html($persian_submenu_title); ?></span>
+                                                                    </div>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                                <?php
+                                                                }
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                        <div class="tab-content">
+                                                            <?php
+                                                            foreach ( $megamenu_content as $item_index => $item_value ) {
+                                                            ?>
+                                                            <div class="mega-menu-wrapper"
+                                                                 data-tabc="apps-<?php echo $item_index;?>"
+                                                                 data-parent="popular">
+                                                                <div class="mega-menu-header">
+                                                                    <p><?php echo esc_html( $megamenu_content['main_title'. $item_index] ); ?></p>
+                                                                </div><!-- .mega-menu-header -->
+                                                                <div class="mega-menu-content">
+                                                                    <?php echo $item_value; ?>
+                                                                </div><!-- .mega-menu-content -->
+                                                            </div><!-- .mega-menu-wrapper -->
+                                                                <?php
+                                                                     }?>
+                                                        </div><!-- .tab-content -->
+                                                    </div><!-- .main-menu__mega-menu -->
+                                                <?php } ?>
+                                            </li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                    <?php
+                                }
+                                ?>
+                            </nav><!-- .main-menu-->
+                            <div class="user-links">
+                                <ul class="list-inline">
+                                    <?php
+                                    if (have_rows('persian-header-links-group', 'option')){
+                                    while (have_rows('persian-header-links-group', 'option')){
+                                    the_row();
+                                    $persian_header_links = get_sub_field('persian-header-links');
+                                    //                                        }
+                                    //                                    }
+                                    //                                   $persian_header_links = get_field('persian-header-links' ,'options');
+                                    foreach ($persian_header_links as $link) {
+                                        switch ($link['value']) {
+                                            case 'search':
+                                                ?>
+                                                <li class="search list-inline-item">
+                                                    <span><i class="persian-search"></i></span>
+                                                    <form class="search__form" action="#" method="get">
+                                                        <input type="search" placeholder="جستجو">
+                                                        <button type="submit">
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                                <?php
+                                                break;
+                                            case 'user':
+                                                ?>
+                                                <li class="user-profile list-inline-item">
+                                                    <a href="#">
+                                                        <span><i class="persian-user"></i></span>
+                                                    </a>
+                                                </li>
+                                                <?php
+                                                break;
+                                            case 'notification':
+                                                ?>
+                                                <li class="notification list-inline-item">
+                                                    <a href="#">
+                                                        <span><i class="persian-notification"></i></span>
+                                                        <span class="notification__is-active"></span>
+                                                    </a>
+                                                    <div class="notification__notification-list">
+                                                        <ul>
+                                                            <li><a href="#">آیتم اول</a></li>
+                                                            <li><a href="#">آیتم دوم</a></li>
+                                                            <li><a href="#">آیتم سوم</a></li>
+                                                            <li><a href="#">آیتم چهارم</a></li>
+                                                            <li><a href="#">آیتم پنجم</a></li>
+                                                        </ul>
+                                                    </div><!-- .notification__list -->
+                                                </li>
+                                                <?php
+                                                break;
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                                <?php
+                                $persian_have_header_btn = get_sub_field('persian-have-header-btn');
+                                if ($persian_have_header_btn) {
+                                    $persian_header_btn = get_sub_field('persian-header-btn');
+                                    if ($persian_header_btn) {
+                                        ?>
+                                        <div class="where-button">
+                                            <a href="<?php echo esc_url($persian_header_btn['link']); ?>">
+                                                <?php echo esc_html($persian_header_btn['title']); ?>
+                                            </a>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                <?php }
+                                }
+                                } ?>
+                            </div><!-- .header__user-links -->
+                        </div><!-- .header__menu-user-links-wrapper -->
+                    </div><!-- .col-xl-19 -->
+                </div><!-- .row -->
+            </div><!-- .header__wrapper -->
+        </div><!-- .container -->
+    </header><!-- .header -->
+</div>
+<div id="main-page">
+    <div class="fixed-social-media-wrapper">
+        <div class="fixed-social-media">
+            <ul>
+                <li>
+                    <!--            <div class="social-text-wrapper">-->
+                    <!--                <span>Telegram <i class="persian-angle-right"></i></span>-->
+                    <!--            </div>-->
+                    <a href="#">
+                        <i class="footer-social-icon persian-telegram"></i>
+                    </a>
+                </li>
+                <li>
+                    <!--            <div class="social-text-wrapper">-->
+                    <!--                <span>WhatsApp <i class="persian-angle-right"></i></span>-->
+                    <!--            </div>-->
+                    <a href="#">
+                        <i class="footer-social-icon persian-whatsapp"></i>
+                    </a>
+                </li>
+                <li>
+                    <!--            <div class="social-text-wrapper">-->
+                    <!--                <span>Twitter <i class="persian-angle-right"></i></span>-->
+                    <!--            </div>-->
+                    <a href="#">
+                        <i class="footer-social-icon persian-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <!--            <div class="social-text-wrapper">-->
+                    <!--                <span>instagram <i class="persian-angle-right"></i></span>-->
+                    <!--            </div>-->
+                    <a href="#">
+                        <i class="footer-social-icon persian-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <!--            <div class="social-text-wrapper">-->
+                    <!--                <span>facebook <i class="persian-angle-right"></i></span>-->
+                    <!--            </div>-->
+                    <a href="#">
+                        <i class="footer-social-icon persian-facebook"></i>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- .fixed-social-media -->
+    </div><!-- .fixed-social-media-wrapper -->
+    <?php get_template_part( 'template_parts/header_bottom' ); ?>
+<?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>

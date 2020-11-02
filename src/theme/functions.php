@@ -45,6 +45,8 @@ function wordpressify_resources() {
 
 add_action( 'wp_enqueue_scripts', 'wordpressify_resources' );
 
+//main_function file
+require_once get_template_directory() . '/libs/main_function.php';
 // Customize excerpt word count length
 function custom_excerpt_length() {
 	return 22;
@@ -80,9 +82,9 @@ require_once get_template_directory() . '/libs/main_function.php';
 
 
 // Add options page for ACF
-if ( function_exists( 'acf_add_options_page' ) ){
-    acf_add_options_page();
-}
+//if ( function_exists( 'acf_add_options_page' ) ){
+//    acf_add_options_page();
+//}
 
 // Comments callback
 function persian_comments( $comment, $args, $depth ) {
@@ -115,3 +117,14 @@ function change_comment_form_defaults( $default ){
     return $default;
 }
 add_filter( 'comment_form_defaults', 'change_comment_form_defaults' );
+
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title' 	=> 'تنظیمات قالب پرشین بورس',
+        'menu_title'	=> 'تنظیمات پرشین بورس',
+        'menu_slug' 	=> 'persian-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+}
