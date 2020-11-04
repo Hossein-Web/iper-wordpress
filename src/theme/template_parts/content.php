@@ -1,3 +1,4 @@
+<?php ivahid_set_views(); ?>
 <section class="last-post last-post--single">
     <div class="container">
         <div class="row p30">

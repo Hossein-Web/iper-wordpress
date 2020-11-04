@@ -59,7 +59,7 @@ function ivahid_get_ip()
     return $ip;
 }
 
-if ($post_views == true) {
+//if ($post_views == true) {
     function ivahid_set_views($postID = null)
     {
         if ($postID == null):
@@ -104,7 +104,7 @@ if ($post_views == true) {
 
     add_filter('manage_posts_columns', 'posts_column_views');
     add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
-}
+//}
 
 // Pagination function
 function ivahid_pagination($both = 1, $middle = 2, $prev = '<span class="change-page-arrow prev-page"><i class=" icon-arrow-right"></i></span>', $next = '<span class="change-page-arrow next-page"><i class="icon-arrow-left"></i></span>',$query=null)

@@ -97,9 +97,15 @@ function persian_comments( $comment, $args, $depth ) {
             <p class="comment-date"><?php echo get_comment_date(); ?></p><!-- .comment-date -->
         </div><!-- .comment-info -->
         <p class="comment-text"><?php echo esc_html( get_comment_text( $comment->comment_ID ) ) ?></p><!-- .comment-text -->
-        <?php  persian_var_dump( get_comment_reply_link( array_merge( $args, [ 'reply_text' => __( 'پاسخ دهید', 'persian_bourse' ),
-                                                                                'add_below' => 'comment',  ] ), $comment->comment_ID,
-                                                                                $comment->comment_post_ID ) ); ?>
+<!--        --><?php persian_var_dump( get_comment_reply_link( array_merge( $args, [ 'reply_text' => __( 'پاسخ دهید', 'persian_bourse' ),
+            'depth'      => $depth,
+            'max_depth'  => $args['max_depth'] ] ))); ?>
+        <?php /*comment_reply_link( array_merge($args, array(
+                'reply_text' => __('Responder <span>&darr;</span>', 'textdomain'),
+                'depth'      => $depth,
+                'max_depth'  => $args['max_depth']
+            )
+        ));*/ ?>
     </div><!-- .comment__content -->
     <?php
 }
