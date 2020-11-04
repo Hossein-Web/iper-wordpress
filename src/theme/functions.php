@@ -61,6 +61,14 @@ function persian_var_dump($var){
 <?php
 }
 
+//text domain
+
+add_action('after_setup_theme', 'persian_add_text_domain');
+function persian_add_text_domain(){
+    load_theme_textdomain('persian_bourse', get_template_directory() . '/languages');
+}
+
+
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
         'page_title' 	=> 'تنظیمات قالب پرشین بورس',

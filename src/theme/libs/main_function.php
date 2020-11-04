@@ -105,3 +105,20 @@ if ($post_views == true) {
     add_filter('manage_posts_columns', 'posts_column_views');
     add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
 }
+
+function ivahid_get_excerpt($character, $post_id = null)
+{
+    if ($post_id == '') {
+        $post_id = get_the_ID();
+    }
+    if (get_the_excerpt($post_id)) {
+        $excerpt = get_the_excerpt($post_id);
+    } else {
+        $excerpt = get_the_content($post_id);
+    }
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $the_str = mb_substr($excerpt, 0, $character);
+    $the_str=$the_str ? $the_str .'...':false;
+    return $the_str;
+}
