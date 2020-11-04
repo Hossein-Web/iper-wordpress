@@ -62,7 +62,7 @@ if ($persian_slider){
                                         <li>
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
-                                        <li><span>دو روز پیش</span></li>
+                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' ' . __('پیش', 'persian_bourse'); ?></span></li>
                                         <li><span>5 دقیقه مطالعه</span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
@@ -86,7 +86,7 @@ if ($persian_slider){
                                         <li>
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
-                                        <li><span>دو روز پیش</span></li>
+                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) . ' '. __('پیش', 'persian_bourse'); ?></span></li>
                                         <li><span>5 دقیقه مطالعه</span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
@@ -113,7 +113,7 @@ if ($persian_slider){
                                         <li>
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
-                                        <li><span>دو روز پیش</span></li>
+                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
                                         <li><span>5 دقیقه مطالعه</span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
@@ -181,7 +181,7 @@ if ($persian_slider){
                                                         <li>
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
-                                                        <li><span>دو روز پیش</span></li>
+                                                        <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
                                                         <li><span>5 دقیقه مطالعه</span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
@@ -208,7 +208,7 @@ if ($persian_slider){
                                                         <li>
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
-                                                        <li><span>دو روز پیش</span></li>
+                                                        <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
                                                         <li><span>5 دقیقه مطالعه</span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
