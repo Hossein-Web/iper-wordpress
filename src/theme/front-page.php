@@ -602,4 +602,189 @@ if ($persian_slider){
                     </div><!-- .container -->
                 </section><!-- .services-slider -->
 
+                <!-------------------------- Comments and posts --------------------------------->
+                <div class="comments-and-posts">
+                    <div class="container">
+                        <div class="row p30">
+                            <?php if ( get_field( 'main_page_comments' ) > 0 ) { ?>
+                                <div class="col-lg-12 col-24">
+                                    <div class="comments">
+                                        <?php
+                                            if ( get_field( 'main_page_comments_title' ) ) {
+                                                $comments_title = get_field( 'main_page_comments_title' );
+                                            ?>
+                                            <div class="bourse-title">
+                                                <h6><?php echo esc_html( $comments_title ); ?></h6>
+                                            </div>
+                                        <?php } ?>
+                                        <div class="comments__wrapper">
+                                            <?php
+                                                $comments_number = get_field( 'main_page_comments' );
+                                                $comments_args = [
+                                                        'status' => 'approve',
+                                                        'number' => $comments_number
+                                                ];
+                                                $comments = get_comments( $comments_args );
+                                            ?>
+                                            <ul>
+                                                <?php foreach ( $comments as $comment_item ) { ?>
+                                                    <li class="d-flex align-items-center">
+                                                        <a href="#" class="comment-profile-image">
+                                                            <?php echo get_avatar( $comment_item ); ?>
+                                                        </a>
+                                                        <div class="comment-content">
+                                                            <p><?php echo esc_html( $comment_item->comment_author ); ?></p>
+                                                            <p><?php echo esc_html( $comment_item->comment_content ); ?></p>
+                                                            <a href="<?php echo get_post_permalink( $comment_item->comment_post_ID ) ?>" class="view-more">
+                                                                <?php _e( 'مشاهده در مطلب', 'persian_bourse' ); ?>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <li class="d-flex align-items-center">
+                                                    <a href="#" class="comment-profile-image">
+                                                        <img src="./assets/img/user-profile.png" alt="user profile">
+                                                    </a>
+                                                    <div class="comment-content">
+                                                        <p>پیمان طباطبایی</p>
+                                                        <p>سلام . وقت بخیر . لطفا بفرمایید چگونه می توان فیلتری نوشت تا...</p>
+                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <a href="#" class="comment-profile-image">
+                                                        <img src="./assets/img/user-profile.png" alt="user profile">
+                                                    </a>
+                                                    <div class="comment-content">
+                                                        <p>محمد عطایی</p>
+                                                        <p>سلام ایا حمایت 47000 برای ورود خوب است...</p>
+                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <a href="#" class="comment-profile-image">
+                                                        <img src="./assets/img/user-profile.png" alt="user profile">
+                                                    </a>
+                                                    <div class="comment-content">
+                                                        <p>رضا اکبری</p>
+                                                        <p> با سلام این وظیفه ماست که هر هفته 40 نماد منتخب سایت را اپدی...</p>
+                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <a href="#" class="comment-profile-image">
+                                                        <img src="./assets/img/user-profile.png" alt="user profile">
+                                                    </a>
+                                                    <div class="comment-content">
+                                                        <p>وحید دانافرد</p>
+                                                        <p>مطالب پرشین بورس عالیه !</p>
+                                                        <a href="#" class="view-more">مشاهده در مطلب</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div><!-- .comments__wrapper -->
+                                    </div><!-- .comments -->
+                                </div><!-- .col-lg-12 -->
+                            <?php } ?>
+                            <div class="col-lg-12 col-24">
+                                <div class="slider-post-small">
+                                    <div class="bourse-title">
+                                        <h6>پربازدیدترین مطالب</h6>
+                                    </div>
+                                    <div class="slider-post-small-slider">
+                                        <div class="swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="./assets/img/slider-post-small.jpg" alt="slider post">
+                                                    <div class="slider-post-small__content">
+                                                        <div class="post-small-title">
+                                                            <p><a href="#">ثبت افزایش سرمایه 328 میلیاردی غشهداب</a></p>
+                                                        </div>
+                                                        <div class="slider-post-small__post-meta">
+                                                            <ul class="list-inline">
+                                                                <li class="meta-date list-inline-item">
+                                                                    <span><i class="persian-date"></i></span>
+                                                                    <span>3 روز پیش</span>
+                                                                </li>
+                                                                <li class="meta-author list-inline-item">
+                                                                    <span><i class="persian-view"></i></span>
+                                                                    <a href="#">
+                                                                        <span>وحید دانا فرد</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="meta-view list-inline-item">
+                                                                    <span><i class="persian-view"></i></span>
+                                                                    <span>1590 بازدید</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="./assets/img/slider-post-small.jpg" alt="slider post">
+                                                    <div class="slider-post-small__content">
+                                                        <div class="post-small-title">
+                                                            <p><a href="#">ثبت افزایش سرمایه 328 میلیاردی غشهداب</a></p>
+                                                        </div>
+                                                        <div class="slider-post-small__post-meta">
+                                                            <ul class="list-inline">
+                                                                <li class="meta-date list-inline-item">
+                                                                    <span><i class="persian-date"></i></span>
+                                                                    <span>3 روز پیش</span>
+                                                                </li>
+                                                                <li class="meta-author list-inline-item">
+                                                                    <span><i class="persian-user"></i></span>
+                                                                    <a href="#">
+                                                                        <span>وحید دانا فرد</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="meta-view list-inline-item">
+                                                                    <span><i class="persian-view"></i></span>
+                                                                    <span>1590 بازدید</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="./assets/img/slider-post-small.jpg" alt="slider post">
+                                                    <div class="slider-post-small__content">
+                                                        <div class="post-small-title">
+                                                            <p><a href="#">ثبت افزایش سرمایه 328 میلیاردی غشهداب</a></p>
+                                                        </div>
+                                                        <div class="slider-post-small__post-meta">
+                                                            <ul class="list-inline">
+                                                                <li class="meta-date list-inline-item">
+                                                                    <span><i class="persian-date"></i></span>
+                                                                    <span>3 روز پیش</span>
+                                                                </li>
+                                                                <li class="meta-author list-inline-item">
+                                                                    <span><i class="persian-user"></i></span>
+                                                                    <a href="#">
+                                                                        <span>وحید دانا فرد</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="meta-view list-inline-item">
+                                                                    <span><i class="persian-view"></i></span>
+                                                                    <span>1590 بازدید</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .swiper-wrapper -->
+                                            <div class="post-slider-navigation post-slider-navigation--left">
+                                                <div class="navigation-button navigation-button--next"></div>
+                                                <div class="connector persian-connector">
+                                                </div>
+                                                <div class="navigation-button navigation-button--prev"></div>
+                                            </div><!-- .post-slider-navigation -->
+                                        </div><!-- .swiper-container -->
+                                    </div><!-- .slider-post-small-slider -->
+                                </div><!-- .slider-post-small -->
+                            </div><!-- .col-lg-12 -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .comments-and-posts -->
+
                 <?php get_footer(); ?>

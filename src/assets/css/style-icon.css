@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'persian';
-  src:  url('../fonts/font_icon/persian.eot?a6n6pa');
-  src:  url('../fonts/font_icon/persian.eot?a6n6pa#iefix') format('embedded-opentype'),
-  url('../fonts/font_icon/persian.ttf?a6n6pa') format('truetype'),
-  url('../fonts/font_icon/persian.woff?a6n6pa') format('woff'),
-  url('../fonts/font_icon/persian.svg?a6n6pa#persian') format('svg');
+  src:  url('./fonts/font_icon/persian.eot?a6n6pa');
+  src:  url('./fonts/font_icon/persian.eot?a6n6pa#iefix') format('embedded-opentype'),
+  url('./fonts/font_icon/persian.ttf?a6n6pa') format('truetype'),
+  url('./fonts/font_icon/persian.woff?a6n6pa') format('woff'),
+  url('./fonts/font_icon/persian.svg?a6n6pa#persian') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

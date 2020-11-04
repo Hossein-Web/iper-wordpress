@@ -122,3 +122,41 @@ function ivahid_get_excerpt($character, $post_id = null)
     $the_str=$the_str ? $the_str .'...':false;
     return $the_str;
 }
+// Pagination function
+function ivahid_pagination($both = 1, $middle = 2, $prev = '<span class="change-page-arrow prev-page"><i class=" icon-arrow-right"></i></span>', $next = '<span class="change-page-arrow next-page"><i class="icon-arrow-left"></i></span>',$query=null)
+{
+    if($query){
+        $wp_query=$query;
+    }else{
+        global $wp_query;
+    }
+    $max_num_pages = $wp_query->max_num_pages;
+//    persian_var_dump( $wp_query->found_posts );
+    //persian_var_dump( $wp_query->posts_per_page );
+    if ($max_num_pages < 2) {
+        echo 'exit in function';
+        return;
+    }
+    $big_number = 999999999;
+    $args = array(
+        'base' => str_replace($big_number, '%#%', esc_url(get_pagenum_link($big_number))),
+        'total' => $max_num_pages,
+        'current' => max(1, get_query_var('paged')),
+        'end_size' => $both,
+        'mid_size' => $middle,
+        'prev_text' => $prev,
+        'next_text' => $next,
+        'before_page_number' => '',
+        'after_page_number' => '',
+        'type'              => 'list'
+    );
+    ?>
+    <div class="pagination-num num-fa pagination-app">
+        <div class="page-list">
+            <?= paginate_links($args) ?>
+        </div>
+    </div>
+    <?php
+}
+
+add_action('pagination','ivahid_pagination', 10, 5 );
