@@ -8,6 +8,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ( ! is_404() ){ ?>
 <div class="menu-wrapper">
     <div class="top-live-prices">
         <div class="container">
@@ -115,8 +116,8 @@
 
                                                                 if ( $persian_submenu_title ){
 
-                                                                     $megamenu_content ['main_title'.get_row_index() ] = $persian_submenu_title;
-                                                                     $megamenu_content[ get_row_index() ] = $persian_megamenu;
+                                                                    $megamenu_content ['main_title'.get_row_index() ] = $persian_submenu_title;
+                                                                    $megamenu_content[ get_row_index() ] = $persian_megamenu;
                                                                     ?>
                                                                     <div data-tab="apps-<?php echo get_row_index(); ?>"
                                                                          data-parent="popular">
@@ -126,26 +127,26 @@
                                                                 }
                                                                 ?>
                                                                 <?php
-                                                                }
+                                                            }
                                                             }
                                                             ?>
                                                         </div>
                                                         <div class="tab-content">
                                                             <?php
                                                             foreach ( $megamenu_content as $item_index => $item_value ) {
-                                                            ?>
-                                                            <div class="mega-menu-wrapper"
-                                                                 data-tabc="apps-<?php echo $item_index;?>"
-                                                                 data-parent="popular">
-                                                                <div class="mega-menu-header">
-                                                                    <p><?php echo esc_html( $megamenu_content['main_title'. $item_index] ); ?></p>
-                                                                </div><!-- .mega-menu-header -->
-                                                                <div class="mega-menu-content">
-                                                                    <?php echo $item_value; ?>
-                                                                </div><!-- .mega-menu-content -->
-                                                            </div><!-- .mega-menu-wrapper -->
+                                                                ?>
+                                                                <div class="mega-menu-wrapper"
+                                                                     data-tabc="apps-<?php echo $item_index;?>"
+                                                                     data-parent="popular">
+                                                                    <div class="mega-menu-header">
+                                                                        <p><?php echo esc_html( $megamenu_content['main_title'. $item_index] ); ?></p>
+                                                                    </div><!-- .mega-menu-header -->
+                                                                    <div class="mega-menu-content">
+                                                                        <?php echo $item_value; ?>
+                                                                    </div><!-- .mega-menu-content -->
+                                                                </div><!-- .mega-menu-wrapper -->
                                                                 <?php
-                                                                     }?>
+                                                            }?>
                                                         </div><!-- .tab-content -->
                                                     </div><!-- .main-menu__mega-menu -->
                                                 <?php } ?>
@@ -287,4 +288,5 @@
         </div><!-- .fixed-social-media -->
     </div><!-- .fixed-social-media-wrapper -->
     <?php get_template_part( 'template_parts/header_bottom' ); ?>
-<?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
+    <?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
+<?php } ?>

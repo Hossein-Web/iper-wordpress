@@ -56,7 +56,7 @@ if ($persian_slider){
                                     </a><!-- .post-item-details__title -->
                                     <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
                                         <li>
-                                            <a href="<?php echo get_the_author_link(); ?>"><?php echo get_the_author(); ?></a>
+                                            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_the_author(); ?></a>
                                         </li>
                                         <li><span>دو روز پیش</span></li>
                                         <li><span>5 دقیقه مطالعه</span></li>
@@ -80,7 +80,7 @@ if ($persian_slider){
                                     </a><!-- .post-item-details__title -->
                                     <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
                                         <li>
-                                            <a href="<?php echo get_the_author_link(); ?>"><?php echo get_the_author(); ?></a>
+                                            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
                                         <li><span>دو روز پیش</span></li>
                                         <li><span>5 دقیقه مطالعه</span></li>
@@ -107,7 +107,7 @@ if ($persian_slider){
                                     </a><!-- .post-item-details__title -->
                                     <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links">
                                         <li>
-                                            <a href="<?php echo get_the_author_link(); ?>"><?php echo get_the_author(); ?></a>
+                                            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
                                         <li><span>دو روز پیش</span></li>
                                         <li><span>5 دقیقه مطالعه</span></li>
@@ -132,7 +132,8 @@ if ($persian_slider){
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <?php
-                                for ($j = 0; $j < count($persian_posts); $j++) { ?>
+                                    for ($j = 0; $j < count($persian_posts); $j++) {
+                                ?>
                                     <div class="swiper-slide">
                                         <div class="tile-post-wrapper">
                                             <div class="tile-post__item tile-post__item--small">
@@ -150,7 +151,7 @@ if ($persian_slider){
                                                     </a><!-- .post-item-details__title -->
                                                     <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
                                                         <li>
-                                                            <a href="<?php echo get_the_author_link(); ?>"><?php echo get_the_author(); ?></a>
+                                                            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
                                                         <li><span>دو روز پیش</span></li>
                                                         <li><span>5 دقیقه مطالعه</span></li>
@@ -174,7 +175,7 @@ if ($persian_slider){
                                                     </a><!-- .post-item-details__title -->
                                                     <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
                                                         <li>
-                                                            <a href="<?php echo get_the_author_link(); ?>"><?php echo get_the_author(); ?></a>
+                                                            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
                                                         <li><span>دو روز پیش</span></li>
                                                         <li><span>5 دقیقه مطالعه</span></li>
@@ -201,7 +202,7 @@ if ($persian_slider){
                                                     </a><!-- .post-item-details__title -->
                                                     <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links">
                                                         <li>
-                                                            <a href="<?php echo get_the_author_link(); ?>"><?php echo get_the_author(); ?></a>
+                                                            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
                                                         <li><span>دو روز پیش</span></li>
                                                         <li><span>5 دقیقه مطالعه</span></li>
@@ -234,6 +235,372 @@ if ($persian_slider){
                         </div>
                     </div>
                 </div>
+                <section class="last-post">
+                    <div class="container">
+                        <?php
+                          $persian_news_title = get_field( 'persian_news_title' );
+                          if ( $persian_news_title ) {
+                              ?>
+                              <div class="bourse-title">
+                                  <h6><?php echo esc_html( $persian_news_title ); ?></h6>
+                                  <a class="bourse-read-more" href="#"><?php _e( 'مشاهده بیشتر','persian_bourse' ); ?><i class="persian-arrow-left"></i></a>
+                              </div>
+                            <?php
+                          }
+                              ?>
+                        <div class="row p30">
+                            <div class="col-lg-12 col-24">
+                                <?php
+                                $persian_main_news = get_field( 'persian_main_news' );
+                                if ( $persian_main_news ) {
+                                    foreach ($persian_main_news as $post) {
+                                        setup_postdata($post);
+                                        ?>
+                                        <article class="last-post__item">
+                                            <div class="post-meta-image-wrapper">
+                                                <div class="post-image">
+                                                    <?php
+                                                    if (has_post_thumbnail()) {
+                                                        ?>
+                                                        <a href="<?php the_permalink() ?>">
+                                                            <?php echo get_the_post_thumbnail(); ?>
+                                                        </a>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="post-study-time">
+                                                    <span>5</span>
+                                                    <span><?php _e( 'دقیقه مطالعه','persian_bourse' ); ?></span>
+                                                </div>
+                                                <div class="meta-background">
+                                                    <span class="persian-back-small"></span>
+                                                </div>
+                                            </div><!-- .post-meta-image-wrapper -->
+                                            <div class="post-meta post-meta--large">
+                                                <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                                    <li class="post-meta__date list-inline-item">
+                                                        <span><i class="persian-date"></i></span>
+                                                        <span>3 روز پیش</span>
+                                                    </li>
+                                                    <li class="post-meta__author list-inline-item">
+                                                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+                                                            <span><i class="persian-user"></i></span>
+                                                            <span><?php echo get_the_author(); ?></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="post-meta__view list-inline-item">
+                                                        <span><i class="persian-view"></i></span>
+                                                        <span>1590 بازدید</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="post-title">
+                                                    <h5>
+                                                        <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                                    </h5>
+                                                </div><!-- .post-title -->
+                                                <div class="post-excerpt">
+                                                    <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                                </div>
+                                            </div><!-- .post-content -->
+                                        </article><!-- .last-post__item -->
+                                        <?php
+                                    }
+                                    wp_reset_postdata();
+                                }
+                                ?>
+                                <?php
+                                $persian_other_news = get_field( 'persian_other_news' );
+                                if( $persian_other_news ){
+                                    $i = 0;
+                                    foreach ( $persian_other_news as $post ){
+                                        setup_postdata( $post );
+                                        if( $i === 0 ) {
+                                            ?>
+                                            <article class="last-post__item last-post__item--small">
+                                                <div class="post-content-image-wrapper">
+                                                    <div class="post-image">
+                                                        <?php
+                                                        if (has_post_thumbnail()) {
+                                                            ?>
+                                                            <a href="<?php the_permalink() ?>">
+                                                                <?php echo get_the_post_thumbnail(); ?>
+                                                            </a>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </div><!-- .post-image -->
+                                                    <div class="post-content">
+                                                        <div class="post-title">
+                                                            <h5>
+                                                                <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                                            </h5>
+                                                        </div><!-- .post-title -->
+                                                        <div class="post-excerpt">
+                                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                                        </div>
+                                                    </div><!-- .post-content -->
+                                                </div><!-- .post-content-image-wrapper -->
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="post-meta">
+                                                        <ul class="list-inline bourse-post-meta bourse-post-meta--small">
+                                                            <li class="post-meta__date list-inline-item">
+                                                                <span><i class="persian-date"></i></span>
+                                                                <span>3 روز پیش</span>
+                                                            </li>
+                                                            <li class="post-meta__author list-inline-item">
+                                                                <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+                                                                    <span><i class="persian-user"></i></span>
+                                                                    <span><?php  echo get_the_author(); ?></span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="post-meta__view list-inline-item">
+                                                                <span><i class="persian-view"></i></span>
+                                                                <span>159 بازدید</span>
+                                                            </li>
+                                                            <li class="post-study-time list-inline-item">
+                                                                <span><i class="persian-time"></i></span>
+                                                                <span><span>5</span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="post-read-more">
+                                                        <a href="<?php the_permalink(); ?>"><?php _e( 'ادامه مطلب','persian_bourse' ); ?></a>
+                                                    </div>
+                                                </div>
+                                            </article><!-- .last-post__item  -->
+                                            <?php
+                                            $i = 1;
+                                        }
+                                    }
+                                    wp_reset_postdata();
+                                }
+                                ?>
+                            </div><!-- .col-lg-12 -->
+                            <div class="col-lg-12 col-24">
+                                <?php
+                                $persian_other_news = get_field( 'persian_other_news' );
+                                if( $persian_other_news ){
+                                    $j = 0;
+                                    foreach ( $persian_other_news as $post ){
+                                        setup_postdata( $post );
+                                        if( $j === 0 ) {
+                                            $j = 1;
+                                            continue;
+                                        }
+                                            ?>
+                                            <article class="last-post__item last-post__item--small">
+                                                <div class="post-content-image-wrapper">
+                                                    <div class="post-image">
+                                                        <?php
+                                                        if (has_post_thumbnail()) {
+                                                            ?>
+                                                            <a href="<?php the_permalink() ?>">
+                                                                <?php echo get_the_post_thumbnail(); ?>
+                                                            </a>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </div><!-- .post-image -->
+                                                    <div class="post-content">
+                                                        <div class="post-title">
+                                                            <h5>
+                                                                <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                                            </h5>
+                                                        </div><!-- .post-title -->
+                                                        <div class="post-excerpt">
+                                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                                        </div>
+                                                    </div><!-- .post-content -->
+                                                </div><!-- .post-content-image-wrapper -->
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="post-meta">
+                                                        <ul class="list-inline bourse-post-meta bourse-post-meta--small">
+                                                            <li class="post-meta__date list-inline-item">
+                                                                <span><i class="persian-date"></i></span>
+                                                                <span>3 روز پیش</span>
+                                                            </li>
+                                                            <li class="post-meta__author list-inline-item">
+                                                                <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+                                                                    <span><i class="persian-user"></i></span>
+                                                                    <span><?php echo get_the_author(); ?></span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="post-meta__view list-inline-item">
+                                                                <span><i class="persian-view"></i></span>
+                                                                <span>159 بازدید</span>
+                                                            </li>
+                                                            <li class="post-study-time list-inline-item">
+                                                                <span><i class="persian-time"></i></span>
+                                                                <span><span>5</span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="post-read-more">
+                                                        <a href="<?php the_permalink(); ?>"><?php _e( 'ادامه مطلب','persian_bourse' ); ?></a>
+                                                    </div>
+                                                </div>
+                                            </article><!-- .last-post__item  -->
+                                         <?php
+                                        }
+                                        wp_reset_postdata();
+                                }
+                                ?>
+                                <?php
+                                $persian_recommend_news = get_field( 'persian_recommend_news' );
+                                if ( $persian_recommend_news ){
+                                    foreach ( $persian_recommend_news as $post ) {
+                                        setup_postdata($post);
+                                        ?>
+                                        <div class="last-post__suggestion d-flex align-items-center">
+                                            <div class="suggestion-icon">
+                                                <span><i class="persian-fire"></i></span>
+                                            </div>
+                                            <div class="suggestion-title">
+                                                <p><?php _e('پیشنهاد ما به شما :', 'persian_bourse'); ?></p>
+                                                <p><?php _e('شاید خوشتان آمد!', 'persian_bourse'); ?></p>
+                                            </div><!-- .suggestion-title -->
+                                            <div class="suggestion-content d-flex align-items-center">
+                                                <div>
+                                                    <p><?php the_title(); ?></p>
+                                                    <p><?php echo ivahid_get_excerpt(50); ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="suggest-link">
+                                                <a href="<?php the_permalink(); ?>">
+                                                    <span><i class="persian-left"></i></span>
+                                                </a>
+                                            </div>
+                                        </div><!-- .last-post__suggestion -->
+                                        <?php
+                                    }
+                                    wp_reset_postdata();
+                                }
+                                ?>
+                            </div><!-- .col-lg-12 -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </section><!-- .last-post -->
+
+                <section class="offer-posts">
+                    <div class="container">
+                        <div class="bourse-title bourse-title--blue">
+                            <h6><?php
+                                $persian_group_title = get_field( 'persian_bourse_group_title' );
+                                if ( $persian_group_title ){
+                                    echo esc_html( $persian_group_title );
+                                } ?></h6>
+                            <a class="bourse-read-more" href="#"><?php echo esc_html( __( 'مشاهده بیشتر', 'persian_bourse' ) ); ?><i class="persian-arrow-left"></i></a>
+                        </div>
+                        <?php
+                        $persian_group_posts = get_field( 'persian_bourse_group' );
+                        if ( $persian_group_posts ){
+                         ?>
+                            <div class="offer-posts__slider-container">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <?php
+                                        foreach ( $persian_group_posts as $post ){
+                                            setup_postdata( $post );
+                                            ?>
+                                            <div class="swiper-slide">
+                                                <div class="offer-posts__item">
+                                                    <div class="item-image">
+                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                            <?php if ( has_post_thumbnail() ) {
+                                                                the_post_thumbnail();
+                                                            } ?>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item-title">
+                                                        <p><a href="<?php echo get_the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a></p>
+                                                    </div>
+                                                    <?php if ( has_excerpt() ) { ?>
+                                                        <div class="item-content">
+                                                            <p><?php echo esc_html( ivahid_get_excerpt(100) );  ?></p>
+                                                        </div><!-- .item-content -->
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
+                                        wp_reset_postdata();?>
+                                    </div>
+                                </div><!-- .swiper-container -->
+                            </div><!-- .offer-posts__slider-container -->
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </section><!-- .offer-posts -->
+                <section class="services-slider">
+                    <div class="container">
+                        <?php
+                        $persian_tools_title = get_field( 'persian_tools_main_title' );
+                        if ( $persian_tools_title ){
+                         ?>
+                            <div class="bourse-title bourse-title--blue">
+                                <h6><?php echo $persian_tools_title ; ?></h6>
+                                <a class="bourse-read-more" href="#"><?php echo esc_html( __( 'مشاهده بیشتر', 'persian_bourse' ) ); ?><i class="persian-arrow-left"></i></a>
+                            </div>
+                        <?php
+
+                        }
+                        ?>
+                        <?php
+                        $persian_tools = get_field('persian_bourse_tools');
+                        if ( $persian_tools ){
+                        ?>
+                        <div class="services-slider__slider-container">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <?php
+                                    if ( have_rows('persian_bourse_tools') ){
+                                        while ( have_rows('persian_bourse_tools') ) {
+                                            the_row();
+                                                $persian_tools_image = get_sub_field('persian_tools_image');
+
+                                                $persian_tool_title = get_sub_field('persian_tools_item_title');
+                                                $tool_item_title = $persian_tool_title['title'];
+                                                $tool_item_url = $persian_tool_title['url'];
+
+                                                $persian_tool_excerpt = get_sub_field('persian_tools_item_excerpt');
+                                            ?>
+                                    <div class="swiper-slide">
+                                        <div class="services-container">
+                                            <div class="services-image">
+                                                <?php if ( $persian_tools_image ) {?>
+                                                    <img src="<?php echo esc_url( $persian_tools_image ); ?>" alt="<?php echo esc_attr( $tool_item_title ); ?>">
+                                                <?php } ?>
+                                            </div>
+                                            <div class="services-content">
+                                                <div class="services-title">
+                                                    <?php if ( $tool_item_title ){ ?>
+                                                        <h4><a href="<?php echo esc_url( $tool_item_url ); ?>"><?php echo esc_html( $tool_item_title ); ?></a></h4>
+                                                    <?php } ?>
+                                                </div>
+                                                <div class="services-excerpt">
+                                                    <?php if ( $persian_tool_excerpt ){
+                                                        echo  $persian_tool_excerpt ;
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                            <?php
+                                        }
+                                    }?>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div><!-- .services-slider__slider-container --> <?php
+                    }
+                    ?>
+                    </div><!-- .container -->
+                </section><!-- .services-slider -->
 
                 <!-------------------------- Comments and posts --------------------------------->
                 <div class="comments-and-posts">

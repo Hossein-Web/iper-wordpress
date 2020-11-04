@@ -106,6 +106,22 @@ function ivahid_get_ip()
     add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
 //}
 
+function ivahid_get_excerpt($character, $post_id = null)
+{
+    if ($post_id == '') {
+        $post_id = get_the_ID();
+    }
+    if (get_the_excerpt($post_id)) {
+        $excerpt = get_the_excerpt($post_id);
+    } else {
+        $excerpt = get_the_content($post_id);
+    }
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $the_str = mb_substr($excerpt, 0, $character);
+    $the_str=$the_str ? $the_str .'...':false;
+    return $the_str;
+}
 // Pagination function
 function ivahid_pagination($both = 1, $middle = 2, $prev = '<span class="change-page-arrow prev-page"><i class=" icon-arrow-right"></i></span>', $next = '<span class="change-page-arrow next-page"><i class="icon-arrow-left"></i></span>',$query=null)
 {

@@ -124,7 +124,6 @@ function change_comment_form_defaults( $default ){
 }
 add_filter( 'comment_form_defaults', 'change_comment_form_defaults' );
 
-
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
         'page_title' 	=> 'تنظیمات قالب پرشین بورس',
