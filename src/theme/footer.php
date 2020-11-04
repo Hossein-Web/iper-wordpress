@@ -1,3 +1,4 @@
+<?php if ( !is_404() ){ ?>
 </div><!-- #main-page -->
 <footer>
     <div class="container">
@@ -185,6 +186,7 @@
 
     </div>
 </div><!-- .header__mobile-menu-wrapper -->
+<?php } ?>
 <?php wp_footer(); ?>
 </body>
 </html>
