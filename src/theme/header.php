@@ -175,11 +175,7 @@
                                                 ?>
                                                 <li class="search list-inline-item">
                                                     <span><i class="persian-search"></i></span>
-                                                    <form class="search__form" action="#" method="get">
-                                                        <input type="search" placeholder="جستجو">
-                                                        <button type="submit">
-                                                        </button>
-                                                    </form>
+                                                    <?php get_search_form(); ?>
                                                 </li>
                                                 <?php
                                                 break;
