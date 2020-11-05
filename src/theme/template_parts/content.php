@@ -1,77 +1,90 @@
 <?php ivahid_set_views(); ?>
-<section class="last-post last-post--single">
-    <div class="container">
-        <div class="row p30">
-            <div class="col-lg-12 col-24">
-                <article class="last-post__item">
-                    <div class="post-meta-image-wrapper">
-                        <?php if ( has_post_thumbnail() ) { ?>
-                            <div class="post-image">
-                            <a href="<?php echo get_the_permalink(); ?>">
-                                <figure>
-                                    <?php the_post_thumbnail(); ?>
-                                </figure>
-                            </a>
+<?php if ( is_single() ){
+    ?>
+    <section class="last-post last-post--single">
+        <div class="container">
+            <div class="row p30">
+                <div class="col-lg-12 col-24">
+                    <article class="last-post__item">
+                        <div class="post-meta-image-wrapper">
+                            <?php if ( has_post_thumbnail() ) { ?>
+                                <div class="post-image">
+                                    <a href="<?php echo get_the_permalink(); ?>">
+                                        <figure>
+                                            <?php the_post_thumbnail(); ?>
+                                        </figure>
+                                    </a>
+                                </div>
+                            <?php } ?>
+                            <div class="post-study-time">
+                                <span>5</span>
+                                <span><?php _e( 'دقیقـه مطالعه', 'persian_bourse' ); ?></span>
+                            </div>
+                            <div class="meta-background">
+                                <span class="persian-back-small"></span>
+                            </div>
+                        </div><!-- .post-meta-image-wrapper -->
+                        <div class="post-meta post-meta--large">
+                            <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                <li class="post-meta__date list-inline-item">
+                                    <span><i class="persian-date"></i></span>
+                                    <span><?php the_date(); ?></span>
+                                </li>
+                                <li class="post-meta__author list-inline-item">
+                                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+                                        <span><i class="persian-user"></i></span>
+                                        <span><?php echo get_the_author(); ?></span>
+                                    </a>
+                                </li>
+                                <li class="post-meta__view list-inline-item">
+                                    <span><i class="persian-view"></i></span>
+                                    <span><?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?></span>
+                                </li>
+                            </ul>
                         </div>
-                        <?php } ?>
-                        <div class="post-study-time">
-                            <span>5</span>
-                            <span><?php _e( 'دقیقـه مطالعه', 'persian_bourse' ); ?></span>
-                        </div>
-                        <div class="meta-background">
-                            <span class="persian-back-small"></span>
-                        </div>
-                    </div><!-- .post-meta-image-wrapper -->
-                    <div class="post-meta post-meta--large">
-                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                            <li class="post-meta__date list-inline-item">
-                                <span><i class="persian-date"></i></span>
-                                <span><?php the_date(); ?></span>
-                            </li>
-                            <li class="post-meta__author list-inline-item">
-                                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-                                    <span><i class="persian-user"></i></span>
-                                    <span><?php echo get_the_author(); ?></span>
-                                </a>
-                            </li>
-                            <li class="post-meta__view list-inline-item">
-                                <span><i class="persian-view"></i></span>
-                                <span><?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-title">
-                            <h5>
-                                <a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h5>
-                        </div><!-- .post-title -->
-                        <div class="post-excerpt">
-                            <?php if ( class_exists( 'ACF' ) ){?>
-                                <?php
+                        <div class="post-content">
+                            <div class="post-title">
+                                <h5>
+                                    <a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h5>
+                            </div><!-- .post-title -->
+                            <div class="post-excerpt">
+                                <?php if ( class_exists( 'ACF' ) ){?>
+                                    <?php
                                     if ( get_field( 'persian_english_title' ) ){
                                         $english_title = get_field( 'persian_english_title' );
-                                ?>
-                                    <p>
-                                        <?php echo esc_html( $english_title ); ?>
-                                    </p>
+                                        ?>
+                                        <p>
+                                            <?php echo esc_html( $english_title ); ?>
+                                        </p>
+                                    <?php } ?>
                                 <?php } ?>
-                            <?php } ?>
+                            </div>
+                        </div><!-- .post-content -->
+                    </article><!-- .last-post__item -->
+                </div><!-- .col-lg-12 -->
+                <div class="col-lg-12 col-24">
+                    <?php if ( is_singular() && has_excerpt() ) { ?>
+                        <div class="last-post__excerpt">
+                            <?php the_excerpt(); ?>
                         </div>
-                    </div><!-- .post-content -->
-                </article><!-- .last-post__item -->
-            </div><!-- .col-lg-12 -->
-            <div class="col-lg-12 col-24">
-                <?php if ( is_singular() && has_excerpt() ) { ?>
-                    <div class="last-post__excerpt">
-                        <?php the_excerpt(); ?>
-                    </div>
-                <?php } ?>
+                    <?php } ?>
 
-            </div><!-- .col-lg-12 -->
-        </div><!-- .row -->
-    </div><!-- .container -->
-</section><!-- .last-post -->
+                </div><!-- .col-lg-12 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .last-post -->
+<?php
+}elseif ( is_page() ){
+    ?>
+    <div class="container">
+        <h1 class="page-title">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        </h1>
+    </div>
+<?php
+}
+?>
 
 <div class="container">
     <div class="row">
