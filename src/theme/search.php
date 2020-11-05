@@ -1,32 +1,27 @@
 <?php get_header(); ?>
-<!-- container -->
-<div class="container">	
-	<!-- site-content -->
-	<div class="site-content">
-		<article class="page">
-			<h2 class="page-title">Results</h2>
-			<!-- main-column -->
-			<div class="inner <?php if ( ! is_search_has_results() ) { echo 'no-result'; }?>">
-				<?php
-					if ( have_posts() ) :
-						while ( have_posts() ) :
-							the_post();
-							get_template_part( 'content', get_post_format() );
-						endwhile;
-					else :
-						get_template_part( 'content', 'none' );
-					endif;
-				?>
-			</div>
-			<!-- /main-column -->
-			<div class="pagination side">
-				<?php echo paginate_links(); ?>
-			</div>
-		</div>
-	</div>
-	<!-- /site-content -->
 
-	<?php get_sidebar(); ?>
+<div class="container">
+    <h2 class="page-title">
+        <?php _e( 'نتایج جستجو برای: ', 'persian_bourse' ); ?>
+        <span><?php echo get_search_query(); ?></span>
+    </h2>
 </div>
-<!-- /container -->
+
+<div class="container">
+    <div class="row">
+        <div class="search-content">
+            <?php
+            if ( have_posts() ) :
+                while ( have_posts() ) :
+                    the_post();
+                    get_template_part( 'template_parts/content', get_post_type() );
+                endwhile;
+//					else :
+//						get_template_part( 'content', 'none' );
+            endif;
+            ?>
+        </div>
+    </div>
+</div>
+	<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
