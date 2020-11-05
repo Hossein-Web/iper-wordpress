@@ -226,7 +226,7 @@ if ($persian_slider){
                 </div><!-- .tile-post -->
                 <?php
                 }
-                elseif(get_row_layout() == 'persian_ads') {
+elseif(get_row_layout() == 'persian_ads') {
 
                     ?>
                     <div class="ads">
@@ -807,98 +807,82 @@ elseif ( get_row_layout() == 'persian_comments_posts' ){
                 </div><!-- .comments-and-posts -->
                 <?php
 }
-                }
-                }
-                ?>
-
-    <!-------------------------- Bourse news and slider --------------------------------->
+elseif ( get_row_layout() == 'persian_news_slider' ){
+    $news_slider_title = get_sub_field('persian_news_slider_title');
+    ?>
     <div class="post-slider">
         <div class="container">
             <div class="bourse-title">
-                <h6>اخبار بورس</h6>
-                <a class="bourse-read-more" href="#">مشاهده بیشتر<i class="persian-arrow-left"></i></a>
+    <?php if ( $news_slider_title ) {
+        ?>
+        <h6><?php echo esc_html($news_slider_title); ?></h6>
+        <?php
+    }
+    ?>
+                <a class="bourse-read-more" href="#"><?php _e( 'مشاهده بیشتر', 'persian_bourse' ); ?><i class="persian-arrow-left"></i></a>
             </div><!-- .bourse-title -->
             <div class="post-slider__slider">
-                <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-rtl">
-                    <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="swiper-slide swiper-slide-active" style="width: 1170px;">
-                            <img src="../assets/img/post-slider-image.jpg" alt="news slider">
-                            <div class="post-slider-details">
-                                <div class="post-slider-details__content">
-                                    <div class="post-slider-title">
-                                        <a href="#">
-                                            <h5>تولیدات مدل‌های جدید سری می میکس</h5>
-                                        </a>
-                                        <a href="#">
-                                            <span>Production of new models of Mi Mix series</span>
-                                        </a>
-                                    </div><!-- .post-slider-title -->
-                                </div><!-- .post-slider-details__content -->
-                                <div class="post-slider-details__back">
-                                    <span class="persian-back-large"></span>
-                                </div><!-- .post-slider-details__back -->
-                            </div><!-- .post-slider-details -->
-                            <div class="study-time">
-                                <span>5</span>
-                                <span>دقیقه مطالعه</span>
-                            </div><!-- .study-time -->
-                        </div><!-- .swiper-slide -->
-                        <div class="swiper-slide swiper-slide-next" style="width: 1170px;">
-                            <img src="../assets/img/post-slider-image.jpg" alt="news slider">
-                            <div class="post-slider-details">
-                                <div class="post-slider-details__content">
-                                    <div class="post-slider-title">
-                                        <a href="#">
-                                            <h5>تولیدات مدل‌های جدید سری می میکس</h5>
-                                        </a>
-                                        <a href="#">
-                                            <span>Production of new models of Mi Mix series</span>
-                                        </a>
-                                    </div><!-- .post-slider-title -->
-                                </div><!-- .post-slider-details__content -->
-                                <div class="post-slider-details__back">
-                                    <span class="persian-back-large"></span>
-                                </div><!-- .post-slider-details__back -->
-                            </div><!-- .post-slider-details -->
-                            <div class="study-time">
-                                <span>5</span>
-                                <span>دقیقه مطالعه</span>
-                            </div><!-- .study-time -->
-                        </div><!-- .swiper-slide -->
-                        <div class="swiper-slide" style="width: 1170px;">
-                            <img src="../assets/img/post-slider-image.jpg" alt="news slider">
-                            <div class="post-slider-details">
-                                <div class="post-slider-details__content">
-                                    <div class="post-slider-title">
-                                        <a href="#">
-                                            <h5>تولیدات مدل‌های جدید سری می میکس</h5>
-                                        </a>
-                                        <a href="#">
-                                            <span>Production of new models of Mi Mix series</span>
-                                        </a>
-                                    </div><!-- .post-slider-title -->
-                                </div><!-- .post-slider-details__content -->
-                                <div class="post-slider-details__back">
-                                    <span class="persian-back-large"></span>
-                                </div><!-- .post-slider-details__back -->
-                            </div><!-- .post-slider-details -->
-                            <div class="study-time">
-                                <span>5</span>
-                                <span>دقیقه مطالعه</span>
-                            </div><!-- .study-time -->
-                        </div><!-- .swiper-slide -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $news_slider = get_sub_field( 'persian_news_slider_item' );
+                        if ( $news_slider ) {
+
+                            foreach ( $news_slider as $post ){
+                                setup_postdata( $post );
+                                $slider_en_title = get_field( 'persian_english_title', get_the_ID());
+                                ?>
+                                <div class="swiper-slide">
+                                    <?php if ( has_post_thumbnail() ){
+                                        echo get_the_post_thumbnail();
+                                    } ?>
+                                    <div class="post-slider-details">
+                                        <div class="post-slider-details__content">
+                                            <div class="post-slider-title">
+                                                <a href="<?php echo get_the_permalink(); ?>">
+                                                    <h5><?php the_title(); ?></h5>
+                                                </a>
+                                                <?php if ( $slider_en_title ){
+                                                    ?>
+                                                    <a href="<?php echo get_the_permalink(); ?>">
+                                                        <span><?php echo esc_html($slider_en_title); ?></span>
+                                                    </a>
+                                    <?php
+                                                } ?>
+                                            </div><!-- .post-slider-title -->
+                                        </div><!-- .post-slider-details__content -->
+                                        <div class="post-slider-details__back">
+                                            <span class="persian-back-large"></span>
+                                        </div><!-- .post-slider-details__back -->
+                                    </div><!-- .post-slider-details -->
+                                    <div class="study-time">
+                                        <span>5</span>
+                                        <span>دقیقه مطالعه</span>
+                                    </div><!-- .study-time -->
+                                </div><!-- .swiper-slide -->
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        }
+                        ?>
                     </div><!-- .swiper-wrapper -->
                     <div class="post-slider-navigation">
-                        <div class="navigation-button navigation-button--next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+                        <div class="navigation-button navigation-button--next"></div>
                         <div class="connector persian-connector">
                         </div>
-                        <div class="navigation-button navigation-button--prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+                        <div class="navigation-button navigation-button--prev"></div>
                     </div><!-- .post-slider-navigation -->
-                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div><!-- .swiper-container -->
+                </div><!-- .swiper-container -->
             </div><!-- .post-slider__slider -->
         </div><!-- .container -->
-    </div>
+    </div><!-- .post-slider -->
 
+                <?php
+            }
+                }
+                }
+                ?>
+    <!-------------------------- Bourse news and slider --------------------------------->
     <div class="bourse-news">
         <div class="container">
             <div class="row p30">
