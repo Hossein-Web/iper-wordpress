@@ -63,7 +63,7 @@ if ($persian_slider){
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
                                         <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' ' . __('پیش', 'persian_bourse'); ?></span></li>
-                                        <li><span>5 دقیقه مطالعه</span></li>
+                                        <li><span><?php echo read_time( $persian_slider[$i] ) . ' '. __('دقیقه مطالعه', 'persian_bourse' );?></span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
                                 <span class="post-item-like persian persian-like"></span>
@@ -87,7 +87,7 @@ if ($persian_slider){
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
                                         <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) . ' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                        <li><span>5 دقیقه مطالعه</span></li>
+                                        <li><span><?php echo read_time( $persian_slider[$i] ) . ' '. __('دقیقه مطالعه', 'persian_bourse' );?></span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
                                 <span class="post-item-like persian persian-like"></span>
@@ -114,7 +114,7 @@ if ($persian_slider){
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
                                         <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                        <li><span>5 دقیقه مطالعه</span></li>
+                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
                                 <span class="post-item-like persian persian-like"></span>
@@ -158,7 +158,7 @@ if ($persian_slider){
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
                                                         <li><span>دو روز پیش</span></li>
-                                                        <li><span>5 دقیقه مطالعه</span></li>
+                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
                                                 <span class="post-item-like persian persian-like"></span>
@@ -182,7 +182,7 @@ if ($persian_slider){
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
                                                         <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                                        <li><span>5 دقیقه مطالعه</span></li>
+                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
                                                 <span class="post-item-like persian persian-like"></span>
@@ -209,7 +209,7 @@ if ($persian_slider){
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
                                                         <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                                        <li><span>5 دقیقه مطالعه</span></li>
+                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
                                                 <span class="post-item-like persian persian-like"></span>
@@ -286,7 +286,7 @@ elseif ( get_row_layout() == 'persian_news'){
                                         ?>
                                     </div>
                                     <div class="post-study-time">
-                                        <span>5</span>
+                                        <span><?php echo read_time( $post ); ?></span>
                                         <span><?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
                                     </div>
                                     <div class="meta-background">
@@ -378,7 +378,7 @@ elseif ( get_row_layout() == 'persian_news'){
                                                 </li>
                                                 <li class="post-study-time list-inline-item">
                                                     <span><i class="persian-time"></i></span>
-                                                    <span><span>5</span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                    <span><span><?php echo read_time( $post ); ?></span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -450,7 +450,7 @@ elseif ( get_row_layout() == 'persian_news'){
                                             </li>
                                             <li class="post-study-time list-inline-item">
                                                 <span><i class="persian-time"></i></span>
-                                                <span><span>5</span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                <span><span><?php echo read_time($post); ?></span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -856,8 +856,8 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                                         </div><!-- .post-slider-details__back -->
                                     </div><!-- .post-slider-details -->
                                     <div class="study-time">
-                                        <span>5</span>
-                                        <span>دقیقه مطالعه</span>
+                                        <span><?php echo read_time( $post ); ?></span>
+                                        <span><?php _e( 'دقیقه مطالعه', 'persian_bourse' ); ?></span>
                                     </div><!-- .study-time -->
                                 </div><!-- .swiper-slide -->
                                 <?php

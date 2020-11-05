@@ -106,6 +106,13 @@ function ivahid_get_ip()
     add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
 //}
 
+function read_time($post){
+    $content = get_post_field('post_content', $post->ID);
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 700);
+    return $reading_time;
+}
+
 function ivahid_get_excerpt($character, $post_id = null)
 {
     if ($post_id == '') {
