@@ -134,7 +134,6 @@ function ivahid_pagination($both = 1, $middle = 2, $prev = '<span class="change-
 //    persian_var_dump( $wp_query->found_posts );
     //persian_var_dump( $wp_query->posts_per_page );
     if ($max_num_pages < 2) {
-        echo 'exit in function';
         return;
     }
     $big_number = 999999999;
