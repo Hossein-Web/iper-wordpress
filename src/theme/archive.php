@@ -3,6 +3,9 @@
     <div class="container">
         <div class="row p30">
             <div class="col-xl-8">
+                <?php if ( is_active_sidebar( 'archive_page_sidebar' ) ) {
+                    dynamic_sidebar( 'archive_page_sidebar' );
+                } ?>
                 <div class="side-categories">
                     <h6 class="categories-title">دسته بندی ها</h6>
                     <ul>
