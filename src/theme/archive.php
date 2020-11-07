@@ -6,25 +6,6 @@
                 <?php if ( is_active_sidebar( 'archive_page_sidebar' ) ) {
                     dynamic_sidebar( 'archive_page_sidebar' );
                 } ?>
-                <div class="side-categories">
-                    <h6 class="categories-title">دسته بندی ها</h6>
-                    <ul>
-                        <li><a href="#">اخبار</a></li>
-                        <li><a href="#">آموزش بورس</a></li>
-                        <li class="has-subcategory">
-                            <span>اقتصاد</span>
-                            <ul>
-                                <li><a href="#">افزایش سرمایه</a></li>
-                                <li><a href="#">تاریخ مجامع</a></li>
-                                <li><a href="#">سود تقسیمی مجامع</a></li>
-                            </ul>
-                        </li><!-- .has-subcategory -->
-                        <li><a href="#">عرضه اولیه</a></li>
-                        <li><a href="#">عملکرد مالی</a></li>
-                        <li><a href="#">شرکت های بورسی</a></li>
-                        <li><a href="#">تماس با سرمایه نیوز</a></li>
-                    </ul>
-                </div><!-- .side-categories -->
                 <div class="side-populars">
                     <div class="title title--blue title--small">
                         <h6><span>پربازدیدترین </span>مطالب</h6>
