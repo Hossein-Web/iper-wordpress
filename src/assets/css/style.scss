@@ -4,6 +4,7 @@
 @import 'reset';
 @import '../../../node_modules/simplebar/dist/simplebar.min';
 @import '../../../node_modules/bxslider/dist/jquery.bxslider';
+@import '../../../node_modules/sweetalert2/dist/sweetalert2.min';
 
 /*
 Table of content
@@ -4879,6 +4880,47 @@ footer {
     opacity: 0;
     -webkit-transform: scale(1.7);
     transform: scale(1.5);
+  }
+}
+
+.loader {
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  i {
+    font-size: 2.5em;
+    color: #3c5059;
+    animation: spinner 1s infinite;
+    z-index: 99999;
+    position: relative;
+  }
+}
+.loader-overly{
+  overflow: hidden;
+  position: relative;
+}
+@-webkit-keyframes spinner {
+  from { -webkit-transform: rotateY(0deg);    }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+
+@keyframes spinner {
+  from {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
   }
 }
 

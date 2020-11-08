@@ -32,194 +32,524 @@ while (have_rows('main_page')){
 the_row();
 if (get_row_layout() == 'persian_main_slider'){
 $persian_slider_type = get_sub_field('persian_slider_type');
-if ($persian_slider_type == 'select'){
-$persian_slider = get_sub_field('persian_main_slider');
-if ($persian_slider){
 ?>
 <div class="tile-post">
     <div class="container">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <?php
-                for ($i = 0; $i < count($persian_slider); $i++) { ?>
+                if ($persian_slider_type == 'select'){
+                    $persian_slider = get_sub_field('persian_main_slider');
+                    if ($persian_slider){
+                        ?>
+                <?php
 
-                    <div class="swiper-slide">
-                        <div class="tile-post-wrapper">
-                            <div class="tile-post__item tile-post__item--small">
-                                <img class="post-item-image"
-                                     src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
-                                     alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
-                                <?php
-                                persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
-                                ?>
-                                <div class="post-item-details">
-                                    <a class="post-item-details__title"
-                                       href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
-                                        <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
-                                        <!-- .post-item-details__title -->
-                                    </a><!-- .post-item-details__title -->
-                                    <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
-                                        <li>
-                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
-                                        </li>
-                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' ' . __('پیش', 'persian_bourse'); ?></span></li>
-                                        <li><span><?php echo read_time( $persian_slider[$i] ) . ' '. __('دقیقه مطالعه', 'persian_bourse' );?></span></li>
-                                    </ul><!-- .bourse-post-meta -->
-                                </div><!-- .post-item-details -->
-                                <span class="post-item-like persian persian-like"></span>
-                            </div><!-- .tile-post__item -->
-                            <?php $i++; ?>
-                            <div class="tile-post__item tile-post__item--small">
-                                <img class="post-item-image"
-                                     src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
-                                     alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
-                                <?php
-                                persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
-                                ?>
-                                <div class="post-item-details">
-                                    <a class="post-item-details__title"
-                                       href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
-                                        <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
-                                        <!-- .post-item-details__title -->
-                                    </a><!-- .post-item-details__title -->
-                                    <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
-                                        <li>
-                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
-                                        </li>
-                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) . ' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                        <li><span><?php echo read_time( $persian_slider[$i] ) . ' '. __('دقیقه مطالعه', 'persian_bourse' );?></span></li>
-                                    </ul><!-- .bourse-post-meta -->
-                                </div><!-- .post-item-details -->
-                                <span class="post-item-like persian persian-like"></span>
-                            </div><!-- .tile-post__item -->
-                        </div><!-- .tile-post-wrapper -->
-                    </div><!-- .swiper-slide -->
-                    <?php $i++ ?>
-                    <div class="swiper-slide">
-                        <div class="tile-post-wrapper">
-                            <div class="tile-post__item">
-                                <img class="post-item-image"
-                                     src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
-                                     alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
-                                <?php
-                                persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
-                                ?>
-                                <div class="post-item-details">
-                                    <a class="post-item-details__title" href="#">
-                                        <h5><?php echo get_the_title($persian_slider[$i]->ID); ?></h5>
-                                        <!-- .post-item-details__title -->
-                                    </a><!-- .post-item-details__title -->
-                                    <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links">
-                                        <li>
-                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
-                                        </li>
-                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
-                                    </ul><!-- .bourse-post-meta -->
-                                </div><!-- .post-item-details -->
-                                <span class="post-item-like persian persian-like"></span>
-                            </div><!-- .tile-post__item -->
-                        </div><!-- .tile-post-wrapper -->
-                    </div><!-- .swiper-slide -->
-                    <?php
-                }
-                }
+                $x = count( $persian_slider );
+                $display_double = false;
+                $i = 0;
 
-                }elseif ($persian_slider_type == 'visited'){
-                $args = array(
-                    'meta_key' => 'views',
-                    'orderby' => 'meta_value_num'
-                );
-                $persian_posts = get_posts($args); ?>
-                <div class="tile-post">
-                    <div class="container">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <?php
-                                for ($j = 0; $j < count($persian_posts); $j++) {
+                while ( $x > 0 ) {
+                    ?>
+                <div class="swiper-slide">
+                    <div class="tile-post-wrapper">
+                           <?php
+                            if ( $x === 1 ){
+                                ?>
+
+                                <div class="tile-post__item">
+                                    <img class="post-item-image"
+                                         src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                         alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                    <?php
+                                    persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
                                     ?>
-                                    <div class="swiper-slide">
-                                        <div class="tile-post-wrapper">
-                                            <div class="tile-post__item tile-post__item--small">
-                                                <img class="post-item-image"
-                                                     src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
-                                                     alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
+                                    <div class="post-item-details">
+                                        <a class="post-item-details__title"
+                                           href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                            <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                            <!-- .post-item-details__title -->
+                                        </a><!-- .post-item-details__title -->
+                                        <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                            <li>
                                                 <?php
-                                                persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
+                                                $author_id = $persian_slider[$i]->post_author;
+                                                $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
                                                 ?>
-                                                <div class="post-item-details">
-                                                    <a class="post-item-details__title"
-                                                       href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
-                                                        <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
-                                                        <!-- .post-item-details__title -->
-                                                    </a><!-- .post-item-details__title -->
-                                                    <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
-                                                        <li>
-                                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
-                                                        </li>
-                                                        <li><span>دو روز پیش</span></li>
-                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
-                                                    </ul><!-- .bourse-post-meta -->
-                                                </div><!-- .post-item-details -->
-                                                <span class="post-item-like persian persian-like"></span>
-                                            </div><!-- .tile-post__item -->
-                                            <?php $j++; ?>
-                                            <div class="tile-post__item tile-post__item--small">
-                                                <img class="post-item-image"
-                                                     src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
-                                                     alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
+                                                <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                            </li>
+                                            <li>
+                                                <span><?php echo human_time_diff(get_the_time('U', $persian_slider[$i]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                            </li>
+                                            <li>
+                                                <span><?php echo read_time($persian_slider[$i]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                            </li>
+                                        </ul><!-- .bourse-post-meta -->
+                                    </div><!-- .post-item-details -->
+                                    <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
+                                          data-postid="<?php echo $persian_slider[$i]->ID; ?>"
+                                          data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                          data-type="like">
+
+                                </span>
+                                </div><!-- .tile-post__item -->
+
+                                <?php
+                                $x = $x - 1;
+                                $i = $i + 1;
+                                $display_double = false;
+                                } ?>
+                           <?php
+                           if ( $x === 2 ){
+                               if ( $display_double === true ){
+                                   ?>
+                                   <div class="tile-post__item">
+                                       <img class="post-item-image"
+                                            src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                            alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                       <?php
+                                       persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
+                                       ?>
+                                       <div class="post-item-details">
+                                           <a class="post-item-details__title"
+                                              href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                               <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                               <!-- .post-item-details__title -->
+                                           </a><!-- .post-item-details__title -->
+                                           <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                               <li>
+                                                   <?php
+                                                   $author_id = $persian_slider[$i]->post_author;
+                                                   $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                   ?>
+                                                   <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                               </li>
+                                               <li>
+                                                   <span><?php echo human_time_diff(get_the_time('U', $persian_slider[$i]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                               </li>
+                                               <li>
+                                                   <span><?php echo read_time($persian_slider[$i]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                               </li>
+                                           </ul><!-- .bourse-post-meta -->
+                                       </div><!-- .post-item-details -->
+                                       <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
+                                             data-postid="<?php echo $persian_slider[$i]->ID; ?>"
+                                             data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                             data-type="like">
+
+                                </span>
+                                   </div><!-- .tile-post__item -->
+                                   <?php
+                                   $x = $x -1;
+                                   $i = $i + 1;
+                                   $display_double = false;
+                               }
+                               else{
+                                   for ( $j = 0; $j<2; $j++ ){
+                                       ?>
+                                       <div class="tile-post__item  tile-post__item--small">
+                                           <img class="post-item-image"
+                                                src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                                alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                           <?php
+                                           persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
+                                           ?>
+                                           <div class="post-item-details">
+                                               <a class="post-item-details__title"
+                                                  href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                                   <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                                   <!-- .post-item-details__title -->
+                                               </a><!-- .post-item-details__title -->
+                                               <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                                   <li>
+                                                       <?php
+                                                       $author_id = $persian_slider[$i]->post_author;
+                                                       $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                       ?>
+                                                       <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                                   </li>
+                                                   <li>
+                                                       <span><?php echo human_time_diff(get_the_time('U', $persian_slider[$i]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                                   </li>
+                                                   <li>
+                                                       <span><?php echo read_time($persian_slider[$i]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                   </li>
+                                               </ul><!-- .bourse-post-meta -->
+                                           </div><!-- .post-item-details -->
+                                           <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
+                                                 data-postid="<?php echo $persian_slider[$i]->ID; ?>"
+                                                 data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                                 data-type="like">
+
+                                </span>
+                                       </div><!-- .tile-post__item -->
+
+                                       <?php
+                                       $i = $i + 1;
+                                       $x = $x - 1;
+                                       $display_double = true;
+                                   }
+                               }
+                           }
+                           if( $x >= 3 ){
+                               if ( $display_double === false ){
+                                   for ( $j=0; $j<2; $j++ ){
+                                       ?>
+                                       <div class="tile-post__item  tile-post__item--small">
+                                           <img class="post-item-image"
+                                                src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                                alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                           <?php
+                                           persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
+                                           ?>
+                                           <div class="post-item-details">
+                                               <a class="post-item-details__title"
+                                                  href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                                   <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                                   <!-- .post-item-details__title -->
+                                               </a><!-- .post-item-details__title -->
+                                               <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                                   <li>
+                                                       <?php
+                                                       $author_id = $persian_slider[$i]->post_author;
+                                                       $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                       ?>
+                                                       <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                                   </li>
+                                                   <li>
+                                                       <span><?php echo human_time_diff(get_the_time('U', $persian_slider[$i]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                                   </li>
+                                                   <li>
+                                                       <span><?php echo read_time($persian_slider[$i]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                   </li>
+                                               </ul><!-- .bourse-post-meta -->
+                                           </div><!-- .post-item-details -->
+                                           <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
+                                                 data-postid="<?php echo $persian_slider[$i]->ID; ?>"
+                                                 data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                                 data-type="like">
+
+                                </span>
+                                       </div><!-- .tile-post__item -->
+
+                                       <?php
+                                       $x = $x -1;
+                                       $i = $i +1;
+                                       $display_double = true;
+                                   }
+                               }
+                               else{
+                                   ?>
+                                   <div class="tile-post__item">
+                                       <img class="post-item-image"
+                                            src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                            alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                       <?php
+                                       persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
+                                       ?>
+                                       <div class="post-item-details">
+                                           <a class="post-item-details__title"
+                                              href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                               <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                               <!-- .post-item-details__title -->
+                                           </a><!-- .post-item-details__title -->
+                                           <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                               <li>
+                                                   <?php
+                                                   $author_id = $persian_slider[$i]->post_author;
+                                                   $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                   ?>
+                                                   <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                               </li>
+                                               <li>
+                                                   <span><?php echo human_time_diff(get_the_time('U', $persian_slider[$i]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                               </li>
+                                               <li>
+                                                   <span><?php echo read_time($persian_slider[$i]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                               </li>
+                                           </ul><!-- .bourse-post-meta -->
+                                       </div><!-- .post-item-details -->
+                                       <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
+                                             data-postid="<?php echo $persian_slider[$i]->ID; ?>"
+                                             data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                             data-type="like">
+
+                                </span>
+                                   </div><!-- .tile-post__item -->
+                                   <?php
+                                   $x = $x - 1;
+                                   $display_double = false;
+                                   $i = $i +1;
+                               }
+                           }
+                           ?>
+
+                    </div><!-- .tile-post-wrapper -->
+                </div><!-- .swiper-slide -->
+                <?php } }?>
+
+                <?php
+                }
+elseif ($persian_slider_type == 'visited'){
+    $main_slider_count = get_sub_field( 'persian_visited_count' );
+
+                $args = array(
+                    'meta_key'          => 'views',
+                    'orderby'           => 'meta_value_num',
+                    'posts_per_page'    => $main_slider_count
+                );
+                $persian_posts = get_posts($args);
+
+                $x = count($persian_posts);
+                $display_double = false;
+                $j = 0;
+
+                while ( $x > 0 ) {
+                    ?>
+                    <div class="swiper-slide">
+                        <div class="tile-post-wrapper">
+                            <?php
+                            if ( $x === 1 ){
+                                ?>
+                                <div class="tile-post__item">
+                                    <img class="post-item-image"
+                                         src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                         alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
+                                    <?php
+                                    persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
+                                    ?>
+                                    <div class="post-item-details">
+                                        <a class="post-item-details__title"
+                                           href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
+                                            <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                            <!-- .post-item-details__title -->
+                                        </a><!-- .post-item-details__title -->
+                                        <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                            <li>
                                                 <?php
-                                                persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
+                                                $author_id = $persian_posts[$j]->post_author;
+                                                $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
                                                 ?>
-                                                <div class="post-item-details">
-                                                    <a class="post-item-details__title"
-                                                       href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
-                                                        <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
-                                                        <!-- .post-item-details__title -->
-                                                    </a><!-- .post-item-details__title -->
-                                                    <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
-                                                        <li>
-                                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
-                                                        </li>
-                                                        <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
-                                                    </ul><!-- .bourse-post-meta -->
-                                                </div><!-- .post-item-details -->
-                                                <span class="post-item-like persian persian-like"></span>
-                                            </div><!-- .tile-post__item -->
-                                        </div><!-- .tile-post-wrapper -->
-                                    </div><!-- .swiper-slide -->
-                                    <?php $j++; ?>
-                                    <div class="swiper-slide">
-                                        <div class="tile-post-wrapper">
-                                            <div class="tile-post__item">
-                                                <img class="post-item-image"
-                                                     src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
-                                                     alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
-                                                <?php
-                                                persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
-                                                ?>
-                                                <div class="post-item-details">
-                                                    <a class="post-item-details__title" href="#">
-                                                        <h5><?php echo get_the_title($persian_posts[$j]->ID); ?></h5>
-                                                        <!-- .post-item-details__title -->
-                                                    </a><!-- .post-item-details__title -->
-                                                    <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links">
-                                                        <li>
-                                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
-                                                        </li>
-                                                        <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
-                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
-                                                    </ul><!-- .bourse-post-meta -->
-                                                </div><!-- .post-item-details -->
-                                                <span class="post-item-like persian persian-like"></span>
-                                            </div><!-- .tile-post__item -->
-                                        </div><!-- .tile-post-wrapper -->
-                                    </div><!-- .swiper-slide -->
-                                <?php }
-                                wp_reset_postdata();
+                                                <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                            </li>
+                                            <li>
+                                                <span><?php echo human_time_diff(get_the_time('U', $persian_posts[$j]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                            </li>
+                                            <li>
+                                                <span><?php echo read_time($persian_posts[$j]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                            </li>
+                                        </ul><!-- .bourse-post-meta -->
+                                    </div><!-- .post-item-details -->
+                                    <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
+                                          data-postid="<?php echo $persian_posts[$j]->ID; ?>"
+                                          data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                          data-type="like">
+
+                                </span>
+
+                                </div><!-- .tile-post__item -->
+                                <?php
+
+                                $x = $x - 1;
+                                $j = $j + 1;
+                                $display_double = false;
+                            }
+                            if ( $x === 2 ){
+                                if ( $display_double === true ){
+                                    ?>
+                                    <div class="tile-post__item">
+                                        <img class="post-item-image"
+                                             src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                             alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
+                                        <?php
+                                        persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
+                                        ?>
+                                        <div class="post-item-details">
+                                            <a class="post-item-details__title"
+                                               href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
+                                                <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                <!-- .post-item-details__title -->
+                                            </a><!-- .post-item-details__title -->
+                                            <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                                <li>
+                                                    <?php
+                                                    $author_id = $persian_posts[$j]->post_author;
+                                                    $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                    ?>
+                                                    <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                                </li>
+                                                <li>
+                                                    <span><?php echo human_time_diff(get_the_time('U', $persian_posts[$j]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                                </li>
+                                                <li>
+                                                    <span><?php echo read_time($persian_posts[$j]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                </li>
+                                            </ul><!-- .bourse-post-meta -->
+                                        </div><!-- .post-item-details -->
+                                        <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
+                                              data-postid="<?php echo $persian_posts[$j]->ID; ?>"
+                                              data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                              data-type="like">
+
+                                        </span>
+                                    </div><!-- .tile-post__item -->
+                                    <?php
+
+                                    $x = $x - 1;
+                                    $j = $j + 1;
+                                    $display_double = false;
+                                }
+                                else{
+                                    for ( $t=0; $t<2; $t++ ){
+                                        ?>
+                                        <div class="tile-post__item tile-post__item--small">
+                                            <img class="post-item-image"
+                                                 src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                                 alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
+                                            <?php
+                                            persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
+                                            ?>
+                                            <div class="post-item-details">
+                                                <a class="post-item-details__title"
+                                                   href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
+                                                    <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                    <!-- .post-item-details__title -->
+                                                </a><!-- .post-item-details__title -->
+                                                <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                                    <li>
+                                                        <?php
+                                                        $author_id = $persian_posts[$j]->post_author;
+                                                        $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                        ?>
+                                                        <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                                    </li>
+                                                    <li>
+
+                                                        <span><?php echo human_time_diff(get_the_time('U', $persian_posts[$j]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span><?php echo read_time($persian_posts[$j]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                    </li>
+                                                </ul><!-- .bourse-post-meta -->
+                                            </div><!-- .post-item-details -->
+                                            <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
+                                                  data-postid="<?php echo $persian_posts[$j]->ID; ?>"
+                                                  data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                                  data-type="like">
+
+                                </span>
+                                        </div><!-- .tile-post__item -->
+
+                                        <?php
+                                        $j = $j + 1;
+                                        $x = $x - 1;
+                                        $display_double = true;
+                                    }
                                 }
                                 ?>
+
+                                <?php
+                            }
+                            if ( $x >= 3 ){
+                                if ( $display_double === false ){
+                                    for ( $t=0; $t<2; $t++ ){
+                                      ?>
+                                        <div class="tile-post__item tile-post__item--small">
+                                            <img class="post-item-image"
+                                                 src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                                 alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
+                                            <?php
+                                            persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
+                                            ?>
+                                            <div class="post-item-details">
+                                                <a class="post-item-details__title"
+                                                   href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
+                                                    <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                    <!-- .post-item-details__title -->
+                                                </a><!-- .post-item-details__title -->
+                                                <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                                    <li>
+                                                        <?php
+                                                        $author_id = $persian_posts[$j]->post_author;
+                                                        $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                        ?>
+                                                        <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                                    </li>
+                                                    <li>
+                                                        <span><?php echo human_time_diff(get_the_time('U', $persian_posts[$j]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span><?php echo read_time($persian_slider[$j]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                    </li>
+                                                </ul><!-- .bourse-post-meta -->
+                                            </div><!-- .post-item-details -->
+                                            <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
+                                                  data-postid="<?php echo $persian_posts[$j]->ID; ?>"
+                                                  data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                                  data-type="like">
+
+                                </span>
+                                        </div><!-- .tile-post__item -->
+                                        <?php
+                                        $x = $x - 1;
+                                        $j = $j + 1;
+                                        $display_double = true;
+                                    }
+                                }
+                                else{
+                                    ?>
+                                    <div class="tile-post__item">
+                                        <img class="post-item-image"
+                                             src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                             alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
+                                        <?php
+                                        persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
+                                        ?>
+                                        <div class="post-item-details">
+                                            <a class="post-item-details__title"
+                                               href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
+                                                <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                <!-- .post-item-details__title -->
+                                            </a><!-- .post-item-details__title -->
+                                            <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
+                                                <li>
+                                                    <?php
+                                                    $author_id = $persian_posts[$j]->post_author;
+                                                    $post_author_name = get_the_author_meta( 'user_nicename', $author_id );
+                                                    ?>
+                                                    <a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo $post_author_name; ?></a>
+                                                </li>
+                                                <li>
+                                                    <span><?php echo human_time_diff(get_the_time('U', $persian_posts[$j]->ID), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
+                                                </li>
+                                                <li>
+                                                    <span><?php echo read_time($persian_posts[$j]) . ' ' . __('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                </li>
+                                            </ul><!-- .bourse-post-meta -->
+                                        </div><!-- .post-item-details -->
+                                        <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
+                                              data-postid="<?php echo $persian_posts[$j]->ID; ?>"
+                                              data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
+                                              data-type="like">
+
+                                </span>
+                                    </div><!-- .tile-post__item -->
+                                    <?php
+
+                                    $x = $x - 1;
+                                    $display_double = false;
+                                    $j = $j + 1;
+                                }
+                            }
+                            ?>
+
+                        </div><!-- .tile-post-wrapper -->
+                    </div><!-- .swiper-slide -->
+
+                    <?php
+                }
+            wp_reset_postdata();
+            }
+            ?>
                             </div><!-- .swiper-wrapper -->
                         </div><!-- .swiper-container -->
                     </div><!-- .container -->
@@ -342,9 +672,7 @@ elseif (get_row_layout() == 'persian_news') {
                                                             <a href="<?php the_permalink() ?>">
                                                                 <?php echo get_the_post_thumbnail(); ?>
                                                             </a>
-                                                            <?php
-                                                        }
-                                                        ?>
+                                                            <?php } ?>
                                                     </div><!-- .post-image -->
                                                     <div class="post-content">
                                                         <div class="post-title">
@@ -414,7 +742,6 @@ elseif (get_row_layout() == 'persian_news') {
                                                 <?php echo get_the_post_thumbnail(); ?>
                                             </a>
                                             <?php } ?>
-                                        ?>
                                     </div><!-- .post-image -->
                                     <div class="post-content">
                                         <div class="post-title">

@@ -318,6 +318,89 @@ $( '.side-categories .has-subcategory span' ).on( 'click', function (e) {
 	$('.side-categories .has-subcategory').toggleClass( 'active' );
 });
 
+
+
+const Toast = Swal.mixin({
+	toast: true,
+	position: 'top-end',
+	showConfirmButton: false,
+	timer: 3000,
+	timerProgressBar: true,
+	didOpen: (toast) => {
+		toast.addEventListener('mouseenter', Swal.stopTimer)
+		toast.addEventListener('mouseleave', Swal.resumeTimer)
+	}
+});
+function loader(el, status) {
+	if (typeof status == "undefined" || status == null) {
+		status = "active";
+	}
+	if (typeof el == "undefined" || el == null) {
+		el = $('body');
+	}
+	if (status == 'active') {
+		el.addClass('loader-overly');
+		el.append('<div class="loader"><i class="icon-markaz-blank"></i></div>');
+	} else {
+		el.removeClass('loader-overly');
+		el.find('.loader').remove();
+	}
+}
+
+
+
+/* like ajax  */
+$('.post-item-like').on('click', function (e) {
+	e.preventDefault();
+	let ele = $(this);
+
+	let data = {};
+	data['postid'] = ele.data('postid');
+	data['nonce'] = ele.data('nonce');
+	data['type'] = ele.data('type');
+	data['action'] = 'ivahid_post_like';
+
+	let ajax_url = ele.data('ajax_url');
+
+	loader(ele);
+
+	$.ajax({
+		type: 'POST',
+		dataType: 'json',
+		url: ajax_url,
+		data: data,
+		complete: function () {
+			loader(ele, 'deactive');
+		},
+		success: function (data) {
+			if ( data.status == 1 ) {
+				Toast.fire({
+					icon: 'success',
+					title: 'با موفقیت انجام شد',
+					footer: data.message,
+				});
+				ele.toggleClass('active');
+				if (ele.find('.count')) {
+					ele.find('.count').html(data.info.count);
+				}
+			} else {
+				Toast.fire({
+					icon: 'error',
+					title: 'متاسفانه انجام نشد',
+					footer: data.message,
+				});
+			}
+		},
+		error: function () {
+			Toast.fire({
+				icon: 'error',
+				title: 'متاسفانه انجام نشد',
+				footer: 'در ارسال درخواست مشکلی وجود دارد.',
+			});
+		}
+	});
+});
+
 // Side video slider
 let side_video = new Swiper('.side-video-slider .swiper-container', {
 	direction: 'vertical',
@@ -336,3 +419,4 @@ side_video.on('transitionStart', function () {
 side_video.on('transitionEnd', function () {
 	$( '.side-video-slider .swiper-slide-prev' ).removeClass( 'slide-change' );
 });
+
