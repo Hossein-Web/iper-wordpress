@@ -35,24 +35,7 @@
         'callback' => 'persian_comments'
     ];
     wp_list_comments( $args );
-//    wp_list_comments( );
     ?>
-    <li class="comment">
-        <div class="comment__content">
-            <div class="comment-info">
-                <p class="comment-author">وحید دانافرد</p><!-- .comment-author -->
-                <p class="comment-date">تاریخ ارسال دو روز قبل</p><!-- .comment-date -->
-            </div><!-- .comment-info -->
-            <p class="comment-text">آیفون 11 نسل جدید تلفن‌های هوشمند شرکت اپل است که در روز دهم سپتامبر 2019
-                معرفی شده است. این تلفن هوشمند در حقیقت نسخه پیش‌فرض گوشی آیفون در سال 2019 است که با بهبودهایی
-                نسبت به سال گذشته در روز دهم شده است. این تلفن هوشمند در حقیقت نسخه پیش‌فرض گوشی آیفون در سال
-                2019 است که با بهبودهایی نسبت به سال گذشته طراحی و آماده معرفی شده است. آیفون 11 دارای که با
-                بهبودهایی نسبت به سال گذشته طراحی و آماده معرفی شده است. آیفون 11 دارای سیستم دوربین دو لنز در
-                قسمت پشتی خود است.
-            </p><!-- .comment-text -->
-            <a href="#" class="comment-reply"><i class="persian-response"></i> پاسخ دهید</a><!-- .comment-reply -->
-        </div><!-- .comment__content -->
-    </li><!-- .comment -->
 </ul>
 </div><!-- .container -->
 </div><!-- .comments_list -->

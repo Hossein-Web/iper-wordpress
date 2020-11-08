@@ -94,7 +94,9 @@ function persian_comments( $comment, $args, $depth ) {
     <div class="comment__content">
         <div class="comment-info">
             <p class="comment-author"><?php echo get_comment_author(); ?></p><!-- .comment-author -->
-            <p class="comment-date"><?php echo human_time_diff( get_comment_date( 'U' ), current_time( 'U' ) ) . ' ' . __( 'پیش', 'persian_bourse' );  ?></p><!-- .comment-date -->
+            <p class="comment-date"><?php echo __( 'تاریخ ارسال', 'persian_bourse' ) .
+                                                ' ' . human_time_diff( get_comment_date( 'U' ), current_time( 'U' ) ) .
+                                                ' ' . __( 'پیش', 'persian_bourse' );  ?></p><!-- .comment-date -->
         </div><!-- .comment-info -->
         <p class="comment-text"><?php echo esc_html( get_comment_text( $comment->comment_ID ) ) ?></p><!-- .comment-text -->
         <?php $comment_link_args = [
@@ -106,19 +108,6 @@ function persian_comments( $comment, $args, $depth ) {
     <?php
 }
 
-//function alter_comment_form_fields( $fields ) {
-////    $fields['author'] = '';
-//    persian_var_dump( $fields );
-//
-//    return $fields;
-//}
-//add_filter('comment_form_default_fields','alter_comment_form_fields');
-
-//function change_comment_form_defaults( $default ){
-//    $default['fields']['mobile'] = '<input type="text" name="mobile" />';
-//    return $default;
-//}
-//add_filter( 'comment_form_defaults', 'change_comment_form_defaults' );
 
 // Add cell phone number to comments
 function add_phone_number( $comment_id ) {

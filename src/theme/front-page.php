@@ -88,7 +88,9 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                     <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
                                           data-postid="<?php echo $persian_slider[$i]->ID; ?>"
                                           data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                          data-type="like">
+                                          data-type="like"
+                                          data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                    >
 
                                 </span>
                                 </div><!-- .tile-post__item -->
@@ -134,7 +136,9 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                        <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
                                              data-postid="<?php echo $persian_slider[$i]->ID; ?>"
                                              data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                             data-type="like">
+                                             data-type="like"
+                                             data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                       >
 
                                 </span>
                                    </div><!-- .tile-post__item -->
@@ -178,7 +182,9 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                            <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
                                                  data-postid="<?php echo $persian_slider[$i]->ID; ?>"
                                                  data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                                 data-type="like">
+                                                 data-type="like"
+                                                 data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                           >
 
                                 </span>
                                        </div><!-- .tile-post__item -->
@@ -226,7 +232,9 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                            <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
                                                  data-postid="<?php echo $persian_slider[$i]->ID; ?>"
                                                  data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                                 data-type="like">
+                                                 data-type="like"
+                                                 data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                           >
 
                                 </span>
                                        </div><!-- .tile-post__item -->
@@ -271,7 +279,9 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                        <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_slider[$i]->ID, 'like') ? 'active' : '' ?>"
                                              data-postid="<?php echo $persian_slider[$i]->ID; ?>"
                                              data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                             data-type="like">
+                                             data-type="like"
+                                             data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                       >
 
                                 </span>
                                    </div><!-- .tile-post__item -->
@@ -342,7 +352,9 @@ elseif ($persian_slider_type == 'visited'){
                                     <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
                                           data-postid="<?php echo $persian_posts[$j]->ID; ?>"
                                           data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                          data-type="like">
+                                          data-type="like"
+                                          data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                    >
 
                                 </span>
 
@@ -388,7 +400,9 @@ elseif ($persian_slider_type == 'visited'){
                                         <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
                                               data-postid="<?php echo $persian_posts[$j]->ID; ?>"
                                               data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                              data-type="like">
+                                              data-type="like"
+                                              data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                        >
 
                                         </span>
                                     </div><!-- .tile-post__item -->
@@ -434,7 +448,9 @@ elseif ($persian_slider_type == 'visited'){
                                             <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
                                                   data-postid="<?php echo $persian_posts[$j]->ID; ?>"
                                                   data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                                  data-type="like">
+                                                  data-type="like"
+                                                  data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                            >
 
                                 </span>
                                         </div><!-- .tile-post__item -->
@@ -485,7 +501,9 @@ elseif ($persian_slider_type == 'visited'){
                                             <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
                                                   data-postid="<?php echo $persian_posts[$j]->ID; ?>"
                                                   data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                                  data-type="like">
+                                                  data-type="like"
+                                                  data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                            >
 
                                 </span>
                                         </div><!-- .tile-post__item -->
@@ -529,7 +547,9 @@ elseif ($persian_slider_type == 'visited'){
                                         <span class="post-item-like persian persian-like <?php echo ivahid_post_like_status( $persian_posts[$j]->ID, 'like') ? 'active' : '' ?>"
                                               data-postid="<?php echo $persian_posts[$j]->ID; ?>"
                                               data-nonce="<?php echo wp_create_nonce('ivahid_post_like_nonce') ?>"
-                                              data-type="like">
+                                              data-type="like"
+                                              data-ajax_url="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+                                        >
 
                                 </span>
                                     </div><!-- .tile-post__item -->

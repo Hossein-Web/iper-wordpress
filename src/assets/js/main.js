@@ -319,7 +319,7 @@ $( '.side-categories .has-subcategory span' ).on( 'click', function (e) {
 });
 
 
-
+//Ajax request in post like
 const Toast = Swal.mixin({
 	toast: true,
 	position: 'top-end',
