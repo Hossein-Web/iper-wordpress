@@ -626,7 +626,7 @@ elseif (get_row_layout() == 'persian_news') {
                                     <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
                                         <li class="post-meta__date list-inline-item">
                                             <span><i class="persian-date"></i></span>
-                                            <span>3 روز پیش</span>
+                                            <span><?php echo human_time_diff(get_the_time('U'), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
                                         </li>
                                         <li class="post-meta__author list-inline-item">
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
@@ -636,7 +636,7 @@ elseif (get_row_layout() == 'persian_news') {
                                         </li>
                                         <li class="post-meta__view list-inline-item">
                                             <span><i class="persian-view"></i></span>
-                                            <span>1590 بازدید</span>
+                                            <span><?php echo ivahid_get_views( get_the_id() ) . __( ' بازدید', 'persian_bourse' ); ?></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -690,7 +690,7 @@ elseif (get_row_layout() == 'persian_news') {
                                                         <ul class="list-inline bourse-post-meta bourse-post-meta--small">
                                                             <li class="post-meta__date list-inline-item">
                                                                 <span><i class="persian-date"></i></span>
-                                                                <span>3 روز پیش</span>
+                                                                <span><?php echo human_time_diff(get_the_time('U'), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
                                                             </li>
                                                             <li class="post-meta__author list-inline-item">
                                                                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
@@ -700,7 +700,7 @@ elseif (get_row_layout() == 'persian_news') {
                                                             </li>
                                                             <li class="post-meta__view list-inline-item">
                                                                 <span><i class="persian-view"></i></span>
-                                                                <span>159 بازدید</span>
+                                                                <span><?php echo ivahid_get_views( get_the_id() ) . __( ' بازدید', 'persian_bourse' ); ?></span>
                                                             </li>
                                                             <li class="post-study-time list-inline-item">
                                                                 <span><i class="persian-time"></i></span>
@@ -759,7 +759,7 @@ elseif (get_row_layout() == 'persian_news') {
                                         <ul class="list-inline bourse-post-meta bourse-post-meta--small">
                                             <li class="post-meta__date list-inline-item">
                                                 <span><i class="persian-date"></i></span>
-                                                <span>3 روز پیش</span>
+                                                <span><?php echo human_time_diff(get_the_time('U'), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
                                             </li>
                                             <li class="post-meta__author list-inline-item">
                                                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
@@ -769,7 +769,7 @@ elseif (get_row_layout() == 'persian_news') {
                                             </li>
                                             <li class="post-meta__view list-inline-item">
                                                 <span><i class="persian-view"></i></span>
-                                                <span>159 بازدید</span>
+                                                <span><?php echo ivahid_get_views( get_the_id() ) . __( ' بازدید', 'persian_bourse' ); ?></span>
                                             </li>
                                             <li class="post-study-time list-inline-item">
                                                 <span><i class="persian-time"></i></span>
@@ -1046,7 +1046,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                         <ul class="list-inline">
                                                                             <li class="meta-date list-inline-item">
                                                                                 <span><i class="persian-date"></i></span>
-                                                                                <span><?php the_date(); ?></span>
+                                                                                <span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' ' . __('پیش', 'persian_bourse'); ?></span>
                                                                             </li>
                                                                             <li class="meta-author list-inline-item">
                                                                                 <span><i class="persian-user"></i></span>
@@ -1091,7 +1091,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                             <ul class="list-inline">
                                                                                 <li class="meta-date list-inline-item">
                                                                                     <span><i class="persian-date"></i></span>
-                                                                                    <span><?php the_date(); ?></span>
+                                                                                    <span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' ' . __('پیش', 'persian_bourse'); ?></span>
                                                                                 </li>
                                                                                 <li class="meta-author list-inline-item">
                                                                                     <span><i class="persian-view"></i></span>
