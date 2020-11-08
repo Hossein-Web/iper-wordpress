@@ -5,8 +5,8 @@
  * Date: 11/1/2020
  * Time: 2:48 PM
  */
+
 /* post like & dislike*/
-$post_views = true;
 
 function ivahid_post_like()
 {
@@ -58,6 +58,31 @@ function ivahid_get_ip()
 
     return $ip;
 }
+
+function ivahid_post_like_status($post_id = null, $type = null)
+{
+    $user_ip = ivahid_get_ip();
+    $ips = get_post_meta($post_id, 'ivahid_post_' . $type . '_ips', true);
+    if ($ips && in_array($user_ip, $ips)) {
+        return true;
+    } else {
+        return null;
+    }
+}
+
+
+function ivahid_post_like_count($post_id = null, $type = null)
+{
+    $likes = get_post_meta($post_id, 'ivahid_post_' . $type, true);
+    if (!$likes) {
+        return 0;
+    }
+    return $likes;
+}
+
+add_action('wp_ajax_nopriv_ivahid_post_like', 'ivahid_post_like');
+add_action('wp_ajax_ivahid_post_like', 'ivahid_post_like');
+
 
 //if ($post_views == true) {
     function ivahid_set_views($postID = null)

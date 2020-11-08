@@ -71,6 +71,7 @@ const headerJS = [
 	'./node_modules/aos/dist/aos.js',
 	'./node_modules/simplebar/dist/simplebar.min.js',
 	'./node_modules/bxslider/dist/jquery.bxslider.js',
+	'./node_modules/sweetalert2/dist/sweetalert2.all.min.js',
 	'./src/assets/js/tabs.js'
 ];
 
