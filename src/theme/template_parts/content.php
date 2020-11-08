@@ -17,7 +17,7 @@
                                 </div>
                             <?php } ?>
                             <div class="post-study-time">
-                                <span>5</span>
+                                <span><?php echo read_time( $post ); ?></span>
                                 <span><?php _e( 'دقیقـه مطالعه', 'persian_bourse' ); ?></span>
                             </div>
                             <div class="meta-background">
@@ -28,7 +28,7 @@
                             <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
                                 <li class="post-meta__date list-inline-item">
                                     <span><i class="persian-date"></i></span>
-                                    <span><?php the_date(); ?></span>
+                                    <span><?php echo human_time_diff(get_the_time('U' ), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
                                 </li>
                                 <li class="post-meta__author list-inline-item">
                                     <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
@@ -38,7 +38,7 @@
                                 </li>
                                 <li class="post-meta__view list-inline-item">
                                     <span><i class="persian-view"></i></span>
-                                    <span><?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?></span>
+                                    <span><?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید ', 'persian_bourse' ); ?></span>
                                 </li>
                             </ul>
                         </div>

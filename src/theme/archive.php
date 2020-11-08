@@ -103,7 +103,7 @@
                                             <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
                                                 <li class="post-date d-inline-flex align-items-center list-inline-item">
                                                     <span><i class="persian-date"></i></span>
-                                                    <span><?php the_date(); ?></span>
+                                                    <span><?php echo human_time_diff(get_the_time('U'), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
                                                 </li>
                                                 <li class="post-author d-inline-flex align-items-center list-inline-item">
                                                     <span><i class="persian-user"></i></span>
