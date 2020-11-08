@@ -68,7 +68,7 @@
             </div><!-- .col-md-8 -->
             <div class="col-md-8 col-sm-24 col-24">
                 <div class="field-wrapper">
-                    <input class="comments-phone" type="text" name="mobile"
+                    <input class="comments-phone" type="text" name="user_phone_number"
                            placeholder="تلفن همراه">
                     <i class="persian persian-mobile"></i>
                 </div><!-- .field-wrapper -->

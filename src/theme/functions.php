@@ -94,18 +94,14 @@ function persian_comments( $comment, $args, $depth ) {
     <div class="comment__content">
         <div class="comment-info">
             <p class="comment-author"><?php echo get_comment_author(); ?></p><!-- .comment-author -->
-            <p class="comment-date"><?php echo get_comment_date(); ?></p><!-- .comment-date -->
+            <p class="comment-date"><?php echo human_time_diff( get_comment_date( 'U' ), current_time( 'U' ) ) . ' ' . __( 'پیش', 'persian_bourse' );  ?></p><!-- .comment-date -->
         </div><!-- .comment-info -->
         <p class="comment-text"><?php echo esc_html( get_comment_text( $comment->comment_ID ) ) ?></p><!-- .comment-text -->
-<!--        --><?php persian_var_dump( get_comment_reply_link( array_merge( $args, [ 'reply_text' => __( 'پاسخ دهید', 'persian_bourse' ),
-            'depth'      => $depth,
-            'max_depth'  => $args['max_depth'] ] ))); ?>
-        <?php /*comment_reply_link( array_merge($args, array(
-                'reply_text' => __('Responder <span>&darr;</span>', 'textdomain'),
-                'depth'      => $depth,
-                'max_depth'  => $args['max_depth']
-            )
-        ));*/ ?>
+        <?php $comment_link_args = [
+                        'reply_text' => __( '<i class="persian-response"></i> پاسخ دهید', 'persian_bourse' ),
+                        'depth'      => $depth,
+                        'max_depth'  => $args['max_depth'] ]; ?>
+    <?php comment_reply_link( array_merge( $args, $comment_link_args ) ); ?>
     </div><!-- .comment__content -->
     <?php
 }
@@ -118,12 +114,19 @@ function persian_comments( $comment, $args, $depth ) {
 //}
 //add_filter('comment_form_default_fields','alter_comment_form_fields');
 
-function change_comment_form_defaults( $default ){
-    $default['fields']['mobile'] = '<input type="text" name="mobile" />';
-    return $default;
-}
-add_filter( 'comment_form_defaults', 'change_comment_form_defaults' );
+//function change_comment_form_defaults( $default ){
+//    $default['fields']['mobile'] = '<input type="text" name="mobile" />';
+//    return $default;
+//}
+//add_filter( 'comment_form_defaults', 'change_comment_form_defaults' );
 
+// Add cell phone number to comments
+function add_phone_number( $comment_id ) {
+    add_comment_meta( $comment_id, 'user_phone_number', $_POST['user_phone_number'] );
+}
+add_action( 'comment_post', 'add_phone_number' );
+
+// Set options page for persian bourse
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
         'page_title' 	=> 'تنظیمات قالب پرشین بورس',
@@ -133,6 +136,24 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'		=> false
     ));
 }
+
+// Add user cell phone number column to comments table
+function user_cell_phone_number_col( $columns ) {
+    $custom_columns = [ 'user_phone_number_id' => __( 'شماره تلفن', 'persian_bourse' ) ];
+    $columns = array_slice( $columns, 0, 3, true ) + $custom_columns + array_slice( $columns, 3, null, true );
+    return $columns;
+}
+add_action( 'manage_edit-comments_columns', 'user_cell_phone_number_col' );
+
+// Add value to user cell phone number column
+function user_cell_phone_number_value( $column, $comment_id ) {
+    if ( $column === 'user_phone_number_id' ){
+        $phone_number = get_comment_meta( $comment_id, 'user_phone_number' );
+        $message = $phone_number ? $phone_number[0] : __( 'بدون شماره تلفن', 'persian_bourse' );
+        echo esc_html( $message );
+    }
+}
+add_action( 'manage_comments_custom_column', 'user_cell_phone_number_value', 10, 2 );
 
 // Get widget id
 add_action('in_widget_form', 'yatendra_get_widget_id'); //hookiing our function to "in_widget_form" hook
