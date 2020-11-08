@@ -672,9 +672,7 @@ elseif (get_row_layout() == 'persian_news') {
                                                             <a href="<?php the_permalink() ?>">
                                                                 <?php echo get_the_post_thumbnail(); ?>
                                                             </a>
-                                                            <?php
-                                                        }
-                                                        ?>
+                                                            <?php } ?>
                                                     </div><!-- .post-image -->
                                                     <div class="post-content">
                                                         <div class="post-title">
@@ -744,7 +742,6 @@ elseif (get_row_layout() == 'persian_news') {
                                                 <?php echo get_the_post_thumbnail(); ?>
                                             </a>
                                             <?php } ?>
-                                        ?>
                                     </div><!-- .post-image -->
                                     <div class="post-content">
                                         <div class="post-title">
