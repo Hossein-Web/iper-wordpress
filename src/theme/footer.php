@@ -124,34 +124,67 @@
             <!--<span class="mobile-close-button__bottom"></span>-->
         </div>
         <div class="mobile-logo">
-            <a href="#">
-                <img src="./assets/img/logo.png" alt="پرشین بورس">
-            </a>
+            <?php
+            $persian_mobile_logo = get_field( 'persian_mobile_logo', 'option' );
+
+
+            if ( $persian_mobile_logo ){
+                $persian_mobile_logo_url = $persian_mobile_logo['url'];
+                $persian_mobile_logo_alt = $persian_mobile_logo['alt'];
+                ?>
+                <a href="<?php echo home_url(); ?>">
+                    <img src="<?php echo esc_url( $persian_mobile_logo_url ); ?>" alt="<?php if ( $persian_mobile_logo_alt ){
+                        echo esc_attr( $persian_mobile_logo_alt );
+                    } ?>">
+                </a>
+            <?php
+            }
+            ?>
         </div><!-- .mobile-logo -->
         <div class="mobile-links">
+            <?php if ( have_rows( 'persian_mobile_btn_group' ,'option' ) ){
+                ?>
             <ul class="list-inline">
-                <li class="search list-inline-item">
-                    <span><i class="persian-search"></i></span>
-                </li>
-                <li class="user-profile list-inline-item">
-                    <a href="#">
-                        <span><i class="persian-user"></i></span>
-                    </a>
-                </li>
-                <li class="notification list-inline-item">
-                    <a href="#">
-                        <span><i class="persian-notification"></i></span>
-                        <span class="notification__is-active"></span>
-                    </a>
-                </li>
-            </ul>
+            <?php
+                while ( have_rows( 'persian_mobile_btn_group', 'option' ) ) {
+                    the_row();
+                    $persian_mobile_links = get_sub_field('persian_mobile_links');
+                    foreach ($persian_mobile_links as $link) {
+                        switch ($link['value']) {
+                            case 'search':
+                                ?>
+                                <li class="search list-inline-item">
+                                    <span><i class="persian-search"></i></span>
+                                </li>
+                                <?php
+                                break;
+                            case 'user':
+                                ?>
+                                <li class="user-profile list-inline-item">
+                                    <a href="#">
+                                        <span><i class="persian-user"></i></span>
+                                    </a>
+                                </li>
+                                <?php
+                                break;
+                            case 'notification':
+                                ?>
+                                <li class="notification list-inline-item">
+                                    <a href="#">
+                                        <span><i class="persian-notification"></i></span>
+                                        <span class="notification__is-active"></span>
+                                    </a>
+                                </li>
+                                <?php
+                                break;
+                        }
+                    }
+
+                    ?>
+                    </ul>
         </div>
         <div class="mobile-links-content">
-            <form class="search__form" action="#" method="get">
-                <input type="search" placeholder="جستجو">
-                <button type="submit">
-                </button>
-            </form>
+            <?php get_search_form(); ?>
             <div class="notification__notification-list">
                 <ul>
                     <li><a href="#">آیتم اول</a></li>
@@ -163,24 +196,59 @@
             </div><!-- .notification__list -->
         </div><!-- .user-links-content -->
     </div><!-- .mobile-menu-header -->
+    <?php
+    }
+
+    } ?>
     <div class="mobile-menu-body">
-        <div class="where-button">
-            <a href="#">
-                ازکجا شروع کنم؟
-            </a>
-        </div>
-        <div class="mobile-menu">
-            <ul>
-                <li><a href="#">ابزارهای معاملاتی</a></li>
-                <li><a href="#">اخبار</a></li>
-                <li><a href="#">آموزش</a></li>
-                <li><a href="#">گروه های بورس</a></li>
-                <li><a href="#">عرضه اولیه</a></li>
-                <li><a href="#">تبلیغات</a></li>
-                <li><a href="#">درباره ما</a></li>
-                <li><a href="#">ارتباط با ما</a></li>
-            </ul>
-        </div><!-- .mobile-menu -->
+        <?php
+        if ( have_rows( 'persian_mobile_btn_group', 'option' ) ){
+            while ( have_rows( 'persian_mobile_btn_group', 'option' ) ) {
+                the_row();
+                $mobile_btn_active = get_sub_field('persian_mobile_btn_active');
+                $mobile_btn = get_sub_field('persian_mobile_btn');
+                if ($mobile_btn_active) {
+                if ($mobile_btn) {
+                    $mobile_btn_link = $mobile_btn['url'];
+                    $mobile_btn_title = $mobile_btn['title'];
+
+                    ?>
+                    <div class="where-button">
+                        <a href="<?php echo esc_url($mobile_btn_link); ?>">
+                            <?php echo esc_html($mobile_btn_title); ?>
+                        </a>
+                    </div>
+                    <?php
+                }
+            }
+
+            }
+        }
+        ?>
+        <?php
+        if ( have_rows( 'persian_mobile_menu','option' ) ){
+                ?>
+                <div class="mobile-menu">
+                    <ul>
+            <?php
+                while ( have_rows( 'persian_mobile_menu', 'option' ) ){
+                    the_row();
+                $item = get_sub_field( 'persian_mobile_item_link' );
+                if ( $item ) {
+                    $item_title = $item['title'];
+                    $item_url = $item['url'];
+                    ?>
+                    <li><a href="<?php echo esc_url($item_url); ?>"><?php echo esc_html($item_title); ?></a></li>
+                    <?php
+                }
+                }
+                ?>
+                    </ul>
+                </div><!-- .mobile-menu -->
+        <?php
+        }
+
+        ?>
     </div>
     <div class="mobile-menu-footer">
 
@@ -190,3 +258,5 @@
 <?php wp_footer(); ?>
 </body>
 </html>
+
+

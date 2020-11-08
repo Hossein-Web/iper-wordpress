@@ -460,3 +460,139 @@ class Persian_Side_Video extends WP_Widget {
     public function form( $instance )
     {}
 }
+
+function archive_page_sidebar(){
+
+    // Register archive page sidebar
+    register_sidebar(
+            [
+                'name'              => __( 'ناحیه ابزارک برگه آرشیو', 'persian_bourse' ),
+                'id'                => 'archive_page_sidebar',
+                'before_widget'     => '',
+                'after_widget' => '',
+                'before_title' => '',
+                'after_title' => '',
+            ]
+    );
+    register_widget( 'persian_category' );
+}
+add_action( 'widgets_init', 'archive_page_sidebar' );
+
+class persian_category extends WP_Widget{
+    /**
+     * Sets up a persian new Categories widget instance.
+     *
+     * @since 2.8.0
+     */
+    public function __construct() {
+        $widget_ops = array(
+            'classname'                   => 'side-categories',
+            'description'                 => __( 'یک لیستی از دسته بندی ها را نمایش می دهد' ),
+            'customize_selective_refresh' => true,
+        );
+        parent::__construct( 'persian_categories', __( 'دسته بندی های پرشین بورس', 'persian_bourse' ), $widget_ops );
+    }
+
+    public function widget( $args, $instance ) {
+
+        $default_title = __( 'دسته بندی ها', 'persian_bourse' );
+        $title         = ! empty( $instance['title'] ) ? $instance['title'] : $default_title;
+        $title = apply_filters( 'widget_title', $title, $instance );
+        $persian_hierarchical = ! empty( $instance['hierarchical'] ) ? '1' : '0';
+        $persian_cat = get_categories();
+
+        if( ! empty( $persian_cat ) ){
+            ?>
+            <div class="side-categories">
+                <?php if ( $title ){
+                    ?>
+                    <h6 class="categories-title"><?php echo $title; ?></h6>
+                    <?php
+                } ?>
+                <ul>
+                    <?php
+                    if ( $persian_hierarchical === '1' ){
+                        foreach ( $persian_cat as $cat ){
+                            if ( $cat->category_parent === 0 ){
+                                $persian_args = [ 'parent' => $cat->cat_ID ];
+                                $children_cat = get_categories( $persian_args );
+                                ?>
+                                <li class="<?php if ( !empty($children_cat )) { echo 'has-subcategory'; } ?>">
+                                    <?php if ( empty( $children_cat ) ){
+                                        ?>
+                                        <a href="<?php echo esc_url(get_category_link( $cat->id )); ?>"><?php echo esc_html( $cat->cat_name ); ?></a>
+                                        <?php
+                                    }else{
+                                        ?>
+                                        <span><?php echo esc_html( $cat->cat_name ); ?></span>
+                                    <?php
+                                    } ?>
+                                    <?php
+                                    if ( !empty( $children_cat ) ){
+                                        ?>
+                                        <ul>
+                                            <?php
+                                            foreach ( $children_cat as $child ){
+                                                ?>
+                                                <li>
+                                                    <a href="<?php echo esc_url( get_category_link( $child->id ) ); ?>"><?php echo esc_html( $child->cat_name ); ?></a>
+                                                </li>
+                                                <?php
+                                            }
+                                            ?>
+
+                                        </ul>
+                                        <?php
+                                    }
+                                    ?>
+                                </li>
+                                <?php
+                            }
+                        }
+                    }
+                    elseif( $persian_hierarchical === '0' ){
+                        foreach ( $persian_cat as $cat ) {
+                            ?>
+                            <li>
+                                <a href="<?php echo esc_url(get_category_link($cat->id)); ?>"><?php echo esc_html($cat->cat_name); ?></a>
+                            </li>
+                            <?php
+                        }
+                    }
+                    ?>
+
+                </ul>
+                <?php
+
+                ?>
+            </div><!-- .side-categories -->
+            <?php
+        }
+
+    }
+
+    public function update( $new_instance, $old_instance ) {
+        $instance                 = $old_instance;
+        $instance['title']        = sanitize_text_field( $new_instance['title'] );
+        $instance['hierarchical'] = ! empty( $new_instance['hierarchical'] ) ? 1 : 0;
+
+        return $instance;
+    }
+
+    public function form( $instance ) {
+        // Defaults.
+        $instance     = wp_parse_args( (array) $instance, array( 'title' => '' ) );
+        $hierarchical = isset( $instance['hierarchical'] ) ? (bool) $instance['hierarchical'] : false;
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
+        </p>
+
+        <p>
+            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'hierarchical' ); ?>" name="<?php echo $this->get_field_name( 'hierarchical' ); ?>"<?php checked( $hierarchical ); ?> />
+            <label for="<?php echo $this->get_field_id( 'hierarchical' ); ?>"><?php _e( 'Show hierarchy' ); ?></label>
+        </p>
+        <?php
+    }
+}

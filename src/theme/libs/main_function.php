@@ -106,6 +106,13 @@ function ivahid_get_ip()
     add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
 //}
 
+function read_time($post){
+    $content = get_post_field('post_content', $post->ID);
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 700);
+    return $reading_time;
+}
+
 function ivahid_get_excerpt($character, $post_id = null)
 {
     if ($post_id == '') {
@@ -134,7 +141,6 @@ function ivahid_pagination($both = 1, $middle = 2, $prev = '<span class="change-
 //    persian_var_dump( $wp_query->found_posts );
     //persian_var_dump( $wp_query->posts_per_page );
     if ($max_num_pages < 2) {
-        echo 'exit in function';
         return;
     }
     $big_number = 999999999;

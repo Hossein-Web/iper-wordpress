@@ -62,8 +62,8 @@ if ($persian_slider){
                                         <li>
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
-                                        <li><span>دو روز پیش</span></li>
-                                        <li><span>5 دقیقه مطالعه</span></li>
+                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' ' . __('پیش', 'persian_bourse'); ?></span></li>
+                                        <li><span><?php echo read_time( $persian_slider[$i] ) . ' '. __('دقیقه مطالعه', 'persian_bourse' );?></span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
                                 <span class="post-item-like persian persian-like"></span>
@@ -86,8 +86,8 @@ if ($persian_slider){
                                         <li>
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
-                                        <li><span>دو روز پیش</span></li>
-                                        <li><span>5 دقیقه مطالعه</span></li>
+                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) . ' '. __('پیش', 'persian_bourse'); ?></span></li>
+                                        <li><span><?php echo read_time( $persian_slider[$i] ) . ' '. __('دقیقه مطالعه', 'persian_bourse' );?></span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
                                 <span class="post-item-like persian persian-like"></span>
@@ -113,8 +113,8 @@ if ($persian_slider){
                                         <li>
                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                         </li>
-                                        <li><span>دو روز پیش</span></li>
-                                        <li><span>5 دقیقه مطالعه</span></li>
+                                        <li><span><?php echo human_time_diff( get_the_time('U'), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
+                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                     </ul><!-- .bourse-post-meta -->
                                 </div><!-- .post-item-details -->
                                 <span class="post-item-like persian persian-like"></span>
@@ -158,7 +158,7 @@ if ($persian_slider){
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
                                                         <li><span>دو روز پیش</span></li>
-                                                        <li><span>5 دقیقه مطالعه</span></li>
+                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
                                                 <span class="post-item-like persian persian-like"></span>
@@ -181,8 +181,8 @@ if ($persian_slider){
                                                         <li>
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
-                                                        <li><span>دو روز پیش</span></li>
-                                                        <li><span>5 دقیقه مطالعه</span></li>
+                                                        <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
+                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
                                                 <span class="post-item-like persian persian-like"></span>
@@ -208,8 +208,8 @@ if ($persian_slider){
                                                         <li>
                                                             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a>
                                                         </li>
-                                                        <li><span>دو روز پیش</span></li>
-                                                        <li><span>5 دقیقه مطالعه</span></li>
+                                                        <li><span><?php echo human_time_diff( get_the_time('U', $persian_posts[$j]->ID ), current_time( 'U' ) ) .' '. __('پیش', 'persian_bourse'); ?></span></li>
+                                                        <li><span><?php echo read_time( $persian_slider[$i] )   . ' '. __('دقیقه مطالعه', 'persian_bourse'  );?></span></li>
                                                     </ul><!-- .bourse-post-meta -->
                                                 </div><!-- .post-item-details -->
                                                 <span class="post-item-like persian persian-like"></span>
@@ -226,7 +226,7 @@ if ($persian_slider){
                 </div><!-- .tile-post -->
                 <?php
                 }
-                elseif (get_row_layout() == 'persian_ads') {
+elseif(get_row_layout() == 'persian_ads') {
 
                     ?>
                     <div class="ads">
@@ -334,6 +334,63 @@ if ($persian_slider){
                                         foreach ($persian_other_news as $post) {
                                             setup_postdata($post);
                                             if ($i === 0) {
+                                        ?>
+                                    </div>
+                                    <div class="post-study-time">
+                                        <span><?php echo read_time( $post ); ?></span>
+                                        <span><?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                    </div>
+                                    <div class="meta-background">
+                                        <span class="persian-back-small"></span>
+                                    </div>
+                                </div><!-- .post-meta-image-wrapper -->
+                                <div class="post-meta post-meta--large">
+                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                        <li class="post-meta__date list-inline-item">
+                                            <span><i class="persian-date"></i></span>
+                                            <span>3 روز پیش</span>
+                                        </li>
+                                        <li class="post-meta__author list-inline-item">
+                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                                                <span><i class="persian-user"></i></span>
+                                                <span><?php echo get_the_author(); ?></span>
+                                            </a>
+                                        </li>
+                                        <li class="post-meta__view list-inline-item">
+                                            <span><i class="persian-view"></i></span>
+                                            <span>1590 بازدید</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-title">
+                                        <h5>
+                                            <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                        </h5>
+                                    </div><!-- .post-title -->
+                                    <div class="post-excerpt">
+                                        <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                    </div>
+                                </div><!-- .post-content -->
+                            </article><!-- .last-post__item -->
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    }
+                    ?>
+                    <?php
+                    $persian_other_news = get_sub_field('persian_other_news');
+                    if ($persian_other_news) {
+                        $i = 0;
+                        foreach ($persian_other_news as $post) {
+                            setup_postdata($post);
+                            if ($i === 0) {
+                                ?>
+                                <article class="last-post__item last-post__item--small">
+                                    <div class="post-content-image-wrapper">
+                                        <div class="post-image">
+                                            <?php
+                                            if (has_post_thumbnail()) {
                                                 ?>
                                                 <article class="last-post__item last-post__item--small">
                                                     <div class="post-content-image-wrapper">
@@ -469,6 +526,71 @@ if ($persian_slider){
                                     if ($persian_recommend_news) {
                                         foreach ($persian_recommend_news as $post) {
                                             setup_postdata($post);
+                                        </div><!-- .post-image -->
+                                        <div class="post-content">
+                                            <div class="post-title">
+                                                <h5>
+                                                    <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                                </h5>
+                                            </div><!-- .post-title -->
+                                            <div class="post-excerpt">
+                                                <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                            </div>
+                                        </div><!-- .post-content -->
+                                    </div><!-- .post-content-image-wrapper -->
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="post-meta">
+                                            <ul class="list-inline bourse-post-meta bourse-post-meta--small">
+                                                <li class="post-meta__date list-inline-item">
+                                                    <span><i class="persian-date"></i></span>
+                                                    <span>3 روز پیش</span>
+                                                </li>
+                                                <li class="post-meta__author list-inline-item">
+                                                    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                                                        <span><i class="persian-user"></i></span>
+                                                        <span><?php echo get_the_author(); ?></span>
+                                                    </a>
+                                                </li>
+                                                <li class="post-meta__view list-inline-item">
+                                                    <span><i class="persian-view"></i></span>
+                                                    <span>159 بازدید</span>
+                                                </li>
+                                                <li class="post-study-time list-inline-item">
+                                                    <span><i class="persian-time"></i></span>
+                                                    <span><span><?php echo read_time( $post ); ?></span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-read-more">
+                                            <a href="<?php the_permalink(); ?>"><?php _e('ادامه مطلب', 'persian_bourse'); ?></a>
+                                        </div>
+                                    </div>
+                                </article><!-- .last-post__item  -->
+                                <?php
+                                $i = 1;
+                            }
+                        }
+                        wp_reset_postdata();
+                    }
+                    ?>
+                </div><!-- .col-lg-12 -->
+                <div class="col-lg-12 col-24">
+                    <?php
+                    $persian_other_news = get_sub_field('persian_other_news');
+                    if ($persian_other_news) {
+                        $j = 0;
+                        foreach ($persian_other_news as $post) {
+                            setup_postdata($post);
+                            if ($j === 0) {
+                                $j = 1;
+                                continue;
+                            }
+                            ?>
+                            <article class="last-post__item last-post__item--small">
+                                <div class="post-content-image-wrapper">
+                                    <div class="post-image">
+                                        <?php
+                                        if (has_post_thumbnail()) {
                                             ?>
                                             <div class="last-post__suggestion d-flex align-items-center">
                                                 <div class="suggestion-icon">
@@ -499,6 +621,52 @@ if ($persian_slider){
                             </div><!-- .row -->
                         </div><!-- .container -->
                     </section><!-- .last-post -->
+                                        ?>
+                                    </div><!-- .post-image -->
+                                    <div class="post-content">
+                                        <div class="post-title">
+                                            <h5>
+                                                <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                            </h5>
+                                        </div><!-- .post-title -->
+                                        <div class="post-excerpt">
+                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                        </div>
+                                    </div><!-- .post-content -->
+                                </div><!-- .post-content-image-wrapper -->
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--small">
+                                            <li class="post-meta__date list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>3 روز پیش</span>
+                                            </li>
+                                            <li class="post-meta__author list-inline-item">
+                                                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                                                    <span><i class="persian-user"></i></span>
+                                                    <span><?php echo get_the_author(); ?></span>
+                                                </a>
+                                            </li>
+                                            <li class="post-meta__view list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>159 بازدید</span>
+                                            </li>
+                                            <li class="post-study-time list-inline-item">
+                                                <span><i class="persian-time"></i></span>
+                                                <span><span><?php echo read_time($post); ?></span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="post-read-more">
+                                        <a href="<?php the_permalink(); ?>"><?php _e('ادامه مطلب', 'persian_bourse'); ?></a>
+                                    </div>
+                                </div>
+                            </article><!-- .last-post__item  -->
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    }
+                    ?>
                     <?php
                 } elseif (get_row_layout() == 'persian_group') {
                     ?>
@@ -888,6 +1056,329 @@ if ($persian_slider){
                                     <div class="navigation-button navigation-button--next" tabindex="0" role="button"
                                          aria-label="Next slide" aria-disabled="false"></div>
                                     <div class="connector persian-connector">
+                                                    }
+                                                } ?>
+                                            </div><!-- .swiper-wrapper -->
+                                            <div class="post-slider-navigation post-slider-navigation--left">
+                                                <div class="navigation-button navigation-button--next"></div>
+                                                <div class="connector persian-connector">
+                                                </div>
+                                                <div class="navigation-button navigation-button--prev"></div>
+                                            </div><!-- .post-slider-navigation -->
+                                        </div><!-- .swiper-container -->
+                                    </div><!-- .slider-post-small-slider -->
+                                </div><!-- .slider-post-small -->
+                            </div><!-- .col-lg-12 -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .comments-and-posts -->
+                <?php
+}
+elseif ( get_row_layout() == 'persian_news_slider' ){
+    $news_slider_title = get_sub_field('persian_news_slider_title');
+    ?>
+    <div class="post-slider">
+        <div class="container">
+            <div class="bourse-title">
+    <?php if ( $news_slider_title ) {
+        ?>
+        <h6><?php echo esc_html($news_slider_title); ?></h6>
+        <?php
+    }
+    ?>
+                <a class="bourse-read-more" href="#"><?php _e( 'مشاهده بیشتر', 'persian_bourse' ); ?><i class="persian-arrow-left"></i></a>
+            </div><!-- .bourse-title -->
+            <div class="post-slider__slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $news_slider = get_sub_field( 'persian_news_slider_item' );
+                        if ( $news_slider ) {
+
+                            foreach ( $news_slider as $post ){
+                                setup_postdata( $post );
+                                $slider_en_title = get_field( 'persian_english_title', get_the_ID());
+                                ?>
+                                <div class="swiper-slide">
+                                    <?php if ( has_post_thumbnail() ){
+                                        echo get_the_post_thumbnail();
+                                    } ?>
+                                    <div class="post-slider-details">
+                                        <div class="post-slider-details__content">
+                                            <div class="post-slider-title">
+                                                <a href="<?php echo get_the_permalink(); ?>">
+                                                    <h5><?php the_title(); ?></h5>
+                                                </a>
+                                                <?php if ( $slider_en_title ){
+                                                    ?>
+                                                    <a href="<?php echo get_the_permalink(); ?>">
+                                                        <span><?php echo esc_html($slider_en_title); ?></span>
+                                                    </a>
+                                    <?php
+                                                } ?>
+                                            </div><!-- .post-slider-title -->
+                                        </div><!-- .post-slider-details__content -->
+                                        <div class="post-slider-details__back">
+                                            <span class="persian-back-large"></span>
+                                        </div><!-- .post-slider-details__back -->
+                                    </div><!-- .post-slider-details -->
+                                    <div class="study-time">
+                                        <span><?php echo read_time( $post ); ?></span>
+                                        <span><?php _e( 'دقیقه مطالعه', 'persian_bourse' ); ?></span>
+                                    </div><!-- .study-time -->
+                                </div><!-- .swiper-slide -->
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        }
+                        ?>
+                    </div><!-- .swiper-wrapper -->
+                    <div class="post-slider-navigation">
+                        <div class="navigation-button navigation-button--next"></div>
+                        <div class="connector persian-connector">
+                        </div>
+                        <div class="navigation-button navigation-button--prev"></div>
+                    </div><!-- .post-slider-navigation -->
+                </div><!-- .swiper-container -->
+            </div><!-- .post-slider__slider -->
+        </div><!-- .container -->
+    </div><!-- .post-slider -->
+
+                <?php
+            }
+                }
+                }
+                ?>
+    <!-------------------------- Bourse news and slider --------------------------------->
+    <div class="bourse-news">
+        <div class="container">
+            <div class="row p30">
+                <div class="col-xl-8">
+                    <?php if ( is_active_sidebar( 'main_page_sidebar' ) ) {
+                        dynamic_sidebar( 'main_page_sidebar' );
+                    } ?>
+                    <div data-tabindex="side-tab" class="side-tab">
+                        <div class="tab-title side-tab__tab-links">
+                            <div data-tab="side-tab-link-1" data-parent="side-tab" class="active">آخرین مطالب</div>
+                            <div data-tab="side-tab-link-2" data-parent="side-tab">مطالب جدید</div>
+                            <div data-tab="side-tab-link-3" data-parent="side-tab">اطلاعیه مهم</div>
+                        </div><!-- .side-tab__tab_links -->
+                        <div class="tab-content">
+                            <div class="side-tab__tab-content active" data-tabc="side-tab-link-1" data-parent="side-tab" style="">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <h6>انعقاد قرارداد دولتی در قزوین</h6>
+                                        </a>
+                                        <p>انعقاد قرارداد دولتی در قزوین به گزارش پرشین بورس، شرکت کارخانجات قند قزوين
+                                            (سهامی
+                                            عام) با نماد قزوین، اخذ قرارداد ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>افزایش 22 درصدی نرخ فروش فروس</h6>
+                                        </a>
+                                        <p>افزایش 22 درصدی نرخ فروش فروس به گزارش پرشین بورس، شرکت فروسيليس ايران (سهامی
+                                            عام) با
+                                            نماد فروس، از دریافت ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
+                                        </a>
+                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
+                                            نماد
+                                            کاما، از فروش ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
+                                        </a>
+                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
+                                            نماد
+                                            کاما، از فروش ...</p>
+                                    </li>
+                                </ul>
+                            </div><!-- .side-tab__tab-content -->
+                            <div data-tabc="side-tab-link-2" data-parent="side-tab" class="side-tab__tab-content" style="display: none;">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <h6>انعقاد قرارداد دولتی در قزوین2</h6>
+                                        </a>
+                                        <p>انعقاد قرارداد دولتی در قزوین به گزارش پرشین بورس، شرکت کارخانجات قند قزوين
+                                            (سهامی
+                                            عام) با نماد قزوین، اخذ قرارداد ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>افزایش 22 درصدی نرخ فروش فروس</h6>
+                                        </a>
+                                        <p>افزایش 22 درصدی نرخ فروش فروس به گزارش پرشین بورس، شرکت فروسيليس ايران (سهامی
+                                            عام) با
+                                            نماد فروس، از دریافت ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
+                                        </a>
+                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
+                                            نماد
+                                            کاما، از فروش ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
+                                        </a>
+                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
+                                            نماد
+                                            کاما، از فروش ...</p>
+                                    </li>
+                                </ul>
+                            </div><!-- .side-tab__tab-content -->
+                            <div data-tabc="side-tab-link-3" data-parent="side-tab" class="side-tab__tab-content" style="display: none;">
+                                <!-- .side-tab__tab-content -->
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <h6>انعقاد قرارداد دولتی در قزوین3</h6>
+                                        </a>
+                                        <p>انعقاد قرارداد دولتی در قزوین به گزارش پرشین بورس، شرکت کارخانجات قند قزوين
+                                            (سهامی
+                                            عام) با نماد قزوین، اخذ قرارداد ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>افزایش 22 درصدی نرخ فروش فروس</h6>
+                                        </a>
+                                        <p>افزایش 22 درصدی نرخ فروش فروس به گزارش پرشین بورس، شرکت فروسيليس ايران (سهامی
+                                            عام) با
+                                            نماد فروس، از دریافت ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
+                                        </a>
+                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
+                                            نماد
+                                            کاما، از فروش ...</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
+                                        </a>
+                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
+                                            نماد
+                                            کاما، از فروش ...</p>
+                                    </li>
+                                </ul>
+                            </div><!-- .side-tab__tab-content -->
+                        </div><!-- .tab-content -->
+                    </div><!-- .side-tab -->
+                    <div class="side-populars">
+                        <div class="title title--blue title--small">
+                            <h6><span>پربازدیدترین </span>مطالب</h6>
+                            <a href="#">آرشیو</a>
+                        </div><!-- .title -->
+                        <ul class="side-populars__items-wrapper">
+                            <li>
+                                <div class="img-wrapper">
+                                    <img src="../assets/img/side-populars/side-populars-img1.jpg" alt="post image">
+                                </div><!-- .img-wrapper -->
+                                <div class="post-details">
+                                    <a href="#">
+                                        <h6>تحلیل تکنیکال لوتوس</h6>
+                                    </a>
+                                    <p>5 روز پیش</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-wrapper">
+                                    <img src="../assets/img/side-populars/side-populars-img2.jpg" alt="post image">
+                                </div><!-- .img-wrapper -->
+                                <div class="post-details">
+                                    <a href="#">
+                                        <h6>انجام مقدمات افزایش سرمایه</h6>
+                                    </a>
+                                    <p>یک هفته پیش</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-wrapper">
+                                    <img src="../assets/img/side-populars/side-populars-img3.jpg" alt="post image">
+                                </div><!-- .img-wrapper -->
+                                <div class="post-details">
+                                    <a href="#">
+                                        <h6>انرژی در مزایده فرابورس شرکت ...</h6>
+                                    </a>
+                                    <p>یک ماه پیش</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- .side-populars -->
+                    <div class="side-video">
+                        <div class="side-video__title">
+                            <h6>ویدیو آموزشی</h6>
+                            <a href="#">آرشیو ویدیو ها</a>
+                        </div><!-- .side-video__title -->
+                        <div class="side-video__content">
+                            <div class="poster-wrapper">
+                                <img src="../assets/img/video-post-poster.jpg" alt="video post poster">
+                                <a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div><!-- .poster-wrapper -->
+                            <h6 class="video-post-title">
+                                <a href="#">اموزش الگوی ماشین در جدول بورس !</a>
+                            </h6>
+                            <ul class="video-post-meta">
+                                <li><span><i class="persian-date"></i></span><span>3 روز پیش</span></li>
+                                <li><span><i class="persian-user"></i></span><span><a href="#">وحید دانا فرد</a></span></li>
+                                <li><span><i class="persian-view"></i></span><span>1590 بازدید</span></li>
+                            </ul>
+                        </div><!-- .side-video__content -->
+                    </div><!-- .side-video -->
+                </div><!-- .col-xl-8 -->
+                <div class="col-xl-16">
+                    <div class="row p30">
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_1.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">تولیدات مدل‌های جدید سری می میکس</a></p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>3 روز پیش</span>
+                                            </li>
+                                            <li class="post-author d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-user"></i></span>
+                                                <a href="#"> <span>وحید دانا فرد</span></a>
+                                            </li>
+                                            <li class="post-view d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>1590 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_2.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">وضعیت بازار بیت کوین در سال 2020</a></p>
                                     </div>
                                     <div class="navigation-button navigation-button--prev swiper-button-disabled"
                                          tabindex="-1" role="button" aria-label="Previous slide"
