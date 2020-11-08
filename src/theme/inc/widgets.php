@@ -58,6 +58,8 @@ function main_page_sidebar() {
 
     // Register widgets
     register_widget( 'Persian_Recent_Posts' );
+    register_widget( 'Persian_Side_Tab' );
+    register_widget( 'Persian_Side_Video' );
 }
 add_action( 'widgets_init', 'main_page_sidebar' );
 
@@ -155,7 +157,7 @@ class Persian_Recent_Posts extends WP_Widget {
                                 <a href="<?php echo get_the_permalink(); ?>">
                                     <h6><?php echo esc_html( get_the_title() ); ?></h6>
                                 </a>
-                                <p><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'U' ) ) . __( ' پیش', 'persian_bourse' );  ?></p>
+                                <p><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'U' ) ) . ' ' . __( 'پیش', 'persian_bourse' );  ?></p>
                             </div>
                         </li>
                     <?php
@@ -209,6 +211,254 @@ class Persian_Recent_Posts extends WP_Widget {
 
         <?php
     }
+}
+
+// Side tab widget class
+class Persian_Side_Tab extends WP_Widget {
+    public  function __construct()
+    {
+        $widget_ops = [
+            'description' => __( 'نمایش نوشته ها به صورت تب', 'persian_bourse' )
+        ];
+        parent::__construct( 'persian-side-tab', __( 'نوشته ها به صورت تب', 'persian_bourse' ), $widget_ops );
+    }
+
+    public function widget($args, $instance)
+    {
+        if ( ! isset( $args['widget_id'] ) ) {
+            $args['widget_id'] = $this->id;
+        }
+        $id = 'widget_' . $args['widget_id'];
+
+        if ( have_rows( 'side_tab_items', $id ) ){ ?>
+            <div data-tabindex="side-tab" class="side-tab">
+                <div class="tab-title side-tab__tab-links">
+            <?php
+            // Display tab links
+            while ( have_rows( 'side_tab_items', $id ) ) {
+                the_row();
+                ?>
+                        <div data-tab="<?php echo 'side-tab-link-' . get_row_index() ?>" data-parent="side-tab"
+                            <?php if ( get_row_index() === 1 ) { ?> class="active" <?php } ?> >
+                            <?php
+                                $tab_title = get_sub_field( 'side_tab_title' );
+                                echo esc_html( $tab_title );
+                            ?>
+                        </div>
+                <?php } ?>
+                </div><!-- .side-tab__tab_links -->
+                <div class="tab-content">
+                    <?php
+            while ( have_rows( 'side_tab_items', $id ) ) {
+                            the_row();
+                            $posts_type = get_sub_field( 'select_posts_type' ); ?>
+                                <div class="side-tab__tab-content <?php if ( get_row_index() === 1 ) echo 'active'; ?>" data-tabc="<?php echo 'side-tab-link-' . get_row_index() ?>" data-parent="side-tab">
+                                    <ul>
+                                        <?php if ( $posts_type === 'select_by_category' ) {
+                                                $post_items = get_sub_field( 'side_tab_posts_by_category' );
+                                                global $post;
+                                                foreach ( $post_items as $post ) {
+                                                    setup_postdata( $post );
+                                                    ?>
+                                                    <li>
+                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                            <h6><?php echo esc_html( get_the_title() ); ?></h6>
+                                                        </a>
+                                                        <?php if ( has_excerpt() ) { ?>
+                                                            <p><?php echo esc_html( get_the_excerpt() ); ?></p>
+                                                        <?php } ?>
+                                                    </li>
+                                                <?php }
+                                                wp_reset_postdata();
+                                        }elseif ( $posts_type === 'select_most_visited_posts' ) {
+                                            $posts_number = get_sub_field( 'side_tab_most_visited_posts' );
+                                            $query_args = [ 'posts_per_page' => $posts_number,
+                                                            'meta_key'       => 'views',
+                                                            'orderby'        => 'meta_value_num'
+                                            ];
+                                            $posts_query = new WP_Query( $query_args );
+                                            if ( $posts_query->have_posts() ) {
+                                                while ( $posts_query->have_posts() ) {
+                                                    $posts_query->the_post();
+                                                    ?>
+                                                    <li>
+                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                            <h6><?php echo esc_html( get_the_title() ); ?></h6>
+                                                        </a>
+                                                        <?php if ( has_excerpt() ) { ?>
+                                                            <p><?php echo esc_html( get_the_excerpt() ); ?></p>
+                                                        <?php } ?>
+                                                    </li>
+                                                <?php }
+                                                wp_reset_postdata();
+                                            }
+                                            ?>
+
+                                        <?php } ?>
+                                        </ul>
+                                </div><!-- .side-tab__tab-content -->
+                        <?php } ?>
+                </div><!-- .tab-content -->
+            </div><!-- .side-tab -->
+            <?php
+        }
+    }
+
+    public function form($instance)
+    {}
+}
+
+// Side video posts
+class Persian_Side_Video extends WP_Widget {
+    public function __construct()
+    {
+        $widget_ops = [
+            'description' => __( 'نمایش نوشته های ویدئویی', 'persian_bourse' )
+        ];
+        parent::__construct( 'persian-side-video', __( 'نوشته های ویدئویی آی وحید', 'persian_bourse' ), $widget_ops );
+    }
+
+    public function widget($args, $instance)
+    {
+        if ( ! isset( $args['widget_id'] ) ) {
+        $args['widget_id'] = $this->id;
+         }
+        $id = 'widget_' . $args['widget_id'];
+        ?>
+        <div class="side-video">
+            <?php
+                $side_video_title = get_field( 'side_video_title', $id );
+                $side_video_posts_category = get_field( 'side_video_most_visited_posts_category', $id );
+                if ( $side_video_title ) { ?>
+                    <div class="side-video__title">
+                        <h6><?php echo esc_html( $side_video_title ); ?></h6>
+                        <?php $side_video_posts_type = get_field( 'side_video_select_posts_type', $id ); ?>
+                        <?php
+                            if ( $side_video_posts_type === 'posts_from_category' ) {
+                                $side_video_link = get_field( 'side_video_link', $id );
+                            ?>
+                            <a href="<?php echo esc_url( $side_video_link['url'] ) ?>"><?php echo esc_html( $side_video_link['title'] ); ?></a>
+                        <?php }elseif ( $side_video_posts_type === 'select_most_visited' ) {
+                                $side_video_link_title = get_field( 'side_video_link_title', $id );
+                                $category_link = get_category_link( $side_video_posts_category );
+                                ?>
+                                <a href="<?php echo esc_url( $category_link ) ?>"><?php echo esc_html( $side_video_link_title ); ?></a>
+                            <?php } ?>
+                    </div><!-- .side-video__title -->
+                <?php } ?>
+                    <div class="side-video-slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <?php if ( $side_video_posts_type === 'posts_from_category' ) {
+                                        $side_video_posts = get_field( 'side_video_posts_from_category', $id );
+                                        global $post;
+                                        foreach ( $side_video_posts as $post ) {
+                                            setup_postdata( $post );
+                                            ?>
+                                                <div class="swiper-slide">
+                                                <div class="side-video__content">
+                                                    <?php if ( has_post_thumbnail() ) { ?>
+                                                        <div class="poster-wrapper">
+                                                            <?php the_post_thumbnail(); ?>
+                                                            <a href="<?php echo get_the_permalink(); ?>">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </a>
+                                                        </div><!-- .poster-wrapper -->
+                                                    <?php } ?>
+                                                    <h6 class="video-post-title">
+                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                            <?php echo esc_html( get_the_title() ); ?>
+                                                        </a>
+                                                    </h6>
+                                                    <ul class="video-post-meta">
+                                                        <li><span><i class="persian-date"></i></span><span><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'U' ) ) . ' ' . __( 'پیش', 'persian_bourse' );  ?></span></li>
+                                                        <li>
+                                                            <span><i class="persian-user"></i></span>
+                                                            <span>
+                                                                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+                                                                    <?php echo get_the_author(); ?>
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span>
+                                                                <i class="persian-view"></i>
+                                                            </span>
+                                                            <span>
+                                                                <?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div><!-- .side-video__content -->
+                                            </div><!-- .swiper-slide -->
+                                            <?php
+                                        }
+                                        wp_reset_postdata();
+                                }elseif( $side_video_posts_type === 'select_most_visited' ) {
+                                    $side_video_posts_number = get_field( 'side_video_most_visited_posts_number', $id );
+                                    $side_video_query_args = [
+                                        'posts_per_page' => $side_video_posts_number,
+                                        'meta_key'       => 'views',
+                                        'orderby'        => 'meta_value_num',
+                                        'cat'            => $side_video_posts_category
+                                    ];
+                                    $side_video_query = new WP_Query( $side_video_query_args );
+                                    if ( $side_video_query->have_posts() ) {
+                                        while ( $side_video_query->have_posts() ) {
+                                            $side_video_query->the_post();
+                                            ?>
+                                                <div class="swiper-slide">
+                                                <div class="side-video__content">
+                                                    <?php if ( has_post_thumbnail() ) { ?>
+                                                        <div class="poster-wrapper">
+                                                            <?php the_post_thumbnail(); ?>
+                                                            <a href="<?php echo get_the_permalink(); ?>">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </a>
+                                                        </div><!-- .poster-wrapper -->
+                                                    <?php } ?>
+                                                    <h6 class="video-post-title">
+                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                            <?php echo esc_html( get_the_title() ); ?>
+                                                        </a>
+                                                    </h6>
+                                                    <ul class="video-post-meta">
+                                                        <li><span><i class="persian-date"></i></span><span><?php echo human_time_diff( get_the_time( 'U' ), current_time( 'U' ) ) . ' ' . __( 'پیش', 'persian_bourse' );  ?></span></li>
+                                                        <li>
+                                                            <span><i class="persian-user"></i></span>
+                                                            <span>
+                                                                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+                                                                    <?php echo get_the_author(); ?>
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span>
+                                                                <i class="persian-view"></i>
+                                                            </span>
+                                                            <span>
+                                                                <?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div><!-- .side-video__content -->
+                                            </div><!-- .swiper-slide -->
+                                            <?php
+                                        }
+                                        wp_reset_postdata();
+                                    }
+                                } ?>
+                            </div><!-- .swiper-wrapper -->
+                        </div>
+                    </div><!-- .side-video-slider -->
+                </div><!-- .side-video --> <?php
+    }
+    public function form( $instance )
+    {}
 }
 
 function archive_page_sidebar(){

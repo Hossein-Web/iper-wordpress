@@ -133,3 +133,25 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'		=> false
     ));
 }
+
+// Get widget id
+add_action('in_widget_form', 'yatendra_get_widget_id'); //hookiing our function to "in_widget_form" hook
+
+function yatendra_get_widget_id($widget_instance)
+
+{
+    // Check if the widget is already saved or not.
+
+    if ($widget_instance->number=="__i__"){
+
+        echo "<strong>Widget ID is</strong>: Pls save the widget first!" ;
+
+
+    }  else {
+
+        //get the widget ID
+
+        echo "<strong>Widget ID is: </strong>" .$widget_instance->id. "";
+
+    }
+}
