@@ -246,7 +246,8 @@ elseif(get_row_layout() == 'persian_ads') {
                         </div>
                     </div>
                     <?php
-                } elseif (get_row_layout() == 'persian_news') {
+                }
+elseif (get_row_layout() == 'persian_news') {
 
                     ?>
                     <section class="last-post">
@@ -281,60 +282,7 @@ elseif(get_row_layout() == 'persian_ads') {
                                                             <a href="<?php the_permalink() ?>">
                                                                 <?php echo get_the_post_thumbnail(); ?>
                                                             </a>
-                                                            <?php
-                                                        }
-                                                        ?>
-                                                    </div>
-                                                    <div class="post-study-time">
-                                                        <span>5</span>
-                                                        <span><?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
-                                                    </div>
-                                                    <div class="meta-background">
-                                                        <span class="persian-back-small"></span>
-                                                    </div>
-                                                </div><!-- .post-meta-image-wrapper -->
-                                                <div class="post-meta post-meta--large">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-meta__date list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>3 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-meta__author list-inline-item">
-                                                            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-                                                                <span><i class="persian-user"></i></span>
-                                                                <span><?php echo get_the_author(); ?></span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="post-meta__view list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>1590 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="post-content">
-                                                    <div class="post-title">
-                                                        <h5>
-                                                            <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                                                        </h5>
-                                                    </div><!-- .post-title -->
-                                                    <div class="post-excerpt">
-                                                        <p><?php echo ivahid_get_excerpt(100); ?></p>
-                                                    </div>
-                                                </div><!-- .post-content -->
-                                            </article><!-- .last-post__item -->
-                                            <?php
-                                        }
-                                        wp_reset_postdata();
-                                    }
-                                    ?>
-                                    <?php
-                                    $persian_other_news = get_sub_field('persian_other_news');
-                                    if ($persian_other_news) {
-                                        $i = 0;
-                                        foreach ($persian_other_news as $post) {
-                                            setup_postdata($post);
-                                            if ($i === 0) {
-                                        ?>
+                                                            <?php } ?>
                                     </div>
                                     <div class="post-study-time">
                                         <span><?php echo read_time( $post ); ?></span>
@@ -390,86 +338,7 @@ elseif(get_row_layout() == 'persian_ads') {
                                     <div class="post-content-image-wrapper">
                                         <div class="post-image">
                                             <?php
-                                            if (has_post_thumbnail()) {
-                                                ?>
-                                                <article class="last-post__item last-post__item--small">
-                                                    <div class="post-content-image-wrapper">
-                                                        <div class="post-image">
-                                                            <?php
-                                                            if (has_post_thumbnail()) {
-                                                                ?>
-                                                                <a href="<?php the_permalink() ?>">
-                                                                    <?php echo get_the_post_thumbnail(); ?>
-                                                                </a>
-                                                                <?php
-                                                            }
-                                                            ?>
-                                                        </div><!-- .post-image -->
-                                                        <div class="post-content">
-                                                            <div class="post-title">
-                                                                <h5>
-                                                                    <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                                                                </h5>
-                                                            </div><!-- .post-title -->
-                                                            <div class="post-excerpt">
-                                                                <p><?php echo ivahid_get_excerpt(100); ?></p>
-                                                            </div>
-                                                        </div><!-- .post-content -->
-                                                    </div><!-- .post-content-image-wrapper -->
-                                                    <div class="d-flex align-items-center justify-content-between">
-                                                        <div class="post-meta">
-                                                            <ul class="list-inline bourse-post-meta bourse-post-meta--small">
-                                                                <li class="post-meta__date list-inline-item">
-                                                                    <span><i class="persian-date"></i></span>
-                                                                    <span>3 روز پیش</span>
-                                                                </li>
-                                                                <li class="post-meta__author list-inline-item">
-                                                                    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-                                                                        <span><i class="persian-user"></i></span>
-                                                                        <span><?php echo get_the_author(); ?></span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="post-meta__view list-inline-item">
-                                                                    <span><i class="persian-view"></i></span>
-                                                                    <span>159 بازدید</span>
-                                                                </li>
-                                                                <li class="post-study-time list-inline-item">
-                                                                    <span><i class="persian-time"></i></span>
-                                                                    <span><span>5</span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="post-read-more">
-                                                            <a href="<?php the_permalink(); ?>"><?php _e('ادامه مطلب', 'persian_bourse'); ?></a>
-                                                        </div>
-                                                    </div>
-                                                </article><!-- .last-post__item  -->
-                                                <?php
-                                                $i = 1;
-                                            }
-                                        }
-                                        wp_reset_postdata();
-                                    }
-                                    ?>
-                                </div><!-- .col-lg-12 -->
-                                <div class="col-lg-12 col-24">
-                                    <?php
-                                    $persian_other_news = get_sub_field('persian_other_news');
-                                    if ($persian_other_news) {
-                                        $j = 0;
-                                        foreach ($persian_other_news as $post) {
-                                            setup_postdata($post);
-                                            if ($j === 0) {
-                                                $j = 1;
-                                                continue;
-                                            }
-                                            ?>
-                                            <article class="last-post__item last-post__item--small">
-                                                <div class="post-content-image-wrapper">
-                                                    <div class="post-image">
-                                                        <?php
-                                                        if (has_post_thumbnail()) {
-                                                            ?>
+                                            if (has_post_thumbnail()) { ?>
                                                             <a href="<?php the_permalink() ?>">
                                                                 <?php echo get_the_post_thumbnail(); ?>
                                                             </a>
@@ -507,7 +376,7 @@ elseif(get_row_layout() == 'persian_ads') {
                                                             </li>
                                                             <li class="post-study-time list-inline-item">
                                                                 <span><i class="persian-time"></i></span>
-                                                                <span><span>5</span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
+                                                                <span><span><?php echo read_time( $post ); ?></span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -517,62 +386,11 @@ elseif(get_row_layout() == 'persian_ads') {
                                                 </div>
                                             </article><!-- .last-post__item  -->
                                             <?php
+                                $i = 1; }
                                         }
                                         wp_reset_postdata();
                                     }
                                     ?>
-                                    <?php
-                                    $persian_recommend_news = get_sub_field('persian_recommend_news');
-                                    if ($persian_recommend_news) {
-                                        foreach ($persian_recommend_news as $post) {
-                                            setup_postdata($post);
-                                        </div><!-- .post-image -->
-                                        <div class="post-content">
-                                            <div class="post-title">
-                                                <h5>
-                                                    <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                                                </h5>
-                                            </div><!-- .post-title -->
-                                            <div class="post-excerpt">
-                                                <p><?php echo ivahid_get_excerpt(100); ?></p>
-                                            </div>
-                                        </div><!-- .post-content -->
-                                    </div><!-- .post-content-image-wrapper -->
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="post-meta">
-                                            <ul class="list-inline bourse-post-meta bourse-post-meta--small">
-                                                <li class="post-meta__date list-inline-item">
-                                                    <span><i class="persian-date"></i></span>
-                                                    <span>3 روز پیش</span>
-                                                </li>
-                                                <li class="post-meta__author list-inline-item">
-                                                    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-                                                        <span><i class="persian-user"></i></span>
-                                                        <span><?php echo get_the_author(); ?></span>
-                                                    </a>
-                                                </li>
-                                                <li class="post-meta__view list-inline-item">
-                                                    <span><i class="persian-view"></i></span>
-                                                    <span>159 بازدید</span>
-                                                </li>
-                                                <li class="post-study-time list-inline-item">
-                                                    <span><i class="persian-time"></i></span>
-                                                    <span><span><?php echo read_time( $post ); ?></span> <?php _e('دقیقه مطالعه', 'persian_bourse'); ?></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="post-read-more">
-                                            <a href="<?php the_permalink(); ?>"><?php _e('ادامه مطلب', 'persian_bourse'); ?></a>
-                                        </div>
-                                    </div>
-                                </article><!-- .last-post__item  -->
-                                <?php
-                                $i = 1;
-                            }
-                        }
-                        wp_reset_postdata();
-                    }
-                    ?>
                 </div><!-- .col-lg-12 -->
                 <div class="col-lg-12 col-24">
                     <?php
@@ -592,35 +410,10 @@ elseif(get_row_layout() == 'persian_ads') {
                                         <?php
                                         if (has_post_thumbnail()) {
                                             ?>
-                                            <div class="last-post__suggestion d-flex align-items-center">
-                                                <div class="suggestion-icon">
-                                                    <span><i class="persian-fire"></i></span>
-                                                </div>
-                                                <div class="suggestion-title">
-                                                    <p><?php _e('پیشنهاد ما به شما :', 'persian_bourse'); ?></p>
-                                                    <p><?php _e('شاید خوشتان آمد!', 'persian_bourse'); ?></p>
-                                                </div><!-- .suggestion-title -->
-                                                <div class="suggestion-content d-flex align-items-center">
-                                                    <div>
-                                                        <p><?php the_title(); ?></p>
-                                                        <p><?php echo ivahid_get_excerpt(50); ?></p>
-                                                    </div>
-                                                </div>
-                                                <div class="suggest-link">
-                                                    <a href="<?php the_permalink(); ?>">
-                                                        <span><i class="persian-left"></i></span>
-                                                    </a>
-                                                </div>
-                                            </div><!-- .last-post__suggestion -->
-                                            <?php
-                                        }
-                                        wp_reset_postdata();
-                                    }
-                                    ?>
-                                </div><!-- .col-lg-12 -->
-                            </div><!-- .row -->
-                        </div><!-- .container -->
-                    </section><!-- .last-post -->
+                                            <a href="<?php the_permalink() ?>">
+                                                <?php echo get_the_post_thumbnail(); ?>
+                                            </a>
+                                            <?php } ?>
                                         ?>
                                     </div><!-- .post-image -->
                                     <div class="post-content">
@@ -666,9 +459,46 @@ elseif(get_row_layout() == 'persian_ads') {
                         }
                         wp_reset_postdata();
                     }
-                    ?>
+    ?>
                     <?php
-                } elseif (get_row_layout() == 'persian_group') {
+                    $persian_recommend_news = get_sub_field('persian_recommend_news');
+                    if ($persian_recommend_news) {
+                        foreach ($persian_recommend_news as $post) {
+                            setup_postdata($post);
+                            ?>
+
+                                            <div class="last-post__suggestion d-flex align-items-center">
+                                                <div class="suggestion-icon">
+                                                    <span><i class="persian-fire"></i></span>
+                                                </div>
+                                                <div class="suggestion-title">
+                                                    <p><?php _e('پیشنهاد ما به شما :', 'persian_bourse'); ?></p>
+                                                    <p><?php _e('شاید خوشتان آمد!', 'persian_bourse'); ?></p>
+                                                </div><!-- .suggestion-title -->
+                                                <div class="suggestion-content d-flex align-items-center">
+                                                    <div>
+                                                        <p><?php the_title(); ?></p>
+                                                        <p><?php echo ivahid_get_excerpt(50); ?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="suggest-link">
+                                                    <a href="<?php the_permalink(); ?>">
+                                                        <span><i class="persian-left"></i></span>
+                                                    </a>
+                                                </div>
+                                            </div><!-- .last-post__suggestion -->
+                                            <?php
+                                        }
+                                        wp_reset_postdata();
+                                    }
+                                    ?>
+                                </div><!-- .col-lg-12 -->
+                            </div><!-- .row -->
+                        </div><!-- .container -->
+                    </section><!-- .last-post -->
+                    <?php
+                }
+elseif (get_row_layout() == 'persian_group') {
                     ?>
                     <section class="offer-posts">
                         <div class="container">
@@ -727,7 +557,8 @@ elseif(get_row_layout() == 'persian_ads') {
                     </section><!-- .offer-posts -->
 
                     <?php
-                } elseif (get_row_layout() == 'persian_tools') {
+                }
+elseif (get_row_layout() == 'persian_tools') {
                     ?>
                     <section class="services-slider">
                         <div class="container">
@@ -801,7 +632,8 @@ elseif(get_row_layout() == 'persian_ads') {
                         </div><!-- .container -->
                     </section><!-- .services-slider -->
                     <?php
-                } elseif (get_row_layout() == 'persian_comments_posts') {
+                }
+elseif (get_row_layout() == 'persian_comments_posts') {
                     ?>
                     <!-------------------------- Comments and posts --------------------------------->
                     <div class="comments-and-posts">
@@ -904,9 +736,7 @@ elseif(get_row_layout() == 'persian_ads') {
                                                                 </div>
                                                             </div>
                                                         <?php }
-                                                        wp_reset_postdata();
-                                                    } ?>
-                                                    <?php
+                                                        wp_reset_postdata(); }
                                                     if ($select_most_visited_posts === 'select_by_number') {
                                                         $posts_number = get_sub_field('most_visited_posts_number');
                                                         $most_visited_posts_args = [
@@ -971,109 +801,6 @@ elseif(get_row_layout() == 'persian_ads') {
                     </div><!-- .comments-and-posts -->
                     <?php
                 }
-                }
-                }
-                ?>
-
-                <!-------------------------- Bourse news and slider --------------------------------->
-                <div class="post-slider">
-                    <div class="container">
-                        <div class="bourse-title">
-                            <h6>اخبار بورس</h6>
-                            <a class="bourse-read-more" href="#">مشاهده بیشتر<i class="persian-arrow-left"></i></a>
-                        </div><!-- .bourse-title -->
-                        <div class="post-slider__slider">
-                            <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-rtl">
-                                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
-                                    <div class="swiper-slide swiper-slide-active" style="width: 1170px;">
-                                        <img src="../assets/img/post-slider-image.jpg" alt="news slider">
-                                        <div class="post-slider-details">
-                                            <div class="post-slider-details__content">
-                                                <div class="post-slider-title">
-                                                    <a href="#">
-                                                        <h5>تولیدات مدل‌های جدید سری می میکس</h5>
-                                                    </a>
-                                                    <a href="#">
-                                                        <span>Production of new models of Mi Mix series</span>
-                                                    </a>
-                                                </div><!-- .post-slider-title -->
-                                            </div><!-- .post-slider-details__content -->
-                                            <div class="post-slider-details__back">
-                                                <span class="persian-back-large"></span>
-                                            </div><!-- .post-slider-details__back -->
-                                        </div><!-- .post-slider-details -->
-                                        <div class="study-time">
-                                            <span>5</span>
-                                            <span>دقیقه مطالعه</span>
-                                        </div><!-- .study-time -->
-                                    </div><!-- .swiper-slide -->
-                                    <div class="swiper-slide swiper-slide-next" style="width: 1170px;">
-                                        <img src="../assets/img/post-slider-image.jpg" alt="news slider">
-                                        <div class="post-slider-details">
-                                            <div class="post-slider-details__content">
-                                                <div class="post-slider-title">
-                                                    <a href="#">
-                                                        <h5>تولیدات مدل‌های جدید سری می میکس</h5>
-                                                    </a>
-                                                    <a href="#">
-                                                        <span>Production of new models of Mi Mix series</span>
-                                                    </a>
-                                                </div><!-- .post-slider-title -->
-                                            </div><!-- .post-slider-details__content -->
-                                            <div class="post-slider-details__back">
-                                                <span class="persian-back-large"></span>
-                                            </div><!-- .post-slider-details__back -->
-                                        </div><!-- .post-slider-details -->
-                                        <div class="study-time">
-                                            <span>5</span>
-                                            <span>دقیقه مطالعه</span>
-                                        </div><!-- .study-time -->
-                                    </div><!-- .swiper-slide -->
-                                    <div class="swiper-slide" style="width: 1170px;">
-                                        <img src="../assets/img/post-slider-image.jpg" alt="news slider">
-                                        <div class="post-slider-details">
-                                            <div class="post-slider-details__content">
-                                                <div class="post-slider-title">
-                                                    <a href="#">
-                                                        <h5>تولیدات مدل‌های جدید سری می میکس</h5>
-                                                    </a>
-                                                    <a href="#">
-                                                        <span>Production of new models of Mi Mix series</span>
-                                                    </a>
-                                                </div><!-- .post-slider-title -->
-                                            </div><!-- .post-slider-details__content -->
-                                            <div class="post-slider-details__back">
-                                                <span class="persian-back-large"></span>
-                                            </div><!-- .post-slider-details__back -->
-                                        </div><!-- .post-slider-details -->
-                                        <div class="study-time">
-                                            <span>5</span>
-                                            <span>دقیقه مطالعه</span>
-                                        </div><!-- .study-time -->
-                                    </div><!-- .swiper-slide -->
-                                </div><!-- .swiper-wrapper -->
-                                <div class="post-slider-navigation">
-                                    <div class="navigation-button navigation-button--next" tabindex="0" role="button"
-                                         aria-label="Next slide" aria-disabled="false"></div>
-                                    <div class="connector persian-connector">
-                                                    }
-                                                } ?>
-                                            </div><!-- .swiper-wrapper -->
-                                            <div class="post-slider-navigation post-slider-navigation--left">
-                                                <div class="navigation-button navigation-button--next"></div>
-                                                <div class="connector persian-connector">
-                                                </div>
-                                                <div class="navigation-button navigation-button--prev"></div>
-                                            </div><!-- .post-slider-navigation -->
-                                        </div><!-- .swiper-container -->
-                                    </div><!-- .slider-post-small-slider -->
-                                </div><!-- .slider-post-small -->
-                            </div><!-- .col-lg-12 -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .comments-and-posts -->
-                <?php
-}
 elseif ( get_row_layout() == 'persian_news_slider' ){
     $news_slider_title = get_sub_field('persian_news_slider_title');
     ?>
@@ -1149,6 +876,7 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                 }
                 }
                 ?>
+
     <!-------------------------- Bourse news and slider --------------------------------->
     <div class="bourse-news">
         <div class="container">
@@ -1157,189 +885,6 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                     <?php if ( is_active_sidebar( 'main_page_sidebar' ) ) {
                         dynamic_sidebar( 'main_page_sidebar' );
                     } ?>
-                    <div data-tabindex="side-tab" class="side-tab">
-                        <div class="tab-title side-tab__tab-links">
-                            <div data-tab="side-tab-link-1" data-parent="side-tab" class="active">آخرین مطالب</div>
-                            <div data-tab="side-tab-link-2" data-parent="side-tab">مطالب جدید</div>
-                            <div data-tab="side-tab-link-3" data-parent="side-tab">اطلاعیه مهم</div>
-                        </div><!-- .side-tab__tab_links -->
-                        <div class="tab-content">
-                            <div class="side-tab__tab-content active" data-tabc="side-tab-link-1" data-parent="side-tab" style="">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <h6>انعقاد قرارداد دولتی در قزوین</h6>
-                                        </a>
-                                        <p>انعقاد قرارداد دولتی در قزوین به گزارش پرشین بورس، شرکت کارخانجات قند قزوين
-                                            (سهامی
-                                            عام) با نماد قزوین، اخذ قرارداد ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>افزایش 22 درصدی نرخ فروش فروس</h6>
-                                        </a>
-                                        <p>افزایش 22 درصدی نرخ فروش فروس به گزارش پرشین بورس، شرکت فروسيليس ايران (سهامی
-                                            عام) با
-                                            نماد فروس، از دریافت ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
-                                        </a>
-                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
-                                            نماد
-                                            کاما، از فروش ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
-                                        </a>
-                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
-                                            نماد
-                                            کاما، از فروش ...</p>
-                                    </li>
-                                </ul>
-                            </div><!-- .side-tab__tab-content -->
-                            <div data-tabc="side-tab-link-2" data-parent="side-tab" class="side-tab__tab-content" style="display: none;">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <h6>انعقاد قرارداد دولتی در قزوین2</h6>
-                                        </a>
-                                        <p>انعقاد قرارداد دولتی در قزوین به گزارش پرشین بورس، شرکت کارخانجات قند قزوين
-                                            (سهامی
-                                            عام) با نماد قزوین، اخذ قرارداد ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>افزایش 22 درصدی نرخ فروش فروس</h6>
-                                        </a>
-                                        <p>افزایش 22 درصدی نرخ فروش فروس به گزارش پرشین بورس، شرکت فروسيليس ايران (سهامی
-                                            عام) با
-                                            نماد فروس، از دریافت ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
-                                        </a>
-                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
-                                            نماد
-                                            کاما، از فروش ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
-                                        </a>
-                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
-                                            نماد
-                                            کاما، از فروش ...</p>
-                                    </li>
-                                </ul>
-                            </div><!-- .side-tab__tab-content -->
-                            <div data-tabc="side-tab-link-3" data-parent="side-tab" class="side-tab__tab-content" style="display: none;">
-                                <!-- .side-tab__tab-content -->
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <h6>انعقاد قرارداد دولتی در قزوین3</h6>
-                                        </a>
-                                        <p>انعقاد قرارداد دولتی در قزوین به گزارش پرشین بورس، شرکت کارخانجات قند قزوين
-                                            (سهامی
-                                            عام) با نماد قزوین، اخذ قرارداد ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>افزایش 22 درصدی نرخ فروش فروس</h6>
-                                        </a>
-                                        <p>افزایش 22 درصدی نرخ فروش فروس به گزارش پرشین بورس، شرکت فروسيليس ايران (سهامی
-                                            عام) با
-                                            نماد فروس، از دریافت ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
-                                        </a>
-                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
-                                            نماد
-                                            کاما، از فروش ...</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h6>سودآوری میلیاردی کاما از فروش فروی</h6>
-                                        </a>
-                                        <p>سودآوری میلیاردی کاما از فروش فروی به گزارش پرشین بورس، شرکت باما (سهامی عام) با
-                                            نماد
-                                            کاما، از فروش ...</p>
-                                    </li>
-                                </ul>
-                            </div><!-- .side-tab__tab-content -->
-                        </div><!-- .tab-content -->
-                    </div><!-- .side-tab -->
-                    <div class="side-populars">
-                        <div class="title title--blue title--small">
-                            <h6><span>پربازدیدترین </span>مطالب</h6>
-                            <a href="#">آرشیو</a>
-                        </div><!-- .title -->
-                        <ul class="side-populars__items-wrapper">
-                            <li>
-                                <div class="img-wrapper">
-                                    <img src="../assets/img/side-populars/side-populars-img1.jpg" alt="post image">
-                                </div><!-- .img-wrapper -->
-                                <div class="post-details">
-                                    <a href="#">
-                                        <h6>تحلیل تکنیکال لوتوس</h6>
-                                    </a>
-                                    <p>5 روز پیش</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-wrapper">
-                                    <img src="../assets/img/side-populars/side-populars-img2.jpg" alt="post image">
-                                </div><!-- .img-wrapper -->
-                                <div class="post-details">
-                                    <a href="#">
-                                        <h6>انجام مقدمات افزایش سرمایه</h6>
-                                    </a>
-                                    <p>یک هفته پیش</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-wrapper">
-                                    <img src="../assets/img/side-populars/side-populars-img3.jpg" alt="post image">
-                                </div><!-- .img-wrapper -->
-                                <div class="post-details">
-                                    <a href="#">
-                                        <h6>انرژی در مزایده فرابورس شرکت ...</h6>
-                                    </a>
-                                    <p>یک ماه پیش</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div><!-- .side-populars -->
-                    <div class="side-video">
-                        <div class="side-video__title">
-                            <h6>ویدیو آموزشی</h6>
-                            <a href="#">آرشیو ویدیو ها</a>
-                        </div><!-- .side-video__title -->
-                        <div class="side-video__content">
-                            <div class="poster-wrapper">
-                                <img src="../assets/img/video-post-poster.jpg" alt="video post poster">
-                                <a href="#">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </a>
-                            </div><!-- .poster-wrapper -->
-                            <h6 class="video-post-title">
-                                <a href="#">اموزش الگوی ماشین در جدول بورس !</a>
-                            </h6>
-                            <ul class="video-post-meta">
-                                <li><span><i class="persian-date"></i></span><span>3 روز پیش</span></li>
-                                <li><span><i class="persian-user"></i></span><span><a href="#">وحید دانا فرد</a></span></li>
-                                <li><span><i class="persian-view"></i></span><span>1590 بازدید</span></li>
-                            </ul>
-                        </div><!-- .side-video__content -->
-                    </div><!-- .side-video -->
                 </div><!-- .col-xl-8 -->
                 <div class="col-xl-16">
                     <div class="row p30">
@@ -1380,267 +925,211 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                                     <div class="post-title">
                                         <p><a href="#">وضعیت بازار بیت کوین در سال 2020</a></p>
                                     </div>
-                                    <div class="navigation-button navigation-button--prev swiper-button-disabled"
-                                         tabindex="-1" role="button" aria-label="Previous slide"
-                                         aria-disabled="true"></div>
-                                </div><!-- .post-slider-navigation -->
-                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                            <!-- .swiper-container -->
-                        </div><!-- .post-slider__slider -->
-                    </div><!-- .container -->
-                </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>6 روز پیش</span>
+                                            </li>
+                                            <li class="post-author d-inline-flex align-items-center list-inline-item">
 
-                <div class="bourse-news">
-                    <div class="container">
-                        <div class="row p30">
-                            <div class="col-xl-8">
-                                <?php if (is_active_sidebar('main_page_sidebar')) {
-                                    dynamic_sidebar('main_page_sidebar');
-                                } ?>
-                            </div><!-- .col-xl-8 -->
-                            <div class="col-xl-16">
-                                <div class="row p30">
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_1.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">تولیدات مدل‌های جدید سری می میکس</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>3 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-user"></i></span>
-                                                            <a href="#"> <span>وحید دانا فرد</span></a>
-                                                        </li>
-                                                        <li class="post-view d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>1590 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_2.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">وضعیت بازار بیت کوین در سال 2020</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>6 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-user"></i></span>
+                                                <a href="#"><span>وحید دانا فرد</span></a>
 
-                                                            <span><i class="persian-user"></i></span>
-                                                            <a href="#"><span>وحید دانا فرد</span></a>
+                                            </li>
+                                            <li class="post-view d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>2560 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_3.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">تلاش چین برای تبدیل شدن به قدرت برتر بلاک چین</a></p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>7 روز پیش</span>
+                                            </li>
+                                            <li class="post-author d-inline-flex align-items-center list-inline-item">
 
-                                                        </li>
-                                                        <li class="post-view d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>2560 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_3.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">تلاش چین برای تبدیل شدن به قدرت برتر بلاک چین</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>7 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-user"></i></span>
+                                                <a href="#"><span>وحید دانا فرد</span></a>
 
-                                                            <span><i class="persian-user"></i></span>
-                                                            <a href="#"><span>وحید دانا فرد</span></a>
+                                            </li>
+                                            <li class="post-view d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>6522 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_4.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">آیا کامپیوتر های کوانتمی میتوانند بیت کوین را
+                                                شک...</a></p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>9 روز پیش</span>
+                                            </li>
+                                            <li class="post-author d-inline-flex align-items-center list-inline-item">
 
-                                                        </li>
-                                                        <li class="post-view d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>6522 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_4.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">آیا کامپیوتر های کوانتمی میتوانند بیت کوین را
-                                                            شک...</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>9 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-user"></i></span>
+                                                <a href="#"> <span>وحید دانا فرد</span></a>
 
-                                                            <span><i class="persian-user"></i></span>
-                                                            <a href="#"> <span>وحید دانا فرد</span></a>
+                                            </li>
+                                            <li class="post-view d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>1590 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_5.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">آمار جدید از آخرین قیمت ارزهای دیجیتالی</a></p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>2 روز پیش</span>
+                                            </li>
+                                            <li class="post-author d-inline-flex align-items-center list-inline-item">
 
-                                                        </li>
-                                                        <li class="post-view d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>1590 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_5.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">آمار جدید از آخرین قیمت ارزهای دیجیتالی</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>2 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-user"></i></span>
+                                                <a href="#"> <span>وحید دانا فرد</span></a>
 
-                                                            <span><i class="persian-user"></i></span>
-                                                            <a href="#"> <span>وحید دانا فرد</span></a>
+                                            </li>
+                                            <li class="post-view d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>154 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_6.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">احتمال سقوط بیشتر بیت کوین وجود دارد!</a></p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>2 روز پیش</span>
+                                            </li>
+                                            <li class="post-author list-inline-item">
+                                                <a href="#">
+                                                    <span><i class="persian-user"></i></span>
+                                                    <span>وحید دانا فرد</span>
+                                                </a>
+                                            </li>
+                                            <li class="post-view list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>256 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_7.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">علاقه شدید مردم ترکیه به بیت کوین در پی تورم</a></p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>3 روز پیش</span>
+                                            </li>
+                                            <li class="post-author d-inline-flex align-items-center list-inline-item">
 
-                                                        </li>
-                                                        <li class="post-view d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>154 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_6.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">احتمال سقوط بیشتر بیت کوین وجود دارد!</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>2 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author list-inline-item">
-                                                            <a href="#">
-                                                                <span><i class="persian-user"></i></span>
-                                                                <span>وحید دانا فرد</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="post-view list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>256 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_7.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">علاقه شدید مردم ترکیه به بیت کوین در پی تورم</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>3 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-user"></i></span>
+                                                <a href="#"> <span>وحید دانا فرد</span>
+                                                </a>
+                                            </li>
+                                            <li class="post-view d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>1590 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                        <div class="col-sm-12 col-24">
+                            <div class="post">
+                                <div class="post__image">
+                                    <img src="./assets/img/posts/post_1.jpg" alt="post">
+                                </div>
+                                <div class="post__content">
+                                    <div class="post-title">
+                                        <p><a href="#">تولیدات مدل‌های جدید سری می میکس</a></p>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
+                                            <li class="post-date d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-date"></i></span>
+                                                <span>3 روز پیش</span>
+                                            </li>
+                                            <li class="post-author d-inline-flex align-items-center list-inline-item">
 
-                                                            <span><i class="persian-user"></i></span>
-                                                            <a href="#"> <span>وحید دانا فرد</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="post-view d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>1590 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                    <div class="col-sm-12 col-24">
-                                        <div class="post">
-                                            <div class="post__image">
-                                                <img src="./assets/img/posts/post_1.jpg" alt="post">
-                                            </div>
-                                            <div class="post__content">
-                                                <div class="post-title">
-                                                    <p><a href="#">تولیدات مدل‌های جدید سری می میکس</a></p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
-                                                        <li class="post-date d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-date"></i></span>
-                                                            <span>3 روز پیش</span>
-                                                        </li>
-                                                        <li class="post-author d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-user"></i></span>
+                                                <a href="#"> <span>وحید دانا فرد</span>
+                                                </a>
+                                            </li>
+                                            <li class="post-view d-inline-flex align-items-center list-inline-item">
+                                                <span><i class="persian-view"></i></span>
+                                                <span>1590 بازدید</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .col-sm-12 -->
+                    </div><!-- .row -->
+                </div><!-- .col-16 -->
 
-                                                            <span><i class="persian-user"></i></span>
-                                                            <a href="#"> <span>وحید دانا فرد</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="post-view d-inline-flex align-items-center list-inline-item">
-                                                            <span><i class="persian-view"></i></span>
-                                                            <span>1590 بازدید</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col-sm-12 -->
-                                </div><!-- .row -->
-                            </div><!-- .col-16 -->
                         </div>
                     </div>
                 </div>
