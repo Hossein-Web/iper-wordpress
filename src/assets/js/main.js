@@ -317,3 +317,22 @@ $('.footer-social-media li').on('mouseover', function (e) {
 $( '.side-categories .has-subcategory span' ).on( 'click', function (e) {
 	$('.side-categories .has-subcategory').toggleClass( 'active' );
 });
+
+// Side video slider
+let side_video = new Swiper('.side-video-slider .swiper-container', {
+	direction: 'vertical',
+	loop: true,
+	slidesPerView: 1,
+	speed: 500,
+	autoplay: {
+		delay: 2000
+	},
+	effect: 'fade',
+	// autoHeight: true
+});
+side_video.on('transitionStart', function () {
+	$( '.side-video-slider .swiper-slide-prev' ).toggleClass( 'slide-change' );
+});
+side_video.on('transitionEnd', function () {
+	$( '.side-video-slider .swiper-slide-prev' ).removeClass( 'slide-change' );
+});
