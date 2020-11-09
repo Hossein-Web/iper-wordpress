@@ -264,9 +264,7 @@ class Persian_Side_Tab extends WP_Widget {
                                                         <a href="<?php echo get_the_permalink(); ?>">
                                                             <h6><?php echo esc_html( get_the_title() ); ?></h6>
                                                         </a>
-                                                        <?php if ( has_excerpt() ) { ?>
-                                                            <p><?php echo esc_html( get_the_excerpt() ); ?></p>
-                                                        <?php } ?>
+                                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
                                                     </li>
                                                 <?php }
                                                 wp_reset_postdata();
@@ -285,9 +283,7 @@ class Persian_Side_Tab extends WP_Widget {
                                                         <a href="<?php echo get_the_permalink(); ?>">
                                                             <h6><?php echo esc_html( get_the_title() ); ?></h6>
                                                         </a>
-                                                        <?php if ( has_excerpt() ) { ?>
-                                                            <p><?php echo esc_html( get_the_excerpt() ); ?></p>
-                                                        <?php } ?>
+                                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
                                                     </li>
                                                 <?php }
                                                 wp_reset_postdata();

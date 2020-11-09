@@ -37,7 +37,7 @@ function persian_post_suggestion_shortcode( $atts ) {
                         <div>
                             <span class="post-like__date"><?php the_date(); ?></span>
                         </div>
-                        <?php the_excerpt(); ?>
+                        <?php echo ivahid_get_excerpt(100); ?>
                     </div>
                 </div>
                 <?php
@@ -93,11 +93,9 @@ function persian_offer_posts_shortcode( $atts ) {
                                     <div class="item-title">
                                         <p><a href="<?php echo get_the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a></p>
                                     </div>
-                                    <?php if ( has_excerpt() ) { ?>
                                         <div class="item-content">
-                                            <p><?php esc_html( get_the_excerpt() );  ?></p>
+                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
                                         </div><!-- .item-content -->
-                                    <?php } ?>
                                 </div>
                             </div>
                         <?php

@@ -64,9 +64,9 @@
                     </article><!-- .last-post__item -->
                 </div><!-- .col-lg-12 -->
                 <div class="col-lg-12 col-24">
-                    <?php if ( is_singular() && has_excerpt() || is_search() && has_excerpt() ) { ?>
+                    <?php if ( is_singular() || is_search()  ) { ?>
                         <div class="last-post__excerpt">
-                            <?php the_excerpt(); ?>
+                            <?php echo ivahid_get_excerpt(100); ?>
                         </div>
                     <?php } ?>
 
