@@ -66,7 +66,7 @@
                                     ?>
                                     <a href="<?php echo esc_url(get_home_url()); ?>">
                                         <img src="<?php echo esc_url($persian_logo['url']); ?>"
-                                             alt="<?php esc_attr($persian_logo['alt']); ?>">
+                                             alt="<?php echo esc_attr($persian_logo['alt']); ?>">
                                     </a>
                                     <?php
                                 }
