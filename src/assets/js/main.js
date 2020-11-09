@@ -190,6 +190,7 @@ let post_slider_slider = new Swiper('.post-slider__slider> .swiper-container', {
 		nextEl: '.post-slider__slider .navigation-button--next',
 		prevEl: '.post-slider__slider .navigation-button--prev',
 	},
+	autoHeight: true
 });
 
 // Tile post
