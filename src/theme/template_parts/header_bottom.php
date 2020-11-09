@@ -21,10 +21,8 @@
                         }
                         ?>
                         <?php
-                        if ( have_rows( 'persian-header-bottom-sliders','option' ) ){
-                            while ( have_rows( 'persian-header-bottom-sliders','option' ) ){
-                                the_row();
-                                $persian_sliders = get_sub_field( 'persian-slider' );
+                                $persian_sliders = get_field( 'persian_header_bottom_slider', 'option' );
+                                if ( $persian_sliders ){
                                     ?>
                                     <div class="latest-news-articles__slider">
                                         <div class="swiper-container">
@@ -33,7 +31,7 @@
                                                     foreach ( $persian_sliders as $slider ){
                                                 ?>
                                                 <div class="swiper-slide">
-                                                    <a href="<?php echo get_permalink( $sliders->ID ); ?>"><?php echo esc_html( $slider->post_title ); ?></a>
+                                                    <a href="<?php echo get_permalink( $slider->ID ); ?>"><?php echo esc_html( $slider->post_title ); ?></a>
                                                 </div>
                                                         <?php
 
@@ -42,9 +40,8 @@
                                             </div><!-- .swiper-wrapper -->
                                         </div>
                                     </div><!-- .latest-news-articles__slider -->
-                                <?php
-                            }
-                        }
+                                    <?php
+                                }
                         ?>
                     </div><!-- .latest-news-articles -->
                 </div><!-- .col-lg-12 -->

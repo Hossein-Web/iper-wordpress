@@ -885,7 +885,7 @@ elseif (get_row_layout() == 'persian_group') {
                                                             </p>
                                                         </div>
                                                             <div class="item-content">
-                                                                <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                                                <p><?php echo esc_html(ivahid_get_excerpt(100)); ?></p>
                                                             </div><!-- .item-content -->
                                                     </div>
                                                 </div>
