@@ -165,9 +165,18 @@ $('.mobile-close-button').on('click', function (e) {
 	mobileClose();
 });
 
-$('.search>span').on('click', function () {
+$('.search>span').on('click', function (e) {
+	// e.stopPropagation();
+	// e.preventDefault();
 	$('.search__form').toggleClass('search-open');
+	$('input#s').focus();
 });
+
+$( '.search__form' ).on( 'focusout', function () {
+	if ( $(this).hasClass( 'search-open' ) ) {
+		$(this).removeClass( 'search-open') ;
+	}
+} );
 
 $('.notification span').on('click', function () {
 	$('.notification__notification-list').toggleClass('active');
@@ -324,7 +333,7 @@ const Toast = Swal.mixin({
 	toast: true,
 	position: 'top-end',
 	showConfirmButton: false,
-	timer: 3000,
+	timer: 10000,
 	timerProgressBar: true,
 	didOpen: (toast) => {
 		toast.addEventListener('mouseenter', Swal.stopTimer)
