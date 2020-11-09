@@ -264,9 +264,7 @@ class Persian_Side_Tab extends WP_Widget {
                                                         <a href="<?php echo get_the_permalink(); ?>">
                                                             <h6><?php echo esc_html( get_the_title() ); ?></h6>
                                                         </a>
-                                                        <?php if ( has_excerpt() ) { ?>
-                                                            <p><?php echo esc_html( get_the_excerpt() ); ?></p>
-                                                        <?php } ?>
+                                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
                                                     </li>
                                                 <?php }
                                                 wp_reset_postdata();
@@ -285,9 +283,7 @@ class Persian_Side_Tab extends WP_Widget {
                                                         <a href="<?php echo get_the_permalink(); ?>">
                                                             <h6><?php echo esc_html( get_the_title() ); ?></h6>
                                                         </a>
-                                                        <?php if ( has_excerpt() ) { ?>
-                                                            <p><?php echo esc_html( get_the_excerpt() ); ?></p>
-                                                        <?php } ?>
+                                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
                                                     </li>
                                                 <?php }
                                                 wp_reset_postdata();
@@ -500,7 +496,6 @@ class persian_category extends WP_Widget{
         $title = apply_filters( 'widget_title', $title, $instance );
         $persian_hierarchical = ! empty( $instance['hierarchical'] ) ? '1' : '0';
         $persian_cat = get_categories();
-
         if( ! empty( $persian_cat ) ){
             ?>
             <div class="side-categories">
@@ -520,7 +515,7 @@ class persian_category extends WP_Widget{
                                 <li class="<?php if ( !empty($children_cat )) { echo 'has-subcategory'; } ?>">
                                     <?php if ( empty( $children_cat ) ){
                                         ?>
-                                        <a href="<?php echo esc_url(get_category_link( $cat->id )); ?>"><?php echo esc_html( $cat->cat_name ); ?></a>
+                                        <a href="<?php echo esc_url(get_category_link( $cat->cat_ID )); ?>"><?php echo esc_html( $cat->cat_name ); ?></a>
                                         <?php
                                     }else{
                                         ?>
@@ -535,7 +530,7 @@ class persian_category extends WP_Widget{
                                             foreach ( $children_cat as $child ){
                                                 ?>
                                                 <li>
-                                                    <a href="<?php echo esc_url( get_category_link( $child->id ) ); ?>"><?php echo esc_html( $child->cat_name ); ?></a>
+                                                    <a href="<?php echo esc_url( get_category_link( $child->cat_ID ) ); ?>"><?php echo esc_html( $child->cat_name ); ?></a>
                                                 </li>
                                                 <?php
                                             }

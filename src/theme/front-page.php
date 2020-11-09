@@ -884,11 +884,9 @@ elseif (get_row_layout() == 'persian_group') {
                                                                 <a href="<?php echo get_the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a>
                                                             </p>
                                                         </div>
-                                                        <?php if (has_excerpt()) { ?>
                                                             <div class="item-content">
-                                                                <p><?php echo esc_html(ivahid_get_excerpt(100)); ?></p>
+                                                                <p><?php echo ivahid_get_excerpt(100); ?></p>
                                                             </div><!-- .item-content -->
-                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                                 <?php
