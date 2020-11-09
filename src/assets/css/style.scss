@@ -1691,6 +1691,14 @@ i {
         }
       }
 
+      .post-excerpt {
+        p {
+          color: $text-color-3;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 26px;
+        }
+      }
       .post-english-title {
         p {
           color: $text-color-3;
