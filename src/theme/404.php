@@ -10,12 +10,24 @@ get_header(); ?>
     <div class="not-found__content-wrapper">
         <div class="logo-content-wrapper d-flex align-items-center">
             <div class="logo">
+                <?php
+
+                $persian_logo = get_field('persian-logo', 'option');
+
+                if ($persian_logo) {
+                    ?>
+                    <a href="<?php echo esc_url(get_home_url()); ?>">
+                        <img src="<?php echo esc_url($persian_logo['url']); ?>"
+                             alt="<?php esc_attr($persian_logo['alt']); ?>">
+                    </a>
+                    <?php
+                }
+                ?>
                 <img src="./assets/img/logo2.png" alt="persian logo">
             </div>
             <div class="not-found__content">
-                <h4>این‌جا صفحه‌ای وجود ندارد!</h4>
-                <p>احتمالا صفحه مورد نظرتان حذف شده یا آدرس را اشتباه وارد کرده‌اید. به دیگر صفحات وب‌سایت سر
-                    بزنید.</p>
+                <h4><?php _e( 'این‌جا صفحه‌ای وجود ندارد!', 'persian_bourse' ); ?></h4>
+                <p><?php _e( 'احتمالا صفحه مورد نظرتان حذف شده یا آدرس را اشتباه وارد کرده‌اید. به دیگر صفحات وب‌سایت سر بزنید.','persian_bourse' ); ?></p>
             </div>
         </div><!-- .logo-content-wrapper -->
         <div class="not-found__links d-flex align-items-center">
