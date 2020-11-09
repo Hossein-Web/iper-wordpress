@@ -1715,6 +1715,15 @@ i {
           line-height: 26px;
         }
       }
+
+      .post-excerpt {
+        p {
+          color: $text-color-3;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 26px;
+        }
+      }
     }
 
     &--small {
@@ -2481,8 +2490,8 @@ i {
     background-color: white;
     .poster-wrapper {
       display: inline-block;
-      margin-left: auto;
-      margin-right: auto;
+      //margin-left: auto;
+      //margin-right: auto;
       margin-bottom: 20px;
       position: relative;
       text-align: center;
@@ -2537,7 +2546,8 @@ i {
       }
 
       img {
-        max-width: 100%;
+        //max-width: 100%;
+        width: 100%;
         z-index: 2;
         position: relative;
         border-radius: 10px;
