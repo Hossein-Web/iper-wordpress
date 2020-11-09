@@ -40,15 +40,16 @@
 </div><!-- .container -->
 </div><!-- .comments_list -->
 <div class="container">
-    <form class="comments__form" action="<?php echo site_url() . '/wp-comments-post.php' ?>" method="post">
-        <div class="row p30">
-            <div class="col-md-8 col-sm-24 col-24">
-                <div class="field-wrapper">
-                    <input class="comments-full-name" type="text" name="name"
-                           placeholder="نام و نام خانوادگی" required>
-                    <i class="persian persian-user"></i>
-                </div><!-- .field-wrapper -->
-            </div><!-- .col-md-8 -->
+    <form class="comments__form" action="<?php echo site_url() . '/wp-comments-post.php'; ?>" method="post">
+        <?php if ( ! is_user_logged_in() ) { ?>
+            <div class="row p30">
+                <div class="col-md-8 col-sm-24 col-24">
+                    <div class="field-wrapper">
+                        <input class="comments-full-name" type="text" name="author"
+                               placeholder="نام و نام خانوادگی" required>
+                        <i class="persian persian-user"></i>
+                    </div><!-- .field-wrapper -->
+                </div><!-- .col-md-8 -->
             <div class="col-md-8 col-sm-24 col-24">
                 <div class="field-wrapper">
                     <input class="comments-phone" type="text" name="user_phone_number"
@@ -64,6 +65,7 @@
                 </div><!-- .field-wrapper -->
             </div><!-- .col-md-8 -->
         </div><!-- .row -->
+        <?php } ?>
         <div class="row">
             <div class="col-24">
                 <div class="field-wrapper">

@@ -237,52 +237,7 @@
     </header><!-- .header -->
 </div>
 <div id="main-page">
-    <div class="fixed-social-media-wrapper">
-        <div class="fixed-social-media">
-            <ul>
-                <li>
-                    <!--            <div class="social-text-wrapper">-->
-                    <!--                <span>Telegram <i class="persian-angle-right"></i></span>-->
-                    <!--            </div>-->
-                    <a href="#">
-                        <i class="footer-social-icon persian-telegram"></i>
-                    </a>
-                </li>
-                <li>
-                    <!--            <div class="social-text-wrapper">-->
-                    <!--                <span>WhatsApp <i class="persian-angle-right"></i></span>-->
-                    <!--            </div>-->
-                    <a href="#">
-                        <i class="footer-social-icon persian-whatsapp"></i>
-                    </a>
-                </li>
-                <li>
-                    <!--            <div class="social-text-wrapper">-->
-                    <!--                <span>Twitter <i class="persian-angle-right"></i></span>-->
-                    <!--            </div>-->
-                    <a href="#">
-                        <i class="footer-social-icon persian-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <!--            <div class="social-text-wrapper">-->
-                    <!--                <span>instagram <i class="persian-angle-right"></i></span>-->
-                    <!--            </div>-->
-                    <a href="#">
-                        <i class="footer-social-icon persian-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <!--            <div class="social-text-wrapper">-->
-                    <!--                <span>facebook <i class="persian-angle-right"></i></span>-->
-                    <!--            </div>-->
-                    <a href="#">
-                        <i class="footer-social-icon persian-facebook"></i>
-                    </a>
-                </li>
-            </ul>
-        </div><!-- .fixed-social-media -->
-    </div><!-- .fixed-social-media-wrapper -->
+    <?php persian_social_media_share(); ?>
     <?php get_template_part( 'template_parts/header_bottom' ); ?>
     <?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
 <?php } ?>

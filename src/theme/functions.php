@@ -165,3 +165,50 @@ function yatendra_get_widget_id($widget_instance)
 
     }
 }
+
+// Social media share
+    function persian_social_media_share() {
+        if ( is_single() ) { ?>
+        <div class="fixed-social-media-wrapper">
+            <div class="fixed-social-media">
+                <?php
+                $encoded_url = urlencode( get_the_permalink() );
+                $post_title = str_replace( ' ', '%20', get_the_title() );
+
+                //Construct social media share links
+                $twitterURL = 'https://twitter.com/intent/tweet?text='.$post_title.'&amp;url='.$encoded_url.'&amp;via=wpvkp';
+                $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$encoded_url;
+                $whatsappURL = 'whatsapp://send?text='.$post_title . ' ' . $encoded_url;
+                $telegramURL = 'https://telegram.me/share/url?url=' . $encoded_url;
+                ?>
+                <ul>
+                    <li>
+                        <a href="<?php echo $telegramURL; ?>">
+                            <i class="footer-social-icon persian-telegram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $whatsappURL; ?>">
+                            <i class="footer-social-icon persian-whatsapp"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $twitterURL; ?>">
+                            <i class="footer-social-icon persian-twitter"></i>
+                        </a>
+                    </li>
+                    <!--                    <li>-->
+                    <!--                        <a href="#">-->
+                    <!--                            <i class="footer-social-icon persian-instagram"></i>-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
+                    <li>
+                        <a href="<?php echo $facebookURL; ?>">
+                            <i class="footer-social-icon persian-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- .fixed-social-media -->
+        </div><!-- .fixed-social-media-wrapper -->
+        <?php }
+    }
