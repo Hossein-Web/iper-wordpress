@@ -31,7 +31,7 @@
                                     <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
                                         <li class="post-date d-inline-flex align-items-center list-inline-item">
                                             <span><i class="persian-date"></i></span>
-                                            <span><?php the_date(); ?></span>
+                                            <span><?php echo human_time_diff(get_the_time('U'), current_time('U'))  . __(' پیش', 'persian_bourse'); ?></span>
                                         </li>
                                         <li class="post-author d-inline-flex align-items-center list-inline-item">
                                             <span><i class="persian-user"></i></span>
@@ -41,7 +41,7 @@
                                         </li>
                                         <li class="post-view d-inline-flex align-items-center list-inline-item">
                                             <span><i class="persian-view"></i></span>
-                                            <span><?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?></span>
+                                            <span><?php echo ivahid_get_views( get_the_ID() ) . __( ' بازدید', 'persian_bourse' ); ?></span>
                                         </li>
                                     </ul>
                                 </div>
