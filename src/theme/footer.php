@@ -233,12 +233,39 @@
             <?php
                 while ( have_rows( 'persian_mobile_menu', 'option' ) ){
                     the_row();
+
                 $item = get_sub_field( 'persian_mobile_item_link' );
+                $mobile_has_submenu = get_sub_field( 'persian_mobile_have_submenu' );
+                $persian_submenu_term = get_sub_field( 'persian_mobile_submenu' );
+
+
                 if ( $item ) {
                     $item_title = $item['title'];
                     $item_url = $item['url'];
+
                     ?>
-                    <li><a href="<?php echo esc_url($item_url); ?>"><?php echo esc_html($item_title); ?></a></li>
+                    <li class="<?php if ( $mobile_has_submenu ) { echo 'has_submenu'; }?>"  >
+                        <a href="<?php echo esc_url($item_url); ?>"><?php echo esc_html($item_title); ?></a>
+                        <?php
+                        if ( $mobile_has_submenu ){
+                        $mobile_sub_menu = wp_get_nav_menu_items($persian_submenu_term);
+                        if ($mobile_sub_menu){
+                        ?>
+                        <ul>
+
+                            <?php
+                            foreach ($mobile_sub_menu as $sub_item) {
+                                ?>
+                                <li>
+                                    <a href="<?php echo esc_url( $sub_item->url ); ?>"><?php echo esc_html($sub_item->title); ?></a>
+                                </li>
+                                <?php
+                            }?>
+                            </ul>
+                            <?php
+                        }
+                        }?>
+                    </li>
                     <?php
                 }
                 }
