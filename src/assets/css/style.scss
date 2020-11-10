@@ -576,7 +576,7 @@ i {
   transition: transform 0.3s;
 
   &.menu-translate {
-    transform: translate3d(-250px, 0, 0);
+    transform: translate3d(-285px, 0, 0);
     transition: 0.3s;
   }
 }
@@ -746,7 +746,7 @@ i {
     top: 0;
     //padding-top: 10px;
     //padding-bottom: 10px;
-    z-index: 100000;
+    z-index: 10000;
     //margin-top: 0;
     //+ #main-page{
     //  padding-top: 137px;
@@ -818,7 +818,7 @@ i {
         transition: 0.3s;
 
         &::before {
-          content: url("../../assets/img/mega-background.png");
+          content: url("img/mega-background.png");
           display: block;
           position: absolute;
           left: 0;
@@ -1107,11 +1107,11 @@ i {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 250px;
+    width: 285px;
     height: 100vh;
     background-color: white;
     transition: 0.3s;
-    z-index: 10000;
+    z-index: 100000;
     padding-right: 10px;
     padding-left: 10px;
     overflow: scroll;
@@ -1295,11 +1295,64 @@ i {
         li {
           padding-right: 5px;
           margin-bottom: 20px;
-          transition: 0.3s;
+          a{
+            transition: 0.3s;
+            &:hover {
+              color: $accent-color;
+              padding-right: 10px;
+            }
+          }
 
-          &:hover {
-            color: $accent-color;
-            padding-right: 10px;
+          &.has_submenu{
+            position: relative;
+            padding-right: 15px;
+
+            &::before{
+              content: '+';
+              display: block;
+              position: absolute;
+              right: 0;
+              color: $text-color;
+              transition: 0.3s;
+            }
+            &:hover{
+              &::before{
+                color: $accent-color;
+              }
+            }
+            ul{
+              visibility: hidden;
+              opacity: 0;
+              transition: 0.5s;
+              overflow: hidden;
+              max-height: 0;
+            }
+            &.active{
+              ul{
+                max-height: 700px;
+                visibility: visible;
+                padding-top: 10px;
+                opacity: 1;
+                li{
+                  position: relative;
+                  padding-right: 10px;
+                  &::before {
+                    content: '-';
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    bottom: -2px;
+                    color: $text-color;
+                    transition: 0.3s;
+                  }
+                  &:hover{
+                    &::before{
+                      color: $accent-color;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

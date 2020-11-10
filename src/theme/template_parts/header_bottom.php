@@ -55,7 +55,7 @@
                     foreach ( $persian_bottom_menu as $item ){
                         ?>
                         <li class="secondary-menu__item">
-                            <a href="<?php echo esc_url( get_permalink( $item->ID ) );  ?>"><?php echo esc_html( $item->post_title ); ?></a>
+                            <a href="<?php echo esc_url(  $item->url );  ?>"><?php echo esc_html( $item->title ); ?></a>
                         </li><!-- .secondary-menu__item -->
                     <?php
                     }
