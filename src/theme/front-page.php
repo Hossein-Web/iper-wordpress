@@ -630,7 +630,7 @@ elseif (get_row_layout() == 'persian_news') {
                                                         if (has_post_thumbnail()) {
                                                             ?>
                                                             <a href="<?php the_permalink() ?>">
-                                                                <?php echo get_the_post_thumbnail(); ?>
+                                                                <?php echo get_the_post_thumbnail( get_the_ID(), 'large_post_image' ); ?>
                                                             </a>
                                                             <?php } ?>
                                     </div>
@@ -690,7 +690,7 @@ elseif (get_row_layout() == 'persian_news') {
                                             <?php
                                             if (has_post_thumbnail()) { ?>
                                                             <a href="<?php the_permalink() ?>">
-                                                                <?php echo get_the_post_thumbnail(); ?>
+                                                                <?php echo get_the_post_thumbnail( get_the_ID(), 'very_small_image' ); ?>
                                                             </a>
                                                             <?php } ?>
                                                     </div><!-- .post-image -->
@@ -759,7 +759,7 @@ elseif (get_row_layout() == 'persian_news') {
                                         if (has_post_thumbnail()) {
                                             ?>
                                             <a href="<?php the_permalink() ?>">
-                                                <?php echo get_the_post_thumbnail(); ?>
+                                                <?php echo get_the_post_thumbnail( get_the_ID(), 'very_small_image' ); ?>
                                             </a>
                                             <?php } ?>
                                     </div><!-- .post-image -->
@@ -875,7 +875,7 @@ elseif (get_row_layout() == 'persian_group') {
                                                         <div class="item-image">
                                                             <a href="<?php echo get_the_permalink(); ?>">
                                                                 <?php if (has_post_thumbnail()) {
-                                                                    the_post_thumbnail();
+                                                                    the_post_thumbnail( 'offer_posts_image' );
                                                                 } ?>
                                                             </a>
                                                         </div>
@@ -1050,7 +1050,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                             ?>
                                                             <div class="swiper-slide">
                                                                 <?php if (has_post_thumbnail()) {
-                                                                    the_post_thumbnail();
+                                                                    the_post_thumbnail( 'small_slider_image' );
                                                                 } ?>
                                                                 <div class="slider-post-small__content">
                                                                     <div class="post-small-title">
@@ -1173,7 +1173,7 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                                 ?>
                                 <div class="swiper-slide">
                                     <?php if ( has_post_thumbnail() ){
-                                        echo get_the_post_thumbnail();
+                                        echo get_the_post_thumbnail( get_the_ID(), 'extra_large_post_image' );
                                     } ?>
                                     <div class="post-slider-details">
                                         <div class="post-slider-details__content">
@@ -1241,7 +1241,7 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
                                                 <div class="post">
                                                 <?php if ( has_post_thumbnail() ) { ?>
                                                     <div class="post__image">
-                                                        <?php the_post_thumbnail(); ?>
+                                                        <?php the_post_thumbnail( 'medium_image' ); ?>
                                                     </div>
                                                 <?php } ?>
                                                 <div class="post__content">
@@ -1291,7 +1291,7 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
                                                 <div class="post">
                                                     <?php if ( has_post_thumbnail() ) { ?>
                                                         <div class="post__image">
-                                                            <?php the_post_thumbnail(); ?>
+                                                            <?php the_post_thumbnail( 'medium_image' ); ?>
                                                         </div>
                                                     <?php } ?>
                                                     <div class="post__content">

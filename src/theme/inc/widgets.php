@@ -150,7 +150,7 @@ class Persian_Recent_Posts extends WP_Widget {
                         <li>
                             <?php if ( has_post_thumbnail() ) { ?>
                                 <div class="img-wrapper">
-                                    <?php the_post_thumbnail(); ?>
+                                    <?php the_post_thumbnail( 'extra_small_image' ); ?>
                                 </div><!-- .img-wrapper -->
                             <?php } ?>
                             <div class="post-details">
@@ -355,7 +355,7 @@ class Persian_Side_Video extends WP_Widget {
                                                 <div class="side-video__content">
                                                     <?php if ( has_post_thumbnail() ) { ?>
                                                         <div class="poster-wrapper">
-                                                            <?php the_post_thumbnail(); ?>
+                                                            <?php the_post_thumbnail( 'video_post_image' ); ?>
                                                             <a href="<?php echo get_the_permalink(); ?>">
                                                                 <span></span>
                                                                 <span></span>
@@ -409,7 +409,7 @@ class Persian_Side_Video extends WP_Widget {
                                                 <div class="side-video__content">
                                                     <?php if ( has_post_thumbnail() ) { ?>
                                                         <div class="poster-wrapper">
-                                                            <?php the_post_thumbnail(); ?>
+                                                            <?php the_post_thumbnail( 'video_post_image' ); ?>
                                                             <a href="<?php echo get_the_permalink(); ?>">
                                                                 <span></span>
                                                                 <span></span>

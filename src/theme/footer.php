@@ -35,7 +35,7 @@
                 <div class="col-lg-12">
                     <div class="footer-copy-right">
                         <div>
-                            <a href="#"></a>
+                            <a href="https://ivahid.com/"></a>
                         </div>
                         <div class="copy-right-text-wrapper">
                             <p>اين وبسايت متعلق به ميباشد و تمامی حقوق آن محفوظ ميباشد.</p>

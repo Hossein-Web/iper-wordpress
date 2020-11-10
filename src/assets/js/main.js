@@ -262,6 +262,7 @@ var mySwiper = new Swiper('.slider-post-small-slider .swiper-container', {
 		nextEl: '.slider-post-small-slider .navigation-button--next',
 		prevEl: '.slider-post-small-slider .navigation-button--prev',
 	},
+	autoHeight: true
 });
 
 //services slider

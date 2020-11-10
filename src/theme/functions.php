@@ -24,6 +24,16 @@ function persian_load_text_domain() {
 }
 add_action( 'after_setup_theme', 'persian_load_text_domain' );
 
+// Add image sizes
+add_image_size( 'extra_large_post_image', 1170, 453, [ 'center', 'center' ] );
+add_image_size( 'large_post_image', 570, 331, [ 'center', 'center' ] );
+add_image_size( 'very_small_image', 116, 79, [ 'center', 'center' ] );
+add_image_size( 'medium_image', 370, 205, [ 'center', 'center' ] );
+add_image_size( 'video_post_image', 328, 240, [ 'center', 'center' ] );
+add_image_size( 'extra_small_image', 53, 53, [ 'center', 'center' ] );
+add_image_size( 'offer_posts_image', 265, 185, [ 'center', 'center' ] );
+add_image_size( 'small_slider_image', 584, 374, [ 'center', 'center' ] );
+
 // Ivahid functions
 
 //function ivahid_get_views($postID = null)

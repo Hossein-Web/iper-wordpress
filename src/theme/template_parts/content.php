@@ -11,7 +11,7 @@
                                 <div class="post-image">
                                     <a href="<?php echo get_the_permalink(); ?>">
                                         <figure>
-                                            <?php the_post_thumbnail(); ?>
+                                            <?php the_post_thumbnail( 'large_post_image' ); ?>
                                         </figure>
                                     </a>
                                 </div>
