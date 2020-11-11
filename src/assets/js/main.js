@@ -354,7 +354,7 @@ const Toast = Swal.mixin({
 	toast: true,
 	position: 'top-end',
 	showConfirmButton: false,
-	timer: 10000,
+	timer: 1000,
 	timerProgressBar: true,
 	didOpen: (toast) => {
 		toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -392,7 +392,7 @@ $('.post-item-like').on('click', function (e) {
 
 	let ajax_url = ele.data('ajax_url');
 
-	loader(ele);
+	// loader(ele);
 
 	$.ajax({
 		type: 'POST',

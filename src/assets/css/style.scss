@@ -3669,7 +3669,7 @@ footer {
   padding: 30px 30px 3px 83px;
   margin-bottom: 34px;
   margin-top: 36px;
-
+  transition: 0.3s;
   &::before {
     content: '\e908';
     font-family: persian;
@@ -5030,3 +5030,6 @@ footer {
   }
 }
 
+.swal2-container{
+  z-index: 1000000!important;
+}
