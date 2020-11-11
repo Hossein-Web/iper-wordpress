@@ -10,16 +10,16 @@
             <div class="col-xl-16">
                 <div class="row p30">
                     <?php
-                        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-                        $archive_args = [
-                                    'post_type'      => 'post',
-                                    'posts_per_page' => 1
-                                ];
-                        $persian_archive_query = new WP_Query( $archive_args );
-                    ?>
-                    <?php if ( $persian_archive_query->have_posts() ) {
-                        while ( $persian_archive_query->have_posts() ) {
-                            $persian_archive_query->the_post();
+//                        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+//                        $archive_args = [
+//                                    'post_type'      => 'post',
+//                                    'posts_per_page' => 1
+//                                ];
+//                        $persian_archive_query = new WP_Query( $archive_args );
+//                    ?>
+                    <?php if ( have_posts() ) {
+                        while ( have_posts() ) {
+                            the_post();
                             ?>
                             <div class="col-sm-12 col-24">
                                 <div class="post">
