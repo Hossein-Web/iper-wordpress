@@ -450,4 +450,24 @@ side_video.on('transitionEnd', function () {
 	$( '.side-video-slider .swiper-slide-prev' ).removeClass( 'slide-change' );
 });
 
+//live prices cards
+	let live_prices = new Swiper('.live-prices__cards .swiper-container', {
+		speed: 400,
+		spaceBetween: 10,
+		slidesPerView: 1.8,
+		breakpoints: {
+			577: {
+				slidesPerView: 1.8,
+			},
+			992: {
+				slidesPerView: 2.7
+			},
+			1200: {
+				slidesPerView: 3
+			}
+		}
+	});
+
+
+
 })(jQuery);

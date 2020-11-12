@@ -1371,6 +1371,58 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
         </div>
     </div>
 <?php }
+elseif ( get_row_layout() == 'persian_live_prices' ){
+    $persian_live_prices = get_sub_field( 'persian_live_prices_card' );
+    $persian_live_price_title = get_sub_field( 'persian_live_prices_title' );
+
+    $persian_live_read_more = get_sub_field( 'persian_live_prices_read_more' );
+    ?>
+    <div class="live-prices">
+        <div class="container">
+            <?php if ( $persian_live_price_title ){
+                ?>
+                <div class="bourse-title bourse-title--blue">
+                    <h6><?php echo $persian_live_price_title; ?></h6>
+                    <?php if ( $persian_live_read_more ){
+                            $persian_live_read_more_title = $persian_live_read_more['title'];
+                            $persian_live_read_more_url = $persian_live_read_more['url'];
+                        ?>
+                        <a class="bourse-read-more" href="<?php echo esc_url($persian_live_read_more_url); ?>"><?php echo esc_html($persian_live_read_more_title); ?><i class="persian-arrow-left"></i></a>
+                        <?php
+                    } ?>
+                </div>
+        <?php
+            } ?>
+            <?php if ( $persian_live_prices ){
+            ?>
+
+            <div class="live-prices__cards">
+                <div class="swiper-container">
+
+                    <div class="swiper-wrapper">
+                        <?php foreach ( $persian_live_prices as $card ){
+                            $card_shortcode = "[ccpw id=". $card->ID ."]";
+                            ?>
+                            <div class="swiper-slide">
+                                <div class="live-prices__item">
+                                    <?php echo do_shortcode($card_shortcode);  ?>
+                                </div><!-- .live-prices__item -->
+                            </div>
+                        <?php
+                        } ?>
+
+                    </div><!-- .swiper-wrapper -->
+
+                </div><!-- .swiper-container -->
+            </div><!-- .live-prices__cards -->
+
+                <?php
+            } ?>
+
+        </div><!-- .container -->
+    </div><!-- .live-prices -->
+<?php
+}
                 }
                 }
                 ?>
