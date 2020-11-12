@@ -361,7 +361,7 @@ const Toast = Swal.mixin({
 	toast: true,
 	position: 'top-end',
 	showConfirmButton: false,
-	timer: 10000,
+	timer: 1000,
 	timerProgressBar: true,
 	didOpen: (toast) => {
 		toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -399,7 +399,7 @@ $('.post-item-like').on('click', function (e) {
 
 	let ajax_url = ele.data('ajax_url');
 
-	loader(ele);
+	// loader(ele);
 
 	$.ajax({
 		type: 'POST',
@@ -456,5 +456,25 @@ side_video.on('transitionStart', function () {
 side_video.on('transitionEnd', function () {
 	$( '.side-video-slider .swiper-slide-prev' ).removeClass( 'slide-change' );
 });
+
+//live prices cards
+	let live_prices = new Swiper('.live-prices__cards .swiper-container', {
+		speed: 400,
+		spaceBetween: 10,
+		slidesPerView: 1.8,
+		breakpoints: {
+			577: {
+				slidesPerView: 1.8,
+			},
+			992: {
+				slidesPerView: 2.7
+			},
+			1200: {
+				slidesPerView: 3
+			}
+		}
+	});
+
+
 
 })(jQuery);

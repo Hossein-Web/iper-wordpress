@@ -2035,11 +2035,110 @@ i {
     background-color: $background-color;
   }
 
-  &__item {
-    box-shadow: -9px 11px 18px rgba(0, 0, 0, 0.05);
-    border-radius: 15px;
-    background-color: white;
-    margin-top: 21px;
+  //chart
+  .swiper-slide{
+
+  }
+  .blocktop-area{
+    position: relative;
+    margin-left: 20px;
+    .ccpw-block{
+      box-shadow: -9px 11px 18px rgba(0, 0, 0, 0.05) !important;
+      margin: 25px 0;
+      border-radius: 15px;
+    }
+
+    &.col-md-12{
+      width: unset;
+      float: unset;
+      padding-right: unset;
+      padding-left: unset;
+      min-height: unset;
+      position: unset;
+      max-width: unset;
+    }
+    .ccpw-coin-24h-volume{
+      display: block !important;
+      text-align: left !important;
+      float: unset !important;
+      color: #c7cad8;
+      font-size: 18px !important;
+      margin-top: 20px;
+      direction: ltr;
+      span{
+        font-size: 18px !important;
+        &:first-child{
+          margin-right: 7px;
+        }
+      }
+      br{
+        display: none;
+      }
+    }
+    .ccpw-block-body{
+      border-radius: 15px !important;
+      background-color: white !important;
+      box-shadow: unset !important;
+    }
+    .ccpw-coin-intro{
+      margin-top: 40px;
+      text-align: left;
+      color: #394148;
+      font-size: 18px;
+      padding-left: 20px;
+      padding-bottom: 35px;
+
+    }
+    .ccpw-coin-info{
+      text-align: left;
+      padding-left: 20px;
+
+      .ccpw-coin-24h-change{
+        position: absolute;
+        right: 19px;
+        top: 54px;
+        font-size: 16px;
+        &.ccpw-status-up{
+          color: $valid-color;
+        }
+        &.ccpw-status-down{
+          color: $invalid-color;
+        }
+
+
+        i{
+          position: absolute;
+          left: -18px;
+          &.ccpw_icon-up{
+            &::before{
+              content: '\e904' !important;
+              font-family: persian !important;
+              font-size: 13px !important;
+            }
+          }
+          &.ccpw_icon-down{
+            &::before{
+              content: '\e902' !important;
+              font-family: persian !important;
+              font-size: 13px !important;
+            }
+          }
+        }
+      }
+    }
+
+    .ccpw-coin-price{
+      color: $text-color-2;
+    }
+    .ccpw-coin-logo{
+      display: none;
+    }
+    .ccpw-coin-rank{
+      display: none;
+    }
+    .chart24h{
+      display: none;
+    }
   }
 }
 
@@ -3745,7 +3844,7 @@ footer {
   padding: 30px 30px 3px 83px;
   margin-bottom: 34px;
   margin-top: 36px;
-
+  transition: 0.3s;
   &::before {
     content: '\e908';
     font-family: persian;
@@ -5088,21 +5187,6 @@ footer {
   }
 }
 
-@keyframes wave {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.25);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.7);
-    transform: scale(1.5);
-  }
-}
 
 .loader {
   background: rgba(255,255,255,0.5);
@@ -5145,3 +5229,22 @@ footer {
   }
 }
 
+.swal2-container{
+  z-index: 1000000!important;
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.25);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.7);
+    transform: scale(1.5);
+  }
+}
