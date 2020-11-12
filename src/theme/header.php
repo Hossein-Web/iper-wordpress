@@ -10,45 +10,16 @@
 <body <?php body_class(); ?>>
 <?php if ( ! is_404() ){ ?>
 <div class="menu-wrapper">
+    <?php
+        $show_digital_currency_slider = get_field( 'digital_currency_slider_display', 'option' );
+        if ( $show_digital_currency_slider === 'show_digital_currency_slider' ) {
+            $digital_currency_post_object = get_field( 'digital_currency_slider', 'option' );
+            $shortcode_text = '[ccpw id="' . $digital_currency_post_object->ID . '"]';
+        }
+    ?>
     <div class="top-live-prices">
         <div class="container">
-            <ul class="currency-list-wrapper">
-                <li class="currency-list-wrapper__item">
-                    <p class="currency-name">Bitcoin</p>
-                    <div class="currency-details">
-                        <span class="currency-value">$168.681841489</span>
-                        <span class="currency-status currency-status--inc">-2.41%</span>
-                    </div><!-- .currency-details -->
-                </li>
-                <li class="currency-list-wrapper__item">
-                    <p class="currency-name">NEM</p>
-                    <div class="currency-details">
-                        <span class="currency-value">$168.681841489</span>
-                        <span class="currency-status currency-status--dec">-2.41%</span>
-                    </div><!-- .currency-details -->
-                </li>
-                <li class="currency-list-wrapper__item">
-                    <p class="currency-name">Bitcoin</p>
-                    <div class="currency-details">
-                        <span class="currency-value">$168.681841489</span>
-                        <span class="currency-status currency-status--inc">-2.41%</span>
-                    </div><!-- .currency-details -->
-                </li>
-                <li class="currency-list-wrapper__item">
-                    <p class="currency-name">Monero</p>
-                    <div class="currency-details">
-                        <span class="currency-value">$168.681841489</span>
-                        <span class="currency-status currency-status--dec">-2.41%</span>
-                    </div><!-- .currency-details -->
-                </li>
-                <li class="currency-list-wrapper__item">
-                    <p class="currency-name">ETHEthereum</p>
-                    <div class="currency-details">
-                        <span class="currency-value">$168.681841489</span>
-                        <span class="currency-status currency-status--dec">-2.41%</span>
-                    </div><!-- .currency-details -->
-                </li>
-            </ul><!-- .currency-list-wrapper -->
+            <?php echo do_shortcode( $shortcode_text ); ?>
         </div><!-- .container -->
     </div><!-- .top-live-prices -->
     <header class="header">

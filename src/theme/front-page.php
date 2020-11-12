@@ -1095,7 +1095,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                 $most_visited_posts_query->the_post(); ?>
                                                                 <div class="swiper-slide">
                                                                     <?php if (has_post_thumbnail()) {
-                                                                        the_post_thumbnail();
+                                                                        the_post_thumbnail( 'small_slider_image' );
                                                                     } ?>
                                                                     <div class="slider-post-small__content">
                                                                         <div class="post-small-title">

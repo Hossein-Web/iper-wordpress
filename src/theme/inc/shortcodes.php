@@ -111,4 +111,4 @@ function persian_offer_posts_shortcode( $atts ) {
     <?php
     return ob_get_clean();
 }
-add_shortcode( 'offer_posts', 'persian_offer_posts_shortcode' );
+//add_shortcode( 'offer_posts', 'persian_offer_posts_shortcode' );

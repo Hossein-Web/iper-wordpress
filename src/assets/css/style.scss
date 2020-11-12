@@ -582,6 +582,71 @@ i {
 }
 
 /*------------ Top live prices -------------*/
+.style-4_big .coin-container::after{
+  border: none !important;
+  margin-left: 50px !important;
+}
+.tickercontainer{
+  height: initial !important;
+  li{
+    background-color: transparent !important;
+    padding: initial !important;
+    .ccpw_right{
+      text-align: left;
+      .ccpw_icon-down, .ccpw_icon-up{
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        &::before {
+          display: inline-block !important;
+          position: relative !important;
+          margin-right: 5px !important;
+          font-family: persian !important;
+          font-weight: 300 !important;
+        }
+      }
+      .ccpw-changes{
+        &.up{
+          color: $valid-color !important;
+          .ccpw_icon-up{
+            &::before{
+              content: '\e904' !important;
+              color: $valid-color;
+            }
+          }
+        }
+        &.down{
+          color: $invalid-color !important;
+          .ccpw_icon-down{
+            &::before{
+              content: '\e902' !important;
+              color: $invalid-color;
+            }
+          }
+        }
+      }
+      .ticker-name, .ticker-symbol{
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        margin-top: initial !important;
+        margin-bottom: 2px;
+        color: $text-color !important;
+      }
+      .live-pricing{
+        padding: 0 4px;
+        .live_p{
+          font-size: 14px !important;
+          font-weight: 400 !important;
+          margin-right: 12px;
+          color: $text-color !important;
+        }
+      }
+    }
+    .ccpw_left{
+      display: none !important;
+    }
+  }
+}
+
 .top-live-prices {
   // top: 0;
   bottom: -70px;
@@ -642,7 +707,7 @@ i {
             color: $valid-color;
 
             &::before {
-              content: '\e904';
+              content: '\e904' !important;
               color: $valid-color;
             }
           }
@@ -651,7 +716,7 @@ i {
             color: $invalid-color;
 
             &::before {
-              content: '\e902';
+              content: '\e902' !important;
               color: $invalid-color;
             }
           }
@@ -1691,6 +1756,10 @@ i {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        transition: 0.3s;
+        &:hover{
+          box-shadow: 0 0 0 rgba( 6, 97, 248, 0.4 );
+        }
 
         span {
           font-weight: 700;
@@ -1713,7 +1782,9 @@ i {
 
           img {
             width: 100%;
-            max-height: 331px;
+            //max-height: 331px;
+            height: 331px;
+            object-fit: cover;
             border-radius: 6px;
           }
         }
@@ -1981,7 +2052,7 @@ i {
 
     .swiper-slide {
       img{
-        //width: 100%;
+        width: 100%;
         width: 1170px;
         height: 453px;
         object-fit: cover;
@@ -2059,6 +2130,10 @@ i {
         padding: 10px 0;
         display: flex;
         flex-direction: column;
+        transition: 0.3s;
+        &:hover{
+          box-shadow: 0 0 0 rgba(6, 97, 248, 0.4);
+        }
 
         span {
           color: white;
@@ -2720,7 +2795,7 @@ i {
         }
 
         > span:first-child {
-          padding-top: 6px;
+          //padding-top: 6px;
           padding-left: 6px;
         }
 
@@ -2732,6 +2807,7 @@ i {
           }
         }
       }
+
     }
   }
 }
@@ -4137,6 +4213,18 @@ footer {
 /*------------ <768px -------------*/
 @media only screen and (max-width: 768px) {
 
+  /*Tile post*/
+  .tile-post{
+    &__item{
+      .post-item-categories{
+        flex-wrap: wrap;
+        .post-item-category{
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
   /*Comments and posts*/
   .comments {
     margin-bottom: 20px;
@@ -4225,6 +4313,32 @@ footer {
     padding: 10px 0 !important;
     //margin-top: 50px;
   }
+
+  .style-4_big{
+    .coin-container{
+      padding: 0 !important;
+      &::after{
+        margin-left: 10px !important;
+      }
+    }
+  }
+
+  .tickercontainer{
+    li{
+      .ccpw_right{
+        margin: 0 !important;
+        .ccpw_icon-down, .ccpw_icon-up{
+            margin-right: 0 !important;
+          }
+        }
+        .ticker-name, .ticker-symbol{
+          margin-bottom: 0 !important;
+        }
+        .live_p{
+          margin-right: 2px !important;
+        }
+      }
+    }
 
   /*Top live prices*/
   .top-live-prices {
@@ -4622,6 +4736,7 @@ footer {
       padding-bottom: 10px;
 
       .post-slider-navigation {
+        position: relative;
         justify-content: center !important;
         right: 0;
         left: 0;
@@ -4629,7 +4744,7 @@ footer {
       }
 
       .swiper-slide {
-        margin-bottom: 63px;
+        margin-bottom: 8px;
 
         .post-slider-details {
           bottom: -20px;
@@ -4670,18 +4785,18 @@ footer {
       }
     }
 
-    .post-slider-navigation {
-      justify-content: flex-start;
-      right: 0;
-      left: 0;
-      bottom: 0;
-
-      .navigation-button {
-        height: 45px;
-        width: 45px;
-        border-radius: 45px;
-      }
-    }
+    //.post-slider-navigation {
+    //  justify-content: flex-start;
+    //  right: 0;
+    //  left: 0;
+    //  bottom: 0;
+    //
+    //  .navigation-button {
+    //    height: 45px;
+    //    width: 45px;
+    //    border-radius: 45px;
+    //  }
+    //}
   }
 
   /*Side tab*/
@@ -4833,7 +4948,7 @@ footer {
     }
 
     .footer-bottom {
-      padding: 15px 0 50px !important;
+      padding: 15px 0 60px !important;
 
       .footer-copy-right {
         flex-wrap: wrap;
