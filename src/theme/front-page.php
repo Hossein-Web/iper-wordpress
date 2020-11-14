@@ -59,10 +59,10 @@ $persian_slider_type = get_sub_field('persian_slider_type');
 
                                 <div class="tile-post__item">
                                     <img class="post-item-image"
-                                         src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                         src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
                                          alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
                                     <?php
-                                    persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
+                                    persian_get_category( $persian_slider[$i]->ID, 'post-item-categories', 'post-item-category' );
                                     ?>
                                     <div class="post-item-details">
                                         <a class="post-item-details__title"
@@ -107,7 +107,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                    ?>
                                    <div class="tile-post__item">
                                        <img class="post-item-image"
-                                            src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                            src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
                                             alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
                                        <?php
                                        persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
@@ -153,7 +153,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                        ?>
                                        <div class="tile-post__item  tile-post__item--small">
                                            <img class="post-item-image"
-                                                src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                                src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'small_tile_post_image' ) ); ?>"
                                                 alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
                                            <?php
                                            persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
@@ -203,7 +203,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                        ?>
                                        <div class="tile-post__item  tile-post__item--small">
                                            <img class="post-item-image"
-                                                src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                                src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'small_tile_post_image' ) ); ?>"
                                                 alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
                                            <?php
                                            persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
@@ -250,7 +250,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                    ?>
                                    <div class="tile-post__item">
                                        <img class="post-item-image"
-                                            src="<?php echo esc_url(get_the_post_thumbnail_url($persian_slider[$i]->ID)); ?>"
+                                            src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
                                             alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
                                        <?php
                                        persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
@@ -323,7 +323,7 @@ elseif ($persian_slider_type == 'visited'){
                                 ?>
                                 <div class="tile-post__item">
                                     <img class="post-item-image"
-                                         src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                         src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_posts[$j]->ID, 'large_tile_post_image' ) ); ?>"
                                          alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
                                     <?php
                                     persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
@@ -371,7 +371,7 @@ elseif ($persian_slider_type == 'visited'){
                                     ?>
                                     <div class="tile-post__item">
                                         <img class="post-item-image"
-                                             src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                             src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_posts[$j]->ID, 'large_tile_post_image' ) ); ?>"
                                              alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
                                         <?php
                                         persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
@@ -418,7 +418,7 @@ elseif ($persian_slider_type == 'visited'){
                                         ?>
                                         <div class="tile-post__item tile-post__item--small">
                                             <img class="post-item-image"
-                                                 src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                                 src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_posts[$j]->ID, 'small_tile_post_image' ) ); ?>"
                                                  alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
                                             <?php
                                             persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
@@ -472,7 +472,7 @@ elseif ($persian_slider_type == 'visited'){
                                       ?>
                                         <div class="tile-post__item tile-post__item--small">
                                             <img class="post-item-image"
-                                                 src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                                 src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_posts[$j]->ID, 'small_tile_post_image' ) ); ?>"
                                                  alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
                                             <?php
                                             persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');
@@ -518,7 +518,7 @@ elseif ($persian_slider_type == 'visited'){
                                     ?>
                                     <div class="tile-post__item">
                                         <img class="post-item-image"
-                                             src="<?php echo esc_url(get_the_post_thumbnail_url($persian_posts[$j]->ID)); ?>"
+                                             src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_posts[$j]->ID, 'large_tile_post_image' ) ); ?>"
                                              alt="<?php echo get_the_title($persian_posts[$j]->ID); ?>">
                                         <?php
                                         persian_get_category($persian_posts[$j]->ID, 'post-item-categories', 'post-item-category');

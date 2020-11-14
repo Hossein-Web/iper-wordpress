@@ -33,6 +33,8 @@ add_image_size( 'video_post_image', 328, 240, [ 'center', 'center' ] );
 add_image_size( 'extra_small_image', 53, 53, [ 'center', 'center' ] );
 add_image_size( 'offer_posts_image', 265, 185, [ 'center', 'center' ] );
 add_image_size( 'small_slider_image', 584, 374, [ 'center', 'center' ] );
+add_image_size( 'large_tile_post_image', 575, 399, [ 'center', 'center' ] );
+add_image_size( 'small_tile_post_image', 575, 191, [ 'center', 'center' ] );
 
 // Ivahid functions
 
