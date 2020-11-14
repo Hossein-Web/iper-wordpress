@@ -91,7 +91,7 @@
                                                                     $megamenu_content ['main_title'.get_row_index() ] = $persian_submenu_title;
                                                                     $megamenu_content[ get_row_index() ] = $persian_megamenu;
                                                                     ?>
-                                                                    <div data-tab="apps-<?php echo get_row_index(); ?>"
+                                                                    <div <?php if ( get_row_index() === 1 ){ echo 'class = "active"'; } ?> data-tab="apps-<?php echo get_row_index(); ?>"
                                                                          data-parent="popular">
                                                                         <span><?php echo esc_html($persian_submenu_title); ?></span>
                                                                     </div>
