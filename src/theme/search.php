@@ -56,10 +56,8 @@
                 <div class="bourse-news__bourse-pagination">
                     <?php do_action( 'pagination', 1, 2, '<i class="persian-angle-right"></i>', '<i class="persian-angle-left"></i>' ); ?>
                     <div class="other-pages">
-                        <a href="#">
-                            <p><?php _e( 'سایر', 'persian_bourse' ); ?></p>
-                            <p><?php _e( 'صفحه ها', 'persian_bourse' ); ?></p>
-                        </a>
+                        <p><?php _e( 'سایر', 'persian_bourse' ); ?></p>
+                        <p><?php _e( 'صفحه ها', 'persian_bourse' ); ?></p>
                     </div>
                 </div>
             </div>
