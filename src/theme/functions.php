@@ -102,7 +102,7 @@ require_once get_template_directory() . '/libs/main_function.php';
 function persian_comments( $comment, $args, $depth ) {
 //    get_template_part( '/template_parts/comment_list' );
     ?>
-    <li class="comment">
+    <li class="comment" id="<?php echo 'comment-' . $comment->comment_ID; ?>">
     <div class="comment__content">
         <div class="comment-info">
             <p class="comment-author"><?php echo get_comment_author(); ?></p><!-- .comment-author -->

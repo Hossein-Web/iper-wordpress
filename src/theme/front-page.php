@@ -1039,6 +1039,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                 ?>
                                                 <ul>
                                                     <?php foreach ($comments as $comment_item) { ?>
+                                                        <?php persian_var_dump( $comment_item ); ?>
                                                         <li class="d-flex align-items-center">
                                                             <a href="<?php echo get_post_permalink($comment_item->comment_post_ID); ?>"
                                                                class="comment-profile-image">
@@ -1047,7 +1048,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                             <div class="comment-content">
                                                                 <p><?php echo esc_html($comment_item->comment_author); ?></p>
                                                                 <p><?php echo esc_html($comment_item->comment_content); ?></p>
-                                                                <a href="<?php echo get_post_permalink($comment_item->comment_post_ID); ?>"
+                                                                <a href="<?php echo get_post_permalink($comment_item->comment_post_ID) . '#comment-' . $comment_item->comment_ID; ?>"
                                                                    class="view-more">
                                                                     <?php _e('مشاهده در مطلب', 'persian_bourse'); ?>
                                                                 </a>
