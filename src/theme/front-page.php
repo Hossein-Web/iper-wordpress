@@ -606,14 +606,14 @@ elseif (get_row_layout() == 'persian_news') {
                             $persian_news_title = get_sub_field('persian_news_title');
 
                             $persian_news_read_more = get_sub_field( 'persian_news_link' );
-                            $persian_news_link_title = $persian_news_read_more['title'];
-                            $persian_news_url = $persian_news_read_more['url'];
 
                             if ($persian_news_title) {
                                 ?>
                                 <div class="bourse-title">
                                     <h6><?php echo esc_html($persian_news_title); ?></h6>
-                                    <?php if ( $persian_news_link_title ){
+                                    <?php if ( $persian_news_read_more ){
+                                        $persian_news_link_title = $persian_news_read_more['title'];
+                                        $persian_news_url = $persian_news_read_more['url'];
                                         ?>
                                         <a class="bourse-read-more" href="<?php echo esc_url( $persian_news_url ); ?>">
                                             <?php echo esc_html( $persian_news_link_title ); ?>
