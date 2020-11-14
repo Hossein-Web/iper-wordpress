@@ -197,11 +197,18 @@ $('.search>span').on('click', function (e) {
 	}, 300 );
 });
 
-// $( '.search__form' ).on( 'focusout', function () {
-// 	if ( $(this).hasClass( 'search-open' ) ) {
-// 		$(this).removeClass( 'search-open') ;
-// 	}
-// } );
+$('body').on( 'click', function (e) {
+	e.stopPropagation();
+	let search_form = $('.search__form');
+
+	if ( search_form.hasClass( 'search-open' ) ){
+		search_form.removeClass( 'search-open' );
+	}
+
+	});
+	$('.search__form input').on( 'click', function (e) {
+		e.stopPropagation();
+	} );
 
 //notification
 $('.notification span').on('click', function () {
