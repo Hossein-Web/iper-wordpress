@@ -461,10 +461,10 @@ side_video.on('transitionEnd', function () {
 	let live_prices = new Swiper('.live-prices__cards .swiper-container', {
 		speed: 400,
 		spaceBetween: 10,
-		slidesPerView: 1.8,
+		slidesPerView: 1.1,
 		breakpoints: {
 			577: {
-				slidesPerView: 1.8,
+				slidesPerView: 1.2,
 			},
 			992: {
 				slidesPerView: 2.7
