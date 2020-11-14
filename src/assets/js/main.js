@@ -98,17 +98,23 @@ if ( topLivePricesSection ) {
 			if ( header_sticky ) {
 				header_element.addClass( 'sticky' );
 				menu_wrapper_padding = topLivePricesSection.outerHeight() + header_element.outerHeight();
-
+				$('#main-page').css( 'padding-top', menu_wrapper_padding );
 			}
 			else {
 				menu_wrapper_padding = topLivePricesSection.outerHeight();
+				menu_wrapper.css( 'padding-top', menu_wrapper_padding );
 			}
 
-			$('#main-page').css( 'padding-top', menu_wrapper_padding );
 		}else if ( topLivePricesSection.hasClass( 'fixed-to-bottom' ) ){
+			if ( header_sticky ) {
+
+				header_element.removeClass( 'sticky' );
+				$('#main-page').css( 'padding-top', '0' );
+			}
+			else {
+				menu_wrapper.css( 'padding-top', '0' );
+			}
 			topLivePricesSection.removeClass( 'fixed-to-bottom' );
-			header_element.removeClass( 'sticky' );
-			$('#main-page').css( 'padding-top', '0' );
 			// mainPage.css( 'padding-top', '0' );
 		}
 	} );
