@@ -48,7 +48,7 @@
                                                 </li>
                                                 <li class="post-view d-inline-flex align-items-center list-inline-item">
                                                     <span><i class="persian-view"></i></span>
-                                                    <span><?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?></span>
+                                                    <span><?php echo ivahid_get_views( get_the_ID() ) . ' ' . __( 'بازدید', 'persian_bourse' ); ?></span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -64,10 +64,8 @@
                         <div class="bourse-news__bourse-pagination">
                             <?php do_action( 'pagination', 1, 2, '<i class="persian-angle-right"></i>', '<i class="persian-angle-left"></i>', $persian_archive_query ); ?>
                             <div class="other-pages">
-                                <a href="#">
-                                    <p><?php _e( 'سایر', 'persian_bourse' ); ?></p>
-                                    <p><?php _e( 'صفحه ها', 'persian_bourse' ); ?></p>
-                                </a>
+                                <p><?php _e( 'سایر', 'persian_bourse' ); ?></p>
+                                <p><?php _e( 'صفحه ها', 'persian_bourse' ); ?></p>
                             </div>
                         </div>
                     </div>
