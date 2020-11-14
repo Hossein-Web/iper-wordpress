@@ -90,10 +90,20 @@ if ( topLivePricesSection ) {
 		// console.log(menu_wrapper_padding);
 		// console.log('top-live-prices '+ topLivePricesSection.outerHeight() );
 		// console.log('header '+ header_element.outerHeight() );
+		let menu_wrapper_padding;
+		let header_sticky = header_element.data( 'sticky' );
+
 		if ( $(this).scrollTop() > topLivePricesSection.outerHeight() ) {
 			topLivePricesSection.addClass( 'fixed-to-bottom' );
-			header_element.addClass( 'sticky' );
-			let menu_wrapper_padding = topLivePricesSection.outerHeight() + header_element.outerHeight();
+			if ( header_sticky ) {
+				header_element.addClass( 'sticky' );
+				menu_wrapper_padding = topLivePricesSection.outerHeight() + header_element.outerHeight();
+
+			}
+			else {
+				menu_wrapper_padding = topLivePricesSection.outerHeight();
+			}
+
 			$('#main-page').css( 'padding-top', menu_wrapper_padding );
 		}else if ( topLivePricesSection.hasClass( 'fixed-to-bottom' ) ){
 			topLivePricesSection.removeClass( 'fixed-to-bottom' );

@@ -23,7 +23,8 @@
             <?php echo do_shortcode( $shortcode_text ); ?>
         </div><!-- .container -->
     </div><!-- .top-live-prices -->
-    <header class="header">
+    <?php $header_sticky = get_field( 'persian-sticky-menu', 'option' ); ?>
+    <header class="header" data-sticky="<?php echo $header_sticky ?>">
         <div class="container">
             <div class="header__wrapper">
                 <div class="row align-items-center">
