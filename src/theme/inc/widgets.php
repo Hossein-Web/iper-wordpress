@@ -383,7 +383,7 @@ class Persian_Side_Video extends WP_Widget {
                                                                 <i class="persian-view"></i>
                                                             </span>
                                                             <span>
-                                                                <?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?>
+                                                                <?php echo ivahid_get_views( get_the_ID() ) . ' ' . __( 'بازدید', 'persian_bourse' ); ?>
                                                             </span>
                                                         </li>
                                                     </ul>
@@ -437,7 +437,7 @@ class Persian_Side_Video extends WP_Widget {
                                                                 <i class="persian-view"></i>
                                                             </span>
                                                             <span>
-                                                                <?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید', 'persian_bourse' ); ?>
+                                                                <?php echo ivahid_get_views( get_the_ID() ) . ' ' . __( 'بازدید', 'persian_bourse' ); ?>
                                                             </span>
                                                         </li>
                                                     </ul>

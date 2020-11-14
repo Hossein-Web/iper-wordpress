@@ -95,6 +95,65 @@
         </div><!-- .row -->
     </div><!-- .container -->
 
+    <section class="offer-posts">
+        <div class="container">
+            <div class="bourse-title bourse-title--blue">
+                <h6><?php _e( 'مطالب <span>مرتبط</span>', 'persian_bourse' ); ?></h6>
+                <?php
+                    $offer_posts_categories = get_the_category();
+                    $offer_post_cat = get_category_link( $offer_posts_categories[0] );
+                    $offer_posts_category_ids = [];
+                    foreach ( $offer_posts_categories as $category_item ) {
+                        $offer_posts_category_ids[] = $category_item->term_id;
+                    }
+
+//                    persian_var_dump( $offer_posts_categories[0] );
+                ?>
+                <a class="bourse-read-more" href="<?php echo $offer_post_cat; ?>"><?php echo esc_html( __( 'مشاهده بیشتر', 'persian_bourse' ) ); ?><i class="persian-arrow-left"></i></a>
+            </div>
+            <?php
+            $offer_posts_query_args = [
+                    'posts_per_page' => 10,
+                    'category__in'   => $offer_posts_category_ids
+            ];
+            $offer_posts_query = new WP_Query( $offer_posts_query_args );
+            ?>
+            <?php if ( $offer_posts_query->have_posts() ) {?>
+                <div class="offer-posts__slider-container">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <?php
+                            while ( $offer_posts_query->have_posts() ) {
+                                $offer_posts_query->the_post();
+                                ?>
+                                <div class="swiper-slide">
+                                    <div class="offer-posts__item">
+                                        <div class="item-image">
+                                            <a href="<?php echo get_the_permalink(); ?>">
+                                                <?php if ( has_post_thumbnail() ) {
+                                                    the_post_thumbnail();
+                                                } ?>
+                                            </a>
+                                        </div>
+                                        <div class="item-title">
+                                            <p><a href="<?php echo get_the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a></p>
+                                        </div>
+                                        <div class="item-content">
+                                            <p><?php echo ivahid_get_excerpt(100); ?></p>
+                                        </div><!-- .item-content -->
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            wp_reset_postdata();
+                            ?>
+                        </div>
+                    </div><!-- .swiper-container -->
+                </div><!-- .offer-posts__slider-container -->
+            <?php } ?>
+        </div>
+    </section><!-- .offer-posts -->
+
     <div class="suggest-bourse suggest-bourse--single">
         <div class="container">
             <div class="bourse-title bourse-title--blue">
