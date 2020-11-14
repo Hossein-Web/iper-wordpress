@@ -212,7 +212,11 @@
 <div id="main-page">
     <?php persian_social_media_share(); ?>
     <?php get_template_part( 'template_parts/header_bottom' ); ?>
-    <?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
+    <div class="container">
+        <div class="persian_edit_post">
+            <?php edit_post_link( __( 'ویرایش', 'persian_bourse' ), '<p class="edit-button">', '</p>'); ?>
+        </div>
+    </div>
 <?php } ?>
 
 <?php } ?>
