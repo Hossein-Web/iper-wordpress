@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <?php wp_head(); ?>
 </head>
+ <?php if ( class_exists( 'ACF' ) ){?>
 
 <body <?php body_class(); ?>>
 <?php if ( ! is_404() ){ ?>
@@ -211,4 +212,6 @@
     <?php persian_social_media_share(); ?>
     <?php get_template_part( 'template_parts/header_bottom' ); ?>
     <?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
+<?php } ?>
+
 <?php } ?>

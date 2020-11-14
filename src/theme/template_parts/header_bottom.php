@@ -7,6 +7,7 @@
  */
 
 ?>
+<?php if ( class_exists( 'ACF' ) ){ ?>
 
 <div class="header-bottom">
         <div class="container">
@@ -67,3 +68,5 @@
             </div><!-- .row -->
         </div><!-- .container -->
     </div><!-- .header-bottom -->
+
+<?php } ?>

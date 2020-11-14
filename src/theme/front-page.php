@@ -26,6 +26,7 @@ function persian_get_category($post_id, $ul_class, $li_class)
     </ul>
     <?php
 }
+ if ( class_exists( 'ACF' ) ){
 
 if (have_rows('main_page')){
 while (have_rows('main_page')){
@@ -1427,5 +1428,6 @@ elseif ( get_row_layout() == 'persian_live_prices' ){
                 }
                 }
                 ?>
+<?php } ?>
 
-                <?php get_footer(); ?>
+<?php get_footer(); ?>

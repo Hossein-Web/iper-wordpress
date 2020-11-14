@@ -11,15 +11,18 @@ get_header(); ?>
         <div class="logo-content-wrapper d-flex align-items-center">
             <div class="logo">
                 <?php
+                  if ( class_exists( 'ACF' ) ) {
 
-                $persian_logo = get_field('persian-logo', 'option');
+                      $persian_logo = get_field('persian-logo', 'option');
 
-                if ($persian_logo) {
-                    ?>
-                        <img src="<?php echo esc_url($persian_logo['url']); ?>"
-                             alt="<?php echo esc_attr($persian_logo['alt']); ?>">
-                    <?php
-                }
+                      if ($persian_logo) {
+                          ?>
+                          <img src="<?php echo esc_url($persian_logo['url']); ?>"
+                               alt="<?php echo esc_attr($persian_logo['alt']); ?>">
+                          <?php
+                      }
+
+                  }
                 ?>
             </div>
             <div class="not-found__content">

@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php var_dump( get_field( 'persian_slider_type' ) ); ?>
 <!-- container -->
 <!--<div class="container">	-->
 	<!-- site-content -->

@@ -1,3 +1,5 @@
+<?php if ( class_exists( 'ACF' ) ){?>
+
 <?php if ( !is_404() ){ ?>
 </div><!-- #main-page -->
 <footer>
@@ -286,4 +288,4 @@
 </body>
 </html>
 
-
+<?php } ?>
