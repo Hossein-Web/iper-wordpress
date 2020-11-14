@@ -1176,7 +1176,7 @@ i {
     height: 100vh;
     background-color: white;
     transition: 0.3s;
-    z-index: 100000;
+    z-index: 100000000;
     padding-right: 10px;
     padding-left: 10px;
     overflow: scroll;
@@ -4927,6 +4927,9 @@ footer {
 
   /*Side video*/
   .side-video {
+    .swiper-container{
+      max-height: 320px;
+    }
     &__title {
       margin-bottom: 20px;
     }
