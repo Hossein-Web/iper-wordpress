@@ -13,7 +13,7 @@
 <div class="menu-wrapper">
     <?php
         $show_digital_currency_slider = get_field( 'digital_currency_slider_display', 'option' );
-        if ( $show_digital_currency_slider === 'show_digital_currency_slider' ) {
+        if ( $show_digital_currency_slider ) {
             $digital_currency_post_object = get_field( 'digital_currency_slider', 'option' );
             $shortcode_text = '[ccpw id="' . $digital_currency_post_object->ID . '"]';
         }
