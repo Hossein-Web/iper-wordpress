@@ -859,8 +859,7 @@ elseif (get_row_layout() == 'persian_group') {
     $persian_group_title = get_sub_field('persian_bourse_group_title');
 
     $persian_group_link = get_sub_field( 'persian_bourse_group_link' );
-    $persian_group_read_more_title = $persian_group_link['title'];
-    $persian_group_read_more_url = $persian_group_link['url'];
+
 
 
                     ?>
@@ -870,7 +869,9 @@ elseif (get_row_layout() == 'persian_group') {
                                 ?>
                             <div class="bourse-title bourse-title--blue">
                                 <h6><?php echo esc_html($persian_group_title); ?></h6>
-                                <?php if ( $persian_group_read_more_title ){
+                                <?php if ( $persian_group_link ){
+                                    $persian_group_read_more_title = $persian_group_link['title'];
+                                    $persian_group_read_more_url = $persian_group_link['url'];
                                     ?>
                                     <a class="bourse-read-more"
                                        href="<?php echo esc_url( $persian_group_read_more_url ); ?>"><?php echo esc_html( $persian_group_read_more_title ); ?><i
@@ -931,14 +932,14 @@ elseif (get_row_layout() == 'persian_tools') {
                             $persian_tools_title = get_sub_field('persian_tools_main_title');
 
                             $persian_tools_read_more = get_sub_field( 'persian_tools_link' );
-                            $persian_tools_read_more_title = $persian_tools_read_more[ 'title' ];
-                            $persian_tools_read_more_url = $persian_tools_read_more[ 'url' ];
 
                             if ($persian_tools_title) {
                                 ?>
                                 <div class="bourse-title bourse-title--blue">
                                     <h6><?php echo $persian_tools_title; ?></h6>
-                                    <?php if ( $persian_tools_read_more_title ){
+                                    <?php if ( $persian_tools_read_more ){
+                                        $persian_tools_read_more_title = $persian_tools_read_more[ 'title' ];
+                                        $persian_tools_read_more_url = $persian_tools_read_more[ 'url' ];
                                         ?>
                                         <a class="bourse-read-more"
                                            href="<?php echo esc_url( $persian_tools_read_more_url ); ?>"><?php echo esc_html( $persian_tools_read_more_title ); ?><i
@@ -964,22 +965,22 @@ elseif (get_row_layout() == 'persian_tools') {
                                                     $persian_tools_image = get_sub_field('persian_tools_image');
 
                                                     $persian_tool_title = get_sub_field('persian_tools_item_title');
-                                                    $tool_item_title = $persian_tool_title['title'];
-                                                    $tool_item_url = $persian_tool_title['url'];
-
+                                                    if ($persian_tool_title) {
+                                                        $tool_item_title = $persian_tool_title['title'];
+                                                        $tool_item_url = $persian_tool_title['url'];
                                                     $persian_tool_excerpt = get_sub_field('persian_tools_item_excerpt');
                                                     ?>
                                                     <div class="swiper-slide">
                                                         <div class="services-container">
                                                             <div class="services-image">
-                                                                <?php if ($persian_tools_image) { ?>
+                                                                <?php if ($persian_tools_image) {
+                                                                    ?>
                                                                     <img src="<?php echo esc_url($persian_tools_image); ?>"
-                                                                         alt="<?php echo esc_attr($tool_item_title); ?>">
+                                                                         alt="<?php echo esc_attr( $tool_item_title ); ?>">
                                                                 <?php } ?>
                                                             </div>
                                                             <div class="services-content">
                                                                 <div class="services-title">
-                                                                    <?php if ($tool_item_title) { ?>
                                                                         <h4>
                                                                             <a href="<?php echo esc_url($tool_item_url); ?>"><?php echo esc_html($tool_item_title); ?></a>
                                                                         </h4>
@@ -1179,8 +1180,6 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
     $news_slider_title = get_sub_field('persian_news_slider_title');
 
     $news_slider_read_more = get_sub_field( 'persian_news_slider_link' );
-    $news_slider_read_more_title = $news_slider_read_more['title'];
-    $news_slider_read_more_url = $news_slider_read_more['url'];
     ?>
     <div class="post-slider">
         <div class="container">
@@ -1188,7 +1187,9 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                 ?>
             <div class="bourse-title">
                 <h6><?php echo esc_html($news_slider_title); ?></h6>
-                <?php if ( $news_slider_read_more_title ){
+                <?php if ( $news_slider_read_more ){
+                    $news_slider_read_more_title = $news_slider_read_more['title'];
+                    $news_slider_read_more_url = $news_slider_read_more['url'];
                     ?>
                 <a class="bourse-read-more" href="<?php echo esc_url( $news_slider_read_more_url ); ?>"><?php echo esc_html( $news_slider_read_more_title ); ?><i class="persian-arrow-left"></i></a>
                     <?php
