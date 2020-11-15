@@ -227,7 +227,8 @@ $('body').on( 'click', function (e) {
 	} );
 
 //notification
-$('.notification span').on('click', function () {
+$('.notification span').on('click', function (e) {
+	e.stopPropagation();
 	$('.notification__notification-list').toggleClass('active');
 });
 

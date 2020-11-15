@@ -136,6 +136,7 @@ function devServer() {
 
 	// watch('./src/assets/css/**/*.css', stylesDev);
 	watch('./src/assets/css/**/*.scss', stylesDev);
+	watch('./src/assets/css/**/*.scss', ltrstylesDev);
 	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
 	watch('./src/assets/img/**', series(copyImagesDev, Reload));
 	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
@@ -186,6 +187,22 @@ function stylesDev() {
 		.pipe(browserSync.stream({ match: '**/*.css' }));
 }
 
+function ltrstylesDev() {
+	// return src('./src/assets/css/style.css')
+	// 	.pipe(plumber({ errorHandler: onError }))
+	// 	.pipe(sourcemaps.init())
+	// 	.pipe(postcss(pluginsListDev))
+	// 	.pipe(sourcemaps.write('.'))
+	// 	.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
+	// 	.pipe(browserSync.stream({ match: '**/*.css' }));
+	return src('./src/assets/css/ltr.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass({includePaths: 'node_modules'}).on("error", sass.logError))
+		.pipe(sourcemaps.write('.'))
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
+		.pipe(browserSync.stream({ match: '**/*.css' }));
+}
+
 function headerScriptsDev() {
 	return src(headerJS)
 		.pipe(plumber({ errorHandler: onError }))
@@ -220,6 +237,7 @@ exports.dev = series(
 	copyImagesDev,
 	copyFontsDev,
 	stylesDev,
+	ltrstylesDev,
 	headerScriptsDev,
 	footerScriptsDev,
 	pluginsDev,
