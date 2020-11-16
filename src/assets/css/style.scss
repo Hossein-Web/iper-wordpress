@@ -2444,6 +2444,7 @@ i {
             font-weight: 500;
             margin-bottom: 7px;
             position: relative;
+            padding-left: 40px;
 
             &::after {
               content: "\e908";
@@ -2451,7 +2452,7 @@ i {
               transition: 0.3s;
               opacity: 0;
               position: absolute;
-              left: 40px;
+              left: 35px;
               top: 0;
             }
           }
