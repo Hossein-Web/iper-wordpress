@@ -46,21 +46,21 @@
                 <div class="col-md-8 col-sm-24 col-24">
                     <div class="field-wrapper">
                         <input class="comments-full-name" type="text" name="author"
-                               placeholder="نام و نام خانوادگی" required>
+                               placeholder="<?php _e( 'نام و نام خانوادگی', 'persian_bourse' ); ?>" required>
                         <i class="persian persian-user"></i>
                     </div><!-- .field-wrapper -->
                 </div><!-- .col-md-8 -->
             <div class="col-md-8 col-sm-24 col-24">
                 <div class="field-wrapper">
                     <input class="comments-phone" type="text" name="user_phone_number"
-                           placeholder="تلفن همراه">
+                           placeholder="<?php _e( 'تلفن همراه', 'persian_bourse' ); ?>">
                     <i class="persian persian-mobile"></i>
                 </div><!-- .field-wrapper -->
             </div><!-- .col-md-8 -->
             <div class="col-md-8 col-sm-24 col-24">
                 <div class="field-wrapper">
                     <input class="comments-email" type="email" name="email"
-                           placeholder="ایمیل" required>
+                           placeholder="<?php _e( 'ایمیل', 'persian_bourse' ); ?>" required>
                     <i class="persian persian-email"></i>
                 </div><!-- .field-wrapper -->
             </div><!-- .col-md-8 -->
@@ -70,11 +70,11 @@
             <div class="col-24">
                 <div class="field-wrapper">
                         <textarea class="comments-text" name="comment" rows="6"
-                                  placeholder="متن دیدگاه" required></textarea>
+                                  placeholder="<?php _e( 'متن دیدگاه', 'persian_bourse' ); ?>" required></textarea>
                 </div><!-- .field-wrapper -->
             </div><!-- .col-24 -->
         </div><!-- .row -->
-        <button class="comments-submit" type="submit" name="submit">ارسال دیدگاه</button>
+        <button class="comments-submit" type="submit" name="submit"><?php _e( 'ارسال دیدگاه', 'persian_bourse' ); ?></button>
         <?php
             comment_id_fields();
             do_action('comment_form', $post->ID );
