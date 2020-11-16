@@ -1407,7 +1407,11 @@ elseif ( get_row_layout() == 'persian_live_prices' ){
                             ?>
                             <div class="swiper-slide">
                                 <div class="live-prices__item">
-                                    <?php echo do_shortcode($card_shortcode);  ?>
+                                    <?php
+                                    if ( class_exists( 'Crypto_Currency_Price_Widget_Pro' ) ){
+                                        echo do_shortcode($card_shortcode);
+                                    }
+                                    ?>
                                 </div><!-- .live-prices__item -->
                             </div>
                         <?php
