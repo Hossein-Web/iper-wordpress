@@ -4196,11 +4196,7 @@ footer {
     .other-pages {
       p{
         color: #9c9c9f;
-        transition: 0.3s;
         text-align: justify;
-        &:hover {
-          color: $accent-color;
-        }
       }
     }
 
