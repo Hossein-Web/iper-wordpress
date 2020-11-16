@@ -20,7 +20,11 @@
     ?>
     <div class="top-live-prices">
         <div class="container">
-            <?php echo do_shortcode( $shortcode_text ); ?>
+            <?php
+            if ( class_exists( 'Crypto_Currency_Price_Widget_Pro' ) ){
+                echo do_shortcode( $shortcode_text );
+            }
+            ?>
         </div><!-- .container -->
     </div><!-- .top-live-prices -->
     <?php $header_sticky = get_field( 'persian-sticky-menu', 'option' ); ?>
