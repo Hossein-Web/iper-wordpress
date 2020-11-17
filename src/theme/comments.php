@@ -26,8 +26,8 @@
         <div class="container">
             <div class="bourse-title bourse-title--blue">
                 <h6><?php _e( 'نظرات <span>کاربران</span>', 'persian_bourse' ); ?></h6>
-<?php $approved_comments = get_comment_count()['approved']; ?>
-<a class="bourse-read-more" href="#"><?php echo $approved_comments . ' ' . __( 'نظر', 'persian_bourse' ); ?></a>
+<?php $approved_comments = get_comment_count( $post->ID )['approved']; ?>
+<p><?php echo $approved_comments . ' ' . __( 'نظر', 'persian_bourse' ); ?></p>
 </div>
 <ul>
     <?php

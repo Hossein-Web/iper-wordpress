@@ -137,6 +137,14 @@ Table of content
   }
 }
 
+input{
+  padding: 10px 10px 10px 32px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
 .single-content {
   p, h1, h2, h3, h4, h5, h6, blockquote {
     color: $text-color-2;
@@ -393,7 +401,7 @@ body {
     }
   }
 
-  h6, a {
+  h6, a, p {
     display: inline-block;
     background-color: white;
     z-index: 2;
@@ -407,7 +415,7 @@ body {
     margin-top: -3px;
   }
 
-  .bourse-read-more {
+  .bourse-read-more, p {
     color: $text-color-2;
     font-size: 14px;
     font-weight: 500;
@@ -422,7 +430,8 @@ body {
       right: 0;
       transition: 0.3s;
     }
-
+  }
+  .bourse-read-more{
     &:hover {
       color: $accent-color;
 
@@ -4354,11 +4363,7 @@ footer {
     .other-pages {
       p{
         color: #9c9c9f;
-        transition: 0.3s;
         text-align: justify;
-        &:hover {
-          color: $accent-color;
-        }
       }
     }
 
