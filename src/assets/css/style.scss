@@ -703,6 +703,279 @@ i {
   }
 }
 
+//crypto widget plugin
+.swiper-slide {
+
+  [class*=col] {
+    flex: initial !important;
+    max-width: initial !important;
+    padding-left: initial !important;
+    padding-right: initial !important;
+    width: initial !important;
+    float: initial;
+  }
+
+  .blocktop-area {
+    position: relative;
+    //margin-left: 20px;
+    background-color: initial !important;
+    .ccpw-block {
+      box-shadow: -9px 11px 18px rgba(0, 0, 0, 0.05) !important;
+      margin: 25px 0;
+      border-radius: 15px;
+    }
+
+    .ccpw-coin-24h-volume {
+      display: block !important;
+      text-align: left !important;
+      float: unset !important;
+      color: #c7cad8;
+      font-size: 18px !important;
+      margin-top: 20px;
+      direction: ltr;
+
+      span {
+        font-size: 18px !important;
+
+        &:first-child {
+          margin-right: 7px;
+        }
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    .ccpw-block-body {
+      border-radius: 15px !important;
+      background-color: white !important;
+      box-shadow: unset !important;
+    }
+
+    .ccpw-coin-intro {
+      margin-top: 40px;
+      text-align: left;
+      color: #394148;
+      font-size: 18px;
+      padding-left: 20px;
+      padding-bottom: 35px;
+
+    }
+
+    .ccpw-coin-info {
+      text-align: left;
+      padding-left: 20px;
+    }
+    .ccpw-coin-24h-change {
+      position: absolute;
+      right: 19px;
+      top: 54px;
+      font-size: 16px;
+
+      &.ccpw-status-up {
+        color: $valid-color;
+      }
+
+      &.ccpw-status-down {
+        color: $invalid-color;
+      }
+
+
+      i {
+        position: absolute;
+        left: -18px;
+
+        &.ccpw_icon-up {
+          &::before {
+            content: '\e904' !important;
+            font-family: persian !important;
+            font-size: 13px !important;
+          }
+        }
+
+        &.ccpw_icon-down {
+          &::before {
+            content: '\e902' !important;
+            font-family: persian !important;
+            font-size: 13px !important;
+          }
+        }
+      }
+    }
+
+    .ccpw-coin-price {
+      color: $text-color-2;
+    }
+
+    .ccpw-coin-logo {
+      display: none;
+    }
+
+    .ccpw-coin-rank {
+      display: none;
+    }
+
+    .chart24h {
+      display: none;
+    }
+  }
+
+  .ccpw-coin-price-widget{
+    color: $text-color-2 !important;
+    background-color: initial !important;
+  }
+}
+ .style-3{
+   .ccpw-coin-24h-change{
+     right: initial !important;
+     top: initial !important;
+     left: 20px !important;
+   }
+ }
+ .style-5{
+   .blocktop-area{
+     color: $text-color-2 !important;
+   }
+ }
+.chart-wrp {
+
+  input.amChartsButton.amcharts-period-input{
+    background-color: $accent-color !important;
+    color: white !important;
+    border-radius: 10px;
+    border: none !important;
+    transition: 0.3s !important;
+    &:hover{
+      background-color: white !important;
+      color: $accent-color !important;
+    }
+  }
+  input.amChartsButtonSelected.amcharts-period-input-selected{
+    background-color: white !important;
+    color: $accent-color !important;
+    border-radius: 10px;
+  }
+
+}
+.coin_details{
+  background-color: $background-color !important;
+  border: 1px solid $light-gray !important;
+}
+
+.ccpw-container {
+  direction: ltr;
+  text-align: left;
+  &.price-block{
+    //background-color: white !important;
+    color: $text-color-2 !important;
+    box-shadow: none !important;
+    &.style-1{
+      background-color: white !important;
+    }
+  }
+  a{
+    border: none !important;
+  }
+  .tabperiods{
+    background-color: $accent-color !important;
+    color: white !important;
+    border-radius: 10px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+
+    &.tabperiods_active{
+      background-color: white !important;
+      color: $accent-color !important;
+    }
+  }
+  .exportBtnTop{
+    background-color: $accent-color !important;
+    color: white !important;
+    border-radius: 10px !important;
+  }
+  &.chart{
+    box-shadow: -18px 18px 35px rgba(56, 66, 77, 0.05);
+    .coin_details{
+      ul{
+        font-size: 18px !important;
+      }
+    }
+    .ccc-logo-right{
+      display: none;
+    }
+    .ccc-chart-header{
+      background-color: $accent-color !important;
+    }
+    #ccc-chart-block {
+      .chartTypeTabLinks{
+        padding-top: 7px;
+        padding-bottom: 3px;
+        border-radius: 10px;
+        &:hover{
+          background-color: $accent-color ;
+        }
+        &.cTypeTabActive{
+          background-color: $accent-color ;
+        }
+      }
+    }
+  }
+}
+
+.chart-wrp {
+  input.amChartsInputField{
+    &.amcharts-end-date-input ,  &.amcharts-start-date-input{
+      color: white !important;
+      background-color: $accent-color !important;
+      border-radius: 10px !important;
+      border: none !important;
+      padding-top: 6px !important;
+      margin-left: 7px !important;
+    }
+  }
+  .amcharts-chart-div{
+    a{
+      display: none !important;
+    }
+  }
+}
+
+.coin-container {
+  &.ccpw-card{
+     &.style-1 ,&.style-2 ,&.style-3, &.style-5 , &.style-6, &.style-7{
+       .ccpw-card-body{
+         background-color: white !important;
+         color: $text-color-2 !important;
+         box-shadow: none !important;
+         border: 1px solid #ebebeb;
+         border-radius: 10px;
+       }
+     }
+    .ccpw-changes {
+      &.up{
+        color: $valid-color !important;
+        i{
+          &::before{
+            content: '\e904' !important;
+            font-family: persian !important;
+            font-size: 13px !important;
+          }
+        }
+      }
+      &.down{
+        color: $invalid-color !important;
+        i{
+          &::before {
+            content: '\e902' !important;
+            font-family: persian !important;
+            font-size: 13px !important;
+          }
+        }
+      }
+    }
+  }
+}
 /*------------ Top live prices -------------*/
 .style-4_big .coin-container::after{
   border: none !important;
@@ -2155,112 +2428,6 @@ i {
     top: 40px;
     bottom: 40px;
     background-color: $background-color;
-  }
-
-  //chart
-  .swiper-slide{
-
-  }
-  .blocktop-area{
-    position: relative;
-    margin-left: 20px;
-    .ccpw-block{
-      box-shadow: -9px 11px 18px rgba(0, 0, 0, 0.05) !important;
-      margin: 25px 0;
-      border-radius: 15px;
-    }
-
-    &.col-md-12{
-      width: unset;
-      float: unset;
-      padding-right: unset;
-      padding-left: unset;
-      min-height: unset;
-      position: unset;
-      max-width: unset;
-    }
-    .ccpw-coin-24h-volume{
-      display: block !important;
-      text-align: left !important;
-      float: unset !important;
-      color: #c7cad8;
-      font-size: 18px !important;
-      margin-top: 20px;
-      direction: ltr;
-      span{
-        font-size: 18px !important;
-        &:first-child{
-          margin-right: 7px;
-        }
-      }
-      br{
-        display: none;
-      }
-    }
-    .ccpw-block-body{
-      border-radius: 15px !important;
-      background-color: white !important;
-      box-shadow: unset !important;
-    }
-    .ccpw-coin-intro{
-      margin-top: 40px;
-      text-align: left;
-      color: #394148;
-      font-size: 18px;
-      padding-left: 20px;
-      padding-bottom: 35px;
-
-    }
-    .ccpw-coin-info{
-      text-align: left;
-      padding-left: 20px;
-
-      .ccpw-coin-24h-change{
-        position: absolute;
-        right: 19px;
-        top: 54px;
-        font-size: 16px;
-        &.ccpw-status-up{
-          color: $valid-color;
-        }
-        &.ccpw-status-down{
-          color: $invalid-color;
-        }
-
-
-        i{
-          position: absolute;
-          left: -18px;
-          &.ccpw_icon-up{
-            &::before{
-              content: '\e904' !important;
-              font-family: persian !important;
-              font-size: 13px !important;
-            }
-          }
-          &.ccpw_icon-down{
-            &::before{
-              content: '\e902' !important;
-              font-family: persian !important;
-              font-size: 13px !important;
-            }
-          }
-        }
-      }
-    }
-
-    .ccpw-coin-price{
-      color: $text-color-2;
-    }
-    .ccpw-coin-logo{
-      display: none;
-    }
-    .ccpw-coin-rank{
-      display: none;
-    }
-    .chart24h{
-      display: none;
-    }
   }
 }
 
