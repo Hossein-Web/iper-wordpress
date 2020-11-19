@@ -157,7 +157,11 @@
                              <li>
                                  <?php if (has_post_thumbnail()) { ?>
                                      <div class="img-wrapper">
-                                         <?php the_post_thumbnail('extra_small_image'); ?>
+                                         <a href="<?php echo get_the_permalink(); ?>">
+                                             <figure>
+                                                 <?php the_post_thumbnail('extra_small_image'); ?>
+                                             </figure>
+                                         </a>
                                      </div><!-- .img-wrapper -->
                                  <?php } ?>
                                  <div class="post-details">
