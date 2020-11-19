@@ -174,8 +174,7 @@
                                                     $notifications = bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' );
                                                     ?>
                                                 <li class="notification list-inline-item">
-                                                    <?php persian_var_dump( bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' ) ); ?>
-                                                    <a href="#">
+                                                    <a href="<?php echo bp_loggedin_user_domain(); ?>">
                                                         <span><i class="persian-notification"></i></span>
                                                         <?php if ( $notifications ){?>
                                                             <span class="notification__is-active"></span>
