@@ -158,11 +158,13 @@
                                                 break;
                                             case 'user':
                                                 ?>
-                                                <li class="user-profile list-inline-item">
-                                                    <a href="#">
-                                                        <span><i class="persian-user"></i></span>
-                                                    </a>
-                                                </li>
+                                                <?php if ( is_user_logged_in() ) { ?>
+                                                    <li class="user-profile list-inline-item">
+                                                        <a href="<?php echo bp_loggedin_user_domain(); ?>">
+                                                            <span><i class="persian-user"></i></span>
+                                                        </a>
+                                                    </li>
+                                                <?php } ?>
                                                 <?php
                                                 break;
                                             case 'notification':

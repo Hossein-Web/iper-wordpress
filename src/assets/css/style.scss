@@ -144,6 +144,11 @@ input{
   border: 1px solid rgba(0, 0, 0, 0.1);
   max-width: 100%;
 }
+//button{
+//  background-color: $accent-color;
+//  color: white;
+//  border-radius: 8px;
+//}
 
 .single-content {
   p, h1, h2, h3, h4, h5, h6, blockquote {
@@ -598,10 +603,54 @@ i {
   .logy-form-item{
     input{
       &:not([type=checkbox]){
+        font-family: IRANSans, sans-serif !important;
       }
     }
   }
 }
+.yz-content{
+  p, li, a, h1, h2, h3, h4, h5, h6, input, textarea, button {
+    font-family: IRANSans, sans-serif !important;
+  }
+  p, span, li{
+    color: $text-color;
+  }
+
+}
+
+// YOUZER general options
+body{
+  .youzer{
+    font-family: IRANSans, sans-serif !important;
+    ul{
+      .yz-general, .yz-notifications, .yz-data{
+        a{
+          font-family: IRANSans, sans-serif !important;
+        }
+      }
+    }
+    button, input{
+      font-family: IRANSans, sans-serif !important;
+    }
+    input{
+      &::placeholder{
+        font-family: IRANSans, sans-serif !important;
+      }
+    }
+  }
+}
+
+// YOUZER settings
+.option-infos{
+  .option-title{
+    font-family: IRANSans, sans-serif !important;
+  }
+  .option-desc{
+    font-family: IRANSans, sans-serif !important;
+  }
+}
+
+  // YOUZER main page
 .yz-page{
   background-color: white;
   background-image: url("./img/bourse-back.png");
@@ -632,6 +681,19 @@ i {
     form{
       padding-top: 0;
       padding-bottom: 20px;
+      label, legend, p, logy-section-title{
+        color: #8b96a2 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        font-family: IRANSans, sans-serif;
+        span{
+          border-radius: 7px !important;
+          font-family: IRANSans, sans-serif;
+        }
+      }
+      fieldset{
+        border-radius: 8px;
+      }
       .logy-form-item{
         .logy-forgot-password, .logy_checkbox_field{
           color: #8b96a2 !important;
@@ -686,13 +748,23 @@ i {
         padding: 12px 28px 12px 20px;
         position: relative;
         border-radius: 8px;
+        font-family: IRANSans, sans-serif;
+        &:hover{
+          opacity: 1 !important;
+          &::after{
+            opacity: 1;
+            left: 20px;
+          }
+        }
         &::after{
           display: block;
           content: "\e903";
           position: absolute;
           font-family: 'persian' !important;
           top: 50%;
-          left: 20px;
+          left: 40px;
+          opacity: 0;
+          transition: 0.3s;
           transform: translateY(-50%);
         }
       }
@@ -701,8 +773,66 @@ i {
       }
     }
   }
+
+  .logy-form-note{
+    &.logy-terms-note{
+      color: #8b96a2;
+      font-size: 12px;
+      font-weight: 500;
+      a{
+        font-size: 12px;
+        font-weight: 500;
+        color: $accent-color;
+      }
+    }
+  }
+  #logy_signup_form  {
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="text"]{
+      color: $text-color-2;
+      border: 1px solid $background-color;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: IRANSans, sans-serif;
+      &:focus {
+        border-color: #dddddd !important;
+      }
+    }
+  }
 }
 
+// YOUZER edit profile
+.yz-account-head-content{
+  h2, span{
+    font-family: IRANSans, sans-serif !important;
+  }
+}
+.yz-account-settings-menu{
+  .yz-menu-head{
+    .yz-menu-title{
+      font-family: IRANSans, sans-serif !important;
+    }
+    .yz-menu-description{
+      font-family: IRANSans, sans-serif !important;
+    }
+  }
+}
+
+.yz-settings-sidebar{
+  .yz-account-menus{
+    ul{
+      li{
+        a{
+          font-family: IRANSans, sans-serif !important;
+        }
+      }
+    }
+  }
+}
 //crypto widget plugin
 .swiper-slide {
 
@@ -711,7 +841,7 @@ i {
     max-width: initial !important;
     padding-left: initial !important;
     padding-right: initial !important;
-    width: initial !important;
+    width: 100% !important;
     float: initial;
   }
 
