@@ -169,22 +169,37 @@
                                                 break;
                                             case 'notification':
                                                 ?>
+                                                <?php
+                                                if ( is_user_logged_in() ){
+                                                    $notifications = bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' );
+                                                    ?>
                                                 <li class="notification list-inline-item">
                                                     <?php persian_var_dump( bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' ) ); ?>
                                                     <a href="#">
                                                         <span><i class="persian-notification"></i></span>
-                                                        <span class="notification__is-active"></span>
+                                                        <?php if ( $notifications ){?>
+                                                            <span class="notification__is-active"></span>
+                                                        <?php
+                                                        } ?>
                                                     </a>
+                                                    <?php if ( $notifications ){
+                                                        ?>
+
                                                     <div class="notification__notification-list">
                                                         <ul>
-                                                            <li><a href="#">آیتم اول</a></li>
-                                                            <li><a href="#">آیتم دوم</a></li>
-                                                            <li><a href="#">آیتم سوم</a></li>
-                                                            <li><a href="#">آیتم چهارم</a></li>
-                                                            <li><a href="#">آیتم پنجم</a></li>
+                                                            <?php foreach ( (array)$notifications as $notification ){
+                                                                ?>
+                                                                <li><a href="<?php echo $notification->href; ?>"><?php echo $notification->content ?></a></li>
+                                                        <?php
+                                                            } ?>
                                                         </ul>
                                                     </div><!-- .notification__list -->
+                                                        <?php
+                                                    } ?>
                                                 </li>
+                                                        <?php
+                                                    }
+                                                ?>
                                                 <?php
                                                 break;
                                         }
