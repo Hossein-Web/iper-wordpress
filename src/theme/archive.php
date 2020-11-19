@@ -25,7 +25,11 @@
                                 <div class="post">
                                     <?php if ( has_post_thumbnail() ){ ?>
                                         <div class="post__image">
-                                            <?php the_post_thumbnail(); ?>
+                                            <a href="<?php echo get_the_permalink(); ?>">
+                                                <figure>
+                                                    <?php the_post_thumbnail(); ?>
+                                                </figure>
+                                            </a>
                                         </div>
                                     <?php } ?>
                                     <div class="post__content">

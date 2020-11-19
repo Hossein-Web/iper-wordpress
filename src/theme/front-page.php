@@ -58,9 +58,11 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                 ?>
 
                                 <div class="tile-post__item">
-                                    <img class="post-item-image"
-                                         src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
-                                         alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                    <a href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                        <img class="post-item-image"
+                                             src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
+                                             alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                    </a>
                                     <?php
                                     persian_get_category( $persian_slider[$i]->ID, 'post-item-categories', 'post-item-category' );
                                     ?>
@@ -106,9 +108,11 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                if ( $display_double === true ){
                                    ?>
                                    <div class="tile-post__item">
-                                       <img class="post-item-image"
-                                            src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
-                                            alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                       <a href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                           <img class="post-item-image"
+                                                src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
+                                                alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                       </a>
                                        <?php
                                        persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
                                        ?>
@@ -152,9 +156,11 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                    for ( $j = 0; $j<2; $j++ ){
                                        ?>
                                        <div class="tile-post__item  tile-post__item--small">
-                                           <img class="post-item-image"
-                                                src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'small_tile_post_image' ) ); ?>"
-                                                alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                           <a href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                               <img class="post-item-image"
+                                                    src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'small_tile_post_image' ) ); ?>"
+                                                    alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                           </a>
                                            <?php
                                            persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
                                            ?>
@@ -202,9 +208,11 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                    for ( $j=0; $j<2; $j++ ){
                                        ?>
                                        <div class="tile-post__item  tile-post__item--small">
-                                           <img class="post-item-image"
-                                                src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'small_tile_post_image' ) ); ?>"
-                                                alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                           <a href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                               <img class="post-item-image"
+                                                    src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'small_tile_post_image' ) ); ?>"
+                                                    alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                           </a>
                                            <?php
                                            persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
                                            ?>
@@ -249,9 +257,11 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                else{
                                    ?>
                                    <div class="tile-post__item">
-                                       <img class="post-item-image"
-                                            src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
-                                            alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                       <a href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
+                                           <img class="post-item-image"
+                                                src="<?php echo esc_url( get_the_post_thumbnail_url( $persian_slider[$i]->ID, 'large_tile_post_image' ) ); ?>"
+                                                alt="<?php echo get_the_title($persian_slider[$i]->ID); ?>">
+                                       </a>
                                        <?php
                                        persian_get_category($persian_slider[$i]->ID, 'post-item-categories', 'post-item-category');
                                        ?>
@@ -1081,8 +1091,12 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                             ?>
                                                             <div class="swiper-slide">
                                                                 <?php if (has_post_thumbnail()) {
+                                                                    ?>
+                                                                    <a href="<?php echo get_the_permalink(); ?>">
+                                                                <?php
                                                                     the_post_thumbnail( 'small_slider_image' );
                                                                 } ?>
+                                                                    </a>
                                                                 <div class="slider-post-small__content">
                                                                     <div class="post-small-title">
                                                                         <p>
@@ -1126,8 +1140,13 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                 $most_visited_posts_query->the_post(); ?>
                                                                 <div class="swiper-slide">
                                                                     <?php if (has_post_thumbnail()) {
+                                                                        ?>
+
+                                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                                            <?php
                                                                         the_post_thumbnail( 'small_slider_image' );
                                                                     } ?>
+                                                                        </a>
                                                                     <div class="slider-post-small__content">
                                                                         <div class="post-small-title">
                                                                             <p>
@@ -1212,7 +1231,15 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                                 ?>
                                 <div class="swiper-slide">
                                     <?php if ( has_post_thumbnail() ){
+                                        ?>
+                                        <a href="<?php echo get_the_permalink(); ?>">
+                                            <figure>
+                                    <?php
                                         echo get_the_post_thumbnail( get_the_ID(), 'extra_large_post_image' );
+                                        ?>
+                                            </figure>
+                                        </a>
+                                            <?php
                                     } ?>
                                     <div class="post-slider-details">
                                         <div class="post-slider-details__content">
@@ -1280,7 +1307,11 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
                                                 <div class="post">
                                                 <?php if ( has_post_thumbnail() ) { ?>
                                                     <div class="post__image">
-                                                        <?php the_post_thumbnail( 'medium_image' ); ?>
+                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                            <figure>
+                                                                <?php the_post_thumbnail( 'medium_image' ); ?>
+                                                            </figure>
+                                                        </a>
                                                     </div>
                                                 <?php } ?>
                                                 <div class="post__content">
