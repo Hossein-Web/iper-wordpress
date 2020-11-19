@@ -170,6 +170,7 @@
                                             case 'notification':
                                                 ?>
                                                 <li class="notification list-inline-item">
+                                                    <?php persian_var_dump( bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' ) ); ?>
                                                     <a href="#">
                                                         <span><i class="persian-notification"></i></span>
                                                         <span class="notification__is-active"></span>
