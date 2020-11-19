@@ -1409,6 +1409,8 @@ elseif ( get_row_layout() == 'persian_live_prices' ){
     $persian_live_price_title = get_sub_field( 'persian_live_prices_title' );
 
     $persian_live_read_more = get_sub_field( 'persian_live_prices_read_more' );
+
+    if ( class_exists( 'Crypto_Currency_Price_Widget_Pro' ) ){
     ?>
     <div class="live-prices">
         <div class="container">
@@ -1438,11 +1440,7 @@ elseif ( get_row_layout() == 'persian_live_prices' ){
                             ?>
                             <div class="swiper-slide">
                                 <div class="live-prices__item">
-                                    <?php
-                                    if ( class_exists( 'Crypto_Currency_Price_Widget_Pro' ) ){
-                                        echo do_shortcode($card_shortcode);
-                                    }
-                                    ?>
+                                    <?php  echo do_shortcode($card_shortcode); ?>
                                 </div><!-- .live-prices__item -->
                             </div>
                         <?php
@@ -1459,9 +1457,46 @@ elseif ( get_row_layout() == 'persian_live_prices' ){
         </div><!-- .container -->
     </div><!-- .live-prices -->
 <?php
+    }
 }
-                }
-                }
+elseif ( get_row_layout() == 'persian_small_live_price_slider' ){
+
+    if ( class_exists( 'Crypto_Currency_Price_Widget_Pro' ) ){
+    $persian_small_price_slider_title = get_sub_field( 'small_live_price_slider_title' );
+    $persian_small_price_slider_items = get_sub_field( 'persian_small_live_prices_slider_items' );
+    ?>
+    <div class="suggest-bourse suggest-bourse--single">
+        <div class="container">
+            <?php if ( $persian_small_price_slider_title ) { ?>
+                <div class="bourse-title bourse-title--blue">
+                    <h6><?php echo $persian_small_price_slider_title; ?></h6>
+                </div>
+            <?php } ?>
+            <?php if( $persian_small_price_slider_items ) { ?>
+                <div class="suggest-bourse__slider-container">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <?php foreach( $persian_small_price_slider_items as $small_price_item ) {
+                                $shortcode_text = '[ccpw id="' . $small_price_item->ID . '"]';
+                                ?>
+                                <div class="swiper-slide">
+                                    <div class="suggest-bourse__item-wrapper">
+                                        <?php echo do_shortcode( $shortcode_text ); ?>
+                                        <?php //persian_var_dump( $small_price_item_shortcode ); ?>
+                                    </div><!-- .suggest-bourse__item-wrapper -->
+                                </div><!-- .swiper-slide -->
+                            <?php } ?>
+                        </div><!-- .swiper-wrapper -->
+                    </div><!-- .swiper-container -->
+                </div><!-- .suggest-bourse__slider-container -->
+            <?php } ?>
+        </div><!-- .container -->
+    </div><!-- .suggest-bourse -->
+<?php
+    }
+    }
+    }
+    }
                 ?>
 <?php } ?>
 

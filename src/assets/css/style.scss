@@ -593,6 +593,116 @@ i {
   }
 }
 
+// YOUZER forms settings
+#logy-form{
+  .logy-form-item{
+    input{
+      &:not([type=checkbox]){
+      }
+    }
+  }
+}
+.yz-page{
+  background-color: white;
+  background-image: url("./img/bourse-back.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  .logy-form{
+    box-shadow: -18px 18px 35px rgba(56, 66, 77, 0.05) !important;
+    border-radius: 10px;
+    .logy-form-header{
+      .logy-form-cover{
+        background-image: none !important;
+        height: initial;
+        .form-cover-title{
+          color: $text-color-2;
+          font-size: 20px;
+          font-weight: 700;
+          font-family: IRANSans, sans-serif;
+          background: initial !important;
+          position: relative;
+          text-align: center;
+          margin: 20px 28px 20px 28px;
+          border-bottom: 2px solid $background-color;
+          padding: 0 0 13px;
+          letter-spacing: initial;
+        }
+      }
+    }
+    form{
+      padding-top: 0;
+      padding-bottom: 20px;
+      .logy-form-item{
+        .logy-forgot-password, .logy_checkbox_field{
+          color: #8b96a2 !important;
+          font-size: 12px !important;
+          font-weight: 500 !important;
+        }
+        .logy_checkbox_field{
+          .logy_field_indication{
+            border-radius: 5px;
+          }
+        }
+        .logy-field-content{
+          border: 1px solid #f8f8f8 !important;
+          border-radius: 8px;
+          transition: 0.3s;
+          &:hover{
+            border-color: #dddddd !important;
+          }
+          .logy-field-icon{
+            background-color: white;
+            border-radius: 8px;
+            .fas{
+              &::before{
+                font-family: 'persian' !important;
+                color: $icon-color;
+                font-weight: 300;
+              }
+              &.fa-user{
+                &::before{
+                  content: "\e919";
+                }
+              }
+              &.fa-lock{
+                &::before{
+                  content: "\e910";
+                }
+              }
+            }
+          }
+          input{
+            font-size: 13px;
+            font-weight: 500;
+            font-family: IRANSans, sans-serif;
+          }
+        }
+      }
+      button, .logy-link-button{
+        color: white;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        background-color: #0661f8;
+        padding: 12px 28px 12px 20px;
+        position: relative;
+        border-radius: 8px;
+        &::after{
+          display: block;
+          content: "\e903";
+          position: absolute;
+          font-family: 'persian' !important;
+          top: 50%;
+          left: 20px;
+          transform: translateY(-50%);
+        }
+      }
+      .logy-link-button{
+        line-height: initial;
+      }
+    }
+  }
+}
+
 //crypto widget plugin
 .swiper-slide {
 
@@ -3384,6 +3494,84 @@ i {
 }
 
 /*------------ Suggest bourse -------------*/
+.suggest-bourse{
+  .swiper-slide{
+    .price-card{
+      height: 100%;
+      .coin-container{
+        height: 100%;
+        margin: initial !important;
+        .ccpw-card-body{
+          padding: initial !important;
+          background-color: white !important;
+          box-shadow: initial !important;
+          direction: ltr;
+          height: 100%;
+          .ccpw_icon{
+            margin-top: 15px;
+          }
+          .ccpw-name{
+            color: #38424c !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            margin-top: 10px;
+          }
+          .live-pricing{
+            .live_p{
+              color: #38424c !important;
+              font-weight: 500 !important;
+              font-size: 15px !important;
+              margin: 10px 0 8px !important;
+            }
+            .ccpw_icon-down, .ccpw_icon-up{
+              font-size: 12px !important;
+              font-weight: 700 !important;
+              &::before {
+                display: inline-block !important;
+                position: relative !important;
+                margin-right: 5px !important;
+                font-family: persian !important;
+                font-weight: 300 !important;
+              }
+            }
+            .ccpw-changes{
+              &.up{
+                color: $valid-color !important;
+                .ccpw_icon-up{
+                  &::before{
+                    content: '\e904' !important;
+                    color: $valid-color;
+                  }
+                }
+              }
+              &.down{
+                color: $invalid-color !important;
+                .ccpw_icon-down{
+                  &::before{
+                    content: '\e902' !important;
+                    color: $invalid-color;
+                  }
+                }
+              }
+            }
+            .live_t{
+              background-color: $accent-color !important;
+              border-radius: 3px;
+            }
+          }
+        }
+      }
+    }
+    .row{
+      height: 100%;
+      [class*=col]{
+        flex: initial !important;
+        max-width: initial !important;
+        height: 100%;
+      }
+    }
+  }
+}
 .suggest-bourse {
   margin-bottom: 44px;
 

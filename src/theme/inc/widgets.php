@@ -145,7 +145,7 @@
                  if ($title) { ?>
                      <div class="title title--blue title--small">
                          <h6><?php echo $title; ?></h6>
-                         <a href="#"><?php _e('آرشیو', 'persian_bourse'); ?></a>
+                         <a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php _e('آرشیو', 'persian_bourse'); ?></a>
                      </div>
                      <?php
                  }
