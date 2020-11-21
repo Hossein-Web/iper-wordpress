@@ -500,15 +500,37 @@ side_video.on('transitionEnd', function () {
 	});
 
 	// Change comment reply link default behaviour
-	$( '.comment-reply-link' ).one( 'click', function ( e ) {
+	$( '.comment-reply-link' ).on( 'click', function ( e ) {
 		e.preventDefault();
+		let reply_link_element =  $( this );
 		let comment_id = $( this ).data( 'commentid' );
-		let comment_parent_element = $( '.comments__form' ).find( 'input#comment_parent' );
-		comment_parent_element.val( comment_id );
-		let comment_form = $('.comments__form');
-		$('html, body').animate({
-			scrollTop: comment_form.offset().top
-		}, '300');
+		reply_link_element.toggleClass( 'show_comment' );
+		let li_parent_element = $(this).closest( 'li' );
+
+		if ( reply_link_element.hasClass( 'show_comment' ) ) {
+			let comment_form = $('.comments__form').clone();
+			let comment_parent_element = comment_form.find( 'input#comment_parent' );
+			comment_parent_element.val( comment_id );
+			let comment_content = li_parent_element.find( '.comment__content' ).first();
+			comment_form.css( 'display', 'none' );
+			comment_content.after( comment_form );
+			comment_form.slideDown( 300 );
+			reply_link_element.animate( { 'opacity': 0 }, 300, function () {
+				$( this ).html( '<i class="persian-response"></i> صرف نظر از پاسخ' ).animate( { 'opacity': 1 }, 300 );
+			} );
+		}else{
+			li_parent_element.find( '.comments__form' ).slideUp( 300 );
+			setTimeout( function () {
+				li_parent_element.find( '.comments__form' ).remove();
+			}, 500 );
+			reply_link_element.animate( { 'opacity': 0 }, 300, function () {
+				$( this ).html( '<i class="persian-response"></i> پاسخ دهید' ).animate( { 'opacity': 1 }, 300 );
+			} );
+
+		}
+		// $('html, body').animate({
+		// 	scrollTop: comment_form.offset().top
+		// }, '300');
 		// console.log( comment_parent_element );
 
 	} )

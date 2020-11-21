@@ -38,7 +38,7 @@
                                 </li>
                                 <li class="post-meta__view list-inline-item">
                                     <span><i class="persian-view"></i></span>
-                                    <span><?php echo ivahid_get_views( get_the_ID() ) . __( 'بازدید ', 'persian_bourse' ); ?></span>
+                                    <span><?php echo ivahid_get_views( get_the_ID() ) . ' ' . __( 'بازدید ', 'persian_bourse' ); ?></span>
                                 </li>
                             </ul>
                         </div>
@@ -101,15 +101,13 @@
                 <h6><?php _e( 'مطالب <span>مرتبط</span>', 'persian_bourse' ); ?></h6>
                 <?php
                     $offer_posts_categories = get_the_category();
-                    $offer_post_cat = get_category_link( $offer_posts_categories[0] );
+//                    $offer_post_cat = get_category_link( $offer_posts_categories[0] );
                     $offer_posts_category_ids = [];
                     foreach ( $offer_posts_categories as $category_item ) {
                         $offer_posts_category_ids[] = $category_item->term_id;
                     }
-
-//                    persian_var_dump( $offer_posts_categories[0] );
                 ?>
-                <a class="bourse-read-more" href="<?php echo $offer_post_cat; ?>"><?php echo esc_html( __( 'مشاهده بیشتر', 'persian_bourse' ) ); ?><i class="persian-arrow-left"></i></a>
+                <a class="bourse-read-more" href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php echo esc_html( __( 'مشاهده بیشتر', 'persian_bourse' ) ); ?><i class="persian-arrow-left"></i></a>
             </div>
             <?php
             $offer_posts_query_args = [
