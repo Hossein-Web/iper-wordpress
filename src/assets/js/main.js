@@ -499,6 +499,19 @@ side_video.on('transitionEnd', function () {
 		}
 	});
 
+	// Change comment reply link default behaviour
+	$( '.comment-reply-link' ).one( 'click', function ( e ) {
+		e.preventDefault();
+		let comment_id = $( this ).data( 'commentid' );
+		let comment_parent_element = $( '.comments__form' ).find( 'input#comment_parent' );
+		comment_parent_element.val( comment_id );
+		let comment_form = $('.comments__form');
+		$('html, body').animate({
+			scrollTop: comment_form.offset().top
+		}, '300');
+		// console.log( comment_parent_element );
+
+	} )
 
 
 })(jQuery);
