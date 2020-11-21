@@ -1413,6 +1413,19 @@ body{
               top: 160%;
             }
           }
+          >a{
+            position: relative;
+            &::before{
+              content: '\e901';
+              display: block;
+              position: absolute;
+              font-family: persian;
+              font-size: 8px;
+              left: -14px;
+              top: 50%;
+              transform: translatey(-50%) rotate(90deg);
+            }
+          }
 
         }
       }

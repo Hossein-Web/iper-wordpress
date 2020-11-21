@@ -68,13 +68,17 @@
                                         while (have_rows('persian-menu', 'option')) {
                                             the_row();
                                             $persian_menu_link = get_sub_field('persian-menu-link');
-                                            $persian_menu_link_title = $persian_menu_link['title'];
-                                            $persian_menu_link_url = $persian_menu_link['url'];
                                             $persian_have_submenu = get_sub_field('persian-have-submenu');
                                             ?>
 
-                                            <li class="list-inline-item mega-menu">
-                                                <a href="<?php echo esc_url($persian_menu_link_url); ?>"><?php echo esc_html($persian_menu_link_title); ?></a>
+                                            <li class="list-inline-item <?php if ( $persian_have_submenu ) { echo 'mega-menu'; }?>">
+                                                <?php if ( $persian_menu_link ){
+                                                    $persian_menu_link_title = $persian_menu_link['title'];
+                                                    $persian_menu_link_url = $persian_menu_link['url'];
+                                                    ?>
+                                                    <a href="<?php echo esc_url($persian_menu_link_url); ?>"><?php echo esc_html($persian_menu_link_title); ?></a>
+                                                <?php
+                                                } ?>
                                                 <?php
                                                 $megamenu_content = [];
                                                 if ($persian_have_submenu) { ?>
@@ -86,7 +90,6 @@
                                                             <?php
                                                             while (have_rows('persian-sub-menu', 'option')) {
                                                                 the_row();
-//                                                                persian_var_dump( get_sub_field('persian-select-megamenu') );
 
                                                                 $persian_submenu_title = get_sub_field('persian-submenu-title');
                                                                 $persian_megamenu = get_sub_field('persian-select-megamenu');
@@ -143,9 +146,7 @@
                                     while (have_rows('persian-header-links-group', 'option')){
                                     the_row();
                                     $persian_header_links = get_sub_field('persian-header-links');
-                                    //                                        }
-                                    //                                    }
-                                    //                                   $persian_header_links = get_field('persian-header-links' ,'options');
+
                                     foreach ($persian_header_links as $link) {
                                         switch ($link['value']) {
                                             case 'search':
