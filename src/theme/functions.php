@@ -53,6 +53,14 @@ function wordpressify_resources() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_script( 'header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false );
 	wp_enqueue_script( 'footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true );
+    $translation_array = array(
+        'reply_text' => __( '<i class="persian-response"></i> پاسخ دهید', 'persian_bourse' ),
+        'leave_reply_text' => __( '<i class="persian-response"></i> صرف نظر از پاسخ', 'persian_bourse' ),
+        'success_message' => __( 'با موفقیت انجام شد', 'persian_bourse' ),
+        'error_message' => __( 'متاسفانه انجام نشد', 'persian_bourse' ),
+        'problem_message' => __( 'در ارسال درخواست مشکلی وجود دارد.', 'persian_bourse' )
+    );
+    wp_localize_script( 'footer_js', 'persian_bourse_global_object', $translation_array );
 }
 
 add_action( 'wp_enqueue_scripts', 'wordpressify_resources' );

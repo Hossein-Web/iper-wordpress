@@ -204,6 +204,7 @@
     } ?>
     <div class="mobile-menu-body">
         <?php
+        do_action('wpml_add_language_selector');
         if ( have_rows( 'persian_mobile_btn_group', 'option' ) ){
             while ( have_rows( 'persian_mobile_btn_group', 'option' ) ) {
                 the_row();

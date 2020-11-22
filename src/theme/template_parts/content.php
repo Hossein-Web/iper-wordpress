@@ -94,8 +94,8 @@
             </div><!-- .single-content -->
         </div><!-- .row -->
     </div><!-- .container -->
-
-    <section class="offer-posts">
+    <?php if ( ! is_page() ) { ?>
+        <section class="offer-posts">
         <div class="container">
             <div class="bourse-title bourse-title--blue">
                 <h6><?php _e( 'مطالب <span>مرتبط</span>', 'persian_bourse' ); ?></h6>
@@ -151,5 +151,5 @@
             <?php } ?>
         </div>
     </section><!-- .offer-posts -->
-<?php
+    <?php }
 } ?>

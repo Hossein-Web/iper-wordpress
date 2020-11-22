@@ -437,7 +437,7 @@ $('.post-item-like').on('click', function (e) {
 			if ( data.status == 1 ) {
 				Toast.fire({
 					icon: 'success',
-					title: 'با موفقیت انجام شد',
+					title: persian_bourse_global_object.success_message,
 					footer: data.message,
 				});
 				ele.toggleClass('active');
@@ -447,7 +447,7 @@ $('.post-item-like').on('click', function (e) {
 			} else {
 				Toast.fire({
 					icon: 'error',
-					title: 'متاسفانه انجام نشد',
+					title: persian_bourse_global_object.error_message,
 					footer: data.message,
 				});
 			}
@@ -455,8 +455,8 @@ $('.post-item-like').on('click', function (e) {
 		error: function () {
 			Toast.fire({
 				icon: 'error',
-				title: 'متاسفانه انجام نشد',
-				footer: 'در ارسال درخواست مشکلی وجود دارد.',
+				title: persian_bourse_global_object.error_message,
+				footer: persian_bourse_global_object.problem_message,
 			});
 		}
 	});
@@ -516,7 +516,7 @@ side_video.on('transitionEnd', function () {
 			comment_content.after( comment_form );
 			comment_form.slideDown( 300 );
 			reply_link_element.animate( { 'opacity': 0 }, 300, function () {
-				$( this ).html( '<i class="persian-response"></i> صرف نظر از پاسخ' ).animate( { 'opacity': 1 }, 300 );
+				$( this ).html( persian_bourse_global_object.leave_reply_text ).animate( { 'opacity': 1 }, 300 );
 			} );
 		}else{
 			li_parent_element.find( '.comments__form' ).slideUp( 300 );
@@ -524,7 +524,7 @@ side_video.on('transitionEnd', function () {
 				li_parent_element.find( '.comments__form' ).remove();
 			}, 500 );
 			reply_link_element.animate( { 'opacity': 0 }, 300, function () {
-				$( this ).html( '<i class="persian-response"></i> پاسخ دهید' ).animate( { 'opacity': 1 }, 300 );
+				$( this ).html( persian_bourse_global_object.reply_text ).animate( { 'opacity': 1 }, 300 );
 			} );
 
 		}
@@ -534,6 +534,5 @@ side_video.on('transitionEnd', function () {
 		// console.log( comment_parent_element );
 
 	} )
-
 
 })(jQuery);

@@ -141,6 +141,9 @@
                             </nav><!-- .main-menu-->
                             <div class="user-links">
                                 <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <?php do_action('wpml_add_language_selector'); ?>
+                                    </li>
                                     <?php
                                     if (have_rows('persian-header-links-group', 'option')){
                                     while (have_rows('persian-header-links-group', 'option')){

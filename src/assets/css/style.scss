@@ -151,6 +151,12 @@ input{
 //}
 
 .single-content {
+  margin: 0 auto;
+  .wp-block-contact-form-7-contact-form-selector{
+    padding: 20px;
+    box-shadow: -18px 18px 35px rgba(56, 66, 77, 0.05) !important;
+    border-radius: 10px;
+  }
   p, h1, h2, h3, h4, h5, h6, blockquote {
     color: $text-color-2;
   }
@@ -321,6 +327,43 @@ input{
       font-weight: 500;
       letter-spacing: normal;
       line-height: 32px;
+    }
+  }
+
+  input, textarea {
+    color: $text-color-2;
+    border: 1px solid $background-color;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: IRANSans, sans-serif;
+    &:focus {
+      border-color: #dddddd;
+    }
+    padding: 10px 20px;
+    line-height: initial;
+  }
+
+  label{
+    color: #8b96a2;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: IRANSans, sans-serif;
+  }
+
+  input[type=submit], button{
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    line-height: initial;
+    transition: 0.3s;
+    font-family: IRANSans, sans-serif;
+    &:hover{
+      background-color: white;
+      color: $accent-color;
     }
   }
 
@@ -595,6 +638,45 @@ i {
   &.menu-translate {
     transform: translate3d(-285px, 0, 0);
     transition: 0.3s;
+  }
+}
+
+// WPML settings
+.wpml-ls-statics-shortcode_actions{
+  .wpml-ls-current-language{
+     a{
+      transition: 0.3s;
+    }
+  }
+  a{
+    border-radius: 10px;
+    border-color: #dddddd !important;
+  }
+}
+.wpml-ls-legacy-dropdown{
+  .wpml-ls-sub-menu{
+    border: none !important;
+  }
+  max-width: 140px;
+  .wpml-ls-item{
+    margin-top: 3px;
+  }
+  .wpml-ls-flag{
+    border-radius: 4px;
+  }
+  a{
+    font-size: 14px !important;
+    &.wpml-ls-item-toggle{
+      &::after{
+        content: '\e901';
+        font-family: persian;
+        font-size: 8px;
+        font-weight: 700;
+        transform: rotate(90deg);
+        border: none !important;
+        top: calc(50% - 4px);
+      }
+    }
   }
 }
 
@@ -1620,7 +1702,7 @@ body{
         justify-content: flex-end;
         align-items: center;
 
-        li {
+        > li {
           padding-left: 23px;
 
           i {

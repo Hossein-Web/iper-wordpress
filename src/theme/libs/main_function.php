@@ -11,7 +11,7 @@
 function ivahid_post_like()
 {
     if (!wp_verify_nonce($_POST['nonce'], 'ivahid_post_like_nonce') || !isset($_POST['nonce'])) {
-        wp_send_json(array('status' => 0, 'message' => __('مشکلی پیش آمده دوباره امتحان کنید.')));
+        wp_send_json(array('status' => 0, 'message' => __('مشکلی پیش آمده دوباره امتحان کنید.', 'persian_bourse')));
     }
     $like_cookie = null;
     $type = $_POST['type'];
@@ -41,7 +41,7 @@ function ivahid_post_like()
     update_post_meta($post_id, 'ivahid_post_' . $type . '_ips', $likes_ip);
     update_post_meta($post_id, 'ivahid_post_' . $type, $likes);
     $likes = get_post_meta($post_id, 'ivahid_post_' . $type, true);
-    wp_send_json(array('status' => 1, 'type' => $type_like, 'message' => __('با موفقیت بروزرسانی شد.'), 'info' => array('count' => $likes)));
+    wp_send_json(array('status' => 1, 'type' => $type_like, 'message' => __('با موفقیت بروزرسانی شد.', 'persian_bourse'), 'info' => array('count' => $likes)));
 }
 
 function ivahid_get_ip()
@@ -115,7 +115,7 @@ add_action('wp_ajax_ivahid_post_like', 'ivahid_post_like');
 
     function posts_column_views($defaults)
     {
-        $defaults['post_views'] = 'بازدید';
+        $defaults['post_views'] = __( 'بازدید', 'persian_bourse' );
 
         return $defaults;
     }
