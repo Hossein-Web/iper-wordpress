@@ -161,22 +161,35 @@
                                 <?php
                                 break;
                             case 'user':
+                                if ( is_user_logged_in() ){
+                                    ?>
+                                    <li class="user-profile list-inline-item">
+                                        <a href="<?php echo bp_loggedin_user_domain(); ?>">
+                                            <span><i class="persian-user"></i></span>
+                                        </a>
+                                    </li>
+                                <?php
+                                }
                                 ?>
-                                <li class="user-profile list-inline-item">
-                                    <a href="#">
-                                        <span><i class="persian-user"></i></span>
-                                    </a>
-                                </li>
                                 <?php
                                 break;
                             case 'notification':
-                                ?>
+                                if ( is_user_logged_in() ){
+                                    $notifications = bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' );
+                                    ?>
                                 <li class="notification list-inline-item">
-                                    <a href="#">
-                                        <span><i class="persian-notification"></i></span>
-                                        <span class="notification__is-active"></span>
+                                    <a href="<?php echo bp_loggedin_user_domain(); ?>">
+                                        <span><i class="persian-notification"></i>
+                                             <?php if ( $notifications ){
+                                                 ?>
+                                                 <span class="notification__is-active"></span>
+                                                 <?php
+                                             } ?>
                                     </a>
                                 </li>
+                                    <?php
+                                }
+                                ?>
                                 <?php
                                 break;
                         }
@@ -187,15 +200,21 @@
         </div>
         <div class="mobile-links-content">
             <?php get_search_form(); ?>
-            <div class="notification__notification-list">
-                <ul>
-                    <li><a href="#">آیتم اول</a></li>
-                    <li><a href="#">آیتم دوم</a></li>
-                    <li><a href="#">آیتم سوم</a></li>
-                    <li><a href="#">آیتم چهارم</a></li>
-                    <li><a href="#">آیتم پنجم</a></li>
-                </ul>
-            </div><!-- .notification__list -->
+            <?php
+            if ( is_user_logged_in() && $notifications ){
+                ?>
+                <div class="notification__notification-list">
+                    <ul>
+                        <?php foreach ( (array)$notifications as $notification ) { ?>
+
+                                <li><a href="<?php echo $notification->href; ?>"><?php echo $notification->content; ?></a></li>
+
+                            <?php } ?>
+                    </ul>
+                </div><!-- .notification__list -->
+                <?php
+            }
+            ?>
         </div><!-- .user-links-content -->
     </div><!-- .mobile-menu-header -->
     <?php
