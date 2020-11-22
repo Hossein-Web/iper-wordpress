@@ -189,7 +189,7 @@
                                                         <ul>
                                                             <?php foreach ( (array)$notifications as $notification ){
                                                                 ?>
-                                                                <li><a href="<?php echo $notification->href; ?>"><?php echo $notification->content ?></a></li>
+                                                                <li><a href="<?php echo $notification->href; ?>"><?php echo $notification->content; ?></a></li>
                                                         <?php
                                                             } ?>
                                                         </ul>
