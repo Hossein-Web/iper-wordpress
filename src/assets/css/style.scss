@@ -1497,6 +1497,7 @@ body{
           }
           >a{
             position: relative;
+            display: inline-block;
             &::before{
               content: '\e901';
               display: block;
