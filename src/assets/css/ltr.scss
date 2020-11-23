@@ -83,41 +83,127 @@ Table of content
   font-weight: 900;
   src: url('../fonts/lato/Lato-BlackItalic.ttf') format('truetype');
 }
+
 /*------------ General -------------*/
+input{
+  padding: 10px 32px 10px 10px;
+}
+
+
+.single-content {
+  .wp-block-contact-form-7-contact-form-selector{
+    box-shadow: -18px 18px 35px rgba(56, 66, 77, 0.05) !important;
+  }
+
+  .wp-block-pullquote{
+
+    blockquote {
+      p{
+        code {
+          text-align: left;
+          font-family: Lato, sans-serif !important;
+        }
+      }
+      &::before {
+        right: unset;
+        left: 28px;
+      }
+
+      &::after {
+        left: unset;
+        right: 23px;
+      }
+    }
+  }
+
+  ul {
+
+    li {
+      padding-right: unset;
+      padding-left: 25px;
+
+      &::before {
+        right: unset;
+        left: 0;
+      }
+    }
+
+    &.check-style {
+
+      li {
+        &::before {
+          left: 0;
+          right: unset;
+        }
+      }
+    }
+  }
+
+}
+
+.log-in, .sign-in, .comments {
+  &__form {
+    .field-wrapper {
+
+      i {
+        left: 0;
+        right: unset;
+        margin-right: unset;
+        margin-left: 20px;
+      }
+      input {
+        padding-right: unset;
+        padding-left: 54px;
+      }
+
+      textarea {
+        padding-right: unset;
+        padding-left: 27px;
+      }
+    }
+  }
+}
+
 body {
   font-family: Lato, sans-serif;
   direction: ltr;
   text-align: left;
 }
 .bourse-title {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 21px;
+
   h6 {
-    padding-left: unset;
     padding-right: 8px;
+    padding-left: unset;
   }
 
-  .bourse-read-more {
-    padding-right: unset;
+  .bourse-read-more, p {
     padding-left: 20px;
+    padding-right: unset;
+
     i {
-      margin-right: unset;
       margin-left: 10px;
-      right: unset;
+      margin-right: unset;
       left: 0;
+      right: unset;
       transform: rotate( -180deg );
     }
-
+  }
+  .bourse-read-more{
     &:hover {
+
       i {
-        right: unset;
         left: 3px;
+        right: unset;
       }
     }
   }
 }
+
+
+
+
+
+
 .bourse-post-meta {
   &--medium {
     li {
@@ -178,6 +264,165 @@ body {
   }
 }
 
+// YOUZER forms settings
+#logy-form{
+  .logy-form-item{
+    input{
+      &:not([type=checkbox]){
+        font-family: Lato, sans-serif !important;
+      }
+    }
+  }
+}
+.yz-content{
+  p, li, a, h1, h2, h3, h4, h5, h6, input, textarea, button {
+    font-family: Lato, sans-serif !important;
+  }
+
+}
+
+// YOUZER general options
+body{
+  .youzer{
+    font-family: Lato, sans-serif !important;
+    ul{
+      .yz-general, .yz-notifications, .yz-data{
+        a{
+          font-family: Lato, sans-serif !important;
+        }
+      }
+    }
+    button, input, p{
+      font-family: Lato, sans-serif !important;
+    }
+    input{
+      &::placeholder{
+        font-family: Lato, sans-serif !important;
+      }
+    }
+  }
+}
+[data-yztooltip]{
+  &::after{
+    font-family: Lato, sans-serif !important;
+  }
+}
+
+.options-section-title{
+  h2{
+    font-family: Lato, sans-serif !important;
+  }
+}
+
+.uk-option-item{
+  label{
+    font-family: Lato, sans-serif !important;
+  }
+}
+
+.uk-option-item{
+  .option-desc{
+    font-family: Lato, sans-serif !important;
+  }
+}
+
+// YOUZER settings
+.option-infos{
+  .option-title{
+    font-family: Lato, sans-serif !important;
+  }
+  .option-desc{
+    font-family: Lato, sans-serif !important;
+  }
+}
+
+// YOUZER main page
+.yz-page{
+  .logy-form{
+    .logy-form-header{
+      .logy-form-cover{
+        .form-cover-title{
+          font-family: Lato, sans-serif;
+        }
+      }
+    }
+    form{
+      label, legend, p, logy-section-title{
+        font-family: Lato, sans-serif;
+        span{
+          font-family: Lato, sans-serif;
+        }
+      }
+      .logy-form-item{
+        .logy-field-content{
+          input{
+            font-family: Lato, sans-serif;
+          }
+        }
+      }
+      button, .logy-link-button{
+        padding: 12px 20px 12px 28px;
+        font-family: Lato, sans-serif;
+        &:hover{
+          &::after{
+            right: 20px;
+            left: unset;
+          }
+        }
+        &::after{
+          right: 40px;
+          left: unset;
+        }
+      }
+    }
+  }
+  #logy_signup_form  {
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="text"]{
+      font-family: Lato, sans-serif;
+    }
+  }
+}
+
+// YOUZER edit profile
+.yz-account-head-content{
+  h2, span{
+    font-family: Lato, sans-serif !important;
+  }
+}
+.yz-account-settings-menu{
+  .yz-menu-head{
+    .yz-menu-title{
+      font-family: Lato, sans-serif !important;
+    }
+    .yz-menu-description{
+      font-family: Lato, sans-serif !important;
+    }
+  }
+}
+
+.yz-settings-sidebar{
+  .yz-account-menus{
+    ul{
+      li{
+        a{
+          font-family: Lato, sans-serif !important;
+        }
+      }
+    }
+  }
+}
+
+
+/*------------ Fixed social media -------------*/
+.fixed-social-media-wrapper {
+  left: 6%;
+  right: unset;
+}
+
+
 /*------------ Header -------------*/
 .header {
   &__logo {
@@ -195,6 +440,16 @@ body {
         &:last-child {
           padding-left: unset;
           padding-right: 0;
+        }
+
+        &.mega-menu {
+          >a{
+            &::before{
+              right: -14px;
+              left: unset;
+            }
+          }
+
         }
       }
 
@@ -690,6 +945,21 @@ body {
 
 /*------------ offer posts -------------*/
 .offer-posts {
+
+  &__item {
+
+    .item-image {
+      a{
+        transform: translateX(-50%);
+        img {
+          right: unset;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+
+    }
+  }
   .item-title {
     padding-right: unset;
     padding-left: 20px;
@@ -1048,7 +1318,7 @@ footer {
 
         a {
 
-          &.next-page, &.prev-page {
+          &.next, &.prev {
             i{
               transform: rotate( -180deg );
             }
