@@ -945,6 +945,21 @@ body{
 
 /*------------ offer posts -------------*/
 .offer-posts {
+
+  &__item {
+
+    .item-image {
+      a{
+        transform: translateX(-50%);
+        img {
+          right: unset;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+
+    }
+  }
   .item-title {
     padding-right: unset;
     padding-left: 20px;
