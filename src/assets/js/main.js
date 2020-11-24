@@ -154,6 +154,7 @@ let body = $('body');
 let mobileWrapper = $('.header__mobile-menu-wrapper');
 let mainPage = $('#main-page');
 let mobileOverlay = $('#mobile-overlay');
+let header_wrapper = $( '.menu-wrapper' );
 
 function mobileClose() {
 	if (mobileWrapper.hasClass('mobile-menu-open')) {
@@ -162,6 +163,9 @@ function mobileClose() {
 		if (mainPage.hasClass('menu-translate')) {
 			mainPage.removeClass('menu-translate');
 		}
+		if ( header_wrapper.hasClass( 'menu-translate' ) ) {
+			header_wrapper.removeClass( 'menu-translate' );
+		}
 		body.removeClass('mobile-menu-active');
 		mobileOverlay.css('display', 'none');
 	}
@@ -169,6 +173,7 @@ function mobileClose() {
 
 function mobileOpen() {
 	mobileWrapper.addClass('mobile-menu-open');
+	header_wrapper.addClass( 'menu-translate' );
 	mainPage.addClass('menu-translate');
 	body.addClass('mobile-menu-active');
 	mobileOverlay.css('display', 'block');
