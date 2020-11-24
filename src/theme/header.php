@@ -146,86 +146,93 @@
                                     </li>
                                     <?php
                                     if (have_rows('persian-header-links-group', 'option')){
-                                    while (have_rows('persian-header-links-group', 'option')){
-                                    the_row();
-                                    $persian_header_links = get_sub_field('persian-header-links');
+                                    while (have_rows('persian-header-links-group', 'option')) {
+                                        the_row();
+                                        $persian_header_links = get_sub_field('persian-header-links');
 
-                                    foreach ($persian_header_links as $link) {
-                                        switch ($link['value']) {
-                                            case 'search':
-                                                ?>
-                                                <li class="search list-inline-item">
-                                                    <span><i class="persian-search"></i></span>
-                                                    <?php get_search_form(); ?>
-                                                </li>
-                                                <?php
-                                                break;
-                                            case 'user':
-                                                ?>
-                                                <?php if ( is_user_logged_in() ) { ?>
+                                        foreach ($persian_header_links as $link) {
+                                            switch ($link['value']) {
+                                                case 'search':
+                                                    ?>
+                                                    <li class="search list-inline-item">
+                                                        <span><i class="persian-search"></i></span>
+                                                        <?php get_search_form(); ?>
+                                                    </li>
+                                                    <?php
+                                                    break;
+                                                case 'user':
+                                                    ?>
+                                                    <?php if (is_user_logged_in()) { ?>
                                                     <li class="user-profile list-inline-item">
                                                         <a href="<?php echo bp_loggedin_user_domain(); ?>">
                                                             <span><i class="persian-user"></i></span>
                                                         </a>
                                                     </li>
                                                 <?php } ?>
-                                                <?php
-                                                break;
-                                            case 'notification':
-                                                ?>
-                                                <?php
-                                                if ( is_user_logged_in() ){
-                                                    $notifications = bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' );
+                                                    <?php
+                                                    break;
+                                                case 'notification':
                                                     ?>
-                                                <li class="notification list-inline-item">
-                                                    <a href="<?php echo bp_loggedin_user_domain(); ?>">
-                                                        <span><i class="persian-notification"></i></span>
-                                                        <?php if ( $notifications ){?>
-                                                            <span class="notification__is-active"></span>
-                                                        <?php
-                                                        } ?>
-                                                    </a>
-                                                    <?php if ( $notifications ){
+                                                    <?php
+                                                    if (is_user_logged_in()) {
+                                                        $notifications = bp_notifications_get_notifications_for_user(bp_loggedin_user_id(), 'object');
                                                         ?>
-
-                                                    <div class="notification__notification-list">
-                                                        <ul>
-                                                            <?php foreach ( (array)$notifications as $notification ){
+                                                        <li class="notification list-inline-item">
+                                                            <a href="<?php echo bp_loggedin_user_domain(); ?>">
+                                                                <span><i class="persian-notification"></i></span>
+                                                                <?php if ($notifications) { ?>
+                                                                    <span class="notification__is-active"></span>
+                                                                    <?php
+                                                                } ?>
+                                                            </a>
+                                                            <?php if ($notifications) {
                                                                 ?>
-                                                                <li><a href="<?php echo $notification->href; ?>"><?php echo $notification->content; ?></a></li>
-                                                        <?php
+
+                                                                <div class="notification__notification-list">
+                                                                    <ul>
+                                                                        <?php foreach ((array)$notifications as $notification) {
+                                                                            ?>
+                                                                            <li>
+                                                                                <a href="<?php echo $notification->href; ?>"><?php echo $notification->content; ?></a>
+                                                                            </li>
+                                                                            <?php
+                                                                        } ?>
+                                                                    </ul>
+                                                                </div><!-- .notification__list -->
+                                                                <?php
                                                             } ?>
-                                                        </ul>
-                                                    </div><!-- .notification__list -->
-                                                        <?php
-                                                    } ?>
-                                                </li>
+                                                        </li>
                                                         <?php
                                                     }
-                                                ?>
-                                                <?php
-                                                break;
+                                                    ?>
+                                                    <?php
+                                                    break;
+                                            }
                                         }
+                                    }
                                     }
                                     ?>
                                 </ul>
                                 <?php
-                                $persian_have_header_btn = get_sub_field('persian-have-header-btn');
-                                if ($persian_have_header_btn) {
-                                    $persian_header_btn = get_sub_field('persian-header-btn');
-                                    if ($persian_header_btn) {
-                                        ?>
-                                        <div class="where-button">
-                                            <a href="<?php echo esc_url($persian_header_btn['link']); ?>">
-                                                <?php echo esc_html($persian_header_btn['title']); ?>
-                                            </a>
-                                        </div>
-                                        <?php
+                                if (have_rows('persian-header-links-group', 'option')){
+                                    while (have_rows('persian-header-links-group', 'option')) {
+                                        the_row();
+                                        $persian_have_header_btn = get_sub_field('persian-have-header-btn');
+                                        if ($persian_have_header_btn) {
+                                            $persian_header_btn = get_sub_field('persian-header-btn');
+                                            if ($persian_header_btn) {
+                                                ?>
+                                                <div class="where-button">
+                                                    <a href="<?php echo esc_url($persian_header_btn['link']); ?>">
+                                                        <?php echo esc_html($persian_header_btn['title']); ?>
+                                                    </a>
+                                                </div>
+                                                <?php
+                                            }
+                                            ?>
+                                        <?php }
                                     }
-                                    ?>
-                                <?php }
-                                }
-                                } ?>
+                                    } ?>
                             </div><!-- .header__user-links -->
                         </div><!-- .header__menu-user-links-wrapper -->
                     </div><!-- .col-xl-19 -->

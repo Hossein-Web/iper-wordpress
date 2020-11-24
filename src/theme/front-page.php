@@ -1031,7 +1031,7 @@ elseif (get_row_layout() == 'persian_tools') {
                 }
 elseif (get_row_layout() == 'persian_comments_posts') {
                     ?>
-                    <!-------------------------- Comments and posts --------------------------------->
+                    <!-- ------------------------ Comments and posts ------------------------------- -->
                     <div class="comments-and-posts">
                         <div class="container">
                             <div class="row p30">
@@ -1296,7 +1296,7 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
             }
 elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
 
-    <!-------------------------- Bourse news and slider --------------------------------->
+    <!-- ------------------------ Bourse news and slider ------------------------------- -->
     <div class="bourse-news">
         <div class="container">
             <div class="row p30">
