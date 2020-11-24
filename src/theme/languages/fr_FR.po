@@ -1,0 +1,303 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Project-Id-Version: Persian bourse\n"
+"POT-Creation-Date: 2020-11-23 15:32+0330\n"
+"PO-Revision-Date: 2020-11-23 17:17+0330\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: fr_FR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:29
+msgid "این‌جا صفحه‌ای وجود ندارد!"
+msgstr "Il n’y a pas de page ici!"
+
+#: 404.php:30
+msgid ""
+"احتمالا صفحه مورد نظرتان حذف شده یا آدرس را اشتباه وارد کرده‌اید. به دیگر "
+"صفحات وب‌سایت سر بزنید."
+msgstr ""
+"Vous avez peut-être supprimé la page que vous vouliez ou avez saisie "
+"incorrectement de l’adresse. Visitez d’autres pages de site Web."
+
+#: 404.php:35
+msgid "بازگشت به صفحه اصلی"
+msgstr "Retour à la maison"
+
+#: 404.php:37
+msgid "گزارش خرابی لینک"
+msgstr "Rapport d’accident de lien"
+
+#: archive.php:45 front-page.php:84 front-page.php:134 front-page.php:182
+#: front-page.php:234 front-page.php:283 front-page.php:358 front-page.php:408
+#: front-page.php:458 front-page.php:513 front-page.php:561 front-page.php:679
+#: front-page.php:743 front-page.php:812 front-page.php:1122
+#: front-page.php:1172 front-page.php:1339 front-page.php:1389
+#: functions.php:119 home.php:41 inc/widgets.php:171 inc/widgets.php:393
+#: inc/widgets.php:449 template_parts/content.php:31
+msgid "پیش"
+msgstr "Ago"
+
+#: archive.php:55 home.php:51 inc/widgets.php:408 inc/widgets.php:464
+#: libs/main_function.php:118 template_parts/content.php:41
+msgid "بازدید"
+msgstr "visite"
+
+#: archive.php:71 home.php:67 search.php:59
+msgid "سایر"
+msgstr "Autres"
+
+#: archive.php:72 home.php:68 search.php:60
+msgid "صفحه ها"
+msgstr "Pages"
+
+#: comments.php:28
+msgid "نظرات <span>کاربران</span>"
+msgstr "<span>Avis des utilisateurs</span>"
+
+#: comments.php:30
+msgid "نظر"
+msgstr "Commentaire"
+
+#: comments.php:49
+msgid "نام و نام خانوادگی"
+msgstr "Prénom et nom de famille"
+
+#: comments.php:56
+msgid "تلفن همراه"
+msgstr "Mobile"
+
+#: comments.php:63
+msgid "ایمیل"
+msgstr "Messagerie électronique"
+
+#: comments.php:73
+msgid "متن دیدگاه"
+msgstr "Texte de commentaire"
+
+#: comments.php:77
+msgid "ارسال دیدگاه"
+msgstr "Laisser un commentaire"
+
+#: content-none.php:2
+msgid "Nothing Found"
+msgstr "Rien trouvé"
+
+#: content-none.php:5
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Prêt à publier votre premier post? <a href=\"%1$s\">Commencer ici</a>."
+
+#: content-none.php:7
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, mais rien ne correspondait à vos termes de recherche. S’il vous "
+"plaît essayer à nouveau avec quelques mots clés différents."
+
+#: content-none.php:10
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"On dirait qu’on ne trouve pas ce que tu cherches. Peut-être que la recherche "
+"peut aider."
+
+#: front-page.php:87 front-page.php:137 front-page.php:185 front-page.php:237
+#: front-page.php:286 front-page.php:361 front-page.php:411 front-page.php:461
+#: front-page.php:516 front-page.php:564 front-page.php:669 front-page.php:757
+#: front-page.php:826 front-page.php:1275
+msgid "دقیقه مطالعه"
+msgstr "Procès-verbal de l’étude"
+
+#: front-page.php:689 front-page.php:753 front-page.php:822 front-page.php:1132
+#: front-page.php:1182 front-page.php:1347 front-page.php:1397 search.php:44
+msgid " بازدید"
+msgstr " visite"
+
+#: front-page.php:762 front-page.php:831
+msgid "ادامه مطلب"
+msgstr "Lire la suite"
+
+#: front-page.php:852
+msgid "پیشنهاد ما به شما :"
+msgstr "Nous vous proposons :"
+
+#: front-page.php:853
+msgid "شاید خوشتان آمد!"
+msgstr "Peut-être que ça vous aimera!"
+
+#: front-page.php:1072
+msgid "مشاهده در مطلب"
+msgstr "Afficher dans le contenu"
+
+#: functions.php:57 functions.php:123
+msgid "<i class=\"persian-response\"></i> پاسخ دهید"
+msgstr "<i class=\"persian-response\"></i> Réponse"
+
+#: functions.php:58
+msgid "<i class=\"persian-response\"></i> صرف نظر از پاسخ"
+msgstr "<i class=\"persian-response\"></i> Quelle que soit la réponse"
+
+#: functions.php:59
+msgid "با موفقیت انجام شد"
+msgstr "C’est un succès."
+
+#: functions.php:60
+msgid "متاسفانه انجام نشد"
+msgstr "J’ai bien peur que ça n’ait pas marché."
+
+#: functions.php:61
+msgid "در ارسال درخواست مشکلی وجود دارد."
+msgstr "Il y a un problème d’envoi de la demande."
+
+#: functions.php:117
+msgid "تاریخ ارسال"
+msgstr "Date d’affichage"
+
+#: functions.php:151
+msgid "شماره تلفن"
+msgstr "Numéro de téléphone"
+
+#: functions.php:161
+msgid "بدون شماره تلفن"
+msgstr "Pas de numéro de téléphone"
+
+#: header.php:242
+msgid "ویرایش"
+msgstr "Modifier"
+
+#: inc/shortcodes.php:67 template_parts/content.php:110
+msgid "مشاهده بیشتر"
+msgstr "Voir plus"
+
+#: inc/widgets.php:10
+msgid "ناحیه فوتر اول"
+msgstr "First Footer District"
+
+#: inc/widgets.php:21
+msgid "ناحیه فوتر دوم"
+msgstr "Deuxième district de Footer"
+
+#: inc/widgets.php:32
+msgid "ناحیه فوتر سوم"
+msgstr "Troisième district de Footer"
+
+#: inc/widgets.php:53
+msgid "ناحیه ابزارک اصلی"
+msgstr "Zone principale du widget"
+
+#: inc/widgets.php:113
+msgid "نوشته های اخیر همراه با تصویر"
+msgstr "Entrées récentes avec image"
+
+#: inc/widgets.php:115
+msgid "نوشته های اخیر آی وحید"
+msgstr "Entrées récentes par Ai Wahid"
+
+#: inc/widgets.php:130
+msgid "نوشته های پربازدید"
+msgstr "Messages les plus consultés"
+
+#: inc/widgets.php:148
+msgid "آرشیو"
+msgstr "Archive"
+
+#: inc/widgets.php:216
+msgid "عنوان:"
+msgstr "Comme:"
+
+#: inc/widgets.php:222
+msgid "تعداد پست ها:"
+msgstr "Nombre de publications:"
+
+#: inc/widgets.php:238
+msgid "نمایش نوشته ها به صورت تب"
+msgstr "Afficher les entrées sous forme d’onglets"
+
+#: inc/widgets.php:240
+msgid "نوشته ها به صورت تب"
+msgstr "Entrées dans l’onglet"
+
+#: inc/widgets.php:332
+msgid "نمایش نوشته های ویدئویی"
+msgstr "Afficher les entrées vidéo"
+
+#: inc/widgets.php:334
+msgid "نوشته های ویدئویی آی وحید"
+msgstr "Entrées vidéo par I Wahid"
+
+#: inc/widgets.php:492
+msgid "ناحیه ابزارک برگه آرشیو"
+msgstr "Zone de widget d’onglet d’archive"
+
+#: inc/widgets.php:516
+msgid "یک لیستی از دسته بندی ها را نمایش می دهد"
+msgstr "Affiche une liste de catégories"
+
+#: inc/widgets.php:519
+msgid "دسته بندی های پرشین بورس"
+msgstr "Catégories de FreeBSD"
+
+#: inc/widgets.php:525
+msgid "دسته بندی ها"
+msgstr "Catégories"
+
+#: inc/widgets.php:617
+msgid "Title:"
+msgstr "Titre:"
+
+#: inc/widgets.php:626
+msgid "Show hierarchy"
+msgstr "Afficher la hiérarchie"
+
+#: libs/main_function.php:14
+msgid "مشکلی پیش آمده دوباره امتحان کنید."
+msgstr "Réessayez."
+
+#: libs/main_function.php:44
+msgid "با موفقیت بروزرسانی شد."
+msgstr "Mise à jour réussie."
+
+#: search.php:5
+msgid "نتایج جستجو برای: "
+msgstr "Résultats de recherche pour : "
+
+#: search.php:8
+msgid "هیچ نتیجه ای یافت نشد"
+msgstr "Aucun résultat trouvé"
+
+#: search.php:34
+msgid " پیش"
+msgstr " Ago"
+
+#: searchform.php:3
+msgid "جستجو"
+msgstr "Occupe-toi de"
+
+#: template_parts/content.php:21
+msgid "دقیقـه مطالعه"
+msgstr "Procès-verbal de l’étude"
+
+#: template_parts/content.php:101
+msgid "مطالب <span>مرتبط</span>"
+msgstr "<span>Contenu connexe</span>"
+
+#. Theme Name of the plugin/theme
+msgid "Persian bourse"
+msgstr "Bourse perse"

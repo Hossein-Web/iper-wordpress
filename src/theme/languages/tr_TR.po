@@ -1,0 +1,304 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Persian bourse\n"
+"POT-Creation-Date: 2020-11-23 15:32+0330\n"
+"PO-Revision-Date: 2020-11-23 17:21+0330\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: tr_TR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:29
+msgid "این‌جا صفحه‌ای وجود ندارد!"
+msgstr "Burada sayfa yok!"
+
+#: 404.php:30
+msgid ""
+"احتمالا صفحه مورد نظرتان حذف شده یا آدرس را اشتباه وارد کرده‌اید. به دیگر "
+"صفحات وب‌سایت سر بزنید."
+msgstr ""
+"İstediğiniz sayfayı silmiş veya adresi yanlış girmiş olabilirsiniz. Diğer "
+"web sitesi sayfalarını ziyaret edin."
+
+#: 404.php:35
+msgid "بازگشت به صفحه اصلی"
+msgstr "Ana Sayfaya Dön"
+
+#: 404.php:37
+msgid "گزارش خرابی لینک"
+msgstr "Bağlantı Kilitlenme Raporu"
+
+#: archive.php:45 front-page.php:84 front-page.php:134 front-page.php:182
+#: front-page.php:234 front-page.php:283 front-page.php:358 front-page.php:408
+#: front-page.php:458 front-page.php:513 front-page.php:561 front-page.php:679
+#: front-page.php:743 front-page.php:812 front-page.php:1122
+#: front-page.php:1172 front-page.php:1339 front-page.php:1389
+#: functions.php:119 home.php:41 inc/widgets.php:171 inc/widgets.php:393
+#: inc/widgets.php:449 template_parts/content.php:31
+msgid "پیش"
+msgstr "Önce"
+
+#: archive.php:55 home.php:51 inc/widgets.php:408 inc/widgets.php:464
+#: libs/main_function.php:118 template_parts/content.php:41
+msgid "بازدید"
+msgstr "Ziyaret"
+
+#: archive.php:71 home.php:67 search.php:59
+msgid "سایر"
+msgstr "Diğer"
+
+#: archive.php:72 home.php:68 search.php:60
+msgid "صفحه ها"
+msgstr "Sayfa"
+
+#: comments.php:28
+msgid "نظرات <span>کاربران</span>"
+msgstr "Kullanıcı <span>Yorumları</span>"
+
+#: comments.php:30
+msgid "نظر"
+msgstr "Yorum"
+
+#: comments.php:49
+msgid "نام و نام خانوادگی"
+msgstr "Adı ve Soyadı"
+
+#: comments.php:56
+msgid "تلفن همراه"
+msgstr "Mobil"
+
+#: comments.php:63
+msgid "ایمیل"
+msgstr "E-posta"
+
+#: comments.php:73
+msgid "متن دیدگاه"
+msgstr "Yorum Metni"
+
+#: comments.php:77
+msgid "ارسال دیدگاه"
+msgstr "Yorum bırak"
+
+#: content-none.php:2
+msgid "Nothing Found"
+msgstr "Hiçbir Şey Bulunamadı"
+
+#: content-none.php:5
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"İlk yazınızı yayınlamaya hazır mısınız? <a href=\"%1$s\">Buradan başlayın.</"
+"a>"
+
+#: content-none.php:7
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Üzgünüz, ama hiçbir şey arama terimleri eşleşen. Lütfen bazı farklı anahtar "
+"kelimelerle yeniden deneyin."
+
+#: content-none.php:10
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Görünüşe göre aradığın şeyi bulamıyoruz. Belki arama yardımcı olabilir."
+
+#: front-page.php:87 front-page.php:137 front-page.php:185 front-page.php:237
+#: front-page.php:286 front-page.php:361 front-page.php:411 front-page.php:461
+#: front-page.php:516 front-page.php:564 front-page.php:669 front-page.php:757
+#: front-page.php:826 front-page.php:1275
+msgid "دقیقه مطالعه"
+msgstr "Çalışma Tutanakları"
+
+#: front-page.php:689 front-page.php:753 front-page.php:822 front-page.php:1132
+#: front-page.php:1182 front-page.php:1347 front-page.php:1397 search.php:44
+msgid " بازدید"
+msgstr " Ziyaret"
+
+#: front-page.php:762 front-page.php:831
+msgid "ادامه مطلب"
+msgstr "Devamını Oku"
+
+#: front-page.php:852
+msgid "پیشنهاد ما به شما :"
+msgstr "Size sunuyoruz:"
+
+#: front-page.php:853
+msgid "شاید خوشتان آمد!"
+msgstr "Belki beğenirsiniz!"
+
+#: front-page.php:1072
+msgid "مشاهده در مطلب"
+msgstr "İçeride Görüntüle"
+
+#: functions.php:57 functions.php:123
+msgid "<i class=\"persian-response\"></i> پاسخ دهید"
+msgstr "<i class=\"persian-response\"></i> Yanıt"
+
+#: functions.php:58
+msgid "<i class=\"persian-response\"></i> صرف نظر از پاسخ"
+msgstr "<i class=\"persian-response\"></i> Ne olursa olsun cevap"
+
+#: functions.php:59
+msgid "با موفقیت انجام شد"
+msgstr "Başarılı oldu."
+
+#: functions.php:60
+msgid "متاسفانه انجام نشد"
+msgstr "Korkarım yürümedi."
+
+#: functions.php:61
+msgid "در ارسال درخواست مشکلی وجود دارد."
+msgstr "İstek göndermede bir sorun var."
+
+#: functions.php:117
+msgid "تاریخ ارسال"
+msgstr "Gönderme Tarihi"
+
+#: functions.php:151
+msgid "شماره تلفن"
+msgstr "Telefon Numarası"
+
+#: functions.php:161
+msgid "بدون شماره تلفن"
+msgstr "Telefon numarası yok"
+
+#: header.php:242
+msgid "ویرایش"
+msgstr "Düzenle"
+
+#: inc/shortcodes.php:67 template_parts/content.php:110
+msgid "مشاهده بیشتر"
+msgstr "Daha fazla görün"
+
+#: inc/widgets.php:10
+msgid "ناحیه فوتر اول"
+msgstr "İlk Altbilgi Bölgesi"
+
+#: inc/widgets.php:21
+msgid "ناحیه فوتر دوم"
+msgstr "İkinci Uşak Mahallesi"
+
+#: inc/widgets.php:32
+msgid "ناحیه فوتر سوم"
+msgstr "Üçüncü Altbilgi Bölgesi"
+
+#: inc/widgets.php:53
+msgid "ناحیه ابزارک اصلی"
+msgstr "Ana Widget Alanı"
+
+#: inc/widgets.php:113
+msgid "نوشته های اخیر همراه با تصویر"
+msgstr "Görüntü içeren son girişler"
+
+#: inc/widgets.php:115
+msgid "نوشته های اخیر آی وحید"
+msgstr "Ai Wahid tarafından Son Girişleri"
+
+#: inc/widgets.php:130
+msgid "نوشته های پربازدید"
+msgstr "En Çok İzlenen Gönderiler"
+
+#: inc/widgets.php:148
+msgid "آرشیو"
+msgstr "Arşiv"
+
+#: inc/widgets.php:216
+msgid "عنوان:"
+msgstr "Olarak:"
+
+#: inc/widgets.php:222
+msgid "تعداد پست ها:"
+msgstr "Gönderi sayısı:"
+
+#: inc/widgets.php:238
+msgid "نمایش نوشته ها به صورت تب"
+msgstr "Girişleri sekme olarak göster"
+
+#: inc/widgets.php:240
+msgid "نوشته ها به صورت تب"
+msgstr "Sekmedeki Girişler"
+
+#: inc/widgets.php:332
+msgid "نمایش نوشته های ویدئویی"
+msgstr "Video Girişlerini Göster"
+
+#: inc/widgets.php:334
+msgid "نوشته های ویدئویی آی وحید"
+msgstr "I Wahid tarafından Video Girişleri"
+
+#: inc/widgets.php:492
+msgid "ناحیه ابزارک برگه آرشیو"
+msgstr "Arşiv Sekmesi Widget Alanı"
+
+#: inc/widgets.php:516
+msgid "یک لیستی از دسته بندی ها را نمایش می دهد"
+msgstr "Kategorilerin listesini görüntüler"
+
+#: inc/widgets.php:519
+msgid "دسته بندی های پرشین بورس"
+msgstr "FreeBSD Kategorileri"
+
+#: inc/widgets.php:525
+msgid "دسته بندی ها"
+msgstr "Kategori"
+
+#: inc/widgets.php:617
+msgid "Title:"
+msgstr "Başlık:"
+
+#: inc/widgets.php:626
+msgid "Show hierarchy"
+msgstr "Hiyerarşiyi göster"
+
+#: libs/main_function.php:14
+msgid "مشکلی پیش آمده دوباره امتحان کنید."
+msgstr "Yeniden Deneyin."
+
+#: libs/main_function.php:44
+msgid "با موفقیت بروزرسانی شد."
+msgstr "Başarıyla güncelleştirildi."
+
+#: search.php:5
+msgid "نتایج جستجو برای: "
+msgstr "Arama sonuçları: "
+
+#: search.php:8
+msgid "هیچ نتیجه ای یافت نشد"
+msgstr "Sonuç bulunamadı"
+
+#: search.php:34
+msgid " پیش"
+msgstr " Önce"
+
+#: searchform.php:3
+msgid "جستجو"
+msgstr "Bakımını yapmak"
+
+#: template_parts/content.php:21
+msgid "دقیقـه مطالعه"
+msgstr "Çalışma Tutanakları"
+
+#: template_parts/content.php:101
+msgid "مطالب <span>مرتبط</span>"
+msgstr "İlgili <span>İçerikler</span>"
+
+#. Theme Name of the plugin/theme
+msgid "Persian bourse"
+msgstr "Farsça borsa"
