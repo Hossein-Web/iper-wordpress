@@ -1,3 +1,9 @@
+/*
+Theme Name: Persian bourse
+Text Domain: persian_bourse
+*/
+
+
 @import '../../../node_modules/swiper/swiper-bundle';
 @import 'variables';
 @import 'style-icon';
@@ -656,6 +662,9 @@ i {
 .wpml-ls-legacy-dropdown{
   .wpml-ls-sub-menu{
     border: none !important;
+    a{
+      border-width: 1px;
+    }
   }
   max-width: 140px;
   .wpml-ls-item{

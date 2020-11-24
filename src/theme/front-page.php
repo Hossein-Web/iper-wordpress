@@ -686,7 +686,7 @@ elseif (get_row_layout() == 'persian_news') {
                                         </li>
                                         <li class="post-meta__view list-inline-item">
                                             <span><i class="persian-view"></i></span>
-                                            <span><?php echo ivahid_get_views( get_the_id() ) . __( ' بازدید', 'persian_bourse' ); ?></span>
+                                            <span><?php echo ivahid_get_views( get_the_id() ) . ' ' . __( ' بازدید', 'persian_bourse' ); ?></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -750,7 +750,7 @@ elseif (get_row_layout() == 'persian_news') {
                                                             </li>
                                                             <li class="post-meta__view list-inline-item">
                                                                 <span><i class="persian-view"></i></span>
-                                                                <span><?php echo ivahid_get_views( get_the_id() ) . __( ' بازدید', 'persian_bourse' ); ?></span>
+                                                                <span><?php echo ivahid_get_views( get_the_id() ) . ' ' . __( ' بازدید', 'persian_bourse' ); ?></span>
                                                             </li>
                                                             <li class="post-study-time list-inline-item">
                                                                 <span><i class="persian-time"></i></span>
@@ -819,7 +819,7 @@ elseif (get_row_layout() == 'persian_news') {
                                             </li>
                                             <li class="post-meta__view list-inline-item">
                                                 <span><i class="persian-view"></i></span>
-                                                <span><?php echo ivahid_get_views( get_the_id() ) . __( ' بازدید', 'persian_bourse' ); ?></span>
+                                                <span><?php echo ivahid_get_views( get_the_id() ) . ' ' . __( ' بازدید', 'persian_bourse' ); ?></span>
                                             </li>
                                             <li class="post-study-time list-inline-item">
                                                 <span><i class="persian-time"></i></span>
@@ -1129,7 +1129,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                             </li>
                                                                             <li class="meta-view list-inline-item">
                                                                                 <span><i class="persian-view"></i></span>
-                                                                                <span><?php echo ivahid_get_views(get_the_ID()) . __(' بازدید', 'persian_bourse'); ?></span>
+                                                                                <span><?php echo ivahid_get_views(get_the_ID()) . ' ' . __(' بازدید', 'persian_bourse'); ?></span>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -1179,7 +1179,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                                 </li>
                                                                                 <li class="meta-view list-inline-item">
                                                                                     <span><i class="persian-view"></i></span>
-                                                                                    <span><?php echo ivahid_get_views(get_the_ID()) . __(' بازدید', 'persian_bourse'); ?></span>
+                                                                                    <span><?php echo ivahid_get_views(get_the_ID()) . ' ' . __(' بازدید', 'persian_bourse'); ?></span>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
@@ -1344,7 +1344,7 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
                                                             </li>
                                                             <li class="post-view d-inline-flex align-items-center list-inline-item">
                                                                 <span><i class="persian-view"></i></span>
-                                                                <span><?php echo ivahid_get_views(get_the_ID()) . __(' بازدید', 'persian_bourse'); ?></span>
+                                                                <span><?php echo ivahid_get_views(get_the_ID()) . ' ' . __(' بازدید', 'persian_bourse'); ?></span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -1394,7 +1394,7 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
                                                                 </li>
                                                                 <li class="post-view d-inline-flex align-items-center list-inline-item">
                                                                     <span><i class="persian-view"></i></span>
-                                                                    <span><?php echo ivahid_get_views(get_the_ID()) . __(' بازدید', 'persian_bourse'); ?></span>
+                                                                    <span><?php echo ivahid_get_views(get_the_ID()) . ' ' . __(' بازدید', 'persian_bourse'); ?></span>
                                                                 </li>
                                                             </ul>
                                                         </div>

@@ -20,7 +20,7 @@ function StrToArr($str, $delimiter)
 
 // Load theme text domain
 function persian_load_text_domain() {
-    load_theme_textdomain( 'persian_bourse', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'persian_bourse',get_template_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'persian_load_text_domain' );
 

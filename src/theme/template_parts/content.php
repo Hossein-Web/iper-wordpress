@@ -38,7 +38,7 @@
                                 </li>
                                 <li class="post-meta__view list-inline-item">
                                     <span><i class="persian-view"></i></span>
-                                    <span><?php echo ivahid_get_views( get_the_ID() ) . ' ' . __( 'بازدید ', 'persian_bourse' ); ?></span>
+                                    <span><?php echo ivahid_get_views( get_the_ID() ) . ' ' . __( 'بازدید', 'persian_bourse' ); ?></span>
                                 </li>
                             </ul>
                         </div>
