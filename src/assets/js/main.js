@@ -535,4 +535,9 @@ side_video.on('transitionEnd', function () {
 
 	} )
 
+	// Social media share button
+	$( '.fixed-social-media-button' ).on( 'click', function () {
+		$( '.fixed-social-media' ).toggleClass( 'collapse' );
+	} );
+
 })(jQuery);

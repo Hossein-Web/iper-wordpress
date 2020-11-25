@@ -228,6 +228,9 @@ function yatendra_get_widget_id($widget_instance)
                         </a>
                     </li>
                 </ul>
+                <div class="fixed-social-media-button">
+                    <i class="persian-angle-right"></i>
+                </div><!-- .fixed-social-media-button -->
             </div><!-- .fixed-social-media -->
         </div><!-- .fixed-social-media-wrapper -->
         <?php }

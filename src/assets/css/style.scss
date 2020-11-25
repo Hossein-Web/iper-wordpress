@@ -1225,6 +1225,9 @@ body{
   }
 }
 /*------------ Top live prices -------------*/
+.ccpw-ticker-cont{
+  z-index: 10 !important;
+}
 .style-4_big .coin-container::after{
   border: none !important;
   margin-left: 50px !important;
@@ -1384,11 +1387,28 @@ body{
     background-color: white;
     border-radius: 30px;
     z-index: 100;
+    transition: 0.3s;
+    &.collapse{
+      opacity: 0.5;
+      ul{
+        visibility: hidden;
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+      }
+      .fixed-social-media-button{
+        i{
+          transform: rotate( 90deg );
+        }
+      }
+    }
 
     ul {
       padding-top: 27px;
       padding-bottom: 22px;
-
+      transition: 0.3s;
+      max-height: 500px;
+      opacity: 1;
       li {
         margin-right: 18px;
         margin-left: 18px;
@@ -1419,6 +1439,20 @@ body{
           margin-bottom: 31px;
         }
       }
+    }
+  }
+
+  .fixed-social-media-button{
+    padding-top: 18px;
+    padding-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+    i{
+      font-size: 18px;
+      font-weight: 500;
+      color: $text-color;
+      transform: rotate( -90deg );
+      transition: 0.3s;
     }
   }
 }
