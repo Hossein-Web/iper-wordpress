@@ -648,6 +648,11 @@ i {
 }
 
 // WPML settings
+.mobile-menu-body{
+  .wpml-ls-statics-shortcode_actions{
+    margin-bottom: 10px;
+  }
+}
 .wpml-ls-statics-shortcode_actions{
   .wpml-ls-current-language{
      a{
