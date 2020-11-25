@@ -163,9 +163,6 @@ function mobileClose() {
 		if (mainPage.hasClass('menu-translate')) {
 			mainPage.removeClass('menu-translate');
 		}
-		if ( header_wrapper.hasClass( 'menu-translate' ) ) {
-			header_wrapper.removeClass( 'menu-translate' );
-		}
 		body.removeClass('mobile-menu-active');
 		mobileOverlay.css('display', 'none');
 	}
@@ -173,7 +170,6 @@ function mobileClose() {
 
 function mobileOpen() {
 	mobileWrapper.addClass('mobile-menu-open');
-	header_wrapper.addClass( 'menu-translate' );
 	mainPage.addClass('menu-translate');
 	body.addClass('mobile-menu-active');
 	mobileOverlay.css('display', 'block');
