@@ -424,7 +424,6 @@ input {
 body {
   font-family: IRANSans, sans-serif;
   text-align: right;
-
   &.mobile-menu-active {
     overflow: hidden;
   }
@@ -2007,11 +2006,6 @@ body{
         a {
           font-size: 13px;
           padding: 10px 15px;
-          //font-weight: 500;
-          //border-radius: 25px;
-          //background-color: $accent-color;
-          //color: white;
-          //display: inline-block;
         }
       }
 
@@ -2021,6 +2015,7 @@ body{
           margin-bottom: 20px;
           a{
             transition: 0.3s;
+            display: block;
             &:hover {
               color: $accent-color;
               padding-right: 10px;
@@ -2028,20 +2023,23 @@ body{
           }
 
           &.has_submenu{
-            position: relative;
-            padding-right: 15px;
+            >a{
+              position: relative;
+              padding-right: 15px;
 
-            &::before{
-              content: '+';
-              display: block;
-              position: absolute;
-              right: 0;
-              color: $text-color;
-              transition: 0.3s;
-            }
-            &:hover{
               &::before{
+                content: '+';
+                display: block;
+                position: absolute;
+                right: 0;
+                color: $text-color;
+                transition: 0.3s;
+              }
+              &:hover{
                 color: $accent-color;
+                &::before{
+                  color: $accent-color;
+                }
               }
             }
             ul{
@@ -2058,20 +2056,23 @@ body{
                 padding-top: 10px;
                 opacity: 1;
                 li{
-                  position: relative;
-                  padding-right: 10px;
-                  &::before {
-                    content: '-';
-                    display: block;
-                    position: absolute;
-                    right: 0;
-                    bottom: -2px;
-                    color: $text-color;
-                    transition: 0.3s;
-                  }
-                  &:hover{
-                    &::before{
-                      color: $accent-color;
+                  a{
+                    position: relative;
+                    padding-right: 10px;
+
+                    &::before {
+                      content: '-';
+                      display: block;
+                      position: absolute;
+                      right: 0;
+                      bottom: -2px;
+                      color: $text-color;
+                      transition: 0.3s;
+                    }
+                    &:hover{
+                      &::before{
+                        color: $accent-color;
+                      }
                     }
                   }
                 }
@@ -2328,37 +2329,6 @@ body{
 /*------------ last post -------------*/
 .last-post {
   margin-bottom: 43px;
-
-  //&__title {
-  //  margin-bottom: 20px;
-  //  position: relative;
-  //
-  //  &::after {
-  //    content: '';
-  //    position: absolute;
-  //    display: block;
-  //    width: 100%;
-  //    height: 2px;
-  //    background-color: $light-gray;
-  //    bottom: 50%;
-  //    transform: translateY(50%);
-  //  }
-  //
-  //  h4 {
-  //    font-size: 18px;
-  //    font-weight: 700;
-  //    color: $text-color-2;
-  //    background-color: white;
-  //    z-index: 2;
-  //    padding-left: 15px;
-  //  }
-  //
-  //  .view-more {
-  //    background-color: white;
-  //    z-index: 2;
-  //    padding-right: 20px;
-  //  }
-  //}
 
   &__item {
     box-shadow: -18px 18px 35px rgba(56, 66, 77, 0.05);
@@ -4965,9 +4935,45 @@ footer {
     }
   }
 
+
+
+  /*------------ last post -------------*/
+  .last-post {
+    &__item {
+      &--small {
+        .post-read-more {
+            box-shadow: 11px 0 7px -7px rgba(0, 0, 0, .1);
+        }
+      }
+    }
+  }
+
+
+
+
+
   /*Comments and posts*/
-  .comments {
-    margin-bottom: 20px;
+  .comments-and-posts {
+
+    .comments {
+      margin-bottom: 20px;
+      &__wrapper {
+
+        .comment-content {
+
+          .view-more {
+            top: 18px;
+            left: -15px;
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            padding-right: 4px;
+            width: auto;
+            font-size: 13px;
+          }
+        }
+      }
+    }
   }
 
   /*Post slider*/

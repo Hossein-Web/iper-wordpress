@@ -154,15 +154,14 @@ let body = $('body');
 let mobileWrapper = $('.header__mobile-menu-wrapper');
 let mainPage = $('#main-page');
 let mobileOverlay = $('#mobile-overlay');
-let header_wrapper = $( '.menu-wrapper' );
 
 function mobileClose() {
 	if (mobileWrapper.hasClass('mobile-menu-open')) {
 		mobileWrapper.removeClass('mobile-menu-open');
 
-		if (mainPage.hasClass('menu-translate')) {
-			mainPage.removeClass('menu-translate');
-		}
+		// if (mainPage.hasClass('menu-translate')) {
+		// 	mainPage.removeClass('menu-translate');
+		// }
 		body.removeClass('mobile-menu-active');
 		mobileOverlay.css('display', 'none');
 	}
@@ -170,7 +169,7 @@ function mobileClose() {
 
 function mobileOpen() {
 	mobileWrapper.addClass('mobile-menu-open');
-	mainPage.addClass('menu-translate');
+	// mainPage.addClass('menu-translate');
 	body.addClass('mobile-menu-active');
 	mobileOverlay.css('display', 'block');
 }
