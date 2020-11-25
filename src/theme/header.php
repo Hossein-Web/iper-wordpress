@@ -34,6 +34,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-5 col-lg-5 col-12">
                         <div class="header__logo">
+                            <h1><?php echo get_bloginfo( 'name' ); ?></h1>
                             <?php
                             if (class_exists('ACF')) {
 
@@ -60,6 +61,7 @@
                                 <span></span>
                             </div>
                             <nav class="main-menu">
+                                <h3>منو</h3>
                                 <?php
                                 if (have_rows('persian-menu', 'option')) {
                                     ?>

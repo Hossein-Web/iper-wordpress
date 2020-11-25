@@ -144,7 +144,7 @@
                  <?php
                  if ($title) { ?>
                      <div class="title title--blue title--small">
-                         <h6><?php echo $title; ?></h6>
+                         <h3><?php echo $title; ?></h3>
                          <a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php _e('آرشیو', 'persian_bourse'); ?></a>
                      </div>
                      <?php
@@ -166,7 +166,7 @@
                                  <?php } ?>
                                  <div class="post-details">
                                      <a href="<?php echo get_the_permalink(); ?>">
-                                         <h6><?php echo esc_html(get_the_title()); ?></h6>
+                                         <h4><?php echo esc_html(get_the_title()); ?></h4>
                                      </a>
                                      <p><?php echo human_time_diff(get_the_time('U'), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></p>
                                  </div>
@@ -259,8 +259,8 @@
                                  <?php if (get_row_index() === 1) { ?> class="active" <?php } ?> >
                                  <?php
                                  $tab_title = get_sub_field('side_tab_title');
-                                 echo esc_html($tab_title);
                                  ?>
+                                 <h3> <?php echo esc_html($tab_title); ?> </h3>
                              </div>
                          <?php } ?>
                      </div><!-- .side-tab__tab_links -->
@@ -280,7 +280,7 @@
                                              ?>
                                              <li>
                                                  <a href="<?php echo get_the_permalink(); ?>">
-                                                     <h6><?php echo esc_html(get_the_title()); ?></h6>
+                                                     <h4><?php echo esc_html(get_the_title()); ?></h4>
                                                  </a>
                                                  <p><?php echo ivahid_get_excerpt(100); ?></p>
                                              </li>
@@ -299,7 +299,7 @@
                                                  ?>
                                                  <li>
                                                      <a href="<?php echo get_the_permalink(); ?>">
-                                                         <h6><?php echo esc_html(get_the_title()); ?></h6>
+                                                         <h4><?php echo esc_html(get_the_title()); ?></h4>
                                                      </a>
                                                      <p><?php echo ivahid_get_excerpt(100); ?></p>
                                                  </li>
@@ -347,7 +347,7 @@
                  $side_video_posts_category = get_field('side_video_most_visited_posts_category', $id);
                  if ($side_video_title) { ?>
                      <div class="side-video__title">
-                         <h6><?php echo esc_html($side_video_title); ?></h6>
+                         <h3><?php echo esc_html($side_video_title); ?></h3>
                          <?php $side_video_posts_type = get_field('side_video_select_posts_type', $id); ?>
                          <?php
                          if ($side_video_posts_type === 'posts_from_category') {
@@ -383,11 +383,11 @@
                                                      </a>
                                                  </div><!-- .poster-wrapper -->
                                              <?php } ?>
-                                             <h6 class="video-post-title">
+                                             <h4 class="video-post-title">
                                                  <a href="<?php echo get_the_permalink(); ?>">
                                                      <?php echo esc_html(get_the_title()); ?>
                                                  </a>
-                                             </h6>
+                                             </h4>
                                              <ul class="video-post-meta">
                                                  <li>
                                                      <span><i class="persian-date"></i></span><span><?php echo human_time_diff(get_the_time('U'), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
@@ -439,11 +439,11 @@
                                                          </a>
                                                      </div><!-- .poster-wrapper -->
                                                  <?php } ?>
-                                                 <h6 class="video-post-title">
+                                                 <h4 class="video-post-title">
                                                      <a href="<?php echo get_the_permalink(); ?>">
                                                          <?php echo esc_html(get_the_title()); ?>
                                                      </a>
-                                                 </h6>
+                                                 </h4>
                                                  <ul class="video-post-meta">
                                                      <li>
                                                          <span><i class="persian-date"></i></span><span><?php echo human_time_diff(get_the_time('U'), current_time('U')) . ' ' . __('پیش', 'persian_bourse'); ?></span>
@@ -532,7 +532,7 @@
                  <div class="side-categories">
                      <?php if ($title) {
                          ?>
-                         <h6 class="categories-title"><?php echo $title; ?></h6>
+                         <h3 class="categories-title"><?php echo $title; ?></h3>
                          <?php
                      } ?>
                      <ul>
