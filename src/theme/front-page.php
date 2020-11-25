@@ -69,7 +69,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                     <div class="post-item-details">
                                         <a class="post-item-details__title"
                                            href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
-                                            <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                            <h3><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h3>
                                             <!-- .post-item-details__title -->
                                         </a><!-- .post-item-details__title -->
                                         <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -119,7 +119,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                        <div class="post-item-details">
                                            <a class="post-item-details__title"
                                               href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
-                                               <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                               <h3><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h3>
                                                <!-- .post-item-details__title -->
                                            </a><!-- .post-item-details__title -->
                                            <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -167,7 +167,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                            <div class="post-item-details">
                                                <a class="post-item-details__title"
                                                   href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
-                                                   <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                                   <h3><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h3>
                                                    <!-- .post-item-details__title -->
                                                </a><!-- .post-item-details__title -->
                                                <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -219,7 +219,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                            <div class="post-item-details">
                                                <a class="post-item-details__title"
                                                   href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
-                                                   <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                                   <h3><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h3>
                                                    <!-- .post-item-details__title -->
                                                </a><!-- .post-item-details__title -->
                                                <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -268,7 +268,7 @@ $persian_slider_type = get_sub_field('persian_slider_type');
                                        <div class="post-item-details">
                                            <a class="post-item-details__title"
                                               href="<?php echo esc_url(get_permalink($persian_slider[$i]->ID)); ?>">
-                                               <h5><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h5>
+                                               <h3><?php echo esc_html(get_the_title($persian_slider[$i]->ID)); ?></h3>
                                                <!-- .post-item-details__title -->
                                            </a><!-- .post-item-details__title -->
                                            <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -343,7 +343,7 @@ elseif ($persian_slider_type == 'visited'){
                                     <div class="post-item-details">
                                         <a class="post-item-details__title"
                                            href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
-                                            <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                            <h3><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h3>
                                             <!-- .post-item-details__title -->
                                         </a><!-- .post-item-details__title -->
                                         <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -393,7 +393,7 @@ elseif ($persian_slider_type == 'visited'){
                                         <div class="post-item-details">
                                             <a class="post-item-details__title"
                                                href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
-                                                <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                <h3><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h3>
                                                 <!-- .post-item-details__title -->
                                             </a><!-- .post-item-details__title -->
                                             <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -442,7 +442,7 @@ elseif ($persian_slider_type == 'visited'){
                                             <div class="post-item-details">
                                                 <a class="post-item-details__title"
                                                    href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
-                                                    <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                    <h3><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h3>
                                                     <!-- .post-item-details__title -->
                                                 </a><!-- .post-item-details__title -->
                                                 <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -498,7 +498,7 @@ elseif ($persian_slider_type == 'visited'){
                                             <div class="post-item-details">
                                                 <a class="post-item-details__title"
                                                    href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
-                                                    <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                    <h3><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h3>
                                                     <!-- .post-item-details__title -->
                                                 </a><!-- .post-item-details__title -->
                                                 <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -546,7 +546,7 @@ elseif ($persian_slider_type == 'visited'){
                                         <div class="post-item-details">
                                             <a class="post-item-details__title"
                                                href="<?php echo esc_url(get_permalink($persian_posts[$j]->ID)); ?>">
-                                                <h5><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h5>
+                                                <h3><?php echo esc_html(get_the_title($persian_posts[$j]->ID)); ?></h3>
                                                 <!-- .post-item-details__title -->
                                             </a><!-- .post-item-details__title -->
                                             <ul class="bourse-post-meta bourse-post-meta--small post-item-details__links ">
@@ -631,7 +631,7 @@ elseif (get_row_layout() == 'persian_news') {
                             if ($persian_news_title) {
                                 ?>
                                 <div class="bourse-title">
-                                    <h6><?php echo esc_html($persian_news_title); ?></h6>
+                                    <h2><?php echo esc_html($persian_news_title); ?></h2>
                                     <?php if ( $persian_news_read_more ){
                                         $persian_news_link_title = $persian_news_read_more['title'];
                                         $persian_news_url = $persian_news_read_more['url'];
@@ -692,9 +692,9 @@ elseif (get_row_layout() == 'persian_news') {
                                 </div>
                                 <div class="post-content">
                                     <div class="post-title">
-                                        <h5>
+                                        <h3>
                                             <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                                        </h5>
+                                        </h3>
                                     </div><!-- .post-title -->
                                     <div class="post-excerpt">
                                         <p><?php echo ivahid_get_excerpt(100); ?></p>
@@ -726,9 +726,9 @@ elseif (get_row_layout() == 'persian_news') {
                                                     </div><!-- .post-image -->
                                                     <div class="post-content">
                                                         <div class="post-title">
-                                                            <h5>
+                                                            <h3>
                                                                 <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                                                            </h5>
+                                                            </h3>
                                                         </div><!-- .post-title -->
                                                         <div class="post-excerpt">
                                                             <p><?php echo ivahid_get_excerpt(100); ?></p>
@@ -795,9 +795,9 @@ elseif (get_row_layout() == 'persian_news') {
                                     </div><!-- .post-image -->
                                     <div class="post-content">
                                         <div class="post-title">
-                                            <h5>
+                                            <h3>
                                                 <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                                            </h5>
+                                            </h3>
                                         </div><!-- .post-title -->
                                         <div class="post-excerpt">
                                             <p><?php echo ivahid_get_excerpt(100); ?></p>
@@ -889,7 +889,7 @@ elseif (get_row_layout() == 'persian_group') {
                             <?php if ( $persian_group_title ){
                                 ?>
                             <div class="bourse-title bourse-title--blue">
-                                <h6><?php echo esc_html($persian_group_title); ?></h6>
+                                <h2><?php echo esc_html($persian_group_title); ?></h2>
                                 <?php if ( $persian_group_link ){
                                     $persian_group_read_more_title = $persian_group_link['title'];
                                     $persian_group_read_more_url = $persian_group_link['url'];
@@ -922,9 +922,9 @@ elseif (get_row_layout() == 'persian_group') {
                                                             </a>
                                                         </div>
                                                         <div class="item-title">
-                                                            <p>
+                                                            <h3>
                                                                 <a href="<?php echo get_the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a>
-                                                            </p>
+                                                            </h3>
                                                         </div>
                                                             <div class="item-content">
                                                                 <p><?php echo esc_html(ivahid_get_excerpt(100)); ?></p>
@@ -957,7 +957,7 @@ elseif (get_row_layout() == 'persian_tools') {
                             if ($persian_tools_title) {
                                 ?>
                                 <div class="bourse-title bourse-title--blue">
-                                    <h6><?php echo $persian_tools_title; ?></h6>
+                                    <h2><?php echo $persian_tools_title; ?></h2>
                                     <?php if ( $persian_tools_read_more ){
                                         $persian_tools_read_more_title = $persian_tools_read_more[ 'title' ];
                                         $persian_tools_read_more_url = $persian_tools_read_more[ 'url' ];
@@ -1002,9 +1002,9 @@ elseif (get_row_layout() == 'persian_tools') {
                                                             </div>
                                                             <div class="services-content">
                                                                 <div class="services-title">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <a href="<?php echo esc_url($tool_item_url); ?>"><?php echo esc_html($tool_item_title); ?></a>
-                                                                        </h4>
+                                                                        </h3>
                                                                     <?php } ?>
                                                                 </div>
                                                                 <div class="services-excerpt">
@@ -1045,7 +1045,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                             if ($comments_title) {
                                                 ?>
                                                 <div class="bourse-title">
-                                                    <h6><?php echo esc_html($comments_title); ?></h6>
+                                                    <h2><?php echo esc_html($comments_title); ?></h2>
                                                 </div>
                                             <?php } ?>
                                             <div class="comments__wrapper">
@@ -1086,7 +1086,7 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                             $most_visited_post_title = get_sub_field('main_page_most_visited_posts_title');
                                             ?>
                                             <div class="bourse-title">
-                                                <h6><?php echo esc_html($most_visited_post_title); ?></h6>
+                                                <h2><?php echo esc_html($most_visited_post_title); ?></h2>
                                             </div>
                                         <?php } ?>
                                         <div class="slider-post-small-slider">
@@ -1109,11 +1109,11 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                     </a>
                                                                 <div class="slider-post-small__content">
                                                                     <div class="post-small-title">
-                                                                        <p>
+                                                                        <h3>
                                                                             <a href="<?php echo get_the_permalink(); ?>">
                                                                                 <?php echo esc_html(get_the_title()); ?>
                                                                             </a>
-                                                                        </p>
+                                                                        </h3>
                                                                     </div>
                                                                     <div class="slider-post-small__post-meta">
                                                                         <ul class="list-inline">
@@ -1159,11 +1159,11 @@ elseif (get_row_layout() == 'persian_comments_posts') {
                                                                         </a>
                                                                     <div class="slider-post-small__content">
                                                                         <div class="post-small-title">
-                                                                            <p>
+                                                                            <h3>
                                                                                 <a href="<?php echo get_the_permalink(); ?>">
                                                                                     <?php echo esc_html(get_the_title()); ?>
                                                                                 </a>
-                                                                            </p>
+                                                                            </h3>
                                                                         </div>
                                                                         <div class="slider-post-small__post-meta">
                                                                             <ul class="list-inline">
@@ -1216,7 +1216,7 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
             <?php if ( $news_slider_title ) {
                 ?>
             <div class="bourse-title">
-                <h6><?php echo esc_html($news_slider_title); ?></h6>
+                <h2><?php echo esc_html($news_slider_title); ?></h2>
                 <?php if ( $news_slider_read_more ){
                     $news_slider_read_more_title = $news_slider_read_more['title'];
                     $news_slider_read_more_url = $news_slider_read_more['url'];
@@ -1255,7 +1255,7 @@ elseif ( get_row_layout() == 'persian_news_slider' ){
                                         <div class="post-slider-details__content">
                                             <div class="post-slider-title">
                                                 <a href="<?php echo get_the_permalink(); ?>">
-                                                    <h5><?php the_title(); ?></h5>
+                                                    <h3><?php the_title(); ?></h3>
                                                 </a>
                                                 <?php if ( $slider_en_title ){
                                                     ?>
@@ -1326,11 +1326,11 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
                                                 <?php } ?>
                                                 <div class="post__content">
                                                     <div class="post-title">
-                                                        <p>
+                                                        <h3>
                                                             <a href="<?php echo get_the_permalink(); ?>">
                                                             <?php echo esc_html( get_the_title() ); ?>
                                                             </a>
-                                                        </p>
+                                                        </h3>
                                                     </div>
                                                     <div class="post-meta">
                                                         <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
@@ -1376,11 +1376,11 @@ elseif ( get_row_layout() == 'persian_bourse_news' ) { ?>
                                                     <?php } ?>
                                                     <div class="post__content">
                                                         <div class="post-title">
-                                                            <p>
+                                                            <h3>
                                                                 <a href="<?php echo get_the_permalink(); ?>">
                                                                     <?php echo esc_html( get_the_title() ); ?>
                                                                 </a>
-                                                            </p>
+                                                            </h3>
                                                         </div>
                                                         <div class="post-meta">
                                                             <ul class="list-inline bourse-post-meta bourse-post-meta--medium">
@@ -1427,7 +1427,7 @@ elseif ( get_row_layout() == 'persian_live_prices' ){
             <?php if ( $persian_live_price_title ){
                 ?>
                 <div class="bourse-title bourse-title--blue">
-                    <h6><?php echo $persian_live_price_title; ?></h6>
+                    <h2><?php echo $persian_live_price_title; ?></h2>
                     <?php if ( $persian_live_read_more ){
                             $persian_live_read_more_title = $persian_live_read_more['title'];
                             $persian_live_read_more_url = $persian_live_read_more['url'];
@@ -1479,7 +1479,7 @@ elseif ( get_row_layout() == 'persian_small_live_price_slider' ){
         <div class="container">
             <?php if ( $persian_small_price_slider_title ) { ?>
                 <div class="bourse-title bourse-title--blue">
-                    <h6><?php echo $persian_small_price_slider_title; ?></h6>
+                    <h2><?php echo $persian_small_price_slider_title; ?></h2>
                 </div>
             <?php } ?>
             <?php if( $persian_small_price_slider_items ) { ?>
