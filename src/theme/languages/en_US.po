@@ -3,7 +3,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Persian bourse\n"
 "POT-Creation-Date: 2020-11-23 15:32+0330\n"
-"PO-Revision-Date: 2020-11-23 17:14+0330\n"
+"PO-Revision-Date: 2020-11-25 15:52+0330\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -216,10 +216,7 @@ msgstr "Most Viewed Posts"
 
 #: inc/widgets.php:148
 msgid "آرشیو"
-msgstr ""
-"Note that this list is only for the archive of ivahid's portfolio and "
-"perhaps some portfolio\n"
-"                            has not yet been unveiled ."
+msgstr "archive"
 
 #: inc/widgets.php:216
 msgid "عنوان:"
