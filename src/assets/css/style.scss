@@ -1226,6 +1226,9 @@ body{
   }
 }
 /*------------ Top live prices -------------*/
+.ccpw-ticker-cont{
+  z-index: 10 !important;
+}
 .style-4_big .coin-container::after{
   border: none !important;
   margin-left: 50px !important;
