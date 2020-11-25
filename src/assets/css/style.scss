@@ -4881,6 +4881,15 @@ footer {
 
 /*------------ < 1200px -------------*/
 @media screen and (max-width: 1200px) {
+  .user-links{
+    // WPML plugin
+    .wpml-ls-legacy-dropdown{
+      max-width: 60px;
+      .wpml-ls-native, .wpml-ls-display{
+        display: none;
+      }
+    }
+  }
 
   /*header*/
   .header {
@@ -5088,6 +5097,7 @@ footer {
     //margin-top: 50px;
   }
 
+  // Cryptocurrency widget
   .style-4_big{
     .coin-container{
       padding: 0 !important;
