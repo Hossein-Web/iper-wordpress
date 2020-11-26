@@ -68,6 +68,7 @@
         <?php } ?>
         <div class="row">
             <div class="col-24">
+                <input name="wpml_language_code" type="hidden" value="<?php echo ICL_LANGUAGE_CODE; ?>">
                 <div class="field-wrapper">
                         <textarea class="comments-text" name="comment" rows="6"
                                   placeholder="<?php _e( 'متن دیدگاه', 'persian_bourse' ); ?>" required></textarea>
