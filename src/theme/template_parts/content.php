@@ -134,7 +134,7 @@
                                             </a>
                                         </div>
                                         <div class="item-title">
-                                            <p><a href="<?php echo get_the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a></p>
+                                            <h3><a href="<?php echo get_the_permalink(); ?>"><?php echo esc_html( get_the_title() ); ?></a></h3>
                                         </div>
                                         <div class="item-content">
                                             <p><?php echo ivahid_get_excerpt(100); ?></p>
