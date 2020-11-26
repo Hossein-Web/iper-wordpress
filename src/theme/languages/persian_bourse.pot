@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Persian bourse\n"
-"POT-Creation-Date: 2020-11-23 15:32+0330\n"
-"PO-Revision-Date: 2020-11-23 15:32+0330\n"
+"POT-Creation-Date: 2020-11-26 11:09+0330\n"
+"PO-Revision-Date: 2020-11-26 11:05+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -112,6 +112,15 @@ msgid ""
 "searching can help."
 msgstr ""
 
+#: footer.php:43
+#, php-format
+msgid "اين وبسايت متعلق به %s بوده و کلیه حقوق آن محفوظ است."
+msgstr ""
+
+#: footer.php:44
+msgid "طراحی سایت توسط تیم طراحی سایت آی وحید"
+msgstr ""
+
 #: front-page.php:87 front-page.php:137 front-page.php:185 front-page.php:237
 #: front-page.php:286 front-page.php:361 front-page.php:411 front-page.php:461
 #: front-page.php:516 front-page.php:564 front-page.php:669 front-page.php:757
@@ -172,7 +181,7 @@ msgstr ""
 msgid "بدون شماره تلفن"
 msgstr ""
 
-#: header.php:242
+#: header.php:251
 msgid "ویرایش"
 msgstr ""
 
