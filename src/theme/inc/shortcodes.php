@@ -63,7 +63,7 @@ function persian_offer_posts_shortcode( $atts ) {
     <section class="offer-posts">
         <div class="container">
             <div class="bourse-title bourse-title--blue">
-                <h6><?php echo $attributes['title']; ?></h6>
+                <h2><?php echo $attributes['title']; ?></h2>
                 <a class="bourse-read-more" href="#"><?php echo esc_html( __( 'مشاهده بیشتر', 'persian_bourse' ) ); ?><i class="persian-arrow-left"></i></a>
             </div>
             <?php

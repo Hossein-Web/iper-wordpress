@@ -98,7 +98,7 @@
         <section class="offer-posts">
         <div class="container">
             <div class="bourse-title bourse-title--blue">
-                <h6><?php _e( 'مطالب <span>مرتبط</span>', 'persian_bourse' ); ?></h6>
+                <h2><?php _e( 'مطالب <span>مرتبط</span>', 'persian_bourse' ); ?></h2>
                 <?php
                     $offer_posts_categories = get_the_category();
 //                    $offer_post_cat = get_category_link( $offer_posts_categories[0] );

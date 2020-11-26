@@ -11,8 +11,8 @@
                  'id' => 'footer_sidebar_1',
                  'before_widget' => '<div class="footer-widget-wrapper">',
                  'after_widget' => '</div><!-- .footer-widget-wrapper -->',
-                 'before_title' => '<h6>',
-                 'after_title' => '</h6>',
+                 'before_title' => '<h3>',
+                 'after_title' => '</h3>',
              )
          );
 
@@ -22,8 +22,8 @@
                  'id' => 'footer_sidebar_2',
                  'before_widget' => '<div class="footer-widget-wrapper">',
                  'after_widget' => '</div><!-- .footer-widget-wrapper -->',
-                 'before_title' => '<h6>',
-                 'after_title' => '</h6>',
+                 'before_title' => '<h3>',
+                 'after_title' => '</h3>',
              )
          );
 
@@ -33,8 +33,8 @@
                  'id' => 'footer_sidebar_3',
                  'before_widget' => '<div class="footer-widget-wrapper">',
                  'after_widget' => '</div><!-- .footer-widget-wrapper -->',
-                 'before_title' => '<h6>',
-                 'after_title' => '</h6>',
+                 'before_title' => '<h3>',
+                 'after_title' => '</h3>',
              )
          );
 
