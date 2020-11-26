@@ -4049,17 +4049,23 @@ footer {
   > .container {
     border-bottom: 2px solid $light-gray;
   }
+  h3 {
+    color: #7c8a9a !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    margin-bottom: 17px !important;
+  }
 
   .footer-widget-wrapper {
     margin-top: 38px;
     margin-bottom: 35px;
 
-    h3 {
-      color: #7c8a9a;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 17px;
-    }
+    //h3 {
+    //  color: #7c8a9a;
+    //  font-size: 14px;
+    //  font-weight: 700;
+    //  margin-bottom: 17px;
+    //}
 
     ul {
       li {
@@ -5738,14 +5744,17 @@ footer {
   /*Footer*/
   footer {
     padding-bottom: 0;
-
+    h3 {
+      margin-bottom: 5px !important;
+      margin-top: 10px !important;
+    }
     .footer-widget-wrapper {
       margin: 5px 0;
 
-      h3 {
-        margin-bottom: 5px;
-        margin-top: 10px;
-      }
+      //h3 {
+      //  margin-bottom: 5px;
+      //  margin-top: 10px;
+      //}
 
       ul {
         li {
