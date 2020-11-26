@@ -171,7 +171,7 @@ body {
 }
 .bourse-title {
 
-  h6 {
+  h2 {
     padding-right: 8px;
     padding-left: unset;
   }
@@ -198,11 +198,6 @@ body {
     }
   }
 }
-
-
-
-
-
 
 .bourse-post-meta {
   &--medium {
@@ -850,7 +845,7 @@ body{
 
         a {
 
-          h6 {
+          h4 {
             padding-right: unset;
             padding-left: 10px;
 
@@ -882,7 +877,9 @@ body{
       .post-details {
         a {
 
-          h6 {
+          h4 {
+            padding-left: initial;
+            padding-right: 40px;
             &::after {
               left: unset;
               right: 40px;
@@ -899,7 +896,7 @@ body{
 
   &__title {
 
-    h6 {
+    h3 {
       padding-left: unset;
       padding-right: 10px;
     }
@@ -1360,10 +1357,6 @@ footer {
   }
 }
 
-/*------------ >992px and <1200px  -------------*/
-@media screen and (max-width: 1200px) and (min-width: 992px) {
-}
-
 /*------------ < 992px -------------*/
 @media screen and (max-width: 992px) {
   /*header*/
@@ -1389,6 +1382,16 @@ footer {
 
 /*------------ <768px -------------*/
 @media only screen and (max-width: 768px) {
+  /* Last post */
+  .last-post {
+    &__item {
+      &--small {
+        .post-read-more {
+          box-shadow: -11px 0 7px -7px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
   /*Post slider*/
   .post-slider{
     &__slider{
