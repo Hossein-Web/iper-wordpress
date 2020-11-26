@@ -40,8 +40,8 @@
                             <a href="https://ivahid.com/"></a>
                         </div>
                         <div class="copy-right-text-wrapper">
-                            <p>اين وبسايت متعلق به ميباشد و تمامی حقوق آن محفوظ ميباشد.</p>
-                            <p>طراحی سایت توسط تیم طراحی سایت آی وحید</p>
+                            <p><?php printf( __( 'اين وبسايت متعلق به %s بوده و کلیه حقوق آن محفوظ است.', 'persian_bourse' ), get_bloginfo( 'name' ) ); ?></p>
+                            <p><?php _e( 'طراحی سایت توسط تیم طراحی سایت آی وحید', 'persian_bourse' ); ?></p>
                         </div><!-- .copy-right-text-wrapper -->
                     </div><!-- .footer-copy-right -->
                 </div><!-- .col-lg-12 -->
