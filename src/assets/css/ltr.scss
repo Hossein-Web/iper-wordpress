@@ -567,21 +567,25 @@ body{
   &__mobile-menu-wrapper {
     transform: translate3d(-100%, 0, 0);
     .mobile-close-button {
-      margin-right: unset;
       margin-left: 5px;
+      margin-right: unset;
+
       &:after, &:before {
-        left: unset;
         right: 0;
+        left: unset;
       }
     }
 
     .mobile-menu-header {
+
       .mobile-links {
         > ul {
+
           li {
+
             &:not( :last-child ) {
-              padding-left: unset;
               padding-right: 30px;
+              padding-left: unset;
             }
           }
         }
@@ -589,9 +593,10 @@ body{
 
       .mobile-links {
         .notification {
+
           &__is-active {
-            right: unset;
             left: -6px;
+            right: unset;
           }
         }
       }
@@ -606,10 +611,11 @@ body{
         .notification {
           &__notification-list {
             text-align: left;
+
             li {
-              &:hover{
-                padding-right: unset;
+              &:hover {
                 padding-left: 12px;
+                padding-right: unset;
               }
             }
           }
@@ -618,33 +624,40 @@ body{
     }
 
     .mobile-menu-body {
+
       .mobile-menu {
         li {
-          padding-right: unset;
           padding-left: 5px;
-
-          &:hover {
-            padding-right: unset;
-            padding-left: 10px;
-          }
-          &.has_submenu{
-            padding-left: 15px;
-            padding-right: unset;
-            &::before{
-              left: 0;
-              right: unset;
+          padding-right: unset;
+          a{
+            &:hover {
+              padding-left: 10px;
+              padding-right: unset;
             }
+          }
 
+          &.has_submenu{
+            >a{
+              padding-left: 15px;
+              padding-right: unset;
+
+              &::before{
+                left: 0;
+                right: unset;
+              }
+            }
             &.active{
               ul{
                 li{
-                  padding-left: 10px;
-                  padding-right: unset;
-                  &::before {
-                    left: 0;
-                    right: unset;
-                  }
+                  a{
+                    padding-left: 10px;
+                    padding-right: unset;
 
+                    &::before {
+                      left: 0;
+                      right: unset;
+                    }
+                  }
                 }
               }
             }
