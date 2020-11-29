@@ -51,8 +51,10 @@ add_image_size( 'small_tile_post_image', 575, 191, [ 'center', 'center' ] );
 // Wordpressify functions
 function wordpressify_resources() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_script( 'header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false );
-	wp_enqueue_script( 'footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true );
+	wp_deregister_script( 'jquery' );
+    wp_enqueue_script( 'jquery_CDN', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', null, '3.5.1', false  );
+	wp_enqueue_script( 'header_js', get_template_directory_uri() . '/js/header-bundle.js', [ 'jquery_CDN' ], 1.0, true );
+	wp_enqueue_script( 'footer_js', get_template_directory_uri() . '/js/footer-bundle.js', [ 'jquery_CDN' ], 1.0, true );
     $translation_array = array(
         'reply_text' => __( '<i class="persian-response"></i> پاسخ دهید', 'persian_bourse' ),
         'leave_reply_text' => __( '<i class="persian-response"></i> صرف نظر از پاسخ', 'persian_bourse' ),

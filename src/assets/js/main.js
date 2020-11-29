@@ -1,25 +1,6 @@
 (function ($) {
 const header = $('#header');
 
-// $(window).on('load', () => {
-// 	WebFont.load({
-// 		google: {
-// 			families: ["Roboto:100,300,400,700"]
-// 		}
-// 	});
-// 	setTimeout(function () {
-// 		$(window).scroll(function () {
-// 			let scrolled = $(window).scrollTop();
-// 			if (scrolled > 350) {
-// 				header.addClass('scrolled');
-// 			} else {
-// 				header.removeClass('scrolled');
-// 			}
-// 		});
-// 	}, 2000);
-// 	AOS.init();
-// });
-
 // center 404 not found
 	let notFoundElement = $('.not-found');
 	if ( notFoundElement.length ) {
@@ -464,7 +445,7 @@ $('.post-item-like').on('click', function (e) {
 
 // Side video slider
 let side_video = new Swiper('.side-video-slider .swiper-container', {
-	direction: 'vertical',
+	// direction: 'vertical',
 	loop: true,
 	slidesPerView: 1,
 	speed: 500,
@@ -475,10 +456,14 @@ let side_video = new Swiper('.side-video-slider .swiper-container', {
 	// autoHeight: true
 });
 side_video.on('transitionStart', function () {
-	$( '.side-video-slider .swiper-slide-prev' ).toggleClass( 'slide-change' );
+	let videoSlideActive = $( '.side-video-slider .swiper-slide-active' );
+	videoSlideActive.toggleClass( 'slide-change' );
+	videoSlideActive.find( 'img' ).css( 'top', '-6px' );
 });
 side_video.on('transitionEnd', function () {
-	$( '.side-video-slider .swiper-slide-prev' ).removeClass( 'slide-change' );
+	let videoSlideActive = $( '.side-video-slider .swiper-slide-active' );
+	videoSlideActive.removeClass( 'slide-change' );
+	videoSlideActive.find( 'img' ).css( 'top', '0' );
 });
 
 //live prices cards

@@ -48,67 +48,112 @@ Table of content
   font-family: IRANSans;
   font-style: normal;
   font-weight: 900;
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Black.eot');
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Black.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-  url('./fonts/IRANSans/woff2/IRANSansWeb_Black.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-  url('./fonts/IRANSans/woff/IRANSansWeb_Black.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('./fonts/IRANSans/ttf/IRANSansWeb_Black.ttf') format('truetype');
+  src: url('./fonts/IRANSans/woff/IRANSansWeb_Black.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: bold;
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Bold.eot');
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-  url('./fonts/IRANSans/woff2/IRANSansWeb_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-  url('./fonts/IRANSans/woff/IRANSansWeb_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('./fonts/IRANSans/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+  src: url('./fonts/IRANSans/woff/IRANSansWeb_Bold.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 500;
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Medium.eot');
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-  url('./fonts/IRANSans/woff2/IRANSansWeb_Medium.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-  url('./fonts/IRANSans/woff/IRANSansWeb_Medium.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('./fonts/IRANSans/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+  src: url('./fonts/IRANSans/woff/IRANSansWeb_Medium.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 300;
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Light.eot');
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-  url('./fonts/IRANSans/woff2/IRANSansWeb_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-  url('./fonts/IRANSans/woff/IRANSansWeb_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('./fonts/IRANSans/ttf/IRANSansWeb_Light.ttf') format('truetype');
+  src: url('./fonts/IRANSans/woff/IRANSansWeb_Light.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 200;
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_UltraLight.eot');
-  src: url('./fonts/IRANSans/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-  url('./fonts/IRANSans/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-  url('./fonts/IRANSans/woff/IRANSansWeb_UltraLight.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('./fonts/IRANSans/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+  src: url('./fonts/IRANSans/woff/IRANSansWeb_UltraLight.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: normal;
-  src: url('./fonts/IRANSans/eot/IRANSansWeb.eot');
-  src: url('./fonts/IRANSans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-  url('./fonts/IRANSans/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-  url('./fonts/IRANSans/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('./fonts/IRANSans/ttf/IRANSansWeb.ttf') format('truetype');
+  src: url('./fonts/IRANSans/woff/IRANSansWeb.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
+
+
+
+
+//@font-face {
+//  font-family: IRANSans;
+//  font-style: normal;
+//  font-weight: 900;
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Black.eot');
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Black.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+//  url('./fonts/IRANSans/woff2/IRANSansWeb_Black.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+//  url('./fonts/IRANSans/woff/IRANSansWeb_Black.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//  url('./fonts/IRANSans/ttf/IRANSansWeb_Black.ttf') format('truetype');
+//}
+//
+//@font-face {
+//  font-family: IRANSans;
+//  font-style: normal;
+//  font-weight: bold;
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Bold.eot');
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+//  url('./fonts/IRANSans/woff2/IRANSansWeb_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+//  url('./fonts/IRANSans/woff/IRANSansWeb_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//  url('./fonts/IRANSans/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+//}
+//
+//@font-face {
+//  font-family: IRANSans;
+//  font-style: normal;
+//  font-weight: 500;
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Medium.eot');
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+//  url('./fonts/IRANSans/woff2/IRANSansWeb_Medium.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+//  url('./fonts/IRANSans/woff/IRANSansWeb_Medium.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//  url('./fonts/IRANSans/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+//}
+//
+//@font-face {
+//  font-family: IRANSans;
+//  font-style: normal;
+//  font-weight: 300;
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Light.eot');
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+//  url('./fonts/IRANSans/woff2/IRANSansWeb_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+//  url('./fonts/IRANSans/woff/IRANSansWeb_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//  url('./fonts/IRANSans/ttf/IRANSansWeb_Light.ttf') format('truetype');
+//}
+//
+//@font-face {
+//  font-family: IRANSans;
+//  font-style: normal;
+//  font-weight: 200;
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_UltraLight.eot');
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+//  url('./fonts/IRANSans/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+//  url('./fonts/IRANSans/woff/IRANSansWeb_UltraLight.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//  url('./fonts/IRANSans/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+//}
+//
+//@font-face {
+//  font-family: IRANSans;
+//  font-style: normal;
+//  font-weight: normal;
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb.eot');
+//  src: url('./fonts/IRANSans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+//  url('./fonts/IRANSans/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+//  url('./fonts/IRANSans/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//  url('./fonts/IRANSans/ttf/IRANSansWeb.ttf') format('truetype');
+//}
 
 /*------------ General -------------*/
 .p20 {
@@ -637,7 +682,7 @@ i {
 //  margin-top: 70px;
 //}
 #main-page {
-  transform: translate3d(0, 0, 0);
+  //transform: translate3d(0, 0, 0);
   transition: transform 0.3s;
 
   &.menu-translate {
@@ -2365,6 +2410,11 @@ body{
 /*------------ Ads -------------*/
 .ads {
   margin-bottom: 38px;
+  img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
 }
 
 /*------------ last post -------------*/
@@ -2489,12 +2539,13 @@ body{
 
       .post-title {
         margin-bottom: 7px;
-
-        a {
-          color: $text-color-2;
-          font-size: 20px;
-          font-weight: 700;
-          line-height: 30px;
+        h3{
+          a {
+            color: $text-color-2;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 30px;
+          }
         }
       }
 
@@ -2968,6 +3019,7 @@ body{
   &__items-wrapper {
     li {
       display: flex;
+      flex-wrap: wrap;
       padding-right: 24px;
       position: relative;
       padding-top: 5px;
@@ -2990,7 +3042,7 @@ body{
 
       .post-details {
         padding-bottom: 25px;
-        flex: 1 0 auto;
+        flex: 1 1 auto;
 
         a {
           &:hover {
@@ -3036,213 +3088,38 @@ body{
 }
 
 /*------------ Side video -------------*/
-//.side-video {
-//  padding: 20px 23px 0 23px;
-//  border-radius: 10px;
-//  border: 1px solid $light-gray;
-//  margin-bottom: 20px;
-//
-//  &__title, &__content {
-//    a {
-//      transition: 0.3s;
-//
-//      &:hover {
-//        color: $accent-color !important;
-//      }
-//    }
-//  }
-//
-//  &__title {
-//    position: relative;
-//    margin-bottom: 25px;
-//
-//    &::before {
-//      content: '';
-//      display: block;
-//      position: absolute;
-//      top: 8px;
-//      height: 2px;
-//      width: 100%;
-//      background-color: $light-gray;
-//      z-index: 1;
-//    }
-//
-//    display: flex;
-//    justify-content: space-between;
-//
-//    h6, a {
-//      z-index: 2;
-//      background-color: white;
-//      color: $text-color-2;
-//    }
-//
-//    h6 {
-//      font-size: 14px;
-//      font-weight: 500;
-//      padding-left: 10px;
-//    }
-//
-//    a {
-//      font-size: 12px;
-//      font-weight: 300;
-//      padding-right: 8px;
-//    }
-//  }
-//
-//  &__content {
-//    display: flex;
-//    flex-direction: column;
-//
-//    .poster-wrapper {
-//      display: inline-block;
-//      margin-left: auto;
-//      margin-right: auto;
-//      margin-bottom: 20px;
-//      position: relative;
-//      text-align: center;
-//
-//      &::before {
-//        content: '';
-//        display: block;
-//        position: absolute;
-//        top: -6px;
-//        left: 11px;
-//        right: 11px;
-//        z-index: 1;
-//        height: 20px;
-//        border-radius: 10px;
-//        background-color: $accent-color;
-//      }
-//
-//      a {
-//        position: absolute;
-//        top: 50%;
-//        right: 50%;
-//        z-index: 3;
-//        transform: translate(50%, -50%);
-//        display: block;
-//        width: 53px;
-//        height: 54px;
-//        background-color: $accent-color;
-//        border-radius: 22px;
-//
-//        span {
-//          display: block;
-//          position: absolute;
-//          top: 0;
-//          width: 100%;
-//          height: 100%;
-//          border: 1px solid white;
-//          border-radius: 22px;
-//          animation: wave 3s linear;
-//          animation-iteration-count: infinite;
-//          opacity: 0.5;
-//
-//          &:first-child {
-//            animation-delay: 0s;
-//          }
-//
-//          &:nth-child(1) {
-//            animation-delay: 1s;
-//          }
-//
-//          &:last-child {
-//            animation-delay: 2s;
-//          }
-//        }
-//
-//        &::before {
-//          content: "\e913";
-//          font-family: persian;
-//          position: absolute;
-//          display: block;
-//          color: white;
-//          top: 50%;
-//          right: 50%;
-//          transform: translate(50%, -50%);
-//        }
-//      }
-//
-//      img {
-//        max-width: 100%;
-//        z-index: 2;
-//        position: relative;
-//        border-radius: 10px;
-//      }
-//    }
-//
-//    .video-post-title {
-//      margin-bottom: 32px;
-//
-//      a {
-//        color: $text-color-2;
-//        font-size: 16px;
-//        font-weight: 700;
-//      }
-//    }
-//
-//    .video-post-meta {
-//      display: flex;
-//
-//      li {
-//        margin-bottom: 17px;
-//        flex: 0 0 auto;
-//
-//        &:not( :last-child ) {
-//          padding-left: 28px;
-//        }
-//
-//        span {
-//          color: $text-color-2;
-//          display: inline-block;
-//          position: relative;
-//          font-size: 14px;
-//          font-weight: 500;
-//
-//          &:first-child {
-//            padding-left: 6px;
-//          }
-//
-//          i {
-//            color: $icon-color;
-//          }
-//        }
-//      }
-//    }
-//  }
-//}
 
 .side-video {
   padding: 20px 23px 0 23px;
   border-radius: 10px;
   border: 1px solid $light-gray;
   margin-bottom: 20px;
-  .swiper-container{
-    max-height: 348px;
-    overflow: visible;
-    .swiper-wrapper{
-      max-height: 348px;
-      .swiper-slide-prev{
-        position: relative;
-        opacity: 1;
-        &.slide-change{
-          &::before{
-            top: 0;
-            //opacity: 0.5;
+  .side-video-slider{
+    .swiper-container{
+      max-width: 320px;
+      overflow: visible;
+      .swiper-wrapper{
+        .swiper-slide-active{
+          position: relative;
+          opacity: 1;
+          &.slide-change{
+            &::before{
+              top: 0;
+            }
           }
-        }
-        &::before {
-          content: '';
-          display: block;
-          position: absolute;
-          top: -6px;
-          left: 11px;
-          right: 11px;
-          z-index: 1;
-          height: 20px;
-          border-radius: 10px;
-          background-color: $accent-color;
-          transition: 0.2s;
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -6px;
+            left: 11px;
+            right: 11px;
+            z-index: 1;
+            height: 20px;
+            border-radius: 10px;
+            background-color: $accent-color;
+            transition: 0.2s;
+          }
         }
       }
     }
@@ -3251,7 +3128,6 @@ body{
   &__title, &__content {
     a {
       transition: 0.3s;
-
       &:hover {
         color: $accent-color !important;
       }
@@ -3301,8 +3177,6 @@ body{
     background-color: white;
     .poster-wrapper {
       display: inline-block;
-      //margin-left: auto;
-      //margin-right: auto;
       margin-bottom: 20px;
       position: relative;
       text-align: center;
@@ -3357,19 +3231,25 @@ body{
       }
 
       img {
-        //max-width: 100%;
         z-index: 2;
         position: relative;
         border-radius: 10px;
         width: 100%;
-        height: 240px;
+        height: 241px;
         object-fit: cover;
+        transition: 0.5s;
       }
     }
 
     .video-post-title {
       margin-bottom: 28px;
-
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      transition: 0.3s;
+      &:hover{
+        color: $accent-color;
+      }
       a {
         color: $text-color-2;
         font-size: 16px;
@@ -3418,7 +3298,7 @@ body{
   &__image {
     text-align: center;
     overflow: hidden;
-    max-height: 205px;
+    height: 217px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 
@@ -3430,28 +3310,35 @@ body{
 
     img {
       width: 100%;
+      height: 217px;
+      object-fit: cover;
       transition: 0.3s;
     }
   }
 
   &__content {
-    padding: 25px 20px 20px;
+    padding: 15px 20px 20px;
 
     .post-title {
       padding-bottom: 17px;
       border-bottom: 2px solid $background-color-2;
 
       &:hover {
-        a {
+        h3, a {
           color: $accent-color;
         }
       }
-
-      a {
-        font-size: 16px;
-        font-weight: 700;
-        color: $text-color-2;
+      h3{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         transition: 0.3s;
+        a {
+          font-size: 16px;
+          font-weight: 700;
+          color: $text-color-2;
+          transition: 0.3s;
+        }
       }
     }
 
